@@ -1,0 +1,47 @@
+﻿{
+  "NewSettingsOffByDefault": true,
+  "DemonBuffs": {
+    "DisableAll": false,
+    "Settings": {
+      "BalorBuffs": {
+        "Enabled": true,
+        "Description": "Add buffs to Balors"
+      },
+      "CorruptedAngelBuffs": {
+        "Enabled": true,
+        "Description": "Add buffs to Corrupted Angels"
+      },
+      "DemonLordBuffs": {
+        "Enabled": true,
+        "Description": "Add buffs to Demon Lords"
+      },
+      "JerribethBuffs": {
+        "Enabled": true,
+        "Description": "Add buffs to Jerribeth"
+      },
+      "MinaghoBuffs": {
+        "Enabled": true,
+        "Description": "Add buffs to Minagho"
+      },
+      "RandomBossBuffs": {
+        "Enabled": true,
+        "Description": "Add buffs to Random Bosses"
+      }
+    },
+    "IsExpanded": true
+  },
+  "OtherBuffs": {
+    "DisableAll": false,
+    "Settings": {
+      "AngelBuffs": {
+        "Enabled": true,
+        "Description": "Add buffs to Angels"
+      },
+      "CultistCasterBuffs": {
+        "Enabled": true,
+        "Description": "Add buffs to Cultist Casters"
+      },
+    },
+    "IsExpanded": true
+  }
+}

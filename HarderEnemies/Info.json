@@ -1,0 +1,14 @@
+﻿{
+  "AssemblyName": "HarderEnemies.dll",
+  "Author": "Snarkki",
+  "DisplayName": "HarderEnemies",
+  "EntryMethod": "HarderEnemies.Main.Load",
+  "GameVersion": "1.3.0",
+  "HomePage": "",
+  "Id": "HarderEnemies",
+  "ManagerVersion": "0.23.0",
+  "Repository": "",
+  "Requirements": [ "TabletopTweaks-Core" ],
+  "LoadAfter": [ "TabletopTweaks-Core" ],
+  "Version": "1.2.0"
+}

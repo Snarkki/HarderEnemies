@@ -1,0 +1,47 @@
+﻿{
+  "NewSettingsOffByDefault": true,
+  "DemonChanges": {
+    "DisableAll": false,
+    "Settings": {
+      "BalorChanges": {
+        "Enabled": true,
+        "Description": "Adjust Balor Abilities"
+      },
+      "CorruptedAngelChanges": {
+        "Enabled": true,
+        "Description": "Adjust Corrupted Angel Abilities"
+      },
+      "DemonLordChanges": {
+        "Enabled": true,
+        "Description": "Adjust Demon Lord Abilities"
+      },
+      "JerribethChanges": {
+        "Enabled": true,
+        "Description": "Adjust Jerribeth Abilities"
+      },
+      "MinaghoChanges": {
+        "Enabled": true,
+        "Description": "Adjust Minagho Abilities"
+      },
+      "RandomBossChanges": {
+        "Enabled": true,
+        "Description": "Adjust Random Boss Abilities"
+      }
+    },
+    "IsExpanded": true
+  },
+  "OtherChanges": {
+    "DisableAll": false,
+    "Settings": {
+      "AngelChanges": {
+        "Enabled": true,
+        "Description": "Adjust Angel Abilities"
+      },
+      "CultistCasterChanges": {
+        "Enabled": true,
+        "Description": "Adjust Cultist Caster Abilities"
+      }
+    },
+    "IsExpanded": true
+  }
+}

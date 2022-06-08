@@ -1,0 +1,46 @@
+﻿{
+  "NewSettingsOffByDefault": true,
+  "HPBoosts": {
+    "DisableAll": false,
+    "Settings": {
+      "AdjustBossHp": {
+        "Enabled": true,
+        "Description": "Add HP boost to Boss list (incl Balors)"
+      },
+      "AdjustAngelHp": {
+        "Enabled": true,
+        "Description": "Add HP boost to Angel list"
+      },
+      "AdjustCultistCasters": {
+        "Enabled": true,
+        "Description": "Add HP boost to units of Cultist Casters list"
+      },
+      "AdjustDemons": {
+        "Enabled": true,
+        "Description": "Add HP boost to units of Demons list"
+      },
+      "AdjustDragonHp": {
+        "Enabled": true,
+        "Description": "Add HP boost to units of Dragon list"
+      },
+      "AdjustEliteCasterHp": {
+        "Enabled": true,
+        "Description": "Add HP boost to units of Elite Caster list"
+      },
+      "AdjustGolemHp": {
+        "Enabled": true,
+        "Description": "Add HP boost to units of Golems list"
+      },
+      "AdjustRetrieverHp": {
+        "Enabled": true,
+        "Description": "Add HP boost to units of Retrievers list"
+      },
+      "AdjustVescavorDerakniHp": {
+        "Enabled": true,
+        "Description": "Add HP boost to units of Vescavor&Derakni list"
+      }
+
+    },
+    "IsExpanded": true
+  }
+}
