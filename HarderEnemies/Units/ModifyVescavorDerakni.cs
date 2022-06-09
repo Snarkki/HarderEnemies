@@ -9,13 +9,18 @@ using TabletopTweaks.Core.Utilities;
 using static HarderEnemies.Main;
 using HarderEnemies.Blueprints;
 using HarderEnemies.Features;
+using Kingmaker.UnitLogic.Abilities.Components;
+using Kingmaker.UnitLogic.Mechanics.Actions;
+using Kingmaker.AI.Blueprints;
 
 namespace HarderEnemies.Units {
     public class ModifyVescavors {
         private static BlueprintFeature SuperToughness = BlueprintTools.GetModBlueprint<BlueprintFeature>(HEContext, "SuperToughnessFeature");
+        private static BlueprintBrain DerakniNewStandardBrain = BlueprintTools.GetModBlueprint<BlueprintBrain>(HEContext, "DerakniNewStandardBrain");
         public static void HandleChanges() {
-            ModifyVescavors.AdjustHP();
-            ModifyVescavors.EditExisting();
+            AdjustHP();
+            HandleVescavorAbilities();
+            HandleVescavorBuffs();
         }
 
         private static void AdjustHP() {
@@ -32,25 +37,36 @@ namespace HarderEnemies.Units {
         }
 
 
-        public static void EditExisting() {
-            
-
-    
-
+        public static void HandleVescavorAbilities() {
+            if (HEContext.AbilityChanges.OtherChanges.IsDisabled("VescavorChanges")) { return; }
+            //VESCAVORS
             foreach (BlueprintUnit thisUnit in Vescavor.VescavorList) {
                 thisUnit.m_AddFacts = thisUnit.m_AddFacts.RemoveFromArray(FeatureList.VescavorQueenGibberAbility.ToReference<BlueprintUnitFactReference>());
                 thisUnit.m_AddFacts = thisUnit.m_AddFacts.AppendToArray(FeatureList.TripBite.ToReference<BlueprintUnitFactReference>());
-
-                if (thisUnit == Vescavor.CR14_VescavorQueenBoss) {
-                    thisUnit.m_AddFacts = thisUnit.m_AddFacts.AppendToArray(SuperToughness.ToReference<BlueprintUnitFactReference>());
-                }
             }
 
+            // add sunder armor action to acid spit
+            var acidSpit = Abilities.VescavorGuardSpitAcidAbility.GetComponent<AbilityEffectRunAction>();
+            acidSpit.Actions.Actions = acidSpit.Actions.Actions.AppendToArray(Helpers.Create<ContextActionCombatManeuver>(c => {
+                c.Type = Kingmaker.RuleSystem.Rules.CombatManeuver.SunderArmor;
+            }));
+
+            // DERAKNIS -> teleport -> strike -> trip / confuse
             foreach (BlueprintUnit thisUnit in Vescavor.DerakniList) {
-                thisUnit.m_AddFacts = thisUnit.m_AddFacts.RemoveFromArray(FeatureList.DerakniDroneAbility.ToReference<BlueprintUnitFactReference>());
+                if (!thisUnit.AddFacts.Contains(Abilities.DimensionDoorHell.ToReference<BlueprintUnitFactReference>())) {
+                    thisUnit.m_AddFacts = thisUnit.m_AddFacts.AppendToArray(Abilities.DimensionDoorHell.ToReference<BlueprintUnitFactReference>());
+                }
                 thisUnit.m_AddFacts = thisUnit.m_AddFacts.AppendToArray(FeatureList.TripBite.ToReference<BlueprintUnitFactReference>());
+                thisUnit.AlternativeBrains = new BlueprintBrainReference[] { };
+                thisUnit.m_Brain = DerakniNewStandardBrain.ToReference<BlueprintBrainReference>();
             }
-            HEContext.Logger.LogHeader("Updated Vescavor/Derakni");
+            HEContext.Logger.LogHeader("Updated Vescavor/Derakni Abilities");
+        }
+
+        public static void HandleVescavorBuffs() {
+            if (HEContext.Prebuffs.OtherBuffs.IsDisabled("VescavorBuffs")) { return; }
+
+            HEContext.Logger.LogHeader("Updated Vescavor/Derakni Buffs");
         }
 
     }

@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace HarderEnemies.Features {
     [AllowedOn(typeof(BlueprintUnitFact), false)]
-    public class SuperToughnessLogic : UnitFactComponentDelegate, ISubscriber, IGlobalSubscriber, IOwnerGainLevelHandler, IUnitSubscriber {
+    public class AbyssalToughnessLogic : UnitFactComponentDelegate, ISubscriber, IGlobalSubscriber, IOwnerGainLevelHandler, IUnitSubscriber {
         public override void OnTurnOn() {
             this.Apply();
         }
@@ -26,8 +26,8 @@ namespace HarderEnemies.Features {
 
         private void Apply() {
             base.Owner.Stats.HitPoints.RemoveModifiersFrom(base.Runtime);
-            int num = (this.CheckMythicLevel ? base.Owner.Progression.MythicLevel : base.Owner.Progression.CharacterLevel) * 10;
-            int value = this.CheckMythicLevel ? num : Math.Max(10, num);
+            int num = (this.CheckMythicLevel ? base.Owner.Progression.MythicLevel : base.Owner.Progression.CharacterLevel) * 25;
+            int value = this.CheckMythicLevel ? num : Math.Max(25, num);
             base.Owner.Stats.HitPoints.AddModifier(value, base.Runtime, ModifierDescriptor.UntypedStackable);
         }
 

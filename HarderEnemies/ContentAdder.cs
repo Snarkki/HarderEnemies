@@ -24,9 +24,10 @@ namespace HarderEnemies {
                 AI_Mechanics.Actions.New_AiCastSpell.CreateNew();
                 Items.Weapons.CreateNewWeapons();
                 AI_Mechanics.Brains.CasterBrains.BrainHandler();
-
+                AI_Mechanics.Brains.DemonBrains.DemonBrainHandler();
+                AI_Mechanics.Brains.DragonBrain.DragonBrainHandler();
                 // 
-                Units.ModifyRetrievers.HandleChanges();
+                Units.ModifyRetrieversDevastators.HandleChanges();
                 Units.ModifyDragons.HandleChanges();
                 Units.ModifyBosses.HandleChanges();
                 Units.ModifyGolems.HandleChanges();

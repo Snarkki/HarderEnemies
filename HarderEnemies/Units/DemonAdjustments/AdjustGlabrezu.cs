@@ -22,31 +22,7 @@ using Kingmaker.UnitLogic.Mechanics.Actions;
 
 namespace HarderEnemies.Units.DemonAdjustments {
     internal class AdjustGlabrezu {
-        private static BlueprintFeature SuperiorQuickenMetaFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(HEContext, "SuperiorQuickenMetaMagicFeature");
-        private static BlueprintFeature SuperiorEmpowerMetaFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(HEContext, "SuperiorEmporedMetaMagicFeature");
-        private static BlueprintFeature SuperToughness = BlueprintTools.GetModBlueprint<BlueprintFeature>(HEContext, "SuperToughnessFeature");
-        private static BlueprintAiCastSpell GreaterDispelAiSpellSwift = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "GreaterDispelAiSpellSwift");
-        private static BlueprintAiCastSpell BlasphemyAiSpell = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "BlasphemyAiSpell");
-        private static BlueprintAiCastSpell UnholyBlightAiSpell = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "UnholyBlightAiSpell");
-        private static BlueprintAiCastSpell StormBoltAiSpell = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "StormBoltAiSpell");
-        private static BlueprintAiCastSpell SummonMonsterViiAiSpell = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "SummonMonsterViiAiSpell");
-        private static BlueprintAiCastSpell FearAiSpell = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "FearAiSpell");
-        private static BlueprintAiCastSpell FirestormEmpoweredAiSpell = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "FirestormEmpoweredAiSpell");
-        private static BlueprintAiCastSpell GreaterInvisibilityAiSpellSwift = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "GreaterInvisibilityAiSpellSwift");
-        private static BlueprintAiCastSpell NewFlameStrikeAiSpell = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "NewFlameStrikeAiSpell");
-        private static BlueprintItemWeapon HolyEvilBane5Sword = BlueprintTools.GetModBlueprint<BlueprintItemWeapon>(HEContext, "HolyEvilBane5Sword");
 
-        private static BlueprintAbility GreaterSwarmSummon = BlueprintTools.GetModBlueprint<BlueprintAbility>(HEContext, "GreaterSwarmSummon");
-        private static BlueprintAbility GateSpell = BlueprintTools.GetModBlueprint<BlueprintAbility>(HEContext, "GateSpell");
-
-        private static BlueprintBrain NocticulaAltBrain = BlueprintTools.GetModBlueprint<BlueprintBrain>(HEContext, "NocticulaAltBrain");
-        private static BlueprintBrain DeskariAltBrain = BlueprintTools.GetModBlueprint<BlueprintBrain>(HEContext, "DeskariAltBrain");
-
-
-        //Balor weapons
-        private static BlueprintItemWeapon BalorNewSword = BlueprintTools.GetModBlueprint<BlueprintItemWeapon>(HEContext, "BalorNewSword");
-        private static BlueprintAbility PullingStrikeAbility = BlueprintTools.GetModBlueprint<BlueprintAbility>(HEContext, "PullingStrikeAbility");
-        private static BlueprintAiCastSpell PullingStrikeAiAction = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "PullingStrikeAiAction");
 
         public static void GlabrezuHandler() {
             GlabrezuAbilities();
@@ -54,17 +30,24 @@ namespace HarderEnemies.Units.DemonAdjustments {
         }
 
         private static void GlabrezuAbilities() {
-            BrainList.GlabrezuBrainStandard.m_Actions = BrainList.GlabrezuBrainStandard.m_Actions.AppendToArray(AiCastSpellList.Minotaur_DispelAiAction.ToReference<BlueprintAiActionReference>(),
-            AiCastSpellList.Nixie_ConfusionAiAction.ToReference<BlueprintAiActionReference>(),
+            if (HEContext.AbilityChanges.DemonChanges.IsDisabled("GlabrezuAbilities")) { return; }
+
+            foreach (BlueprintUnit thisUnit in Demons.DemonGlabrezuList) {
+                thisUnit.m_AddFacts = thisUnit.m_AddFacts.AppendToArray(BuffLists.DemonBuffLists.GibrilithAbilities);
+            }
+            BrainList.GlabrezuBrainStandard.m_Actions = BrainList.GlabrezuBrainStandard.m_Actions.AppendToArray(AiCastSpellList.MinotaurCleric_DispelMagicAiAction.ToReference<BlueprintAiActionReference>(),
+            AiCastSpellList.NixieConfusionAiAction.ToReference<BlueprintAiActionReference>(),
             AiCastSpellList.Glabrezu_AiAction_PowerWordStun.ToReference<BlueprintAiActionReference>()
             );
-            HEContext.Logger.LogHeader("Updated GlabrezuList");
+            HEContext.Logger.LogHeader("Updated GlabrezuListA");
         }
 
         private static void GlabrezuBuffs() {
-
-
-            HEContext.Logger.LogHeader("Updated Oolioddroo");
+            if (HEContext.Prebuffs.DemonBuffs.IsDisabled("GlabrezuBuffs")) { return; }
+            foreach (BlueprintUnit thisUnit in Demons.DemonGlabrezuList) {
+                thisUnit.m_AddFacts = thisUnit.m_AddFacts.AppendToArray(BuffLists.DemonBuffLists.GibrilithAbilities);
+            }
+            HEContext.Logger.LogHeader("Updated GlabrezuListB");
         }
 
     }

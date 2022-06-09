@@ -13,11 +13,13 @@ namespace HarderEnemies.Units {
     public class ModifyGolems {
 
         private static BlueprintFeature SuperToughness = BlueprintTools.GetModBlueprint<BlueprintFeature>(HEContext, "SuperToughnessFeature");
-
+        private static BlueprintUnitFactReference[] GolemBuffs =  {
+            Buffs.HasteBuff.ToReference<BlueprintUnitFactReference>(),
+        };
         public static void HandleChanges() {
             AdjustHP();
             HandleGolemAbilities();
-            HandleGolemAbilities();
+            HandleGolemBuffs();
         }
 
         private static void AdjustHP() {
@@ -30,7 +32,7 @@ namespace HarderEnemies.Units {
         }
 
         private static void HandleGolemAbilities() {
-
+            if (HEContext.AbilityChanges.OtherChanges.IsDisabled("GolemChanges")) { return; }
 
             foreach (BlueprintUnit thisUnit in Golems.GolemList) {
                 if (thisUnit.CR >= 0 && thisUnit.CR <= 15) {
@@ -44,11 +46,11 @@ namespace HarderEnemies.Units {
         }
 
         private static void HandleGolemBuffs() {
-
+            if (HEContext.Prebuffs.OtherBuffs.IsDisabled("GolemBuffs")) { return; }
 
             foreach (BlueprintUnit thisUnit in Golems.GolemList) {
-
-            }
+                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, thisUnit.CR, GolemBuffs);
+            }     
             HEContext.Logger.LogHeader("Updated Golems Buffs");
         }
 

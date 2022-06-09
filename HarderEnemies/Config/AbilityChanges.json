@@ -1,6 +1,6 @@
 ﻿{
   "NewSettingsOffByDefault": true,
-  "DemonChanges": {
+  "BossChanges": {
     "DisableAll": false,
     "Settings": {
       "BalorChanges": {
@@ -30,6 +30,56 @@
     },
     "IsExpanded": true
   },
+  "DemonChanges": {
+    "DisableAll": false,
+    "Settings": {
+      "AbrikandiluAbilities": {
+        "Enabled": true,
+        "Description": "Adjust Abrikandilu Abilities"
+      },
+      "BabauAbilities": {
+        "Enabled": true,
+        "Description": "Adjust Babau Abilities"
+      },
+      "BrimorakAbilities": {
+        "Enabled": true,
+        "Description": "Adjust Brimorak Abilities"
+      },
+      "ColoxusAbilities": {
+        "Enabled": true,
+        "Description": "Adjust Coloxus Abilities"
+      },
+      "DemodandStringyAbilities": {
+        "Enabled": true,
+        "Description": "Adjust Demodand Stringy Abilities"
+      },
+      "DemodandTarryAbilities": {
+        "Enabled": true,
+        "Description": "Adjust Demodand Tarry Abilities"
+      },
+      "GibrilethAbilities": {
+        "Enabled": true,
+        "Description": "Adjust Gibrileth Abilities"
+      },
+      "GlabrezuAbilities": {
+        "Enabled": true,
+        "Description": "Adjust Glabrezu Abilities"
+      },
+      "MarilithAbilities": {
+        "Enabled": true,
+        "Description": "Adjust Marilith Abilities"
+      },
+      "OolioddrooAbilities": {
+        "Enabled": true,
+        "Description": "Adjust Oolioddroo Abilities"
+      },
+      "CambionAbilities": {
+        "Enabled": true,
+        "Description": "Adjust Cambion Abilities"
+      }
+    },
+    "IsExpanded": true
+  },
   "OtherChanges": {
     "DisableAll": false,
     "Settings": {
@@ -40,6 +90,30 @@
       "CultistCasterChanges": {
         "Enabled": true,
         "Description": "Adjust Cultist Caster Abilities"
+      },
+      "DragonChanges": {
+        "Enabled": true,
+        "Description": "Adjust Dragon Abilities"
+      },
+      "LesserDragonChanges": {
+        "Enabled": true,
+        "Description": "Adjust Lesser Dragon Abilities"
+      },
+      "EliteCasterChanges": {
+        "Enabled": true,
+        "Description": "Adjust Elite Caster Abilities (liches etc)"
+      },
+      "GolemChanges": {
+        "Enabled": true,
+        "Description": "Adjust Golem Abilities"
+      },
+      "RetrieverChanges": {
+        "Enabled": true,
+        "Description": "Adjust Retriever Abilities"
+      },
+      "VescavorChanges": {
+        "Enabled": true,
+        "Description": "Adjust Vescavor & Derakni Abilities"
       }
     },
     "IsExpanded": true

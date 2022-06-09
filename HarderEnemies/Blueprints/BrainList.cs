@@ -31,8 +31,20 @@ namespace HarderEnemies.Blueprints {
         public static BlueprintBrain GibrilethStandardBrain = BlueprintTools.GetBlueprint<BlueprintBrain>("9761cff3240c3a24196f6c2bbffb1c60");
         public static BlueprintBrain GlabrezuBrainStandard = BlueprintTools.GetBlueprint<BlueprintBrain>("93486b9c4e2f14a46897d65aca967985");
         public static BlueprintBrain Mutasafen_Brain = BlueprintTools.GetBlueprint<BlueprintBrain>("5d5d64b872a06ff4495b5630de528f17");
+        public static BlueprintBrain Alushinyrra_Minagho_Brain = BlueprintTools.GetBlueprint<BlueprintBrain>("a4f9e2c494e6432cb9926a88ea84e984");
 
-        // Greater Dragons
+        public static BlueprintBrain Nocticula_Brain = BlueprintTools.GetBlueprint<BlueprintBrain>("b37b0e3ae7ee4f38b29930aaa816c972");
+        public static BlueprintBrain Areelu_Brain = BlueprintTools.GetBlueprint<BlueprintBrain>("a712b94402ff4b0ba40af14482b7250d");
+        public static BlueprintBrain Deskari_Brain = BlueprintTools.GetBlueprint<BlueprintBrain>("e8df029c531638d448dbe8a548454c41");
+        public static BlueprintBrain EchoOfDeskari_Brain = BlueprintTools.GetBlueprint<BlueprintBrain>("9e71574658a6f234193838bcd07f49d7");
+        public static BlueprintBrain MidnightFane_DeskariPriestess_Brain = BlueprintTools.GetBlueprint<BlueprintBrain>("0a7fab9bcdef89e4ab50824c4aff882d");
+        public static BlueprintBrain Areshkagal_BrainFirst = BlueprintTools.GetBlueprint<BlueprintBrain>("c1da4b6948f84bc3b6e87bf3d80be6df");
+        public static BlueprintBrain BalorBrain = BlueprintTools.GetBlueprint<BlueprintBrain>("8d252e57135076842b1425d5b3e082d3");
+        public static BlueprintBrain BalorMythic6_BloodragerBrain = BlueprintTools.GetBlueprint<BlueprintBrain>("222ac5dab8a22cd4d98253df4c786bf4");
+        public static BlueprintBrain BalorMythic_FighterBrain = BlueprintTools.GetBlueprint<BlueprintBrain>("4525d12246e49894cb02b9f3668a571a");
+        public static BlueprintBrain BalorNocticulaGuard_Brain_Caster = BlueprintTools.GetBlueprint<BlueprintBrain>("a623eefae37d4772bdd0c38ecbf17013");
+        public static BlueprintBrain BalorNocticulaGuard_Brain_Melee = BlueprintTools.GetBlueprint<BlueprintBrain>("01f3ed64c9434d508111a08b7f7335f9");
+        public static BlueprintBrain Khor_BalorBrain = BlueprintTools.GetBlueprint<BlueprintBrain>("440b0c54268c4bfdb7e0447f241d7f5c");
 
 
 

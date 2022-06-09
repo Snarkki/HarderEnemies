@@ -17,10 +17,8 @@ using static HarderEnemies.Main;
 namespace HarderEnemies.Units {
     public class ModifyDragons {
 
-        private static BlueprintFeature SuperiorQuickenMetaFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(HEContext, "SuperiorQuickenMetaMagicFeature");
-        private static BlueprintFeature SuperiorEmpowerMetaFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(HEContext, "SuperiorEmporedMetaMagicFeature");
-        private static BlueprintFeature SuperToughness = BlueprintTools.GetModBlueprint<BlueprintFeature>(HEContext, "SuperToughnessFeature");
-        private static BlueprintBrain DragonAltBrain = BlueprintTools.GetModBlueprint<BlueprintBrain>(HEContext, "DragonAltBrain");
+        private static BlueprintFeature AbyssalToughnessFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(HEContext, "AbyssalToughnessFeature");
+        private static BlueprintBrain NewBlackDragonBrain = BlueprintTools.GetModBlueprint<BlueprintBrain>(HEContext, "NewBlackDragonBrain");
 
 
         
@@ -36,53 +34,37 @@ namespace HarderEnemies.Units {
             if (HEContext.HPChanges.HPBoosts.IsDisabled("AdjustDragonHp")) { return; }
 
             foreach (BlueprintUnit thisUnit in Dragons.DragonList) {
-                thisUnit.m_AddFacts = thisUnit.m_AddFacts.AppendToArray(SuperToughness.ToReference<BlueprintUnitFactReference>());
+                thisUnit.m_AddFacts = thisUnit.m_AddFacts.AppendToArray(AbyssalToughnessFeature.ToReference<BlueprintUnitFactReference>());
             }
             foreach (BlueprintUnit thisUnit in Dragons.LesserDragonsList) {
-                thisUnit.m_AddFacts = thisUnit.m_AddFacts.AppendToArray(SuperToughness.ToReference<BlueprintUnitFactReference>());
+                thisUnit.m_AddFacts = thisUnit.m_AddFacts.AppendToArray(AbyssalToughnessFeature.ToReference<BlueprintUnitFactReference>());
             }
             
             HEContext.Logger.LogHeader("Adjusted Dragon HP");
         }
 
         private static void DragonAbilities() {
-
+            if (HEContext.AbilityChanges.OtherChanges.IsDisabled("DragonChanges")) { return; }
         }
 
         private static void DragonBuffs() {
-
-            foreach (BlueprintUnit thisUnit in Dragons.DragonList) {
-                thisUnit.AddComponent<AddFacts>(c => {
-                    c.CasterLevel = thisUnit.CR;
-                    c.MinDifficulty = Kingmaker.Settings.GameDifficultyOption.Daring;
-                    c.m_Facts = new BlueprintUnitFactReference[] {
-                        Abilities.FrigtfulAspectBuff.ToReference<BlueprintUnitFactReference>(),
-                        Abilities.SeamantleBuff.ToReference<BlueprintUnitFactReference>(),
-                        Abilities.DeathWardBuff.ToReference<BlueprintUnitFactReference>(),
-                        Abilities.FreedomOfMovementBuff.ToReference<BlueprintUnitFactReference>(),
-                    };
-                });
-
-                thisUnit.m_AddFacts = thisUnit.m_AddFacts.AppendToArray(
-                    SuperiorQuickenMetaFeature.ToReference<BlueprintUnitFactReference>(),
-                    Abilities.DispelGreater.ToReference<BlueprintUnitFactReference>(),
-                    Abilities.StinkingCloud.ToReference<BlueprintUnitFactReference>(),
-                    Abilities.Stormbolts.ToReference<BlueprintUnitFactReference>(),
-                    Abilities.Blasphemy.ToReference<BlueprintUnitFactReference>(),
-                    Abilities.UnholyBlight.ToReference<BlueprintUnitFactReference>(),
-                    SuperiorEmpowerMetaFeature.ToReference<BlueprintUnitFactReference>()
-                );
-                thisUnit.AlternativeBrains = thisUnit.AlternativeBrains.AppendToArray(DragonAltBrain.ToReference<BlueprintBrainReference>());
+            if (HEContext.Prebuffs.OtherBuffs.IsDisabled("DragonBuffs")) { return; }
+            foreach (BlueprintUnit thisUnit in Dragons.DragonList) {           
+                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, thisUnit.CR, BuffLists.DragonBuffsLists.GreaterDragonBuffs);
+                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, thisUnit.CR, BuffLists.DragonBuffsLists.GreaterDragonAbilities);
             }
+            Dragons.CR16_BlackDragonAncient.m_Brain = NewBlackDragonBrain.ToReference<BlueprintBrainReference>();
         }
 
         private static void LesserDragonAbilities() {
-
+            if (HEContext.AbilityChanges.OtherChanges.IsDisabled("LesserDragonChanges")) { return; }
         }
 
         private static void LesserDragonBuffs() {
-            foreach (BlueprintUnit thisUnit in Dragons.LesserDragonsList) {
+            if (HEContext.Prebuffs.OtherBuffs.IsDisabled("LesserDragonBuffs")) { return; }
 
+            foreach (BlueprintUnit thisUnit in Dragons.LesserDragonsList) {
+                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, thisUnit.CR, BuffLists.DragonBuffsLists.LesserDragonBuffs);
 
             }
             HEContext.Logger.LogHeader("Updated Dragons");

@@ -53,75 +53,34 @@ namespace HarderEnemies.Units.Adjustments {
         }
 
         private static void RandomBossAbilities() {
-            if (HEContext.AbilityChanges.DemonChanges.IsDisabled("RandomBossChanges")) { return; }
+            if (HEContext.AbilityChanges.BossChanges.IsDisabled("RandomBossChanges")) { return; }
 
+            Utils.CustomHelpers.AddFactListsToUnit(Bosses.Mutasafen, Bosses.Mutasafen.CR, BuffLists.RandomBossBuffLists.MutasafenAbilities);
+
+            BrainList.Mutasafen_Brain.m_Actions = BrainList.Mutasafen_Brain.m_Actions.AppendToArray(
+                GreaterInvisibilityAiSpellSwift.ToReference<BlueprintAiActionReference>(),
+                AiCastSpellList.MythicShadow_Demon_LegendaryProportions_AiAction.ToReference<BlueprintAiActionReference>()
+            );
+
+
+            // This should be the priestress fight in midnight fane, party level should be 15~ 
+            //MidnightFane_NocticulaPriestess
 
         }
         private static void RandomBossBuffs() {
-            if (HEContext.Prebuffs.DemonBuffs.IsDisabled("RandomBossBuffs")) { return; }
+            if (HEContext.Prebuffs.BossBuffs.IsDisabled("RandomBossBuffs")) { return; }
 
-            Bosses.FakeHellknightGlabrezuBoss.m_AddFacts = Bosses.FakeHellknightGlabrezuBoss.m_AddFacts.AppendToArray(Abilities.UnholyAura.ToReference<BlueprintUnitFactReference>());
-            Bosses.LostChapel_GargoyleMiniboss.m_AddFacts = Bosses.LostChapel_GargoyleMiniboss.m_AddFacts.AppendToArray(Abilities.ShielfOfFaithBuff.ToReference<BlueprintUnitFactReference>());
 
-            Bosses.Maugla.AddComponent<AddFacts>(c => {
-                c.CasterLevel = Bosses.Maugla.CR;
-                c.MinDifficulty = Kingmaker.Settings.GameDifficultyOption.Daring;
-                c.m_Facts = new BlueprintUnitFactReference[] {
-                        Abilities.MageArmorBuff.ToReference<BlueprintUnitFactReference>(),
-                        Abilities.MageShieldBuff.ToReference<BlueprintUnitFactReference>(),
-                        Abilities.ProtectionFromArrowsBuff.ToReference<BlueprintUnitFactReference>(),
-                        Abilities.StoneskinBuff.ToReference<BlueprintUnitFactReference>()
-                    };
-            });
+            Utils.CustomHelpers.AddFactListsToUnit(Bosses.Maugla, Bosses.Maugla.CR, BuffLists.RandomBossBuffLists.MauglaBuffs);
+
 
             foreach (BlueprintUnit thisUnit in Bosses.MutafasenList) {
-                thisUnit.AddComponent<AddFacts>(c => {
-                    c.CasterLevel = 17;
-                    c.MinDifficulty = Kingmaker.Settings.GameDifficultyOption.Daring;
-                    c.m_Facts = new BlueprintUnitFactReference[] {
-                        Abilities.DeathWardBuff.ToReference<BlueprintUnitFactReference>(),
-                        Abilities.FreedomOfMovementBuff.ToReference<BlueprintUnitFactReference>(),
-                        Abilities.BarkskinBuff.ToReference<BlueprintUnitFactReference>(),
-                        Abilities.MageShieldBuff.ToReference<BlueprintUnitFactReference>(),
-                        Abilities.StoneskinBuff.ToReference<BlueprintUnitFactReference>()
-
-                    };
-                });
+                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, thisUnit.CR, BuffLists.RandomBossBuffLists.MutasafenGangBuffs);
             }
 
 
-            Bosses.Mutasafen.AddComponent<AddFacts>(c => {
-                c.CasterLevel = 20;
-                c.MinDifficulty = Kingmaker.Settings.GameDifficultyOption.Daring;
-                c.m_Facts = new BlueprintUnitFactReference[] {
-                        Abilities.InvisibilityGreater.ToReference<BlueprintUnitFactReference>(),
-                        Abilities.LegendaryProportionsBuff.ToReference<BlueprintUnitFactReference>(),
-                        Abilities.EchoLocationbuff.ToReference<BlueprintUnitFactReference>(),
-                        FeatureList.AscendentElementAcid.ToReference<BlueprintUnitFactReference>(),
-                        SuperiorQuickenMetaFeature.ToReference<BlueprintUnitFactReference>(),
-                    };
+            Utils.CustomHelpers.AddFactListsToUnit(Bosses.XanthirPhase1, Bosses.XanthirPhase1.CR, BuffLists.RandomBossBuffLists.XanthirBuffs);
 
-                BrainList.Mutasafen_Brain.m_Actions = BrainList.Mutasafen_Brain.m_Actions.AppendToArray(
-                        GreaterInvisibilityAiSpellSwift.ToReference<BlueprintAiActionReference>()
-                    );
-            });
-
-
-            Bosses.XanthirPhase1.AddComponent<AddFacts>(c => {
-                c.CasterLevel = 20;
-                c.MinDifficulty = Kingmaker.Settings.GameDifficultyOption.Daring;
-                c.m_Facts = new BlueprintUnitFactReference[] {
-                        Abilities.FrigtfulAspectBuff.ToReference<BlueprintUnitFactReference>(),
-                        Abilities.SeamantleBuff.ToReference<BlueprintUnitFactReference>(),
-                        Abilities.DeathWardBuff.ToReference<BlueprintUnitFactReference>(),
-                        Abilities.FreedomOfMovementBuff.ToReference<BlueprintUnitFactReference>(),
-                        Abilities.BarkskinBuff.ToReference<BlueprintUnitFactReference>(),
-                        Abilities.MindBlankBuff.ToReference<BlueprintUnitFactReference>(),
-                        Abilities.TrueSeeingBuff.ToReference<BlueprintUnitFactReference>(),
-                        Abilities.MageShieldBuff.ToReference<BlueprintUnitFactReference>(),
-                        Abilities.StoneskinBuff.ToReference<BlueprintUnitFactReference>(),
-                    };
-            });
         }
     }
 }

@@ -39,6 +39,9 @@ namespace HarderEnemies {
             MidnightFane_RetrieverColdForged1,
             CR23_AreshkagalRetriever,
             CR25_Areshkagal_RetrieverBoss,
+
+        };
+        public static List<BlueprintUnit> DevastatorList = new List<BlueprintUnit>() {
             CR26_Devastator,
             CR26_Devastator_RE,
             CR29_Devastator,

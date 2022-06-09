@@ -22,21 +22,22 @@ namespace HarderEnemies {
             var AddedContent = Main.HEContext.AbilityChanges;
             UI.Div(0, 15);
             using (UI.VerticalScope()) {
-                UI.Toggle("New Settings On By Default".bold(), ref AddedContent.NewSettingsOffByDefault);
                 UI.Space(25);
                 SetttingUI.SettingGroup("Enemy Changes", TabLevel, AddedContent.DemonChanges);
+                SetttingUI.SettingGroup("Boss Changes", TabLevel, AddedContent.BossChanges);
+                SetttingUI.SettingGroup("Other Changes", TabLevel, AddedContent.OtherChanges);
             }
         }
 
         public static void Prebuffs() {
             var TabLevel = SetttingUI.TabLevel.Zero;
-            var Fixes = Main.HEContext.Prebuffs;
+            var Prebuffs = Main.HEContext.Prebuffs;
             UI.Div(0, 15);
             using (UI.VerticalScope()) {
-                UI.Toggle("New Settings On By Default".bold(), ref Fixes.NewSettingsOffByDefault);
                 UI.Space(25);
-
-                SetttingUI.SettingGroup("P", TabLevel, Fixes.Miscellaneous);
+                SetttingUI.SettingGroup("Demon Buffs", TabLevel, Prebuffs.DemonBuffs);
+                SetttingUI.SettingGroup("Boss Buffs", TabLevel, Prebuffs.BossBuffs);
+                SetttingUI.SettingGroup("Other Buffs", TabLevel, Prebuffs.OtherBuffs);
             }
         }
 
@@ -45,9 +46,8 @@ namespace HarderEnemies {
             var HPChanges = Main.HEContext.HPChanges;
             UI.Div(0, 15);
             using (UI.VerticalScope()) {
-                UI.Toggle("New Settings On By Default".bold(), ref HPChanges.NewSettingsOffByDefault);
                 UI.Space(25);
-                SetttingUI.SettingGroup("Boss HP Boost", TabLevel, HPChanges.HPBoosts);
+                SetttingUI.SettingGroup("HP Boosts", TabLevel, HPChanges.HPBoosts);
             }
         }
     }

@@ -23,8 +23,6 @@ namespace HarderEnemies.Units.Lists {
         };
 
         public static List<BlueprintUnit> AllEliteCastersList = new List<BlueprintUnit>() {
-                CR18_MageWithAHundredFaces_Boss,
-                CR18_MageWithAHundredFaces_Boss1,
                 AlderpashLich25
         };
     }

@@ -127,9 +127,6 @@ namespace HarderEnemies {
 
 
         public static List<BlueprintUnit> NocticulaList = new List<BlueprintUnit>() {
-            MidnightFane_NocticulaPriestess,
-            MidnightFane_ShadowDemonNocticula,
-            AreeluDemonicForm,
             NocticulaInDress,
             Nocticula,
         };
@@ -152,7 +149,6 @@ namespace HarderEnemies {
             CR26_BalorMythicBloodrager_RE,
             CR28M_BalorMythicFighter,
             CR28M_BalorMythicFighter_RE,
-            CR30_BalorMythicBloodrager_DLC1,
             Darrazand,
             Khorramzadeh,
             Khorramzadeh_Aeon,

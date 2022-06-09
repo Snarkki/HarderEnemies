@@ -21,49 +21,14 @@ using Kingmaker.UnitLogic.Mechanics.Actions;
 
 namespace HarderEnemies.Units.Adjustments {
     internal class AdjustDemonLords {
-        private static BlueprintFeature SuperiorQuickenMetaFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(HEContext, "SuperiorQuickenMetaMagicFeature");
-        private static BlueprintFeature SuperiorEmpowerMetaFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(HEContext, "SuperiorEmporedMetaMagicFeature");
-        private static BlueprintFeature SuperToughness = BlueprintTools.GetModBlueprint<BlueprintFeature>(HEContext, "SuperToughnessFeature");
+
         private static BlueprintAiCastSpell GreaterDispelAiSpellSwift = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "GreaterDispelAiSpellSwift");
-        private static BlueprintAiCastSpell BlasphemyAiSpell = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "BlasphemyAiSpell");
-        private static BlueprintAiCastSpell UnholyBlightAiSpell = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "UnholyBlightAiSpell");
+        private static BlueprintAiCastSpell CreateRiftOfRuinAiSpell = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "CreateRiftOfRuinAiSpell");
         private static BlueprintAiCastSpell StormBoltAiSpell = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "StormBoltAiSpell");
-        private static BlueprintAiCastSpell SummonMonsterViiAiSpell = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "SummonMonsterViiAiSpell");
-        private static BlueprintAiCastSpell FearAiSpell = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "FearAiSpell");
+        private static BlueprintAiCastSpell CreateMythicSwarmsAiSpell = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "CreateMythicSwarmsAiSpell");
         private static BlueprintAiCastSpell FirestormEmpoweredAiSpell = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "FirestormEmpoweredAiSpell");
-        private static BlueprintAiCastSpell GreaterInvisibilityAiSpellSwift = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "GreaterInvisibilityAiSpellSwift");
-        private static BlueprintAiCastSpell NewFlameStrikeAiSpell = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "NewFlameStrikeAiSpell");
-        private static BlueprintItemWeapon HolyEvilBane5Sword = BlueprintTools.GetModBlueprint<BlueprintItemWeapon>(HEContext, "HolyEvilBane5Sword");
-
-        private static BlueprintAbility GreaterSwarmSummon = BlueprintTools.GetModBlueprint<BlueprintAbility>(HEContext, "GreaterSwarmSummon");
-        private static BlueprintAbility GateSpell = BlueprintTools.GetModBlueprint<BlueprintAbility>(HEContext, "GateSpell");
-
-        private static BlueprintBrain NocticulaAltBrain = BlueprintTools.GetModBlueprint<BlueprintBrain>(HEContext, "NocticulaAltBrain");
-        private static BlueprintBrain DeskariAltBrain = BlueprintTools.GetModBlueprint<BlueprintBrain>(HEContext, "DeskariAltBrain");
-
-
-        //Balor weapons
-        private static BlueprintItemWeapon BalorNewSword = BlueprintTools.GetModBlueprint<BlueprintItemWeapon>(HEContext, "BalorNewSword");
-        private static BlueprintAbility PullingStrikeAbility = BlueprintTools.GetModBlueprint<BlueprintAbility>(HEContext, "PullingStrikeAbility");
-        private static BlueprintAiCastSpell PullingStrikeAiAction = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "PullingStrikeAiAction");
-
-        private static BlueprintUnitFactReference[] DemonLordBuffsList =  {
-                        Abilities.FrigtfulAspectBuff.ToReference<BlueprintUnitFactReference>(),
-                        Abilities.SeamantleBuff.ToReference<BlueprintUnitFactReference>(),
-                        Abilities.DeathWardBuff.ToReference<BlueprintUnitFactReference>(),
-                        Abilities.FreedomOfMovementBuff.ToReference<BlueprintUnitFactReference>(),
-                        Abilities.FlamesOfTheAbyssBuff.ToReference<BlueprintUnitFactReference>(),
-                        Abilities.BloodHaze.ToReference<BlueprintUnitFactReference>(),
-                        Abilities.BoneShieldBuff.ToReference<BlueprintUnitFactReference>(),
-                        Abilities.MindBlankBuff.ToReference<BlueprintUnitFactReference>(),
-                        Abilities.TrueSeeingBuff.ToReference<BlueprintUnitFactReference>(),
-                        FeatureList.DR15.ToReference<BlueprintUnitFactReference>(),
-                        FeatureList.AlwaysAChange.ToReference<BlueprintUnitFactReference>(),
-                        FeatureList.ThunderingBlows.ToReference<BlueprintUnitFactReference>(),
-                        FeatureList.DestructiveShockwave.ToReference<BlueprintUnitFactReference>(),
-                        FeatureList.AscendentElementFire.ToReference<BlueprintUnitFactReference>(),
-                        SuperToughness.ToReference<BlueprintUnitFactReference>()
-        };
+        private static BlueprintAiCastSpell EdictOfInvulnerabilityAiSpell = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "EdictOfInvulnerabilityAiSpell");
+        private static BlueprintAiCastSpell OpenGateAiSpell = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "OpenGateAiSpell");
 
         public static void HandleDemonLords() {
             DemonLordAbilities();
@@ -72,69 +37,83 @@ namespace HarderEnemies.Units.Adjustments {
 
 
         private static void DemonLordAbilities() {
-            if (HEContext.AbilityChanges.DemonChanges.IsDisabled("DemonLordChanges")) { return; }
+            if (HEContext.AbilityChanges.BossChanges.IsDisabled("DemonLordChanges")) { return; }
+
 
             foreach (BlueprintUnit thisUnit in Bosses.NocticulaList) {
-                thisUnit.AddComponent<AddFacts>(c => {
-                    c.CasterLevel = thisUnit.CR;
-                    c.MinDifficulty = Kingmaker.Settings.GameDifficultyOption.Daring;
-                    c.m_Facts = new BlueprintUnitFactReference[] {
-                        Abilities.WindsOfVengeanceBuff.ToReference<BlueprintUnitFactReference>(),
-                        Abilities.DispelGreater.ToReference<BlueprintUnitFactReference>(),
-                        Abilities.Stormbolts.ToReference<BlueprintUnitFactReference>(),
-                        Abilities.RiftOfRuin.ToReference<BlueprintUnitFactReference>(),
-                        Abilities.Firestorm.ToReference<BlueprintUnitFactReference>(),
-                        SuperiorQuickenMetaFeature.ToReference<BlueprintUnitFactReference>(),
-                        SuperiorEmpowerMetaFeature.ToReference<BlueprintUnitFactReference>(),
-                    };
-                });
-                thisUnit.AlternativeBrains = thisUnit.AlternativeBrains.AppendToArray(NocticulaAltBrain.ToReference<BlueprintBrainReference>());
+                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, thisUnit.CR, BuffLists.DemonLordBuffLists.NocticulaAbilityList);
             }
 
+
             foreach (BlueprintUnit thisUnit in Bosses.DeskariList) {
-                thisUnit.AddComponent<AddFacts>(c => {
-                    c.CasterLevel = thisUnit.CR;
-                    c.MinDifficulty = Kingmaker.Settings.GameDifficultyOption.Daring;
-                    c.m_Facts = new BlueprintUnitFactReference[] {
-                        GreaterSwarmSummon.ToReference<BlueprintUnitFactReference>(),
-                        Abilities.EdictOfInvulnerability.ToReference<BlueprintUnitFactReference>(),
-                    };
-                });
-                thisUnit.AlternativeBrains = thisUnit.AlternativeBrains.AppendToArray(DeskariAltBrain.ToReference<BlueprintBrainReference>());
+                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, thisUnit.CR, BuffLists.DemonLordBuffLists.DeskariAbilityList);
+
             }
 
 
 
             //CR30_AreshkagalBoss, ehkä ei mitään...
+            Utils.CustomHelpers.AddFactListsToUnit(Bosses.CR30_AreshkagalBoss, Bosses.CR30_AreshkagalBoss.CR, BuffLists.DemonLordBuffLists.CR30_AreshkagalAbilities);
 
 
-            Bosses.AreeluDemonicForm.AddComponent<AddFacts>(c => {
-                c.CasterLevel = Bosses.AreeluDemonicForm.CR;
-                c.MinDifficulty = Kingmaker.Settings.GameDifficultyOption.Daring;
-                c.m_Facts = new BlueprintUnitFactReference[] {
-                        Abilities.OverwhelmingPresence.ToReference<BlueprintUnitFactReference>(),
-                        Abilities.DispelGreater.ToReference<BlueprintUnitFactReference>(),
-                        Abilities.Stormbolts.ToReference<BlueprintUnitFactReference>(),
-                        Abilities.CommandGreaterFall.ToReference<BlueprintUnitFactReference>(),
-                        SuperiorQuickenMetaFeature.ToReference<BlueprintUnitFactReference>(),
-                        SuperiorEmpowerMetaFeature.ToReference<BlueprintUnitFactReference>(),
-                        GateSpell.ToReference<BlueprintUnitFactReference>(),
-                    };
-            });
-            Bosses.AreeluDemonicForm.AlternativeBrains = Bosses.AreeluDemonicForm.AlternativeBrains.AppendToArray(DeskariAltBrain.ToReference<BlueprintBrainReference>());
+
+            //AREELU 
+            Utils.CustomHelpers.AddFactListsToUnit(Bosses.AreeluDemonicForm, Bosses.AreeluDemonicForm.CR, BuffLists.DemonLordBuffLists.AreeluAbilityList);
+
+
+            // BRAINS
+            BrainList.Nocticula_Brain.m_Actions = BrainList.Nocticula_Brain.m_Actions.AppendToArray(
+                GreaterDispelAiSpellSwift.ToReference<BlueprintAiActionReference>(),
+                FirestormEmpoweredAiSpell.ToReference<BlueprintAiActionReference>(),
+                StormBoltAiSpell.ToReference<BlueprintAiActionReference>()
+                );
+            BrainList.Deskari_Brain.m_Actions = BrainList.Deskari_Brain.m_Actions.AppendToArray(
+                CreateMythicSwarmsAiSpell.ToReference<BlueprintAiActionReference>(),
+                EdictOfInvulnerabilityAiSpell.ToReference<BlueprintAiActionReference>()
+                );
+            BrainList.Areelu_Brain.m_Actions = BrainList.Areelu_Brain.m_Actions.AppendToArray(
+                OpenGateAiSpell.ToReference<BlueprintAiActionReference>(),
+                GreaterDispelAiSpellSwift.ToReference<BlueprintAiActionReference>(),
+                StormBoltAiSpell.ToReference<BlueprintAiActionReference>(),
+                AiCastSpellList.ColyphyrBaphomet_CommandGreater_AIAction.ToReference<BlueprintAiActionReference>(),
+                AiCastSpellList.Baphomet_OverwhelmingPresence_AIAction.ToReference<BlueprintAiActionReference>()
+                );
         }
 
 
         private static void DemonLordBuffs() {
-            if (HEContext.Prebuffs.DemonBuffs.IsDisabled("DemonLordBuffs")) { return; }
+            if (HEContext.Prebuffs.BossBuffs.IsDisabled("DemonLordBuffs")) { return; }
 
-            foreach (BlueprintUnit thisUnit in Bosses.DemonLordList) {
-                thisUnit.AddComponent<AddFacts>(c => {
-                    c.CasterLevel = thisUnit.CR;
-                    c.MinDifficulty = Kingmaker.Settings.GameDifficultyOption.Daring;
-                    c.m_Facts = DemonLordBuffsList;
-                });
+            //NOCTICULA
+            foreach (BlueprintUnit thisUnit in Bosses.NocticulaList) {
+                // this takes care of MOST of the buffs, has ascendant elements, all low lvl buffs etc. The combatprebuff has haste, blur etc (visuals)
+                thisUnit.m_AddFacts = thisUnit.m_AddFacts.AppendToArray(FeatureList.CR22_AxiomiteCaster_Feature_Prebuff.ToReference<BlueprintUnitFactReference>(),
+                    FeatureList.CR22_AxiomiteCaster_Feature_CombatPrebuff.ToReference<BlueprintUnitFactReference>() 
+                    );
+                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, thisUnit.CR, BuffLists.DemonLordBuffLists.NocticulaBuffList);
             }
+
+            //DESKARI
+            foreach (BlueprintUnit thisUnit in Bosses.DeskariList) {
+                thisUnit.m_AddFacts = thisUnit.m_AddFacts.AppendToArray(FeatureList.CR22_AxiomiteCaster_Feature_Prebuff.ToReference<BlueprintUnitFactReference>(),
+                                        FeatureList.CR22_AxiomiteCaster_Feature_CombatPrebuff.ToReference<BlueprintUnitFactReference>()
+                    );
+                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, thisUnit.CR, BuffLists.DemonLordBuffLists.DeskariBuffList);
+            }
+
+            //CR30_AreshkagalBoss
+            Bosses.CR30_AreshkagalBoss.m_AddFacts = Bosses.CR30_AreshkagalBoss.m_AddFacts.AppendToArray(FeatureList.CR22_AxiomiteCaster_Feature_Prebuff.ToReference<BlueprintUnitFactReference>(),
+                                    FeatureList.CR22_AxiomiteCaster_Feature_CombatPrebuff.ToReference<BlueprintUnitFactReference>()
+                    );
+            Utils.CustomHelpers.AddFactListsToUnit(Bosses.CR30_AreshkagalBoss, Bosses.CR30_AreshkagalBoss.CR, BuffLists.DemonLordBuffLists.CR30_AreshkagalBossBuffs);
+
+
+            //AREELU 
+            Bosses.AreeluDemonicForm.m_AddFacts = Bosses.AreeluDemonicForm.m_AddFacts.AppendToArray(FeatureList.CR22_AxiomiteCaster_Feature_Prebuff.ToReference<BlueprintUnitFactReference>(),
+                                    FeatureList.CR22_AxiomiteCaster_Feature_CombatPrebuff.ToReference<BlueprintUnitFactReference>()
+                    );
+            Utils.CustomHelpers.AddFactListsToUnit(Bosses.AreeluDemonicForm, Bosses.AreeluDemonicForm.CR, BuffLists.DemonLordBuffLists.AreeluBuffList);
+
         }
     }
 }

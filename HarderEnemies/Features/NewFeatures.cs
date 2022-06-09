@@ -13,7 +13,8 @@ using Kingmaker.UnitLogic.Mechanics.Actions;
 using TabletopTweaks.Core.Utilities;
 using HarderEnemies.Blueprints;
 using static HarderEnemies.Main;
-
+using Kingmaker.Blueprints.Classes.Prerequisites;
+using Kingmaker.UnitLogic.Mechanics.Components;
 
 namespace HarderEnemies.Features {
     public class NewFeatures {
@@ -23,20 +24,48 @@ namespace HarderEnemies.Features {
 
         public static void CreateNewFeatures() {
             CreateSuperToughness();
+            CreateAbyssalToughness();
             CreateMetaMagicFeature();
             CreatePullingStrike();
+            CreateBabauDispellingStrike();
         }
 
         public static void CreateSuperToughness() {
 
             var SuperToughnessFeature = FeatureList.Toughness.CreateCopy(HEContext, "SuperToughnessFeature", bp => {
                 bp.SetName(HEContext, "Superior Toughness");
-                bp.SetDescription(HEContext, "You gain +25 hit points for every level.");
+                bp.SetDescription(HEContext, "You gain +10 hit points for every level.");
                 bp.RemoveComponents<ToughnessLogic>();
                 bp.AddComponent<SuperToughnessLogic>(c => {
                     c.CheckMythicLevel = false;
                 });
             });         
+        }
+
+        public static void CreateAbyssalToughness() {
+
+            var AbyssalToughnessFeature = FeatureList.Toughness.CreateCopy(HEContext, "AbyssalToughnessFeature", bp => {
+                bp.SetName(HEContext, "Abyssal Toughness");
+                bp.SetDescription(HEContext, "You gain +25 hit points for every level.");
+                bp.RemoveComponents<ToughnessLogic>();
+                bp.AddComponent<AbyssalToughnessLogic>(c => {
+                    c.CheckMythicLevel = false;
+                });
+            });
+        }
+
+        public static void CreateBabauDispellingStrike() {
+
+            var BabauDispellingStrike = FeatureList.DispellingStrike.CreateCopy(HEContext, "BabauDispellingStrike", bp => {
+                bp.SetName(HEContext, "Dispelling Strike");
+                bp.SetDescription(HEContext, "An opponent that is dealt sneak {g|Encyclopedia:Attack}attack{/g} {g|Encyclopedia:Damage}damage{/g} by a character with this ability is affected by a targeted dispel magic affecting one of the {g|Encyclopedia:Spell}spell{/g} effects active on the target.");
+                bp.RemoveComponents<PrerequisiteFeature>();
+                var RankConfig = bp.GetComponent<ContextRankConfig>();
+                RankConfig.m_BaseValueType = ContextRankBaseValueType.ClassLevel;
+                RankConfig.Archetype = null;
+                RankConfig.m_Class = new BlueprintCharacterClassReference [] { CharacterClass.OutsiderClass.ToReference<BlueprintCharacterClassReference>() };
+
+            });
         }
 
         public static void CreateMetaMagicFeature() {
@@ -46,6 +75,8 @@ namespace HarderEnemies.Features {
                 BlueprintTools.GetBlueprintReference<BlueprintAbilityReference>("b9be852b03568064b8d2275a6cf9e2de"),    // GreaterDispelArea,
                 BlueprintTools.GetBlueprintReference<BlueprintAbilityReference>("f0f761b808dc4b149b08eaf44b99f633"),    // DispelMagicGreater,
                 BlueprintTools.GetBlueprintReference<BlueprintAbilityReference>("ecaa0def35b38f949bd1976a6c9539e0"),    // GreaterInvisbility,
+                BlueprintTools.GetBlueprintReference<BlueprintAbilityReference>("f492622e473d34747806bdb39356eb89"),    // Slow,
+                BlueprintTools.GetBlueprintReference<BlueprintAbilityReference>("da1b292d91ba37948893cdbe9ea89e28"),    // LegendaryProportions,
             };
 
             var emporedAbilities = new BlueprintAbilityReference[] {

@@ -1,6 +1,6 @@
 ﻿{
   "NewSettingsOffByDefault": true,
-  "DemonBuffs": {
+  "BossBuffs": {
     "DisableAll": false,
     "Settings": {
       "BalorBuffs": {
@@ -30,6 +30,56 @@
     },
     "IsExpanded": true
   },
+  "DemonBuffs": {
+    "DisableAll": false,
+    "Settings": {
+      "AbrikandiluBuffs": {
+        "Enabled": true,
+        "Description": "Add buffs to Abrikandilu"
+      },
+      "BabauBuffs": {
+        "Enabled": true,
+        "Description": "Add buffs to Babau"
+      },
+      "BrimorakBuffs": {
+        "Enabled": true,
+        "Description": "Add buffs to Brimoraks"
+      },
+      "ColoxusBuffs": {
+        "Enabled": true,
+        "Description": "Add buffs to Coloxus"
+      },
+      "DemodandStringyBuffs": {
+        "Enabled": true,
+        "Description": "Add buffs to Demodand Stringy"
+      },
+      "DemodandTarryBuffs": {
+        "Enabled": true,
+        "Description": "Add buffs to Demodand Tarry"
+      },
+      "GibrilethBuffs": {
+        "Enabled": true,
+        "Description": "Add buffs to Gibrileth"
+      },
+      "GlabrezuBuffs": {
+        "Enabled": true,
+        "Description": "Add buffs to Glabrezu"
+      },
+      "MarilithBuffs": {
+        "Enabled": true,
+        "Description": "Add buffs to Marilith"
+      },
+      "OolioddrooBuffs": {
+        "Enabled": true,
+        "Description": "Add buffs to Oolioddroo"
+      },
+      "CambionBuffs": {
+        "Enabled": true,
+        "Description": "Add buffs to Cambions"
+      }
+    },
+    "IsExpanded": true
+  },
   "OtherBuffs": {
     "DisableAll": false,
     "Settings": {
@@ -41,6 +91,30 @@
         "Enabled": true,
         "Description": "Add buffs to Cultist Casters"
       },
+      "DragonBuffs": {
+        "Enabled": true,
+        "Description": "Add buffs to Dragons"
+      },
+      "LesserDragonBuffs": {
+        "Enabled": true,
+        "Description": "Add buffs to Lesser Dragons"
+      },
+      "EliteCasterBuffs": {
+        "Enabled": true,
+        "Description": "Add buffs to Elite Casters"
+      },
+      "GolemBuffs": {
+        "Enabled": true,
+        "Description": "Add buffs to Golems"
+      },
+      "RetrieverBuffs": {
+        "Enabled": true,
+        "Description": "Add buffs to Retrievers"
+      },
+      "VescavorBuffs": {
+        "Enabled": true,
+        "Description": "Add buffs to Vescavors & Derakni"
+      }
     },
     "IsExpanded": true
   }

@@ -23,6 +23,10 @@ namespace HarderEnemies.Units {
         private static BlueprintAiCastSpell AnimateDeadAiSpell = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "AnimateDeadAiSpell");
         private static BlueprintFeature SuperToughness = BlueprintTools.GetModBlueprint<BlueprintFeature>(HEContext, "SuperToughnessFeature");
 
+        private static BlueprintBrain NewCultistClericBrain = BlueprintTools.GetModBlueprint<BlueprintBrain>(HEContext, "NewCultistClericBrain");
+        private static BlueprintBrain NewCultistClericEliteBrain = BlueprintTools.GetModBlueprint<BlueprintBrain>(HEContext, "NewCultistClericEliteBrain");
+        
+        
         public static void HandleChanges() {
             ModifyCultists.AdjustHP();
             ModifyCultists.CasterAbilities();
@@ -41,36 +45,54 @@ namespace HarderEnemies.Units {
         public static void CasterAbilities() {
             if (HEContext.AbilityChanges.OtherChanges.IsDisabled("CultistCasterChanges")) { return; }
             foreach (BlueprintUnit thisUnit in Cultists.CultistCasterList) {
-                thisUnit.AddComponent<AddFacts>(c => {
-                    c.CasterLevel = (thisUnit.CR + 1);
-                    c.MinDifficulty = Kingmaker.Settings.GameDifficultyOption.Daring;
-                    c.m_Facts = new BlueprintUnitFactReference[] {
-                        Abilities.MageShieldBuff.ToReference<BlueprintUnitFactReference>(),
-                        Abilities.ProtectionFromArrowsBuff.ToReference<BlueprintUnitFactReference>(),
-                        Abilities.BarkskinBuff.ToReference<BlueprintUnitFactReference>(),
-                        Abilities.Grease.ToReference<BlueprintUnitFactReference>(),
-                        Abilities.StinkingCloud.ToReference<BlueprintUnitFactReference>(),
-                        Abilities.CreatePit.ToReference<BlueprintUnitFactReference>(),
-                        Abilities.AnimateDead.ToReference<BlueprintUnitFactReference>(),
-                    };
-                });
+                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, thisUnit.CR, BuffLists.CultistBuffLists.CultistCasterAbilities);
+                thisUnit.AlternativeBrains = new BlueprintBrainReference[] { };
             }
 
             BrainList.CultistEvokerBrain.m_Actions = BrainList.CultistEvokerBrain.m_Actions.AppendToArray(
-                GreaseAiSpell.ToReference<BlueprintAiActionReference>(),
-                AiCastSpellList.StinkingCloudAiAction.ToReference<BlueprintAiActionReference>()
+                AiCastSpellList.CultistConjurerHasteAiAction.ToReference<BlueprintAiActionReference>(),
+                CreatePitAiSpell.ToReference<BlueprintAiActionReference>()
                 );
-            BrainList.CultistEvokerBrain.m_Actions = BrainList.CultistEvokerBrain.m_Actions.AppendToArray(
+
+            BrainList.CultistConjurerBrain.m_Actions = BrainList.CultistConjurerBrain.m_Actions.AppendToArray(
                 GreaseAiSpell.ToReference<BlueprintAiActionReference>(),
-                CreatePitAiSpell.ToReference<BlueprintAiActionReference>(),
                 AnimateDeadAiSpell.ToReference<BlueprintAiActionReference>(),
-                AiCastSpellList.StinkingCloudAiAction.ToReference<BlueprintAiActionReference>()
+                AiCastSpellList.StinkingCloudAiAction.ToReference<BlueprintAiActionReference>(),
+                CreatePitAiSpell.ToReference<BlueprintAiActionReference>()
                 );
+
+
+            // MELEE CASTERIT!
+            foreach (BlueprintUnit thisUnit in Cultists.CultistClericList) {
+                if (thisUnit.CR <= 10) {
+                    Utils.CustomHelpers.AddFactListsToUnit(thisUnit, thisUnit.CR, BuffLists.CultistBuffLists.CultistClericAbilities);
+                    thisUnit.AlternativeBrains = new BlueprintBrainReference[] { };
+                    thisUnit.m_Brain = NewCultistClericBrain.ToReference<BlueprintBrainReference>();
+                }
+                else {
+                    Utils.CustomHelpers.AddFactListsToUnit(thisUnit, thisUnit.CR, BuffLists.CultistBuffLists.CultistEliteClericAbilities);
+                    thisUnit.AlternativeBrains = new BlueprintBrainReference[] { };
+                    thisUnit.m_Brain = NewCultistClericEliteBrain.ToReference<BlueprintBrainReference>();
+                }
+            }
+
             HEContext.Logger.LogHeader("Updated Cultist Casters");
         }
         public static void CasterBuffs() {
 
             if (HEContext.Prebuffs.OtherBuffs.IsDisabled("CultistCasterBuffs")) { return; }
+
+            foreach (BlueprintUnit thisUnit in Cultists.CultistCasterList) {
+                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, thisUnit.CR, BuffLists.CultistBuffLists.CultistCasterBuffs);
+            }
+
+            foreach (BlueprintUnit thisUnit in Cultists.CultistClericList) {
+                if (thisUnit.CR <= 10) {
+                    Utils.CustomHelpers.AddFactListsToUnit(thisUnit, thisUnit.CR, BuffLists.CultistBuffLists.CultistClericBuffs);
+                } else {
+                    Utils.CustomHelpers.AddFactListsToUnit(thisUnit, thisUnit.CR, BuffLists.CultistBuffLists.CultistEliteClericBuffs);
+                }
+            }
 
             HEContext.Logger.LogHeader("Updated Cultist Casters");
         }

@@ -35,16 +35,19 @@ namespace HarderEnemies.Blueprints {
         public static BlueprintFeature AscendentElementNegative = BlueprintTools.GetBlueprint<BlueprintFeature>("d9819d09c703c53438e142a2e2c8a113");
         public static BlueprintFeature AscendentElementAcid = BlueprintTools.GetBlueprint<BlueprintFeature>("d808baf783a063e4d84a1aaadbdd1cb7");
         public static BlueprintFeature AscendentElementElectricity = BlueprintTools.GetBlueprint<BlueprintFeature>("7bf39f8d76f8c9441896222128f1673a");
+        public static BlueprintFeature AscendentElementCold = BlueprintTools.GetBlueprint<BlueprintFeature>("25f9791fbb5de694a8a3b936d2f30390");
 
         public static BlueprintFeature TrippingBite = BlueprintTools.GetBlueprint<BlueprintFeature>("f957b4444b6fb404e84ae2a5765797bb");
+        public static BlueprintFeature CornugonSmash = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>("ceea53555d83f2547ae5fc47e0399e14");
+        public static BlueprintFeature IntimidatingProwess = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>("d76497bfc48516e45a0831628f767a0f");
+        public static BlueprintFeature Outflank = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>("422dab7309e1ad343935f33a4d6e9f11");
+        public static BlueprintFeature DispellingStrike = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>("1b92146b8a9830d4bb97ab694335fa7c");
 
+        public static BlueprintFeature CR22_AxiomiteCaster_Feature_Prebuff = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>("c6e69c237da84ff1ae85603912187809");
+        public static BlueprintFeature CR22_AxiomiteCaster_Feature_CombatPrebuff = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>("c412fe0f34ec444e9f9ca1da3d18bd9b");
 
-
-        public static BlueprintAbility DerakniDroneAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("30e1b50180b115840a94c611599de01e");
-        public static BlueprintAbility DroningWingsAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("7050231f1705f604c859f991fec4b523");
-
-        
-
+        public static BlueprintFeature TestBuffFeature = BlueprintTools.GetBlueprint<BlueprintFeature>("c412fe0f34ec444e9f9ca1da3d18bd9b");
+        public static BlueprintFeature CombatTriggerFeature = BlueprintTools.GetBlueprint<BlueprintFeature>("91f45419333747bda417602ec6ccf673");
 
     }
 }

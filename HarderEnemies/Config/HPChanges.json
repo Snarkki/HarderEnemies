@@ -12,11 +12,11 @@
         "Description": "Add HP boost to Angel list"
       },
       "AdjustCultistCasters": {
-        "Enabled": true,
+        "Enabled": false,
         "Description": "Add HP boost to units of Cultist Casters list"
       },
       "AdjustDemons": {
-        "Enabled": true,
+        "Enabled": false,
         "Description": "Add HP boost to units of Demons list"
       },
       "AdjustDragonHp": {
@@ -24,7 +24,7 @@
         "Description": "Add HP boost to units of Dragon list"
       },
       "AdjustEliteCasterHp": {
-        "Enabled": true,
+        "Enabled": false,
         "Description": "Add HP boost to units of Elite Caster list"
       },
       "AdjustGolemHp": {
@@ -33,10 +33,10 @@
       },
       "AdjustRetrieverHp": {
         "Enabled": true,
-        "Description": "Add HP boost to units of Retrievers list"
+        "Description": "Add HP boost to units of Retrievers/Devastator list"
       },
       "AdjustVescavorDerakniHp": {
-        "Enabled": true,
+        "Enabled": false,
         "Description": "Add HP boost to units of Vescavor&Derakni list"
       }
 

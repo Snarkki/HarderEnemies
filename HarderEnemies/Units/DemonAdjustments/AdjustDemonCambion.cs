@@ -19,26 +19,33 @@ using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.UnitLogic.Abilities.Components;
 using Kingmaker.UnitLogic.Mechanics.Actions;
 
-
 namespace HarderEnemies.Units.DemonAdjustments {
-    internal class AdjustOolioddroo {
+    internal class AdjustDemonCambion {
 
 
-        public static void OoliodroHandler() {
-            OolioddrooAbilities();
-            OolioddrooBuffs();
+        public static void CambionHandler() {
+            CambionAbilities();
+            CambionBuffs();
         }
 
-        private static void OolioddrooAbilities () {
-            if (HEContext.AbilityChanges.DemonChanges.IsDisabled("OolioddrooAbilities")) { return; }
-        }
-
-        private static void OolioddrooBuffs() {
-            if (HEContext.Prebuffs.DemonBuffs.IsDisabled("OolioddrooBuffs")) { return; }
-            foreach (BlueprintUnit thisUnit in Demons.OolioddrooList) {
-                thisUnit.m_AddFacts = thisUnit.m_AddFacts.AppendToArray(BuffLists.DemonBuffLists.OolioddrooBuffs);
+        private static void CambionAbilities() {
+            if (HEContext.AbilityChanges.DemonChanges.IsDisabled("CambionAbilities")) { return; }
+            foreach (BlueprintUnit thisUnit in Demons.DemonCambionList) {
+                
             }
-            HEContext.Logger.LogHeader("Updated Oolioddroo");
+
+            HEContext.Logger.LogHeader("Updated CambionAbilities");
+
+        }
+
+        private static void CambionBuffs() {
+            if (HEContext.Prebuffs.DemonBuffs.IsDisabled("CambionBuffs")) { return; }
+
+            foreach (BlueprintUnit thisUnit in Demons.DemonCambionList) {
+                
+            }
+
+            HEContext.Logger.LogHeader("Updated CambionBuffs");
         }
 
     }

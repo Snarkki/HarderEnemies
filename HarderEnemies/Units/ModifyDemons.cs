@@ -34,7 +34,7 @@ namespace HarderEnemies.Units {
             AdjustGlabrezu.GlabrezuHandler();
             AdjustMariliths.MarilithHandler();
             AdjustOolioddroo.OoliodroHandler();
-
+            AdjustDemonCambion.CambionHandler();
         }
 
         private static void AdjustHP() {

@@ -25,11 +25,12 @@ namespace HarderEnemies.AI_Mechanics.Actions {
             CreateSummonSpells();
             CreateAreaControlSpells();
             CreateBuffSpells();
+            CreateSingleTargetSpells();
         }
 
         public static void CreatePullingAttack() {
 
-            var PullingStrikeAiAction = AiCastSpellList.SunderArmorAiSpell.CreateCopy(HEContext, "PullingStrikeAiAction", bp => {
+            var PullingStrikeAiAction = AiCastSpellList.SunderArmorAiAction.CreateCopy(HEContext, "PullingStrikeAiAction", bp => {
                 //SwiftActionCooldown.ToReference<ConsiderationReference>()
                 bp.BaseScore = 75.0f;
                 bp.CooldownRounds = 0;
@@ -44,27 +45,27 @@ namespace HarderEnemies.AI_Mechanics.Actions {
 
         public static void CreateSwiftSpells() {
 
-            var GreaterDispelAiSpellSwift = AiCastSpellList.Cr27Coloxus_greaterDispel.CreateCopy(HEContext, "GreaterDispelAiSpellSwift", bp => {
+            var GreaterDispelAiSpellSwift = AiCastSpellList.CR27ColoxusDLC1_AiAction_GreaterDispel.CreateCopy(HEContext, "GreaterDispelAiSpellSwift", bp => {
                 bp.BaseScore = 20.0f;
                 bp.CooldownRounds = 1;
                 bp.StartCooldownRounds = 1;
                 bp.CooldownDice = new DiceFormula(1, DiceType.D2);
                 bp.m_ActorConsiderations = new ConsiderationReference[] {
-                   AiConsiderationList.SwiftActionCooldown.ToReference<ConsiderationReference>()
+                   AiConsiderationList.SwiftActionOffCooldown.ToReference<ConsiderationReference>()
                 };
                 bp.m_TargetConsiderations = new ConsiderationReference[] {
-                    AiConsiderationList.AvoidSelf.ToReference<ConsiderationReference>(),
-                    AiConsiderationList.ChooseMoreAoeTargets.ToReference<ConsiderationReference>()
+                    AiConsiderationList.AoE_AvoidSelf.ToReference<ConsiderationReference>(),
+                    AiConsiderationList.AoE_ChooseMoreEnemies.ToReference<ConsiderationReference>()
                 };
             });
 
-            var GreaterInvisibilityAiSpellSwift = AiCastSpellList.DivineFavorAiSpell.CreateCopy(HEContext, "GreaterInvisibilityAiSpellSwift", bp => {
+            var GreaterInvisibilityAiSpellSwift = AiCastSpellList.CultistDivineFavorAiAction.CreateCopy(HEContext, "GreaterInvisibilityAiSpellSwift", bp => {
                 bp.BaseScore = 10.0f;
                 bp.CooldownRounds = 1;
                 bp.StartCooldownRounds = 0;
                 bp.m_Ability = Abilities.InvisibilityGreater.ToReference<BlueprintAbilityReference>();
                 bp.m_ActorConsiderations = new ConsiderationReference[] {
-                   AiConsiderationList.SwiftActionCooldown.ToReference<ConsiderationReference>(),
+                   AiConsiderationList.SwiftActionOffCooldown.ToReference<ConsiderationReference>(),
                    AiConsiderationList.NoBuffInvisibilityGreater.ToReference<ConsiderationReference>()
                 };
             });
@@ -72,17 +73,30 @@ namespace HarderEnemies.AI_Mechanics.Actions {
             //BlueprintTools.GetBlueprintReference<BlueprintAbilityReference>("b9be852b03568064b8d2275a6cf9e2de"),    // GreaterDispelArea,
             //BlueprintTools.GetBlueprintReference<BlueprintAbilityReference>("f0f761b808dc4b149b08eaf44b99f633"),    // DispelMagicGreater,
         }
-
+        private static void CreateSingleTargetSpells() {
+            var PowerWordBlindAiSpell = AiCastSpellList.Glabrezu_AiAction_PowerWordStun.CreateCopy(HEContext, "PowerWordBlindAiSpell", bp => {
+                bp.BaseScore = 5.0f;
+                bp.CooldownRounds = 1;
+                bp.CooldownDice = new DiceFormula(2, DiceType.D3);
+                bp.m_TargetConsiderations = new ConsiderationReference[] {
+                        AiConsiderationList.AttackTargetsPriority.ToReference<ConsiderationReference>()
+                    };
+                bp.m_ActorConsiderations = new ConsiderationReference[] {
+                        AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>()
+                    };
+                bp.m_Ability = Abilities.PowerWordBlind.ToReference<BlueprintAbilityReference>();
+            });
+        }
         public static void CreateBuffSpells() {
 
-            var EdictOfInvulnerabilityAiSpell = AiCastSpellList.DivineFavorAiSpell.CreateCopy(HEContext, "EdictOfInvulnerabilityAiSpell", bp => {
+            var EdictOfInvulnerabilityAiSpell = AiCastSpellList.CultistDivineFavorAiAction.CreateCopy(HEContext, "EdictOfInvulnerabilityAiSpell", bp => {
                 bp.BaseScore = 10.0f;
                 bp.CooldownRounds = 5;
                 bp.StartCooldownRounds = 2;
                 bp.CooldownDice = new DiceFormula(2, DiceType.D4);
                 bp.m_Ability = Abilities.EdictOfInvulnerability.ToReference<BlueprintAbilityReference>();
                 bp.m_ActorConsiderations = new ConsiderationReference[] {
-                    AiConsiderationList.ChaoticBehavior.ToReference<ConsiderationReference>()
+                    AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>()
                 };
             });
 
@@ -92,52 +106,52 @@ namespace HarderEnemies.AI_Mechanics.Actions {
         }
 
         public static void CreateDamageSpells() {
-            var BlasphemyAiSpell = AiCastSpellList.Vavakia_Blasphemy.CreateCopy(HEContext, "BlasphemyAiSpell", bp => {
+            var BlasphemyAiSpell = AiCastSpellList.Vavakia_AiAction_Blasphemy.CreateCopy(HEContext, "BlasphemyAiSpell", bp => {
                 bp.CombatCount = 1;
                 bp.CooldownRounds = 6;
                 bp.CooldownDice = new DiceFormula(2, DiceType.D3);
             });
 
-            var UnholyBlightAiSpell = AiCastSpellList.Baphoment_UnholyBlight.CreateCopy(HEContext, "UnholyBlightAiSpell", bp => {
+            var UnholyBlightAiSpell = AiCastSpellList.Baphomet_UnholyBlightAIAction.CreateCopy(HEContext, "UnholyBlightAiSpell", bp => {
                 bp.CombatCount = 3;
                 bp.CooldownRounds = 2;
                 bp.CooldownDice = new DiceFormula(1, DiceType.D3);
             });
 
-            var NewFlameStrikeAiSpell = AiCastSpellList.FlameStrikeAiSpell.CreateCopy(HEContext, "NewFlameStrikeAiSpell", bp => {
+            var NewFlameStrikeAiSpell = AiCastSpellList.FlameStrikeAiAction.CreateCopy(HEContext, "NewFlameStrikeAiSpell", bp => {
                 bp.CombatCount = 3;
                 bp.CooldownRounds = 1;
                 bp.CooldownDice = new DiceFormula(1, DiceType.D3);
             });
 
-            var StormBoltAiSpell = AiCastSpellList.Mielara_AiAction_StormBolt.CreateCopy(HEContext, "StormBoltAiSpell", bp => {
+            var StormBoltAiSpell = AiCastSpellList.Mielara_AiAction_Stormbolts.CreateCopy(HEContext, "StormBoltAiSpell", bp => {
                 bp.BaseScore = 15.0f;
                 bp.CombatCount = 3;
                 bp.CooldownRounds = 1;
                 bp.CooldownDice = new DiceFormula(2, DiceType.D3);
                 bp.m_TargetConsiderations = new ConsiderationReference[] {
-                    AiConsiderationList.ChooseMoreAoeTargets.ToReference<ConsiderationReference>()
+                    AiConsiderationList.AoE_ChooseMoreEnemies.ToReference<ConsiderationReference>()
                 };
                 bp.m_ActorConsiderations = new ConsiderationReference[] {
-                    AiConsiderationList.ChaoticBehavior.ToReference<ConsiderationReference>()
+                    AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>()
                 };
             });
 
-            var FirestormEmpoweredAiSpell = AiCastSpellList.Mielara_AiAction_StormBolt.CreateCopy(HEContext, "FirestormEmpoweredAiSpell", bp => {
+            var FirestormEmpoweredAiSpell = AiCastSpellList.Mielara_AiAction_Stormbolts.CreateCopy(HEContext, "FirestormEmpoweredAiSpell", bp => {
                 bp.BaseScore = 15.0f;
                 bp.CombatCount = 3;
                 bp.CooldownRounds = 1;
                 bp.CooldownDice = new DiceFormula(2, DiceType.D3);
                 bp.m_Ability = Abilities.Firestorm.ToReference<BlueprintAbilityReference>();
                 bp.m_TargetConsiderations = new ConsiderationReference[] {
-                    AiConsiderationList.ChooseMoreAoeTargets.ToReference<ConsiderationReference>()
+                    AiConsiderationList.AoE_ChooseMoreEnemies.ToReference<ConsiderationReference>()
                 };
                 bp.m_ActorConsiderations = new ConsiderationReference[] {
-                    AiConsiderationList.ChaoticBehavior.ToReference<ConsiderationReference>()
+                    AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>()
                 };
             });
 
-            var DisintregrateMaximized = AiCastSpellList.DLC2_Empowered_magic_missle_aispell.CreateCopy(HEContext, "DisintregrateMaximized", bp => {
+            var DisintregrateMaximized = AiCastSpellList.DLC2_Wizard_Empowered_MagicMissle_AiAction.CreateCopy(HEContext, "DisintregrateMaximized", bp => {
                 bp.BaseScore = 10.0f;
                 bp.CombatCount = 2;
                 bp.CooldownRounds = 1;
@@ -146,7 +160,7 @@ namespace HarderEnemies.AI_Mechanics.Actions {
             });
 
 
-            var HellFireMaximized = AiCastSpellList.DLC2_Empowered_magic_missle_aispell.CreateCopy(HEContext, "HellFireMaximized", bp => {
+            var HellFireMaximized = AiCastSpellList.DLC2_Wizard_Empowered_MagicMissle_AiAction.CreateCopy(HEContext, "HellFireMaximized", bp => {
                 bp.BaseScore = 10.0f;
                 bp.CombatCount = 2;
                 bp.CooldownRounds = 1;
@@ -212,7 +226,7 @@ namespace HarderEnemies.AI_Mechanics.Actions {
                 bp.CooldownDice = new DiceFormula(2, DiceType.D3);
                 bp.m_Ability = Abilities.Grease.ToReference<BlueprintAbilityReference>();
                 bp.m_ActorConsiderations = new ConsiderationReference[] {
-                    AiConsiderationList.ChaoticBehavior.ToReference<ConsiderationReference>()
+                    AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>()
                 };
             });
             var CreatePitAiSpell = AiCastSpellList.StinkingCloudAiAction.CreateCopy(HEContext, "CreatePitAiSpell", bp => {
@@ -221,11 +235,11 @@ namespace HarderEnemies.AI_Mechanics.Actions {
                 bp.CooldownDice = new DiceFormula(2, DiceType.D3);
                 bp.m_Ability = Abilities.CreatePit.ToReference<BlueprintAbilityReference>();
                 bp.m_ActorConsiderations = new ConsiderationReference[] {
-                    AiConsiderationList.ChaoticBehavior.ToReference<ConsiderationReference>()
+                    AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>()
                 };
                 bp.m_TargetConsiderations = new ConsiderationReference[] {
-                    AiConsiderationList.AvoidSelf.ToReference<ConsiderationReference>(),
-                    AiConsiderationList.ChooseMoreAoeTargets.ToReference<ConsiderationReference>()
+                    AiConsiderationList.AoE_AvoidSelf.ToReference<ConsiderationReference>(),
+                    AiConsiderationList.AoE_ChooseMoreEnemies.ToReference<ConsiderationReference>()
                 };
             });
 
@@ -235,11 +249,11 @@ namespace HarderEnemies.AI_Mechanics.Actions {
                 bp.CooldownDice = new DiceFormula(2, DiceType.D3);
                 bp.m_Ability = Abilities.RiftOfRuin.ToReference<BlueprintAbilityReference>();
                 bp.m_ActorConsiderations = new ConsiderationReference[] {
-                    AiConsiderationList.ChaoticBehavior.ToReference<ConsiderationReference>()
+                    AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>()
                 };
                 bp.m_TargetConsiderations = new ConsiderationReference[] {
-                    AiConsiderationList.AvoidSelf.ToReference<ConsiderationReference>(),
-                    AiConsiderationList.ChooseMoreAoeTargets.ToReference<ConsiderationReference>()
+                    AiConsiderationList.AoE_AvoidSelf.ToReference<ConsiderationReference>(),
+                    AiConsiderationList.AoE_ChooseMoreEnemies.ToReference<ConsiderationReference>()
                 };
             });
 
@@ -249,11 +263,11 @@ namespace HarderEnemies.AI_Mechanics.Actions {
                 bp.CooldownDice = new DiceFormula(2, DiceType.D3);
                 bp.m_Ability = Abilities.AcidPit.ToReference<BlueprintAbilityReference>();
                 bp.m_ActorConsiderations = new ConsiderationReference[] {
-                   AiConsiderationList.ChaoticBehavior.ToReference<ConsiderationReference>()
+                   AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>()
                 };
                 bp.m_TargetConsiderations = new ConsiderationReference[] {
-                    AiConsiderationList.AvoidSelf.ToReference<ConsiderationReference>(),
-                    AiConsiderationList.ChooseMoreAoeTargets.ToReference<ConsiderationReference>()
+                    AiConsiderationList.AoE_AvoidSelf.ToReference<ConsiderationReference>(),
+                    AiConsiderationList.AoE_ChooseMoreEnemies.ToReference<ConsiderationReference>()
                 };
             });
 
@@ -262,10 +276,10 @@ namespace HarderEnemies.AI_Mechanics.Actions {
                 bp.CooldownRounds = 5;
                 bp.CooldownDice = new DiceFormula(2, DiceType.D3);
                 bp.m_TargetConsiderations = new ConsiderationReference[] {
-                    AiConsiderationList.ChooseMoreAoeTargets.ToReference<ConsiderationReference>()
+                    AiConsiderationList.AoE_ChooseMoreEnemies.ToReference<ConsiderationReference>()
                 };
                 bp.m_ActorConsiderations = new ConsiderationReference[] {
-                    AiConsiderationList.ChaoticBehavior.ToReference<ConsiderationReference>()
+                    AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>()
                 };
                 bp.m_Ability = Abilities.Fear.ToReference<BlueprintAbilityReference>();
             });

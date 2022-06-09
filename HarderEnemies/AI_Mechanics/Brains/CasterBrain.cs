@@ -32,25 +32,63 @@ namespace HarderEnemies.AI_Mechanics.Brains {
             CreateDragonAlternativeBrain();
             CreateDemonLordsAlternativeBrains();
             CreateEliteCasterBrains();
+            CreateCultistCasterBrain();
         }
 
+
+
+        private static void CreateCultistCasterBrain() {
+
+            var NewCultistClericBrain = Helpers.CreateBlueprint<BlueprintBrain>(HEContext, "NewCultistClericBrain", bp => {
+                bp.m_Actions = new BlueprintAiActionReference[]
+               {
+                   Blueprints.AiCastSpellList.AttackAiAction.ToReference<BlueprintAiActionReference>(),
+                   Blueprints.AiCastSpellList.CultistChannelAiAction.ToReference<BlueprintAiActionReference>(),
+                   Blueprints.AiCastSpellList.CultistCCWAiAction.ToReference<BlueprintAiActionReference>(),
+                   Blueprints.AiCastSpellList.CultistCLWAiAction.ToReference<BlueprintAiActionReference>(),
+                   Blueprints.AiCastSpellList.CultistHoldPersonAiAction.ToReference<BlueprintAiActionReference>(),
+               };
+            });
+
+            var NewCultistClericEliteBrain = Helpers.CreateBlueprint<BlueprintBrain>(HEContext, "NewCultistClericEliteBrain", bp => {
+                bp.m_Actions = new BlueprintAiActionReference[]
+               {
+                   Blueprints.AiCastSpellList.AttackAiAction.ToReference<BlueprintAiActionReference>(),
+                   Blueprints.AiCastSpellList.MinotaurCleric_RighteousMightAiAction.ToReference<BlueprintAiActionReference>(),
+                   Blueprints.AiCastSpellList.CultistBaphometCaster_AI_UnholyBlight.ToReference<BlueprintAiActionReference>(),
+                   Blueprints.AiCastSpellList.CultistBaphometCaster_AI_CureModWoundMass.ToReference<BlueprintAiActionReference>(),
+                   Blueprints.AiCastSpellList.CultistBaphometCaster_AI_FlameStrike.ToReference<BlueprintAiActionReference>(),
+                   Blueprints.AiCastSpellList.CultistBaphometCaster_AI_Prayer.ToReference<BlueprintAiActionReference>(),
+                   Blueprints.AiCastSpellList.Oolioddroo_HoldPersonMassAIAction.ToReference<BlueprintAiActionReference>(),
+                   Blueprints.AiCastSpellList.AngelTargona_HealAiAction.ToReference<BlueprintAiActionReference>(),
+               };
+            });
+        }
 
         public static void CreateEliteCasterBrains() {
 
             var SemiEliteCasterAltBrain = Helpers.CreateBlueprint<BlueprintBrain>(HEContext, "SemiEliteCasterAltBrain", bp => {
                 bp.m_Actions = new BlueprintAiActionReference[]
                {
+                   Blueprints.AiCastSpellList.AttackAiAction.ToReference<BlueprintAiActionReference>(),
+                   Blueprints.AiCastSpellList.MageWithAHundredFaces_Sirocco_AiAction.ToReference<BlueprintAiActionReference>(),
                     GreaterDispelAiSpellSwift.ToReference<BlueprintAiActionReference>(),
                     StormBoltAiSpell.ToReference<BlueprintAiActionReference>(),
                     CreateAcitPitAiSpell.ToReference<BlueprintAiActionReference>(),
                     GreaterInvisibilityAiSpellSwift.ToReference<BlueprintAiActionReference>(),
                     DisintregrateMaximized.ToReference<BlueprintAiActionReference>(),
+                    Blueprints.AiCastSpellList.ControlledFireballAiAction.ToReference<BlueprintAiActionReference>(),
+                    Blueprints.AiCastSpellList.FlameStrikeAiAction.ToReference<BlueprintAiActionReference>(),
+                    Blueprints.AiCastSpellList.BurningArcAiAction.ToReference<BlueprintAiActionReference>(),
                };
             });
 
             var EliteCasterAltBrain = Helpers.CreateBlueprint<BlueprintBrain>(HEContext, "EliteCasterAltBrain", bp => {
                 bp.m_Actions = new BlueprintAiActionReference[]
                {
+                    Blueprints.AiCastSpellList.AttackAiAction.ToReference<BlueprintAiActionReference>(),
+                    Blueprints.AiCastSpellList.NocticulaPriestess_AiAction_OverwhelmingPrescence.ToReference<BlueprintAiActionReference>(),
+                    SummonErineyesAiSpell.ToReference<BlueprintAiActionReference>(),
                     GreaterDispelAiSpellSwift.ToReference<BlueprintAiActionReference>(),
                     StormBoltAiSpell.ToReference<BlueprintAiActionReference>(),
                     CreateRiftOfRuinAiSpell.ToReference<BlueprintAiActionReference>(),
@@ -58,11 +96,19 @@ namespace HarderEnemies.AI_Mechanics.Brains {
                     FirestormEmpoweredAiSpell.ToReference<BlueprintAiActionReference>(),
                     EdictOfInvulnerabilityAiSpell.ToReference<BlueprintAiActionReference>(),
                     GreaterInvisibilityAiSpellSwift.ToReference<BlueprintAiActionReference>(),
-                    Blueprints.AiCastSpellList.OverWhelmingPrecenceAiSpell.ToReference<BlueprintAiActionReference>(),
-                    SummonErineyesAiSpell.ToReference<BlueprintAiActionReference>(),
                     HellFireMaximized.ToReference<BlueprintAiActionReference>(),
-                    Blueprints.AiCastSpellList.FullCasterBoss_Wail_AiSpell.ToReference<BlueprintAiActionReference>(),
-                    Blueprints.AiCastSpellList.Xorges_HorridWilting_AiSpell.ToReference<BlueprintAiActionReference>(),
+                    Blueprints.AiCastSpellList.FullCasterBoss_AiAction_WailOfBanshee.ToReference<BlueprintAiActionReference>(),
+                    Blueprints.AiCastSpellList.Xorges_HorridWilting_AiAction.ToReference<BlueprintAiActionReference>(),
+                    Blueprints.AiCastSpellList.AlderpashLich_WavesOfExhastion.ToReference<BlueprintAiActionReference>(),
+                    Blueprints.AiCastSpellList.AlderpashLich_PhantasmalWeb.ToReference<BlueprintAiActionReference>(),
+                    Blueprints.AiCastSpellList.AlderpashLich_PhantasmalPutrefaction1.ToReference<BlueprintAiActionReference>(),
+                    Blueprints.AiCastSpellList.AlderpashLich_Soulreaver.ToReference<BlueprintAiActionReference>(),
+                    Blueprints.AiCastSpellList.AlderpashLich_ConeOfCold.ToReference<BlueprintAiActionReference>(),
+                    Blueprints.AiCastSpellList.AlderpashLich_Boneshatter.ToReference<BlueprintAiActionReference>(),
+                    Blueprints.AiCastSpellList.AlderpashLich_MagicMissile.ToReference<BlueprintAiActionReference>(),
+                    Blueprints.AiCastSpellList.AlderpashLich_Destruction.ToReference<BlueprintAiActionReference>(),
+                    Blueprints.AiCastSpellList.AlderpashLich_IcyPrison.ToReference<BlueprintAiActionReference>(),
+                    Blueprints.AiCastSpellList.AlderpashLich_PolarMidnight.ToReference<BlueprintAiActionReference>(),
                };
             });
         }
@@ -107,10 +153,10 @@ namespace HarderEnemies.AI_Mechanics.Brains {
                {
                     EdictOfInvulnerabilityAiSpell.ToReference<BlueprintAiActionReference>(),
                     OpenGateAiSpell.ToReference<BlueprintAiActionReference>(),
-                    Blueprints.AiCastSpellList.CommandGreaterFallAiSpell.ToReference<BlueprintAiActionReference>(),
+                    Blueprints.AiCastSpellList.ColyphyrBaphomet_CommandGreater_AIAction.ToReference<BlueprintAiActionReference>(),
                     StormBoltAiSpell.ToReference<BlueprintAiActionReference>(),
                     GreaterDispelAiSpellSwift.ToReference<BlueprintAiActionReference>(),
-                    Blueprints.AiCastSpellList.OverWhelmingPrecenceAiSpell.ToReference<BlueprintAiActionReference>(),
+                    Blueprints.AiCastSpellList.NocticulaPriestess_AiAction_OverwhelmingPrescence.ToReference<BlueprintAiActionReference>(),
                };
             });
         }

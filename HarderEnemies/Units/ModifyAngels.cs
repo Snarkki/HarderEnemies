@@ -39,12 +39,7 @@ namespace HarderEnemies.Units {
             if (HEContext.AbilityChanges.OtherChanges.IsDisabled("AngelChanges")) { return; }
 
             foreach (BlueprintUnit thisUnit in Lists.Angels.AngelsList) {
-                thisUnit.m_AddFacts = thisUnit.m_AddFacts.AppendToArray(SuperToughness.ToReference<BlueprintUnitFactReference>());
-                thisUnit.Body.m_PrimaryHand = HolyEvilBane5Sword.ToReference<BlueprintItemEquipmentHandReference>();
-                thisUnit.AddComponent<AddStatBonus>(c => {
-                    c.Stat = Kingmaker.EntitySystem.Stats.StatType.HitPoints;
-                    c.Value = 200;
-                });
+
             }
         }
         public static void AngelBuffs() {
@@ -52,12 +47,7 @@ namespace HarderEnemies.Units {
             if (HEContext.Prebuffs.OtherBuffs.IsDisabled("AngelBuffs")) { return; }
 
             foreach (BlueprintUnit thisUnit in Lists.Angels.AngelsList) {
-                thisUnit.m_AddFacts = thisUnit.m_AddFacts.AppendToArray(SuperToughness.ToReference<BlueprintUnitFactReference>());
                 thisUnit.Body.m_PrimaryHand = HolyEvilBane5Sword.ToReference<BlueprintItemEquipmentHandReference>();
-                thisUnit.AddComponent<AddStatBonus>(c => {
-                    c.Stat = Kingmaker.EntitySystem.Stats.StatType.HitPoints;
-                    c.Value = 200;
-                });
             }
         }
 

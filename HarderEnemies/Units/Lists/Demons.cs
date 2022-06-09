@@ -468,9 +468,7 @@ namespace HarderEnemies {
             CR11_BabauElite_RE,
             CR15_BabauSpecial,
             CR15_BabauSpecial_RE,
-            CR16_BabauElite_DLC1,
             CR22M_BabauAdvanced,
-            CR6_BabauForTest,
             CR6_BabauFreeHand,
             CR6_BabauFreeHand_RE,
             CR6_BabauFreeHand_RE_high,
@@ -518,13 +516,6 @@ namespace HarderEnemies {
             DaeranQ1_CambionWizard_normal,
             CR18_CambionToughCaster,
             CR18_CambionToughCaster_RE,
-            //CambionMinibossKineticist,
-            //Mutasafen,
-            //MutasafenAssistent,
-            //MutasafenFourth_NoLoot,
-            //MutasafenSecond,
-            //MutasafenThird,
-            //Mutasafen_MidnightFaneInThePast,
             Nexus_CambionWithLoot_ForAssault,
             Nexus_CambionWithLoot_ForAssault_2,
             ToughMinaghoCambion,
@@ -591,14 +582,6 @@ namespace HarderEnemies {
             CR22M_MythicGlabrezu,
             CR22M_MythicGlabrezu_RE,
             Drezen1_Tavern_Glabrezu,
-            //FakeHellknightGlabrezuBoss,
-            //MidnightFane_GlabrezuElite,
-            //MidnightFane_GlabrezuRitualists,
-            //MutasafenLair_MythicGlabrezu,
-            //SW_GlabrezuBoss,
-            //SW_GlabrezuBoss_phase2,
-            //TutorialTestISpellResistance,
-            //VeryOptionalGlabrezu_Miniboss,
             Voetiel,
             WintersunGlabrezu,
         };
@@ -613,7 +596,6 @@ namespace HarderEnemies {
             CR7_IncubusAdvanced,
             CR7_IncubusAdvanced_RE,
             IncubusBandLair_Incubus,
-            //IncubusBandLair_IncubusBoss,
         };
 
         public static List<BlueprintUnit> DemonKalavakusList = new List<BlueprintUnit>() {
@@ -637,12 +619,9 @@ namespace HarderEnemies {
             CR25M_Prebuff_GreaterKalavakusAdvanced,
             CR25M_Prebuff_GreaterKalavakusAdvanced_RE,
             EmberQ2_KalavakusStandard,
-            //Xuneki,
         };
 
         public static List<BlueprintUnit> DemonLilituList = new List<BlueprintUnit>() {
-            //Alushinyrra_Minagho,
-           //ArmyLilitu,
             CR17_AreshkagalLilitu,
             CR17_LilituStandard,
             CR17_LilituStandard_RE,
@@ -651,7 +630,6 @@ namespace HarderEnemies {
             CR23M_LilituAdvanced,
             CR23M_LilituAdvanced_RE,
             CR23M_LilituAdvanced_RE_high,
-            //Minagho,
             WrongPlace_LilituAdvanced,
         };
         public static List<BlueprintUnit> DemonMarilithList = new List<BlueprintUnit>() {
@@ -666,7 +644,6 @@ namespace HarderEnemies {
             CR21_MarilithMythic4_Slayer,
             CR21_MarilithMythic4_Slayer_RE,
             CR23_MythicMarilithRogue,
-           // CR24_Areshkagal_MarilithBoss,
             CR26_MythicMarilithSlayer,
             DontLikeGuestsLeader,
             Ember_Q3_MarilithAdvanced,

@@ -144,9 +144,28 @@ namespace HarderEnemies {
             CR8_Cultist_Wizard_DamageFullCaster_RE,
             CR8_Cultist_Wizard_Summoner,
             CR8_Cultist_Wizard_Summoner_RE,
-            Cultist_Wizard_DamageFullCaster_Deskari,
-            CR17_Cultist_Areshkagal_DamageFullCaster
+            //Cultist_Wizard_DamageFullCaster_Deskari,
+            //CR17_Cultist_Areshkagal_DamageFullCaster
         };
 
+        public static List<BlueprintUnit> CultistClericList = new List<BlueprintUnit>() {
+            CR10_Cultist_Kabriri_MeleeCaster,
+            CR11_Cultist_Baphomet_MeleeCaster,
+            CR19_Cultist_Areshkagal_MeleeCaster,
+            CR3_Cultist_Baphomet_MeleeCaster,
+            CR3_Cultist_Baphomet_MeleeCaster_RE,
+            CR4_Cultist_Baphomet_MeleeCaster,
+            CR4_Cultist_Baphomet_MeleeCaster_RE,
+            CR6_Cultist_Baphomet_MeleeCaster,
+            CR6_Cultist_Baphomet_MeleeCaster_RE,
+            CR8_Cultist_Baphomet_MeleeCaster,
+            CR8_Cultist_Baphomet_MeleeCaster_RE,
+            CR8_Cultist_Kabriri_MeleeCaster,
+            TemplarOfIvoryLabyrinth_CR11_Cultist_Baphomet_MeleeCaster,
+            TemplarOfIvoryLabyrinth_CR3_Cultist_Baphomet_MeleeCaster,
+            TemplarOfIvoryLabyrinth_CR4_Cultist_Baphomet_MeleeCaster,
+            TemplarOfIvoryLabyrinth_CR6_Cultist_Baphomet_MeleeCaster,
+            TemplarOfIvoryLabyrinth_CR8_Cultist_Baphomet_MeleeCaster,
+        };
     }
 }

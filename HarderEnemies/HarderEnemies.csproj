@@ -159,11 +159,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AI_Mechanics\Brains\DemonBrains.cs" />
+    <Compile Include="AI_Mechanics\Brains\DragonBrain.cs" />
     <Compile Include="Blueprints\AiCastSpellList.cs" />
     <Compile Include="Blueprints\AiConsiderationList.cs" />
     <Compile Include="AI_Mechanics\Actions\New_AiCastSpell.cs" />
     <Compile Include="Blueprints\BrainList.cs" />
     <Compile Include="AI_Mechanics\Brains\CasterBrain.cs" />
+    <Compile Include="Blueprints\Buffs.cs" />
     <Compile Include="Blueprints\CharacterClass.cs" />
     <Compile Include="Blueprints\ItemAndEnchs.cs" />
     <Compile Include="Config\Prebuffs.cs" />
@@ -171,6 +174,7 @@
     <Compile Include="Config\HPChanges.cs" />
     <Compile Include="ContentAdder.cs" />
     <Compile Include="Blueprints\FeatureList.cs" />
+    <Compile Include="Features\Logics\AbyssalToughness.cs" />
     <Compile Include="Features\Logics\SuperToughnessLogic.cs" />
     <Compile Include="Features\NewFeatures.cs" />
     <Compile Include="Features\NewSpells.cs" />
@@ -183,12 +187,19 @@
     <Compile Include="Units\BossAdjustments\AdjustRandomBosses.cs" />
     <Compile Include="Units\Bosses.cs" />
     <Compile Include="Units\BossAdjustments\AdjustMinagho.cs" />
+    <Compile Include="Units\BuffLists\BossBuffLists.cs" />
+    <Compile Include="Units\BuffLists\CultistBuffLists.cs" />
+    <Compile Include="Units\BuffLists\DemonBuffLists.cs" />
+    <Compile Include="Units\BuffLists\DemonLordBuffLists.cs" />
+    <Compile Include="Units\BuffLists\DragonBuffsLists.cs" />
     <Compile Include="Units\BuffLists\EliteCasterList.cs" />
+    <Compile Include="Units\BuffLists\RandomBossBuffLists.cs" />
     <Compile Include="Units\DemonAdjustments\AdjustDemodandTarry.cs" />
     <Compile Include="Units\DemonAdjustments\AdjustAbrikandilu.cs" />
     <Compile Include="Units\DemonAdjustments\AdjustBabau.cs" />
     <Compile Include="Units\DemonAdjustments\AdjustBrimorak.cs" />
     <Compile Include="Units\DemonAdjustments\AdjustDemodandStringy.cs" />
+    <Compile Include="Units\DemonAdjustments\AdjustDemonCambion.cs" />
     <Compile Include="Units\DemonAdjustments\AdjustMariliths.cs" />
     <Compile Include="Units\DemonAdjustments\AdjustGlabrezu.cs" />
     <Compile Include="Units\DemonAdjustments\AdjustGibrileth.cs" />
@@ -209,13 +220,14 @@
     <Compile Include="Units\ModifyDragons.cs" />
     <Compile Include="Units\ModifyEliteCasters.cs" />
     <Compile Include="Units\ModifyGolems.cs" />
-    <Compile Include="Units\ModifyRetrievers.cs" />
+    <Compile Include="Units\ModifyRetrieversDevastators.cs" />
     <Compile Include="Units\ModifyVescavorDerakni.cs" />
     <Compile Include="Utils\ActionFlow.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="ModLogic\ModContextMCEBase.cs" />
     <Compile Include="UMMSettingsUI.cs" />
     <Compile Include="Utils\AuraUtils.cs" />
+    <Compile Include="Utils\CustomHelpers.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Config\Blueprints.json" />
