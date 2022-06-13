@@ -110,6 +110,8 @@ namespace HarderEnemies {
         public static BlueprintUnit CorruptedHerald_Phase2 = ResourcesLibrary.TryGetBlueprint<BlueprintUnit>("38a1ababf66a5ba4694d282c592952c4");
         public static BlueprintUnit CorruptedHerald_Phase2_CR25 = ResourcesLibrary.TryGetBlueprint<BlueprintUnit>("e17a94be7b3a1924c806e91e85b0d4e2");
         public static BlueprintUnit CR24_Memitim_SupportToHerald = ResourcesLibrary.TryGetBlueprint<BlueprintUnit>("6c88c7421c064ba4aa60db286026d4b0");
+        public static BlueprintUnit Jerribeth_Sanctum = ResourcesLibrary.TryGetBlueprint<BlueprintUnit>("bb9fe2c12d6941a43bfd5d5090ac97b9");
+
 
         public static List<BlueprintUnit> DemonLordList = new List<BlueprintUnit>() {
             MidnightFane_NocticulaPriestess,
@@ -163,7 +165,8 @@ namespace HarderEnemies {
 
         public static List<BlueprintUnit> JerribethList = new List<BlueprintUnit>() {
             Jerribeth,
-            Jerribeth_Wintersun
+            Jerribeth_Wintersun,
+            Jerribeth_Sanctum
         };
 
         public static List<BlueprintUnit> MutafasenList = new List<BlueprintUnit>() {

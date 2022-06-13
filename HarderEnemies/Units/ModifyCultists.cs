@@ -34,7 +34,7 @@ namespace HarderEnemies.Units {
         }
 
         private static void AdjustHP() {
-            if (HEContext.HPChanges.HPBoosts.IsDisabled("AdjustCultistCasters")) { return; }
+            if (HEContext.HPChanges.HPBoosts.IsDisabled("AdjustCultistCastersHp")) { return; }
 
             foreach (BlueprintUnit thisUnit in Cultists.CultistCasterList) {
                 thisUnit.m_AddFacts = thisUnit.m_AddFacts.AppendToArray(SuperToughness.ToReference<BlueprintUnitFactReference>());
@@ -46,7 +46,7 @@ namespace HarderEnemies.Units {
             if (HEContext.AbilityChanges.OtherChanges.IsDisabled("CultistCasterChanges")) { return; }
             foreach (BlueprintUnit thisUnit in Cultists.CultistCasterList) {
                 Utils.CustomHelpers.AddFactListsToUnit(thisUnit, thisUnit.CR, BuffLists.CultistBuffLists.CultistCasterAbilities);
-                thisUnit.AlternativeBrains = new BlueprintBrainReference[] { };
+                thisUnit.AlternativeBrains = new BlueprintBrainReference[0] { };
             }
 
             BrainList.CultistEvokerBrain.m_Actions = BrainList.CultistEvokerBrain.m_Actions.AppendToArray(
@@ -66,12 +66,12 @@ namespace HarderEnemies.Units {
             foreach (BlueprintUnit thisUnit in Cultists.CultistClericList) {
                 if (thisUnit.CR <= 10) {
                     Utils.CustomHelpers.AddFactListsToUnit(thisUnit, thisUnit.CR, BuffLists.CultistBuffLists.CultistClericAbilities);
-                    thisUnit.AlternativeBrains = new BlueprintBrainReference[] { };
+                    thisUnit.AlternativeBrains = new BlueprintBrainReference[0] { };
                     thisUnit.m_Brain = NewCultistClericBrain.ToReference<BlueprintBrainReference>();
                 }
                 else {
                     Utils.CustomHelpers.AddFactListsToUnit(thisUnit, thisUnit.CR, BuffLists.CultistBuffLists.CultistEliteClericAbilities);
-                    thisUnit.AlternativeBrains = new BlueprintBrainReference[] { };
+                    thisUnit.AlternativeBrains = new BlueprintBrainReference[0] { };
                     thisUnit.m_Brain = NewCultistClericEliteBrain.ToReference<BlueprintBrainReference>();
                 }
             }

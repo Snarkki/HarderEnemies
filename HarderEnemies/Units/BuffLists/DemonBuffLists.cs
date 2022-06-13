@@ -60,6 +60,11 @@ namespace HarderEnemies.Units.BuffLists {
             Buffs.MageShieldBuff.ToReference<BlueprintUnitFactReference>(),
             Buffs.BlinkBuff.ToReference<BlueprintUnitFactReference>(),
         };
+
+        public static BlueprintUnitFactReference[] CambionRangedAbilities = {
+            FeatureList.PreciseShot.ToReference<BlueprintUnitFactReference>(),
+            FeatureList.ImprovedPreciseShot.ToReference<BlueprintUnitFactReference>(),
+        };
     }
     
 }

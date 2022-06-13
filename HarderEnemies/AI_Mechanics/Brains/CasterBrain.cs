@@ -58,7 +58,7 @@ namespace HarderEnemies.AI_Mechanics.Brains {
                    Blueprints.AiCastSpellList.CultistBaphometCaster_AI_UnholyBlight.ToReference<BlueprintAiActionReference>(),
                    Blueprints.AiCastSpellList.CultistBaphometCaster_AI_CureModWoundMass.ToReference<BlueprintAiActionReference>(),
                    Blueprints.AiCastSpellList.CultistBaphometCaster_AI_FlameStrike.ToReference<BlueprintAiActionReference>(),
-                   Blueprints.AiCastSpellList.CultistBaphometCaster_AI_Prayer.ToReference<BlueprintAiActionReference>(),
+                   Blueprints.AiCastSpellList.EverbrightCrusader_AiAction_Prayer.ToReference<BlueprintAiActionReference>(),
                    Blueprints.AiCastSpellList.Oolioddroo_HoldPersonMassAIAction.ToReference<BlueprintAiActionReference>(),
                    Blueprints.AiCastSpellList.AngelTargona_HealAiAction.ToReference<BlueprintAiActionReference>(),
                };

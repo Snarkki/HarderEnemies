@@ -76,8 +76,13 @@
       "CambionAbilities": {
         "Enabled": true,
         "Description": "Adjust Cambion Abilities"
+      },
+      "MinotaurAbilities": {
+        "Enabled": true,
+        "Description": "Adjust Minotaur Abilities"
       }
     },
+
     "IsExpanded": true
   },
   "OtherChanges": {
@@ -114,6 +119,10 @@
       "VescavorChanges": {
         "Enabled": true,
         "Description": "Adjust Vescavor & Derakni Abilities"
+      },
+      "CyborgChanges": {
+        "Enabled": true,
+        "Description": "Adjust Cyborg (Blackwater) Abilities"
       }
     },
     "IsExpanded": true

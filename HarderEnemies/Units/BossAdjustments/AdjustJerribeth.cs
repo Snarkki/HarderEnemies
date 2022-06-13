@@ -49,7 +49,10 @@ namespace HarderEnemies.Units.Adjustments {
                 SummonMonsterViiAiSpell.ToReference<BlueprintAiActionReference>(),
                 FearAiSpell.ToReference<BlueprintAiActionReference>(),
                 AiCastSpellList.Nabasu_MassHoldPersonHigh_AiAction.ToReference<BlueprintAiActionReference>(),
-                AiCastSpellList.StinkingCloudAiAction.ToReference<BlueprintAiActionReference>()
+                AiCastSpellList.ScorchingRayAiAction.ToReference<BlueprintAiActionReference>(),
+                AiCastSpellList.BurningArcAiAction.ToReference<BlueprintAiActionReference>(),
+                AiCastSpellList.Xantir_SlowAIAction.ToReference<BlueprintAiActionReference>()
+                
                 );
             HEContext.Logger.LogHeader("Updated Jerribeth Abilities");
         }

@@ -64,9 +64,9 @@ namespace HarderEnemies.Features {
                 RankConfig.m_BaseValueType = ContextRankBaseValueType.ClassLevel;
                 RankConfig.Archetype = null;
                 RankConfig.m_Class = new BlueprintCharacterClassReference [] { CharacterClass.OutsiderClass.ToReference<BlueprintCharacterClassReference>() };
-
             });
         }
+
 
         public static void CreateMetaMagicFeature() {
 

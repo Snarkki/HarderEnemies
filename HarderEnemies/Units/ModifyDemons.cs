@@ -35,10 +35,11 @@ namespace HarderEnemies.Units {
             AdjustMariliths.MarilithHandler();
             AdjustOolioddroo.OoliodroHandler();
             AdjustDemonCambion.CambionHandler();
+            AdjustMinotaur.MinaotaurHandler();
         }
 
         private static void AdjustHP() {
-            if (HEContext.HPChanges.HPBoosts.IsDisabled("AdjustDemons")) { return; }
+            if (HEContext.HPChanges.HPBoosts.IsDisabled("AdjustDemonsHp")) { return; }
 
             foreach (BlueprintUnit thisUnit in Demons.DemonMegaList) {
                 thisUnit.m_AddFacts = thisUnit.m_AddFacts.AppendToArray(SuperToughness.ToReference<BlueprintUnitFactReference>());

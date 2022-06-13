@@ -32,6 +32,7 @@ namespace HarderEnemies.Blueprints {
         public static BlueprintAbility MirrorImage = BlueprintTools.GetBlueprint<BlueprintAbility>("3e4ab69ada402d145a5e0ad3ad4b8564");
         public static BlueprintAbility LegendaryProportions = BlueprintTools.GetBlueprint<BlueprintAbility>("da1b292d91ba37948893cdbe9ea89e28");
         public static BlueprintAbility ChaosHammer = BlueprintTools.GetBlueprint<BlueprintAbility>("c42ac3feb96d1e54e9bc77c84082f05f");
+        public static BlueprintAbility BullRushAction = BlueprintTools.GetBlueprint<BlueprintAbility>("7ab6f70c996fe9b4597b8332f0a3af5f");
 
         public static BlueprintAbility Firestorm = BlueprintTools.GetBlueprint<BlueprintAbility>("e3d0dfe1c8527934294f241e0ae96a8d");
         public static BlueprintAbility OverwhelmingPresence = BlueprintTools.GetBlueprint<BlueprintAbility>("41cf93453b027b94886901dbfc680cb9");
@@ -65,6 +66,8 @@ namespace HarderEnemies.Blueprints {
         public static BlueprintAbility RighteousMagic = BlueprintTools.GetBlueprint<BlueprintAbility>("90810e5cf53bf854293cbd5ea1066252");
         public static BlueprintAbility CureModerateWoundsMass = BlueprintTools.GetBlueprint<BlueprintAbility>("571221cc141bc21449ae96b3944652aa");
         public static BlueprintAbility Prayer = BlueprintTools.GetBlueprint<BlueprintAbility>("faabd2cc67efa4646ac58c7bb3e40fcc");
+        public static BlueprintAbility ScorchingRay = BlueprintTools.GetBlueprint<BlueprintAbility>("cdb106d53c65bbc4086183d54c3b97c7");
+        public static BlueprintAbility BurningArc = BlueprintTools.GetBlueprint<BlueprintAbility>("eaac3d36e0336cb479209a6f65e25e7c");
 
         //Features.FlyerCR15.ToReference<BlueprintUnitFactReference>(),
         //Buffs.TrueSeeingBuff.ToReference<BlueprintUnitFactReference>(),

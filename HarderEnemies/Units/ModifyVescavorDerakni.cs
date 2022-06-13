@@ -57,7 +57,7 @@ namespace HarderEnemies.Units {
                     thisUnit.m_AddFacts = thisUnit.m_AddFacts.AppendToArray(Abilities.DimensionDoorHell.ToReference<BlueprintUnitFactReference>());
                 }
                 thisUnit.m_AddFacts = thisUnit.m_AddFacts.AppendToArray(FeatureList.TripBite.ToReference<BlueprintUnitFactReference>());
-                thisUnit.AlternativeBrains = new BlueprintBrainReference[] { };
+                thisUnit.AlternativeBrains = new BlueprintBrainReference[0] { };
                 thisUnit.m_Brain = DerakniNewStandardBrain.ToReference<BlueprintBrainReference>();
             }
             HEContext.Logger.LogHeader("Updated Vescavor/Derakni Abilities");

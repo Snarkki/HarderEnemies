@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using TabletopTweaks.Core.Utilities;
 using HarderEnemies.Blueprints;
 using static HarderEnemies.Main;
+using Kingmaker.UnitLogic.FactLogic;
 
 namespace HarderEnemies.Units {
     public class ModifyGolems {
@@ -36,10 +37,20 @@ namespace HarderEnemies.Units {
 
             foreach (BlueprintUnit thisUnit in Golems.GolemList) {
                 if (thisUnit.CR >= 0 && thisUnit.CR <= 15) {
-                    thisUnit.m_AddFacts = thisUnit.m_AddFacts.AppendToArray(FeatureList.DR15.ToReference<BlueprintUnitFactReference>());
+                    thisUnit.m_AddFacts = thisUnit.m_AddFacts.AppendToArray(FeatureList.DR15.ToReference<BlueprintUnitFactReference>() );
+                    thisUnit.AddComponent<AddStatBonus>(c => {
+                        c.Value = -4;
+                        c.Descriptor = Kingmaker.Enums.ModifierDescriptor.UntypedStackable;
+                        c.Stat = Kingmaker.EntitySystem.Stats.StatType.AC;
+                    });
                 }
                 else {
                     thisUnit.m_AddFacts = thisUnit.m_AddFacts.AppendToArray(FeatureList.DR30.ToReference<BlueprintUnitFactReference>());
+                    thisUnit.AddComponent<AddStatBonus>(c => {
+                        c.Value = -6;
+                        c.Descriptor = Kingmaker.Enums.ModifierDescriptor.UntypedStackable;
+                        c.Stat = Kingmaker.EntitySystem.Stats.StatType.AC;
+                    });
                 }
             }
             HEContext.Logger.LogHeader("Updated Golems Abilities");

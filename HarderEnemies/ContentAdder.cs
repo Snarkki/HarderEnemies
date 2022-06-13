@@ -36,7 +36,7 @@ namespace HarderEnemies {
                 Units.ModifyDemons.HandleChanges();
                 Units.ModifyAngels.HandleChanges();
                 Units.ModifyEliteCasters.HandleChanges();
-
+                Units.ModifyCyborgs.HandleChanges();
                 HEContext.Logger.LogHeader("Updates done");
             }
 

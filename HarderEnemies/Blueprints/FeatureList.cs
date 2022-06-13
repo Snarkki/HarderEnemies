@@ -25,7 +25,18 @@ namespace HarderEnemies.Blueprints {
         public static BlueprintFeature VescavorQueenGibberAbility = BlueprintTools.GetBlueprint<BlueprintFeature>("a938c2c4b81c8c342b46bab76989d727");
         public static BlueprintFeature TripBite = BlueprintTools.GetBlueprint<BlueprintFeature>("f957b4444b6fb404e84ae2a5765797bb");
         public static BlueprintFeature QuickenSpellFeature = BlueprintTools.GetBlueprint<BlueprintFeature>("ef7ece7bb5bb66a41b256976b27f424e");
+        public static BlueprintFeature ImprovedPreciseShot = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>("46f970a6b9b5d2346b10892673fe6e74");
+        public static BlueprintFeature PreciseBomb = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>("5c396342f614dd644a48c3af08d79701");
+        public static BlueprintFeature PreciseShot = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>("8f3d1e6b4be006f4d896081f2f889665");
+        public static BlueprintFeature PointBlankShot = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>("0da0c194d6e1d43419eb8d990b28e0ab");
+        public static BlueprintFeature VitalStrikeFeature = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>("14a1fc1356df9f146900e1e42142fc9d");
+        public static BlueprintFeature VitalStrikeFeatureGreater = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>("e2d1fa11f6b095e4fb2fd1dcf5e36eb3");
+        public static BlueprintFeature VitalStrikeFeatureImproved = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>("52913092cd018da47845f36e6fbe240f");
+        public static BlueprintFeature VitalStrikeMythicFeat = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>("e07bcb271ecefec44be314e1c807c798");
 
+        public static BlueprintFeature GreaterBullRush = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>("72ba6ad46d94ecd41bad8e64739ea392");
+        public static BlueprintFeature ImprovedBullRush = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>("b3614622866fe7046b787a548bbd7f59");
+        public static BlueprintFeature HalfFiendTemplate = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>("f79b555fa1d81d44499a128076f91273");
 
         // MYTHIC FEATURES
         public static BlueprintFeature AlwaysAChange = BlueprintTools.GetBlueprint<BlueprintFeature>("d57301613ad6a5140b2fdac40fa368e3");
@@ -46,8 +57,7 @@ namespace HarderEnemies.Blueprints {
         public static BlueprintFeature CR22_AxiomiteCaster_Feature_Prebuff = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>("c6e69c237da84ff1ae85603912187809");
         public static BlueprintFeature CR22_AxiomiteCaster_Feature_CombatPrebuff = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>("c412fe0f34ec444e9f9ca1da3d18bd9b");
 
-        public static BlueprintFeature TestBuffFeature = BlueprintTools.GetBlueprint<BlueprintFeature>("c412fe0f34ec444e9f9ca1da3d18bd9b");
-        public static BlueprintFeature CombatTriggerFeature = BlueprintTools.GetBlueprint<BlueprintFeature>("91f45419333747bda417602ec6ccf673");
+
 
     }
 }

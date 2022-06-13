@@ -194,6 +194,7 @@
     <Compile Include="Units\BuffLists\DragonBuffsLists.cs" />
     <Compile Include="Units\BuffLists\EliteCasterList.cs" />
     <Compile Include="Units\BuffLists\RandomBossBuffLists.cs" />
+    <Compile Include="Units\DemonAdjustments\AdjustMinotaurs.cs" />
     <Compile Include="Units\DemonAdjustments\AdjustDemodandTarry.cs" />
     <Compile Include="Units\DemonAdjustments\AdjustAbrikandilu.cs" />
     <Compile Include="Units\DemonAdjustments\AdjustBabau.cs" />
@@ -208,6 +209,7 @@
     <Compile Include="Units\Lists\Angels.cs" />
     <Compile Include="Units\Lists\Bosses.cs" />
     <Compile Include="Units\Lists\Cultists.cs" />
+    <Compile Include="Units\Lists\Cyborgs.cs" />
     <Compile Include="Units\Lists\Demons.cs" />
     <Compile Include="Units\Lists\Dragons.cs" />
     <Compile Include="Units\Lists\EliteCasters.cs" />
@@ -215,6 +217,7 @@
     <Compile Include="Units\Lists\Retrievers.cs" />
     <Compile Include="Units\Lists\Vescavor.cs" />
     <Compile Include="Units\ModifyAngels.cs" />
+    <Compile Include="Units\ModifyCyborgs.cs" />
     <Compile Include="Units\ModifyCultists.cs" />
     <Compile Include="Units\ModifyDemons.cs" />
     <Compile Include="Units\ModifyDragons.cs" />
@@ -242,7 +245,9 @@
     </EmbeddedResource>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="muutokset.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" AfterTargets="BeforeClean">
     <PropertyGroup>

@@ -22,7 +22,7 @@ using Kingmaker.UnitLogic.Mechanics.Actions;
 namespace HarderEnemies.Units.DemonAdjustments {
     internal class AdjustDemonCambion {
 
-
+        private static BlueprintBrain CambionRangedBrain = BlueprintTools.GetModBlueprint<BlueprintBrain>(HEContext, "CambionRangedBrain");
         public static void CambionHandler() {
             CambionAbilities();
             CambionBuffs();
@@ -31,7 +31,12 @@ namespace HarderEnemies.Units.DemonAdjustments {
         private static void CambionAbilities() {
             if (HEContext.AbilityChanges.DemonChanges.IsDisabled("CambionAbilities")) { return; }
             foreach (BlueprintUnit thisUnit in Demons.DemonCambionList) {
-                
+                //thisUnit.m_AddFacts = thisUnit.m_AddFacts.AppendToArray(BuffLists.DemonBuffLists.Cam);
+            }
+
+            foreach (BlueprintUnit thisUnit in Demons.DemonRangedCambionList) {
+                thisUnit.m_AddFacts = thisUnit.m_AddFacts.AppendToArray(BuffLists.DemonBuffLists.CambionRangedAbilities);
+                thisUnit.m_Brain = CambionRangedBrain.ToReference<BlueprintBrainReference>();
             }
 
             HEContext.Logger.LogHeader("Updated CambionAbilities");
@@ -42,7 +47,7 @@ namespace HarderEnemies.Units.DemonAdjustments {
             if (HEContext.Prebuffs.DemonBuffs.IsDisabled("CambionBuffs")) { return; }
 
             foreach (BlueprintUnit thisUnit in Demons.DemonCambionList) {
-                
+               // thisUnit.m_AddFacts = thisUnit.m_AddFacts.AppendToArray(BuffLists.DemonBuffLists.DemodandTarryBuffs);
             }
 
             HEContext.Logger.LogHeader("Updated CambionBuffs");

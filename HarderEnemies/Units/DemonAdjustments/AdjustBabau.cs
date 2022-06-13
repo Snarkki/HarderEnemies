@@ -35,13 +35,14 @@ namespace HarderEnemies.Units.DemonAdjustments {
             if (HEContext.AbilityChanges.DemonChanges.IsDisabled("BabauAbilities")) { return; }
             foreach (BlueprintUnit thisUnit in Demons.DemonBabauList) {
                 // get rid of dispellers
-                thisUnit.AlternativeBrains = new BlueprintBrainReference[] { };
+                thisUnit.m_Brain = BrainList.DumbBrain.ToReference<BlueprintBrainReference>();
+                thisUnit.AlternativeBrains = new BlueprintBrainReference[0] { };
                 if (thisUnit.CR > 6) {
                     // Adds outflank & dispelling strike
                     thisUnit.m_AddFacts = thisUnit.m_AddFacts.AppendToArray(BuffLists.DemonBuffLists.BabauAbilities);
                 }
             }
-
+            HEContext.Logger.LogHeader("Updated Babau Abilities");
 
         }
 
@@ -50,7 +51,7 @@ namespace HarderEnemies.Units.DemonAdjustments {
             foreach (BlueprintUnit thisUnit in Demons.DemonBabauList) {
 
             }
-            HEContext.Logger.LogHeader("Updated Oolioddroo");
+            HEContext.Logger.LogHeader("Updated BabauBuffs");
         }
 
     }

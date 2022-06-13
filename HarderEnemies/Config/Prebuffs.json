@@ -76,7 +76,12 @@
       "CambionBuffs": {
         "Enabled": true,
         "Description": "Add buffs to Cambions"
+      },
+      "MinotaurBuffs": {
+        "Enabled": true,
+        "Description": "Add buffs to Minataurs"
       }
+ 
     },
     "IsExpanded": true
   },
@@ -114,6 +119,10 @@
       "VescavorBuffs": {
         "Enabled": true,
         "Description": "Add buffs to Vescavors & Derakni"
+      },
+      "CyborgBuffs": {
+        "Enabled": true,
+        "Description": "Add buffs to Cyborgs"
       }
     },
     "IsExpanded": true

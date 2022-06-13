@@ -92,7 +92,9 @@ namespace HarderEnemies.Units.BuffLists {
         public static BlueprintUnitFactReference[] JerribethAbilities =  {
             Abilities.SummonMonsterVII.ToReference<BlueprintUnitFactReference>(),
             Abilities.HoldPersonMass.ToReference<BlueprintUnitFactReference>(),
-            Abilities.StinkingCloud.ToReference<BlueprintUnitFactReference>(),
+            Abilities.BurningArc.ToReference<BlueprintUnitFactReference>(),
+            Abilities.ScorchingRay.ToReference<BlueprintUnitFactReference>(),
+            Abilities.Slow.ToReference<BlueprintUnitFactReference>(),
             Abilities.Fear.ToReference<BlueprintUnitFactReference>(),
             Abilities.Stormbolts.ToReference<BlueprintUnitFactReference>(),
             SuperiorQuickenMetaFeature.ToReference<BlueprintUnitFactReference>(),

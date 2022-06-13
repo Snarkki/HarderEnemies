@@ -47,7 +47,7 @@ namespace HarderEnemies.Blueprints {
         public static BlueprintBrain Khor_BalorBrain = BlueprintTools.GetBlueprint<BlueprintBrain>("440b0c54268c4bfdb7e0447f241d7f5c");
 
 
-
-
+        public static BlueprintBrain DumbBrain = BlueprintTools.GetBlueprint<BlueprintBrain>("5abc8884c6f15204c8604cb01a2efbab");
+        public static BlueprintBrain HalfFiendMinotaur_Standard_Brain = BlueprintTools.GetBlueprint<BlueprintBrain>("c6ba6fd4eca00a140b3a723c418c3343");
     }
 }

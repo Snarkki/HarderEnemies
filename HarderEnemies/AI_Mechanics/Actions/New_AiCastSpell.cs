@@ -26,6 +26,12 @@ namespace HarderEnemies.AI_Mechanics.Actions {
             CreateAreaControlSpells();
             CreateBuffSpells();
             CreateSingleTargetSpells();
+            CreateRangedAttack();
+        }
+
+        private static void CreateRangedAttack() {
+
+
         }
 
         public static void CreatePullingAttack() {

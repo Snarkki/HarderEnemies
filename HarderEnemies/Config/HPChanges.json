@@ -11,11 +11,11 @@
         "Enabled": true,
         "Description": "Add HP boost to Angel list"
       },
-      "AdjustCultistCasters": {
+      "AdjustCultistCastersHp": {
         "Enabled": false,
         "Description": "Add HP boost to units of Cultist Casters list"
       },
-      "AdjustDemons": {
+      "AdjustDemonsHp": {
         "Enabled": false,
         "Description": "Add HP boost to units of Demons list"
       },
@@ -38,6 +38,10 @@
       "AdjustVescavorDerakniHp": {
         "Enabled": false,
         "Description": "Add HP boost to units of Vescavor&Derakni list"
+      },
+      "AdjustCyborgsHP": {
+        "Enabled": false,
+        "Description": "Add HP boost to units of Cyborg units list"
       }
 
     },
