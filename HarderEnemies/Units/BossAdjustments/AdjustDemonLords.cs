@@ -41,24 +41,24 @@ namespace HarderEnemies.Units.Adjustments {
 
 
             foreach (BlueprintUnit thisUnit in Bosses.NocticulaList) {
-                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, thisUnit.CR, BuffLists.DemonLordBuffLists.NocticulaAbilityList);
+                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, 40, BuffLists.DemonLordBuffLists.NocticulaAbilityList);
             }
 
 
             foreach (BlueprintUnit thisUnit in Bosses.DeskariList) {
-                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, thisUnit.CR, BuffLists.DemonLordBuffLists.DeskariAbilityList);
+                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, 40, BuffLists.DemonLordBuffLists.DeskariAbilityList);
 
             }
 
 
 
             //CR30_AreshkagalBoss, ehkä ei mitään...
-            Utils.CustomHelpers.AddFactListsToUnit(Bosses.CR30_AreshkagalBoss, Bosses.CR30_AreshkagalBoss.CR, BuffLists.DemonLordBuffLists.CR30_AreshkagalAbilities);
+            Utils.CustomHelpers.AddFactListsToUnit(Bosses.CR30_AreshkagalBoss, 40, BuffLists.DemonLordBuffLists.CR30_AreshkagalAbilities);
 
 
 
             //AREELU 
-            Utils.CustomHelpers.AddFactListsToUnit(Bosses.AreeluDemonicForm, Bosses.AreeluDemonicForm.CR, BuffLists.DemonLordBuffLists.AreeluAbilityList);
+            Utils.CustomHelpers.AddFactListsToUnit(Bosses.AreeluDemonicForm, 40, BuffLists.DemonLordBuffLists.AreeluAbilityList);
 
 
             // BRAINS
@@ -90,7 +90,7 @@ namespace HarderEnemies.Units.Adjustments {
                 thisUnit.m_AddFacts = thisUnit.m_AddFacts.AppendToArray(FeatureList.CR22_AxiomiteCaster_Feature_Prebuff.ToReference<BlueprintUnitFactReference>(),
                     FeatureList.CR22_AxiomiteCaster_Feature_CombatPrebuff.ToReference<BlueprintUnitFactReference>() 
                     );
-                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, thisUnit.CR, BuffLists.DemonLordBuffLists.NocticulaBuffList);
+                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, 40, BuffLists.DemonLordBuffLists.NocticulaBuffList);
             }
 
             //DESKARI
@@ -98,21 +98,21 @@ namespace HarderEnemies.Units.Adjustments {
                 thisUnit.m_AddFacts = thisUnit.m_AddFacts.AppendToArray(FeatureList.CR22_AxiomiteCaster_Feature_Prebuff.ToReference<BlueprintUnitFactReference>(),
                                         FeatureList.CR22_AxiomiteCaster_Feature_CombatPrebuff.ToReference<BlueprintUnitFactReference>()
                     );
-                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, thisUnit.CR, BuffLists.DemonLordBuffLists.DeskariBuffList);
+                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, 40, BuffLists.DemonLordBuffLists.DeskariBuffList);
             }
 
             //CR30_AreshkagalBoss
             Bosses.CR30_AreshkagalBoss.m_AddFacts = Bosses.CR30_AreshkagalBoss.m_AddFacts.AppendToArray(FeatureList.CR22_AxiomiteCaster_Feature_Prebuff.ToReference<BlueprintUnitFactReference>(),
                                     FeatureList.CR22_AxiomiteCaster_Feature_CombatPrebuff.ToReference<BlueprintUnitFactReference>()
                     );
-            Utils.CustomHelpers.AddFactListsToUnit(Bosses.CR30_AreshkagalBoss, Bosses.CR30_AreshkagalBoss.CR, BuffLists.DemonLordBuffLists.CR30_AreshkagalBossBuffs);
+            Utils.CustomHelpers.AddFactListsToUnit(Bosses.CR30_AreshkagalBoss, 40, BuffLists.DemonLordBuffLists.CR30_AreshkagalBossBuffs);
 
 
             //AREELU 
             Bosses.AreeluDemonicForm.m_AddFacts = Bosses.AreeluDemonicForm.m_AddFacts.AppendToArray(FeatureList.CR22_AxiomiteCaster_Feature_Prebuff.ToReference<BlueprintUnitFactReference>(),
                                     FeatureList.CR22_AxiomiteCaster_Feature_CombatPrebuff.ToReference<BlueprintUnitFactReference>()
                     );
-            Utils.CustomHelpers.AddFactListsToUnit(Bosses.AreeluDemonicForm, Bosses.AreeluDemonicForm.CR, BuffLists.DemonLordBuffLists.AreeluBuffList);
+            Utils.CustomHelpers.AddFactListsToUnit(Bosses.AreeluDemonicForm, 40, BuffLists.DemonLordBuffLists.AreeluBuffList);
 
         }
     }

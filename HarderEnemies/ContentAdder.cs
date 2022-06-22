@@ -21,11 +21,13 @@ namespace HarderEnemies {
                 HEContext.Logger.LogHeader("Modifying enemies");
                 Features.NewFeatures.CreateNewFeatures();
                 Features.NewSpells.CreateNewSpells();
+                AI_Mechanics.Actions.AiConsiderations.CreateNew();
                 AI_Mechanics.Actions.New_AiCastSpell.CreateNew();
                 Items.Weapons.CreateNewWeapons();
                 AI_Mechanics.Brains.CasterBrains.BrainHandler();
                 AI_Mechanics.Brains.DemonBrains.DemonBrainHandler();
                 AI_Mechanics.Brains.DragonBrain.DragonBrainHandler();
+                AI_Mechanics.Brains.AngelBrains.AngelBrainHandler();
                 // 
                 Units.ModifyRetrieversDevastators.HandleChanges();
                 Units.ModifyDragons.HandleChanges();

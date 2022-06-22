@@ -29,6 +29,18 @@ namespace HarderEnemies.Units.Adjustments {
         private static BlueprintAiCastSpell FirestormEmpoweredAiSpell = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "FirestormEmpoweredAiSpell");
         private static BlueprintAiCastSpell BlasphemyAiSpell = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "BlasphemyAiSpell");
         private static BlueprintAiCastSpell NewFlameStrikeAiSpell = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "NewFlameStrikeAiSpell");
+        private static BlueprintAiCastSpell MirrorImageAiSpell = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "MirrorImageAiSpell");
+        private static BlueprintAiCastSpell InvisibilityGreaterAiSpell = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "InvisibilityGreaterAiSpell");
+        private static BlueprintAiCastSpell MindBlankAiSpell = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "MindBlankAiSpell");
+        private static BlueprintAiCastSpell LegendaryProportionsAiSpell = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "LegendaryProportionsAiSpell");
+        private static BlueprintAiCastSpell GreaterDispelAiSpellSwift = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "GreaterDispelAiSpellSwift");
+        private static BlueprintAiCastSpell OverwhelmingPresenceAiSpell = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "OverwhelmingPresenceAiSpell");
+        private static BlueprintAiCastSpell HoldPersonMassAiSpell = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "HoldPersonMassAiSpell");
+        private static BlueprintAiCastSpell GreaterShoutAiSpell = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "GreaterShoutAiSpell");
+
+        
+        private static BlueprintAiAttack ThreatenedAiAttack = BlueprintTools.GetModBlueprint<BlueprintAiAttack>(HEContext, "ThreatenedAiAttack");
+        
 
         public static void HandleBalors() {
             BalorAbilities();
@@ -40,7 +52,7 @@ namespace HarderEnemies.Units.Adjustments {
 
             foreach (BlueprintUnit thisUnit in Bosses.BalorList) {
                 if (thisUnit == Bosses.Darrazand) {
-                    Utils.CustomHelpers.AddFactListsToUnit(thisUnit, thisUnit.CR, BuffLists.BossBuffLists.DarrazandAbilities);
+                    Utils.CustomHelpers.AddFactListsToUnit(thisUnit, 35, BuffLists.BossBuffLists.DarrazandAbilities);
                 }
                 else if (thisUnit == Bosses.BalorLeader ||
                     thisUnit == Bosses.CR20_BalorStandard ||
@@ -52,7 +64,7 @@ namespace HarderEnemies.Units.Adjustments {
                     thisUnit == Bosses.CR28M_BalorMythicFighter ||
                     thisUnit == Bosses.CR28M_BalorMythicFighter_RE 
                     ) {
-                    Utils.CustomHelpers.AddFactListsToUnit(thisUnit, thisUnit.CR, BuffLists.BossBuffLists.BalorAbilities);
+                    Utils.CustomHelpers.AddFactListsToUnit(thisUnit, 35, BuffLists.BossBuffLists.BalorAbilities);
                     thisUnit.Body.m_PrimaryHand = BalorNewSword.ToReference<BlueprintItemEquipmentHandReference>();
                 }
                 else if (thisUnit == Bosses.Alushynirra_BalorNocticulaGuard) {
@@ -62,25 +74,31 @@ namespace HarderEnemies.Units.Adjustments {
                 // BRAIN APPEND
                 BrainList.DarrazandBrain.m_Actions = new BlueprintAiActionReference[] {
                         AiCastSpellList.AttackAiAction.ToReference<BlueprintAiActionReference>(),
+                        ThreatenedAiAttack.ToReference<BlueprintAiActionReference>(),
                         PullingStrikeAiAction.ToReference<BlueprintAiActionReference>(),
                         BlasphemyAiSpell.ToReference<BlueprintAiActionReference>(),
                         NewFlameStrikeAiSpell.ToReference<BlueprintAiActionReference>(),
                         FirestormEmpoweredAiSpell.ToReference<BlueprintAiActionReference>(),
                         StormBoltAiSpell.ToReference<BlueprintAiActionReference>(),
+                        MirrorImageAiSpell.ToReference<BlueprintAiActionReference>(),
+                        InvisibilityGreaterAiSpell.ToReference<BlueprintAiActionReference>(),
+                        MindBlankAiSpell.ToReference<BlueprintAiActionReference>(),
+                        LegendaryProportionsAiSpell.ToReference<BlueprintAiActionReference>(),
+                        GreaterDispelAiSpellSwift.ToReference<BlueprintAiActionReference>(),
                     };
                 BrainList.BalorBrain.m_Actions = BrainList.BalorBrain.m_Actions.AppendToArray(
-                    AiCastSpellList.Baphomet_OverwhelmingPresence_AIAction.ToReference<BlueprintAiActionReference>(),
-                    AiCastSpellList.FlameStrikeAiAction.ToReference<BlueprintAiActionReference>(),
-                    AiCastSpellList.FireStormAiAction.ToReference<BlueprintAiActionReference>(),
-                    AiCastSpellList.MythicBabau_AiAction_HoldPersonMass.ToReference<BlueprintAiActionReference>(),
-                    AiCastSpellList.PerpetuallyAnnoyedWizard_AIActionShoutGreater.ToReference<BlueprintAiActionReference>()
+                    OverwhelmingPresenceAiSpell.ToReference<BlueprintAiActionReference>(),
+                    NewFlameStrikeAiSpell.ToReference<BlueprintAiActionReference>(),
+                    FirestormEmpoweredAiSpell.ToReference<BlueprintAiActionReference>(),
+                    HoldPersonMassAiSpell.ToReference<BlueprintAiActionReference>(),
+                    GreaterShoutAiSpell.ToReference<BlueprintAiActionReference>()
                     );
                 BrainList.BalorMythic6_BloodragerBrain.m_Actions = BrainList.BalorMythic6_BloodragerBrain.m_Actions.AppendToArray(
-                    AiCastSpellList.Baphomet_OverwhelmingPresence_AIAction.ToReference<BlueprintAiActionReference>(),
-                    AiCastSpellList.FlameStrikeAiAction.ToReference<BlueprintAiActionReference>(),
-                    AiCastSpellList.FireStormAiAction.ToReference<BlueprintAiActionReference>(),
-                    AiCastSpellList.MythicBabau_AiAction_HoldPersonMass.ToReference<BlueprintAiActionReference>(),
-                    AiCastSpellList.PerpetuallyAnnoyedWizard_AIActionShoutGreater.ToReference<BlueprintAiActionReference>()
+                    OverwhelmingPresenceAiSpell.ToReference<BlueprintAiActionReference>(),
+                    NewFlameStrikeAiSpell.ToReference<BlueprintAiActionReference>(),
+                    FirestormEmpoweredAiSpell.ToReference<BlueprintAiActionReference>(),
+                    HoldPersonMassAiSpell.ToReference<BlueprintAiActionReference>(),
+                    GreaterShoutAiSpell.ToReference<BlueprintAiActionReference>()
                     );
             }
             HEContext.Logger.LogHeader("Updated Balors");
@@ -90,7 +108,7 @@ namespace HarderEnemies.Units.Adjustments {
             if (HEContext.Prebuffs.BossBuffs.IsDisabled("BalorBuffs")) { return; }
             foreach (BlueprintUnit thisUnit in Bosses.BalorList) {
                 thisUnit.m_AddFacts = thisUnit.m_AddFacts.AppendToArray(FeatureList.CR22_AxiomiteCaster_Feature_CombatPrebuff.ToReference<BlueprintUnitFactReference>());
-                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, thisUnit.CR, BuffLists.BossBuffLists.BalorBuffsList);
+                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, 35, BuffLists.BossBuffLists.BalorBuffsList);
             }
        }
 

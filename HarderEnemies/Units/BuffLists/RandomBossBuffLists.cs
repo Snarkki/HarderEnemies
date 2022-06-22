@@ -57,6 +57,25 @@ namespace HarderEnemies.Units.BuffLists {
         };
 
 
+        // these are allies
+        public static BlueprintUnitFactReference[] AngelAbilitiesList = {
+            Abilities.InvisibilityGreater.ToReference<BlueprintUnitFactReference>(),
+            Abilities.LegendaryProportions.ToReference<BlueprintUnitFactReference>(),
+            Abilities.MirrorImage.ToReference<BlueprintUnitFactReference>(),
+            SuperiorQuickenMetaFeature.ToReference<BlueprintUnitFactReference>(),
+        };
+
+        public static BlueprintUnitFactReference[] AngelBuffList = {
+            Buffs.FrigtfulAspectBuff.ToReference<BlueprintUnitFactReference>(),
+            Buffs.SeamantleBuff.ToReference<BlueprintUnitFactReference>(),
+            Buffs.DeathWardBuff.ToReference<BlueprintUnitFactReference>(),
+            Buffs.FreedomOfMovementBuff.ToReference<BlueprintUnitFactReference>(),
+            Buffs.BarkskinBuff.ToReference<BlueprintUnitFactReference>(),
+            Buffs.TrueSeeingBuff.ToReference<BlueprintUnitFactReference>(),
+            Buffs.UnlootableBuff.ToReference<BlueprintUnitFactReference>(),
+        };
+
+
 
     }
 }

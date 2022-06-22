@@ -15,6 +15,8 @@ using HarderEnemies.Blueprints;
 using static HarderEnemies.Main;
 using Kingmaker.Blueprints.Classes.Prerequisites;
 using Kingmaker.UnitLogic.Mechanics.Components;
+using Kingmaker.Blueprints.TurnBasedModifiers;
+using HarderEnemies.Features.Logics;
 
 namespace HarderEnemies.Features {
     public class NewFeatures {
@@ -22,11 +24,12 @@ namespace HarderEnemies.Features {
         private static BlueprintFeature EmporedMetaMagicFeature = BlueprintTools.GetBlueprint<BlueprintFeature>("a1de1e4f92195b442adb946f0e2b9d4e");
         private static BlueprintFeature QuickenedMetaMagicFeature = BlueprintTools.GetBlueprint<BlueprintFeature>("ef7ece7bb5bb66a41b256976b27f424e");
 
+
         public static void CreateNewFeatures() {
             CreateSuperToughness();
             CreateAbyssalToughness();
-            CreateMetaMagicFeature();
             CreatePullingStrike();
+            CreateMetaMagicFeature();
             CreateBabauDispellingStrike();
         }
 
@@ -176,17 +179,53 @@ namespace HarderEnemies.Features {
                     bp.Actions = Helpers.CreateActionList(
                         new ContextActionCombatManeuver() {
                             Type = Kingmaker.RuleSystem.Rules.CombatManeuver.Pull,
+                            OnSuccess = Helpers.CreateActionList(
+                            new ContextActionKnockdownTarget() {
+
+                            },
+                            new ContextActionProvokeAttackOfOpportunity() { ApplyToCaster = false }
+                            )
                         }
                         );
                 });
-
+                bp.AddComponent<AbilityIsFullRoundInTurnBased>(abil => {
+                    abil.FullRoundIfTurnBased = true;
+                });
                 bp.SetName(HEContext, "Whip Strike");
-                bp.SetDescription(HEContext, "While striking with your whip, you also try to pull the target next to you.");
+                bp.SetDescription(HEContext, "As a standard action, you can try to pull an enemy towards you.");
                 bp.Range = AbilityRange.Close;
+               
+                bp.NeedEquipWeapons = true;
+                bp.Type = AbilityType.SpellLike;
                 bp.ActionType = Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Standard;
-
-
             });
+
+            var quickenAbilities = new BlueprintAbilityReference[] {
+                BlueprintTools.GetBlueprintReference<BlueprintAbilityReference>("486eaff58293f6441a5c2759c4872f98"),    // haste,
+                BlueprintTools.GetBlueprintReference<BlueprintAbilityReference>("b9be852b03568064b8d2275a6cf9e2de"),    // GreaterDispelArea,
+                BlueprintTools.GetBlueprintReference<BlueprintAbilityReference>("f0f761b808dc4b149b08eaf44b99f633"),    // DispelMagicGreater,
+                PullingStrikeAbility.ToReference<BlueprintAbilityReference>()
+            };
+
+            var DarrazandQuickenFeature = Sevalros_QuickenFeature.CreateCopy(HEContext, "DarrazandQuickenFeature", bp => {
+                bp.m_Icon = FeatureList.QuickenSpellFeature.Icon;
+                bp.RemoveComponents<AutoMetamagic>();
+                bp.SetName(HEContext, "Quicken Metamagic");
+                bp.SetDescription(HEContext, "Allows you to add quicken metamagic to spells.");
+                bp.AddComponent<AutoMetamagic>(c => {
+                    c.m_AllowedAbilities = AutoMetamagic.AllowedType.Any;
+                    c.Metamagic = Kingmaker.UnitLogic.Abilities.Metamagic.Quicken;
+                    c.Once = false;
+                    c.MaxSpellLevel = 0;
+                    c.School = Kingmaker.Blueprints.Classes.Spells.SpellSchool.None;
+                    c.CheckSpellbook = false;
+                    c.m_Spellbook = null;
+                    c.Descriptor.m_IntValue = 0;
+                    c.Abilities = quickenAbilities.ToList();
+                });
+            });
+
+
         }
 
     }

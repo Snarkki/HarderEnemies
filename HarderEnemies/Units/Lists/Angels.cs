@@ -15,6 +15,7 @@ namespace HarderEnemies.Units.Lists {
         public static BlueprintUnit PuluraFall_Eliandra = ResourcesLibrary.TryGetBlueprint<BlueprintUnit>("e349079a648cb15448a27f9049344bf1");
         public static BlueprintUnit Yaniel = ResourcesLibrary.TryGetBlueprint<BlueprintUnit>("d914111e83e44194db99ab91d8c04632");
         public static BlueprintUnit Yaniel_DrezenCitadelLevel2 = ResourcesLibrary.TryGetBlueprint<BlueprintUnit>("6774bfa8c17aa6f4f88129b1451d6a4c");
+        public static BlueprintUnit Herald = ResourcesLibrary.TryGetBlueprint<BlueprintUnit>("fff912fcbfbbc364e84ae5ea9384db89");
 
         public static BlueprintUnit IrabethTirabade = ResourcesLibrary.TryGetBlueprint<BlueprintUnit>("d1e567736abf23943b9f041ba7a0bc23");
         public static BlueprintUnit IrabethTirabadeDrezen = ResourcesLibrary.TryGetBlueprint<BlueprintUnit>("b14f909c20a130d47b907ad1a8cf4984");
@@ -31,6 +32,7 @@ namespace HarderEnemies.Units.Lists {
         public static BlueprintUnit QueenGalfrey_DH = ResourcesLibrary.TryGetBlueprint<BlueprintUnit>("ac2060f96475ca54e8238cb1d8fc20a3");
         public static BlueprintUnit QueenGalfrey_DrezenCapital = ResourcesLibrary.TryGetBlueprint<BlueprintUnit>("8c5dcc93d68d0ed44afd43902201da40");
         public static BlueprintUnit QueenGalfrey_LostChapel = ResourcesLibrary.TryGetBlueprint<BlueprintUnit>("93f70f6a27e49c049b5e3f3fdc52ff15");
+        
 
         public static BlueprintUnit AlushinyrraHerald = ResourcesLibrary.TryGetBlueprint<BlueprintUnit>("ba4d057e32bd2984f969bc781da523ba"); 
 
@@ -38,10 +40,10 @@ namespace HarderEnemies.Units.Lists {
 
         public static List<BlueprintUnit> AngelsList = new List<BlueprintUnit>() {
             MidnightFane_MonadicDeva,
-            AlushinyrraHerald,
-            AngelTargona,
-            MidnightFane_MonadicDeva,
-            PuluraFall_Eliandra,
+            //AlushinyrraHerald,
+            //AngelTargona,
+            //PuluraFall_Eliandra,
+            Herald,
         };
 
         public static List<BlueprintUnit> IrabethList = new List<BlueprintUnit>() {

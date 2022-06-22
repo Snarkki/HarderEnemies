@@ -54,7 +54,7 @@ namespace HarderEnemies.Units {
             }
 
 
-            Utils.CustomHelpers.AddFactListsToUnit(Lists.EliteCasters.AlderpashLich25, Lists.EliteCasters.AlderpashLich25.CR, EliteCasterList.EliteCasterAbilities);
+            Utils.CustomHelpers.AddFactListsToUnit(Lists.EliteCasters.AlderpashLich25, 40, EliteCasterList.EliteCasterAbilities);
 
             Lists.EliteCasters.AlderpashLich25.m_Brain = EliteCasterAltBrain.ToReference<BlueprintBrainReference>();
             HEContext.Logger.LogHeader("Updated EliteCasters Abilities");
@@ -66,7 +66,7 @@ namespace HarderEnemies.Units {
                 Utils.CustomHelpers.AddFactListsToUnit(thisUnit, thisUnit.CR, EliteCasterList.SemiEliteCasterBuffs);
             }
 
-            Utils.CustomHelpers.AddFactListsToUnit(Lists.EliteCasters.AlderpashLich25, Lists.EliteCasters.AlderpashLich25.CR, EliteCasterList.EliteCasterBuffs);
+            Utils.CustomHelpers.AddFactListsToUnit(Lists.EliteCasters.AlderpashLich25, 40, EliteCasterList.EliteCasterBuffs);
 
 
             HEContext.Logger.LogHeader("Updated EliteCasters Buffs");

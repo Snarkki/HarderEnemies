@@ -159,6 +159,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AI_Mechanics\Actions\AiConsiderations.cs" />
+    <Compile Include="AI_Mechanics\Brains\AngelBrain.cs" />
     <Compile Include="AI_Mechanics\Brains\DemonBrains.cs" />
     <Compile Include="AI_Mechanics\Brains\DragonBrain.cs" />
     <Compile Include="Blueprints\AiCastSpellList.cs" />
@@ -175,6 +177,7 @@
     <Compile Include="ContentAdder.cs" />
     <Compile Include="Blueprints\FeatureList.cs" />
     <Compile Include="Features\Logics\AbyssalToughness.cs" />
+    <Compile Include="Features\Logics\CustomContextActionMeleeAttack.cs" />
     <Compile Include="Features\Logics\SuperToughnessLogic.cs" />
     <Compile Include="Features\NewFeatures.cs" />
     <Compile Include="Features\NewSpells.cs" />

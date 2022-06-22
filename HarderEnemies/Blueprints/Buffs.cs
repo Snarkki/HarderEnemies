@@ -49,9 +49,9 @@ namespace HarderEnemies.Blueprints {
         public static BlueprintBuff RighteousMightEvilBuff = BlueprintTools.GetBlueprint<BlueprintBuff>("c84fbb4414925f344b894e9511626296");
         public static BlueprintBuff EaglesoulBuff = BlueprintTools.GetBlueprint<BlueprintBuff>("fb0ae0908b3d5c3459be94e11e0c1687");
         public static BlueprintBuff CloakOfChaosBuff = BlueprintTools.GetBlueprint<BlueprintBuff>("627224e071dc51f47ba402fcbb6f830d");
-     
 
 
+        public static BlueprintBuff UnlootableBuff = BlueprintTools.GetBlueprint<BlueprintBuff>("0f775c7d5d8b6494197e1ce937754482");
         // MYTHIC BUFFS
         public static BlueprintBuff FlamesOfTheAbyssBuff = BlueprintTools.GetBlueprint<BlueprintBuff>("c16a3f85221254245bdbdbe5cd431095");
         public static BlueprintBuff BloodHaze = BlueprintTools.GetBlueprint<BlueprintBuff>("173af01d6aae5574ba0391e277e9b168");

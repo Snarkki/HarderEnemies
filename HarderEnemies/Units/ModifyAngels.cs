@@ -19,6 +19,8 @@ namespace HarderEnemies.Units {
         private static BlueprintFeature SuperToughness = BlueprintTools.GetModBlueprint<BlueprintFeature>(HEContext, "SuperToughnessFeature");
         //Holy+5 weapons
         private static BlueprintItemWeapon HolyEvilBane5Sword = BlueprintTools.GetModBlueprint<BlueprintItemWeapon>(HEContext, "HolyEvilBane5Sword");
+        private static BlueprintBrain AngelMidnightFaneBrain = BlueprintTools.GetModBlueprint<BlueprintBrain>(HEContext, "AngelMidnightFaneBrain");
+
         public static void HandleChanges() {
             ModifyAngels.AdjustHP();
             ModifyAngels.AngelAbilities();
@@ -39,7 +41,8 @@ namespace HarderEnemies.Units {
             if (HEContext.AbilityChanges.OtherChanges.IsDisabled("AngelChanges")) { return; }
 
             foreach (BlueprintUnit thisUnit in Lists.Angels.AngelsList) {
-
+                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, thisUnit.CR, BuffLists.RandomBossBuffLists.AngelAbilitiesList);
+                thisUnit.m_Brain = AngelMidnightFaneBrain.ToReference<BlueprintBrainReference>();
             }
         }
         public static void AngelBuffs() {
@@ -48,6 +51,7 @@ namespace HarderEnemies.Units {
 
             foreach (BlueprintUnit thisUnit in Lists.Angels.AngelsList) {
                 thisUnit.Body.m_PrimaryHand = HolyEvilBane5Sword.ToReference<BlueprintItemEquipmentHandReference>();
+                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, thisUnit.CR, BuffLists.RandomBossBuffLists.AngelBuffList);
             }
         }
 
