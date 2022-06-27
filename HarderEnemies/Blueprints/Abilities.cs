@@ -33,10 +33,19 @@ namespace HarderEnemies.Blueprints {
         public static BlueprintAbility LegendaryProportions = BlueprintTools.GetBlueprint<BlueprintAbility>("da1b292d91ba37948893cdbe9ea89e28");
         public static BlueprintAbility ChaosHammer = BlueprintTools.GetBlueprint<BlueprintAbility>("c42ac3feb96d1e54e9bc77c84082f05f");
         public static BlueprintAbility BullRushAction = BlueprintTools.GetBlueprint<BlueprintAbility>("7ab6f70c996fe9b4597b8332f0a3af5f");
+        public static BlueprintAbility Command = BlueprintTools.GetBlueprint<BlueprintAbility>("feb70aab86cc17f4bb64432c83737ac2");
+        public static BlueprintAbility CommandFall = BlueprintTools.GetBlueprint<BlueprintAbility>("9e87cb2778afdc24e9ceb523aca512a8");
+        public static BlueprintAbility Boneshaker = BlueprintTools.GetBlueprint<BlueprintAbility>("b7731c2b4fa1c9844a092329177be4c3");
+        public static BlueprintAbility SoundBurst = BlueprintTools.GetBlueprint<BlueprintAbility>("c3893092a333b93499fd0a21845aa265");
+        public static BlueprintAbility Blindess = BlueprintTools.GetBlueprint<BlueprintAbility>("46fd02ad56c35224c9c91c88cd457791");
+        public static BlueprintAbility Prayer = BlueprintTools.GetBlueprint<BlueprintAbility>("faabd2cc67efa4646ac58c7bb3e40fcc");
+        public static BlueprintAbility CauseFear = BlueprintTools.GetBlueprint<BlueprintAbility>("bd81a3931aa285a4f9844585b5d97e51");
+
+
 
         public static BlueprintAbility Firestorm = BlueprintTools.GetBlueprint<BlueprintAbility>("e3d0dfe1c8527934294f241e0ae96a8d");
         public static BlueprintAbility OverwhelmingPresence = BlueprintTools.GetBlueprint<BlueprintAbility>("41cf93453b027b94886901dbfc680cb9");
-        public static BlueprintAbility CommandGreaterFall = BlueprintTools.GetBlueprint<BlueprintAbility>("4cffe11248cb2134d98c9e39a827476a"); 
+        public static BlueprintAbility CommandGreaterFall = BlueprintTools.GetBlueprint<BlueprintAbility>("4cffe11248cb2134d98c9e39a827476a");
         public static BlueprintAbility PowerWordKill = BlueprintTools.GetBlueprint<BlueprintAbility>("2f8a67c483dfa0f439b293e094ca9e3c");
         public static BlueprintAbility PowerWordBlind = BlueprintTools.GetBlueprint<BlueprintAbility>("261e1788bfc5ac1419eec68b1d485dbc");
         public static BlueprintAbility WailOfBanshee = BlueprintTools.GetBlueprint<BlueprintAbility>("b24583190f36a8442b212e45226c54fc");
@@ -65,7 +74,6 @@ namespace HarderEnemies.Blueprints {
         public static BlueprintAbility Harm = BlueprintTools.GetBlueprint<BlueprintAbility>("137af566f68fd9b428e2e12da43c1482");
         public static BlueprintAbility RighteousMagic = BlueprintTools.GetBlueprint<BlueprintAbility>("90810e5cf53bf854293cbd5ea1066252");
         public static BlueprintAbility CureModerateWoundsMass = BlueprintTools.GetBlueprint<BlueprintAbility>("571221cc141bc21449ae96b3944652aa");
-        public static BlueprintAbility Prayer = BlueprintTools.GetBlueprint<BlueprintAbility>("faabd2cc67efa4646ac58c7bb3e40fcc");
         public static BlueprintAbility ScorchingRay = BlueprintTools.GetBlueprint<BlueprintAbility>("cdb106d53c65bbc4086183d54c3b97c7");
         public static BlueprintAbility BurningArc = BlueprintTools.GetBlueprint<BlueprintAbility>("eaac3d36e0336cb479209a6f65e25e7c");
 
@@ -86,11 +94,11 @@ namespace HarderEnemies.Blueprints {
         public static BlueprintAbility SuddenSquall = BlueprintTools.GetBlueprint<BlueprintAbility>("4e22d7cfda74b3644b31de8e7c044e21");
         public static BlueprintAbility EdictOfInvulnerability = BlueprintTools.GetBlueprint<BlueprintAbility>("6d21deddd7712fd409c94d248b75643d");
 
-       
 
 
- 
-        
+
+
+
 
 
     }

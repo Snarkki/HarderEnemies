@@ -49,6 +49,9 @@ namespace HarderEnemies.Blueprints {
         public static BlueprintBuff RighteousMightEvilBuff = BlueprintTools.GetBlueprint<BlueprintBuff>("c84fbb4414925f344b894e9511626296");
         public static BlueprintBuff EaglesoulBuff = BlueprintTools.GetBlueprint<BlueprintBuff>("fb0ae0908b3d5c3459be94e11e0c1687");
         public static BlueprintBuff CloakOfChaosBuff = BlueprintTools.GetBlueprint<BlueprintBuff>("627224e071dc51f47ba402fcbb6f830d");
+        public static BlueprintBuff MagicalVestmentArmorBuff = BlueprintTools.GetBlueprint<BlueprintBuff>("9e265139cf6c07c4fb8298cb8b646de9");
+        public static BlueprintBuff MagicWeaponGreaterPrimaryBuff = BlueprintTools.GetBlueprint<BlueprintBuff>("a38824af2ce2ee845b3592f9533a6056");
+        public static BlueprintBuff AidBuff = BlueprintTools.GetBlueprint<BlueprintBuff>("319b4679f25779e4e9d04360381254e1");
 
 
         public static BlueprintBuff UnlootableBuff = BlueprintTools.GetBlueprint<BlueprintBuff>("0f775c7d5d8b6494197e1ce937754482");

@@ -28,6 +28,7 @@ namespace HarderEnemies {
                 AI_Mechanics.Brains.DemonBrains.DemonBrainHandler();
                 AI_Mechanics.Brains.DragonBrain.DragonBrainHandler();
                 AI_Mechanics.Brains.AngelBrains.AngelBrainHandler();
+                AI_Mechanics.Brains.MeleeCultistBrains.BrainHandler();
                 // 
                 Units.ModifyRetrieversDevastators.HandleChanges();
                 Units.ModifyDragons.HandleChanges();
@@ -39,6 +40,8 @@ namespace HarderEnemies {
                 Units.ModifyAngels.HandleChanges();
                 Units.ModifyEliteCasters.HandleChanges();
                 Units.ModifyCyborgs.HandleChanges();
+
+                UnitModifications.Cultists.MeleeCasters.MeleeCasterAdjusts.Handler();
                 HEContext.Logger.LogHeader("Updates done");
             }
 

@@ -1,0 +1,27 @@
+﻿Cleric (melee caster):
+
+lvl1 - bless, shield of faith, divine favor, stunning barrier
+lvl2, aid, bull strength, (resist energy, delay poison)
+lvl3 archon aura, magical vestment, (prot from energy)
+lvl4 divine power, freedom of movement, death ward, shield of dawn, greater magic weapon
+lvl5 spell resistance, righteous magic, sacred nimbus, true seeing, 
+lvl6: eaglesoul
+lvl7: ""
+lvl8: Frigtful aspect, unholy aura, cloak of chaos
+lvl9 winds of vengeance
+
+spellit mistä ei pahaa versiota: crusader edge, angelic aspect, bestow grace of champion, angelic aspect greater, 
+
+Wizard:
+
+lvl1 - bless, shield of faith, divine favor, stunning barrier
+lvl2, aid, bull strength, (resist energy, delay poison)
+lvl3 archon aura, magical vestment, (prot from energy)
+lvl4 divine power, freedom of movement, death ward, shield of dawn, greater magic weapon
+lvl5 spell resistance, righteous magic, sacred nimbus, true seeing, 
+lvl6: eaglesoul
+lvl7: ""
+lvl8: Frigtful aspect, unholy aura, cloak of chaos
+lvl9 winds of vengeance
+
+ spellit mistä ei pahaa versiota: crusader edge, angelic aspect, bestow grace of champion, angelic aspect greater, 

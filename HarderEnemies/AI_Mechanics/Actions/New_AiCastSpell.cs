@@ -18,7 +18,7 @@ namespace HarderEnemies.AI_Mechanics.Actions {
 
         private static BlueprintAbility PullingStrikeAbility = BlueprintTools.GetModBlueprint<BlueprintAbility>(HEContext, "PullingStrikeAbility");
         private static BuffConsideration NoMindBlankConsideration = BlueprintTools.GetModBlueprint<BuffConsideration>(HEContext, "NoMindBlankConsideration");
-        
+
 
         public static void CreateNew() {
             CreatePullingAttack();
@@ -182,6 +182,23 @@ namespace HarderEnemies.AI_Mechanics.Actions {
         }
 
         public static void CreateDamageSpells() {
+
+
+            var BoneshakerAiSpell = AiCastSpellList.BoneshakerAiAction.CreateCopy(HEContext, "BoneshakerAiSpell", bp => {
+                bp.BaseScore = 5.0f;
+                bp.m_ActorConsiderations = new ConsiderationReference[] {
+                    AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>(),
+                };
+            });
+
+            var SoundBurstAiSpell = AiCastSpellList.ThundercallerSoundBurstAiAction.CreateCopy(HEContext, "SoundBurstAiSpell", bp => {
+                bp.BaseScore = 5.0f;
+                bp.m_ActorConsiderations = new ConsiderationReference[] {
+                    AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>(),
+                };
+                bp.m_Ability = Abilities.SoundBurst.ToReference<BlueprintAbilityReference>();
+            });
+
             var BlasphemyAiSpell = AiCastSpellList.Vavakia_AiAction_Blasphemy.CreateCopy(HEContext, "BlasphemyAiSpell", bp => {
                 bp.BaseScore = 15.0f;
                 bp.CombatCount = 1;
@@ -301,7 +318,7 @@ namespace HarderEnemies.AI_Mechanics.Actions {
                     AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>()
                 };
             });
-            
+
             var CreateMythicSwarmsAiSpell = AiCastSpellList.Xantir_SummonMonsterVIAIAction.CreateCopy(HEContext, "CreateMythicSwarmsAiSpell", bp => {
                 var GreaterSwarmSummonAbility = BlueprintTools.GetModBlueprint<BlueprintFeature>(HEContext, "GreaterSwarmSummon");
                 bp.BaseScore = 15.0f;
@@ -443,6 +460,32 @@ namespace HarderEnemies.AI_Mechanics.Actions {
                 };
                 bp.m_Ability = Abilities.ShoutGreater.ToReference<BlueprintAbilityReference>();
             });
+
+            var HoldPersonAiSpell = AiCastSpellList.CultistHoldPersonAiAction.CreateCopy(HEContext, "HoldPersonAiSpell", bp => {
+                bp.BaseScore = 5.0f;
+                bp.m_ActorConsiderations = new ConsiderationReference[] {
+                    AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>()
+                };
+            });
+
+            var CauseFearAiSpell = AiCastSpellList.CauseFearAiAction.CreateCopy(HEContext, "CauseFearAiSpell", bp => {
+                bp.BaseScore = 5.0f;
+                bp.m_ActorConsiderations = new ConsiderationReference[] {
+                    AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>()
+                };
+            });
+
+            var CommandAiSpell = AiCastSpellList.CultistHoldPersonAiAction.CreateCopy(HEContext, "CommandAiSpell", bp => {
+                bp.BaseScore = 5.0f;
+                bp.m_ActorConsiderations = new ConsiderationReference[] {
+                    AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>()
+                };
+                bp.m_TargetConsiderations = new ConsiderationReference[] { };
+                bp.m_Ability = Abilities.Command.ToReference<BlueprintAbilityReference>();
+                bp.m_Variant = Abilities.CommandFall.ToReference<BlueprintAbilityReference>();
+            });
+
+
         }
     }
 }

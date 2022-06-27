@@ -27,7 +27,7 @@ namespace HarderEnemies.AI_Mechanics.Brains {
         private static BlueprintAiCastSpell CreateAcitPitAiSpell = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "CreateAcitPitAiSpell");
         private static BlueprintAiCastSpell DisintregrateMaximized = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "DisintregrateMaximized");
         private static BlueprintAiCastSpell HellFireMaximized = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "HellFireMaximized");
-        
+
         public static void BrainHandler() {
             CreateDragonAlternativeBrain();
             CreateDemonLordsAlternativeBrains();
@@ -38,6 +38,7 @@ namespace HarderEnemies.AI_Mechanics.Brains {
 
 
         private static void CreateCultistCasterBrain() {
+
 
             var NewCultistClericBrain = Helpers.CreateBlueprint<BlueprintBrain>(HEContext, "NewCultistClericBrain", bp => {
                 bp.m_Actions = new BlueprintAiActionReference[]
@@ -112,7 +113,7 @@ namespace HarderEnemies.AI_Mechanics.Brains {
                };
             });
         }
-   
+
 
         public static void CreateDragonAlternativeBrain() {
 
@@ -128,7 +129,7 @@ namespace HarderEnemies.AI_Mechanics.Brains {
         }
 
         public static void CreateDemonLordsAlternativeBrains() {
-            
+
             var NocticulaAltBrain = Helpers.CreateBlueprint<BlueprintBrain>(HEContext, "NocticulaAltBrain", bp => {
                 bp.m_Actions = new BlueprintAiActionReference[]
                {

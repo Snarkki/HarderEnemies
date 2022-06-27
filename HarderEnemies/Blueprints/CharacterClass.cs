@@ -14,5 +14,6 @@ namespace HarderEnemies.Blueprints {
 
         public static BlueprintCharacterClass WitchClass = BlueprintTools.GetBlueprint<BlueprintCharacterClass>("1b9873f1e7bfe5449bc84d03e9c8e3cc");
         public static BlueprintCharacterClass OutsiderClass = BlueprintTools.GetBlueprint<BlueprintCharacterClass>("92ab5f2fe00631b44810deffcc1a97fd");
+        public static BlueprintCharacterClass ClericClass = BlueprintTools.GetBlueprint<BlueprintCharacterClass>("67819271767a9dd4fbfd4ae700befea0");
     }
 }

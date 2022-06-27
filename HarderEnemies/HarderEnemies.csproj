@@ -163,6 +163,7 @@
     <Compile Include="AI_Mechanics\Brains\AngelBrain.cs" />
     <Compile Include="AI_Mechanics\Brains\DemonBrains.cs" />
     <Compile Include="AI_Mechanics\Brains\DragonBrain.cs" />
+    <Compile Include="AI_Mechanics\Brains\MeleeCultistBrains.cs" />
     <Compile Include="Blueprints\AiCastSpellList.cs" />
     <Compile Include="Blueprints\AiConsiderationList.cs" />
     <Compile Include="AI_Mechanics\Actions\New_AiCastSpell.cs" />
@@ -183,6 +184,10 @@
     <Compile Include="Features\NewSpells.cs" />
     <Compile Include="Blueprints\Abilities.cs" />
     <Compile Include="Items\Weapons.cs" />
+    <Compile Include="UnitModifications\Cultists\MeleeCasters\UnitLists.cs" />
+    <Compile Include="UnitModifications\Cultists\MeleeCasters\AbilityLists.cs" />
+    <Compile Include="UnitModifications\Cultists\MeleeCasters\BuffLists.cs" />
+    <Compile Include="UnitModifications\Cultists\MeleeCasters\MeleeCasterAdjusts.cs" />
     <Compile Include="Units\BossAdjustments\AdjustBalors.cs" />
     <Compile Include="Units\BossAdjustments\AdjustCorruptedAngels.cs" />
     <Compile Include="Units\BossAdjustments\AdjustDemonLords.cs" />
@@ -249,6 +254,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="BuffLists.txt" />
     <Content Include="muutokset.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
