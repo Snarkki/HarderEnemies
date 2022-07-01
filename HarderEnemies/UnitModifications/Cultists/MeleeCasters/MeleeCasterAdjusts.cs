@@ -51,61 +51,31 @@ namespace HarderEnemies.UnitModifications.Cultists.MeleeCasters {
             }
         }
 
+
         private static void HandleAbilities() {
 
             //Modify Abilities including brains
             if (!HEContext.AbilityChanges.OtherChanges.IsDisabled("CultistCasterChanges")) {
-                // CR3&¤
+                // CR3
                 foreach (BlueprintUnit thisUnit in UnitLists.LowLevelClericList) {
-                    // Adjust memorized spells
-                    var clericClass = thisUnit.GetComponent<AddClassLevels>(c => c.m_CharacterClass == CharacterClass.ClericClass.ToReference<BlueprintCharacterClassReference>());
-                    clericClass.m_MemorizeSpells = AbilityLists.LowLevelCultistClericMemorizedSpells;
-
-                    // Clear alternative brains
-                    thisUnit.AlternativeBrains = new BlueprintBrainReference[0] { };
-                    thisUnit.m_Brain = LowLevelClericBrain.ToReference<BlueprintBrainReference>();
+                    Utils.CustomHelpers.AddMemorizedSpellsAndBrains(thisUnit, CharacterClass.ClericClass, AbilityLists.LowLevelCultistClericMemorizedSpells, LowLevelClericBrain);                    
                 }
 
                 foreach (BlueprintUnit thisUnit in UnitLists.CR6ClericList) {
-                    // Adjust memorized spells
-                    var clericClass = thisUnit.GetComponent<AddClassLevels>(c => c.m_CharacterClass == CharacterClass.ClericClass.ToReference<BlueprintCharacterClassReference>());
-                    clericClass.m_MemorizeSpells = AbilityLists.CR6ClericMemorizedSpells;
-
-                    // Clear alternative brains
-                    thisUnit.AlternativeBrains = new BlueprintBrainReference[0] { };
-                    thisUnit.m_Brain = CR6ClericBrain.ToReference<BlueprintBrainReference>();
+                    Utils.CustomHelpers.AddMemorizedSpellsAndBrains(thisUnit, CharacterClass.ClericClass, AbilityLists.CR6ClericMemorizedSpells, CR6ClericBrain);
                 }
 
                 foreach (BlueprintUnit thisUnit in UnitLists.CR8ClericList) {
-                    // Adjust memorized spells
-                    var clericClass = thisUnit.GetComponent<AddClassLevels>(c => c.m_CharacterClass == CharacterClass.ClericClass.ToReference<BlueprintCharacterClassReference>());
-                    clericClass.m_MemorizeSpells = AbilityLists.CR8ClericMemorizedSpells;
-
-                    // Clear alternative brains
-                    thisUnit.AlternativeBrains = new BlueprintBrainReference[0] { };
-                    thisUnit.m_Brain = CR8ClericBrain.ToReference<BlueprintBrainReference>();
+                    Utils.CustomHelpers.AddMemorizedSpellsAndBrains(thisUnit, CharacterClass.ClericClass, AbilityLists.CR8ClericMemorizedSpells, CR8ClericBrain);
                 }
 
                 foreach (BlueprintUnit thisUnit in UnitLists.HighLevelClericList) {
-                    // Adjust memorized spells
-                    var clericClass = thisUnit.GetComponent<AddClassLevels>(c => c.m_CharacterClass == CharacterClass.ClericClass.ToReference<BlueprintCharacterClassReference>());
-                    clericClass.m_MemorizeSpells = AbilityLists.HighLevelClericMemorizedSpells;
-
-                    // Clear alternative brains
-                    thisUnit.AlternativeBrains = new BlueprintBrainReference[0] { };
-                    thisUnit.m_Brain = HighLevelClericBrain.ToReference<BlueprintBrainReference>();
+                    Utils.CustomHelpers.AddMemorizedSpellsAndBrains(thisUnit, CharacterClass.ClericClass, AbilityLists.HighLevelClericMemorizedSpells, HighLevelClericBrain);
                 }
 
-
-                // thiis  seems to have high level abilities ready
-                //var clericClassVar = UnitLists.CR19_Cultist_Areshkagal_MeleeCaster.GetComponent<AddClassLevels>(c => c.m_CharacterClass == CharacterClass.ClericClass.ToReference<BlueprintCharacterClassReference>());
-                //clericClassVar.m_MemorizeSpells = AbilityLists.HighLevelClericMemorizedSpells;
-
-                //// Clear alternative brains
-                //UnitLists.CR19_Cultist_Areshkagal_MeleeCaster.AlternativeBrains = new BlueprintBrainReference[0] { };
-                //UnitLists.CR19_Cultist_Areshkagal_MeleeCaster.m_Brain = HighLevelClericBrain.ToReference<BlueprintBrainReference>();
-
-                //UnitLists.CR19_Cultist_Areshkagal_MeleeCaster.m_AddFacts = UnitLists.CR19_Cultist_Areshkagal_MeleeCaster.m_AddFacts.AppendToArray(SuperToughness.ToReference<BlueprintUnitFactReference>());
+                
+                Utils.CustomHelpers.AddMemorizedSpellsAndBrains(UnitLists.CR19_Cultist_Areshkagal_MeleeCaster, CharacterClass.ClericClass, AbilityLists.HighLevelClericMemorizedSpells, HighLevelClericBrain);
+                
             }
         }
         private static void HandleBuffs() {

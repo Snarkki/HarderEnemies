@@ -12,6 +12,7 @@ using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.ElementsSystem;
 using Kingmaker.UnitLogic.Mechanics.Actions;
 using Kingmaker.UnitLogic.FactLogic;
+using Kingmaker.AI.Blueprints;
 
 namespace HarderEnemies.Utils {
     public static class CustomHelpers {
@@ -23,6 +24,20 @@ namespace HarderEnemies.Utils {
                 c.MinDifficulty = Kingmaker.Settings.GameDifficultyOption.Story;
                 c.m_Facts = buffList;
             });
+        }
+
+        public static void AddMemorizedSpellsAndBrains(BlueprintUnit thisUnit, BlueprintCharacterClass CharacterClass, BlueprintAbilityReference[] SpellList, BlueprintBrain newBrain) {
+            var memorizedSpells = thisUnit.GetComponent<AddClassLevels>(c => c.m_CharacterClass.Equals(CharacterClass.ToReference<BlueprintCharacterClassReference>()))?.m_MemorizeSpells;
+            //HEContext.Logger.LogHeader(clericClass.m_CharacterClass.ToString());
+            if (memorizedSpells != null) {
+
+                memorizedSpells = SpellList;
+
+                // Clear alternative brains
+                thisUnit.AlternativeBrains = new BlueprintBrainReference[0] { };
+                thisUnit.m_Brain = newBrain.ToReference<BlueprintBrainReference>();
+                HEContext.Logger.LogHeader("Added " +  thisUnit.ToString() + " Spells and Brain");
+            }
         }
 
 

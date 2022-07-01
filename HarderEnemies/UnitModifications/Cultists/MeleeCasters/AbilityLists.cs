@@ -17,7 +17,7 @@ using static HarderEnemies.Main;
 namespace HarderEnemies.UnitModifications.Cultists.MeleeCasters {
     internal class AbilityLists {
 
-        public static BlueprintAbilityReference[] LowLevelCultistClericMemorizedSpells = {
+        public static BlueprintAbilityReference[] LowLevelCultistClericMemorizedSpells = new BlueprintAbilityReference[] {
                 Abilities.Command.ToReference<BlueprintAbilityReference>(),
                 Abilities.Command.ToReference<BlueprintAbilityReference>(),
                 Abilities.CauseFear.ToReference<BlueprintAbilityReference>(),

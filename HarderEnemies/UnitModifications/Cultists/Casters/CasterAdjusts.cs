@@ -64,64 +64,29 @@ namespace HarderEnemies.UnitModifications.Cultists.Casters {
             //Modify Abilities including brains
             if (!HEContext.AbilityChanges.OtherChanges.IsDisabled("CultistCasterChanges")) {
                 // CR4
+
                 foreach (BlueprintUnit thisUnit in UnitLists.CR4CultistDamageCasterList) {
-                    // Adjust memorized spells
-                    var wizardClass = thisUnit.GetComponent<AddClassLevels>(c => c.m_CharacterClass == CharacterClass.WizardClass.ToReference<BlueprintCharacterClassReference>());
-                    wizardClass.m_MemorizeSpells = AbilityLists.CR4DamageWizardSpells;
-
-                    // Clear alternative brains
-                    thisUnit.AlternativeBrains = new BlueprintBrainReference[0] { };
-                    thisUnit.m_Brain = CR4DamageWizardBrain.ToReference<BlueprintBrainReference>();
+                    Utils.CustomHelpers.AddMemorizedSpellsAndBrains(thisUnit, CharacterClass.WizardClass, AbilityLists.CR4DamageWizardSpells, CR4DamageWizardBrain);
                 }
+
                 foreach (BlueprintUnit thisUnit in UnitLists.CR4CultistSummonCasterList) {
-                    // Adjust memorized spells
-                    var wizardClass = thisUnit.GetComponent<AddClassLevels>(c => c.m_CharacterClass == CharacterClass.WizardClass.ToReference<BlueprintCharacterClassReference>());
-                    wizardClass.m_MemorizeSpells = AbilityLists.CR4SummonWizardSpells;
-
-                    // Clear alternative brains
-                    thisUnit.AlternativeBrains = new BlueprintBrainReference[0] { };
-                    thisUnit.m_Brain = CR4SummonWizardBrain.ToReference<BlueprintBrainReference>();
+                    Utils.CustomHelpers.AddMemorizedSpellsAndBrains(thisUnit, CharacterClass.WizardClass, AbilityLists.CR4SummonWizardSpells, CR4SummonWizardBrain);
                 }
-
 
                 foreach (BlueprintUnit thisUnit in UnitLists.CR6CultistDamageCasterList) {
-                    // Adjust memorized spells
-                    var wizardClass = thisUnit.GetComponent<AddClassLevels>(c => c.m_CharacterClass == CharacterClass.WizardClass.ToReference<BlueprintCharacterClassReference>());
-                    wizardClass.m_MemorizeSpells = AbilityLists.CR6DamageWizardSpells;
-
-                    // Clear alternative brains
-                    thisUnit.AlternativeBrains = new BlueprintBrainReference[0] { };
-                    thisUnit.m_Brain = CR6DamageWizardBrain.ToReference<BlueprintBrainReference>();
+                    Utils.CustomHelpers.AddMemorizedSpellsAndBrains(thisUnit, CharacterClass.WizardClass, AbilityLists.CR6DamageWizardSpells, CR6DamageWizardBrain);
                 }
+
                 foreach (BlueprintUnit thisUnit in UnitLists.CR6CultistSummonCasterList) {
-                    // Adjust memorized spells
-                    var wizardClass = thisUnit.GetComponent<AddClassLevels>(c => c.m_CharacterClass == CharacterClass.WizardClass.ToReference<BlueprintCharacterClassReference>());
-                    wizardClass.m_MemorizeSpells = AbilityLists.CR6SummonWizardSpells;
-
-                    // Clear alternative brains
-                    thisUnit.AlternativeBrains = new BlueprintBrainReference[0] { };
-                    thisUnit.m_Brain = CR6SummonWizardBrain.ToReference<BlueprintBrainReference>();
+                    Utils.CustomHelpers.AddMemorizedSpellsAndBrains(thisUnit, CharacterClass.WizardClass, AbilityLists.CR6SummonWizardSpells, CR6SummonWizardBrain);
                 }
-
-
 
                 foreach (BlueprintUnit thisUnit in UnitLists.CR8CultistDamageCasterList) {
-                    // Adjust memorized spells
-                    var wizardClass = thisUnit.GetComponent<AddClassLevels>(c => c.m_CharacterClass == CharacterClass.WizardClass.ToReference<BlueprintCharacterClassReference>());
-                    wizardClass.m_MemorizeSpells = AbilityLists.CR8DamageWizardSpells;
-
-                    // Clear alternative brains
-                    thisUnit.AlternativeBrains = new BlueprintBrainReference[0] { };
-                    thisUnit.m_Brain = CR8DamageWizardBrain.ToReference<BlueprintBrainReference>();
+                    Utils.CustomHelpers.AddMemorizedSpellsAndBrains(thisUnit, CharacterClass.WizardClass, AbilityLists.CR8DamageWizardSpells, CR8DamageWizardBrain);
                 }
-                foreach (BlueprintUnit thisUnit in UnitLists.CR8CultistSummonCasterList) {
-                    // Adjust memorized spells
-                    var wizardClass = thisUnit.GetComponent<AddClassLevels>(c => c.m_CharacterClass == CharacterClass.WizardClass.ToReference<BlueprintCharacterClassReference>());
-                    wizardClass.m_MemorizeSpells = AbilityLists.CR8SummonWizardSpells;
 
-                    // Clear alternative brains
-                    thisUnit.AlternativeBrains = new BlueprintBrainReference[0] { };
-                    thisUnit.m_Brain = CR8SummonWizardBrain.ToReference<BlueprintBrainReference>();
+                foreach (BlueprintUnit thisUnit in UnitLists.CR8CultistSummonCasterList) {
+                    Utils.CustomHelpers.AddMemorizedSpellsAndBrains(thisUnit, CharacterClass.WizardClass, AbilityLists.CR8SummonWizardSpells, CR8SummonWizardBrain);
                 }
             }
         }
