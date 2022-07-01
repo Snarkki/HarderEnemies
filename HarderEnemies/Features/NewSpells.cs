@@ -36,7 +36,7 @@ namespace HarderEnemies.Features {
 
 
         private static void CreateGateSpell() {
-            var summonedBalor = Demons.CR21_BalorAdvanced.CreateCopy(HEContext, "SummonedBalors", bp => {
+            var summonedBalor = UnitModifications.Bosses.Balors.UnitLists.CR21_BalorAdvanced.CreateCopy(HEContext, "SummonedBalors", bp => {
                 bp.m_Faction = SummonedFaction.ToReference<BlueprintFactionReference>();
             });
 

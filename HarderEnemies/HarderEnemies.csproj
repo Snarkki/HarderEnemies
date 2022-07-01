@@ -160,6 +160,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AI_Mechanics\Actions\AiConsiderations.cs" />
+    <Compile Include="AI_Mechanics\Actions\ByLevels\Custom.cs" />
+    <Compile Include="AI_Mechanics\Actions\ByLevels\Level9.cs" />
+    <Compile Include="AI_Mechanics\Actions\ByLevels\Level8.cs" />
+    <Compile Include="AI_Mechanics\Actions\ByLevels\Level7.cs" />
+    <Compile Include="AI_Mechanics\Actions\ByLevels\Level6.cs" />
+    <Compile Include="AI_Mechanics\Actions\ByLevels\Level5.cs" />
+    <Compile Include="AI_Mechanics\Actions\ByLevels\Level4.cs" />
+    <Compile Include="AI_Mechanics\Actions\ByLevels\Level3.cs" />
+    <Compile Include="AI_Mechanics\Actions\ByLevels\Level2.cs" />
+    <Compile Include="AI_Mechanics\Actions\ByLevels\Level1.cs" />
     <Compile Include="AI_Mechanics\Brains\AngelBrain.cs" />
     <Compile Include="AI_Mechanics\Brains\DemonBrains.cs" />
     <Compile Include="AI_Mechanics\Brains\DragonBrain.cs" />
