@@ -26,5 +26,40 @@ namespace HarderEnemies.UnitModifications.Cultists.MeleeCasters {
                 Abilities.SoundBurst.ToReference<BlueprintAbilityReference>(),
                 Abilities.Boneshaker.ToReference<BlueprintAbilityReference>(),
             };
+
+        public static BlueprintAbilityReference[] CR6ClericMemorizedSpells = {
+                Abilities.Command.ToReference<BlueprintAbilityReference>(),
+                Abilities.Command.ToReference<BlueprintAbilityReference>(),
+                Abilities.CauseFear.ToReference<BlueprintAbilityReference>(),
+                Abilities.CauseFear.ToReference<BlueprintAbilityReference>(),
+                Abilities.HoldPerson.ToReference<BlueprintAbilityReference>(),
+                Abilities.SoundBurst.ToReference<BlueprintAbilityReference>(),
+                Abilities.Boneshaker.ToReference<BlueprintAbilityReference>(),
+                Abilities.Prayer.ToReference<BlueprintAbilityReference>(),
+                Abilities.Blindess.ToReference<BlueprintAbilityReference>(),
+            };
+
+        public static BlueprintAbilityReference[] CR8ClericMemorizedSpells = {
+                Abilities.Command.ToReference<BlueprintAbilityReference>(),
+                Abilities.Command.ToReference<BlueprintAbilityReference>(),
+                Abilities.CauseFear.ToReference<BlueprintAbilityReference>(),
+                Abilities.CauseFear.ToReference<BlueprintAbilityReference>(),
+                Abilities.HoldPerson.ToReference<BlueprintAbilityReference>(),
+                Abilities.SoundBurst.ToReference<BlueprintAbilityReference>(),
+                Abilities.Boneshaker.ToReference<BlueprintAbilityReference>(),
+                Abilities.Prayer.ToReference<BlueprintAbilityReference>(),
+                Abilities.Blindess.ToReference<BlueprintAbilityReference>(),
+                Abilities.DivinePower.ToReference<BlueprintAbilityReference>(),
+            };
+
+        public static BlueprintAbilityReference[] HighLevelClericMemorizedSpells = {
+                Abilities.Prayer.ToReference<BlueprintAbilityReference>(),
+                Abilities.Blindess.ToReference<BlueprintAbilityReference>(),
+                Abilities.DivinePower.ToReference<BlueprintAbilityReference>(),
+                Abilities.FlameStrike.ToReference<BlueprintAbilityReference>(),
+                Abilities.FlameStrike.ToReference<BlueprintAbilityReference>(),
+                Abilities.CommandGreater.ToReference<BlueprintAbilityReference>(),
+                Abilities.ColdIceStrike.ToReference<BlueprintAbilityReference>(),
+            };
     }
 }

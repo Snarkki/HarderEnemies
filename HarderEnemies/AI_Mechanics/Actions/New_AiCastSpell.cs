@@ -75,7 +75,7 @@ namespace HarderEnemies.AI_Mechanics.Actions {
         public static void CreateSwiftSpells() {
 
             var GreaterDispelAiSpellSwift = AiCastSpellList.CR27ColoxusDLC1_AiAction_GreaterDispel.CreateCopy(HEContext, "GreaterDispelAiSpellSwift", bp => {
-                bp.BaseScore = 20.0f;
+                bp.BaseScore = 10.0f;
                 bp.CooldownRounds = 3;
                 bp.StartCooldownRounds = 8;
                 bp.CooldownDice = new DiceFormula(1, DiceType.D2);
@@ -89,7 +89,7 @@ namespace HarderEnemies.AI_Mechanics.Actions {
             });
 
             var GreaterInvisibilityAiSpellSwift = AiCastSpellList.CultistDivineFavorAiAction.CreateCopy(HEContext, "GreaterInvisibilityAiSpellSwift", bp => {
-                bp.BaseScore = 15.0f;
+                bp.BaseScore = 10.0f;
                 bp.CooldownRounds = 1;
                 bp.StartCooldownRounds = 0;
                 bp.m_Ability = Abilities.InvisibilityGreater.ToReference<BlueprintAbilityReference>();
@@ -104,7 +104,7 @@ namespace HarderEnemies.AI_Mechanics.Actions {
         }
         private static void CreateSingleTargetSpells() {
             var PowerWordBlindAiSpell = AiCastSpellList.Glabrezu_AiAction_PowerWordStun.CreateCopy(HEContext, "PowerWordBlindAiSpell", bp => {
-                bp.BaseScore = 15.0f;
+                bp.BaseScore = 8.0f;
                 bp.CooldownRounds = 8;
                 bp.CooldownDice = new DiceFormula(3, DiceType.D4);
                 bp.m_TargetConsiderations = new ConsiderationReference[] {
@@ -119,7 +119,7 @@ namespace HarderEnemies.AI_Mechanics.Actions {
         public static void CreateBuffSpells() {
 
             var EdictOfInvulnerabilityAiSpell = AiCastSpellList.CultistDivineFavorAiAction.CreateCopy(HEContext, "EdictOfInvulnerabilityAiSpell", bp => {
-                bp.BaseScore = 15.0f;
+                bp.BaseScore = 10.0f;
                 bp.CooldownRounds = 8;
                 bp.StartCooldownRounds = 2;
                 bp.CooldownDice = new DiceFormula(3, DiceType.D4);
@@ -131,7 +131,7 @@ namespace HarderEnemies.AI_Mechanics.Actions {
 
 
             var LegendaryProportionsAiSpell = AiCastSpellList.CultistDivineFavorAiAction.CreateCopy(HEContext, "LegendaryProportionsAiSpell", bp => {
-                bp.BaseScore = 15.0f;
+                bp.BaseScore = 10.0f;
                 bp.CooldownRounds = 5;
                 bp.StartCooldownRounds = 2;
                 bp.CooldownDice = new DiceFormula(3, DiceType.D4);
@@ -143,7 +143,7 @@ namespace HarderEnemies.AI_Mechanics.Actions {
             });
 
             var MindBlankAiSpell = AiCastSpellList.CultistDivineFavorAiAction.CreateCopy(HEContext, "MindBlankAiSpell", bp => {
-                bp.BaseScore = 15.0f;
+                bp.BaseScore = 8.0f;
                 bp.CooldownRounds = 5;
                 bp.StartCooldownRounds = 2;
                 bp.CooldownDice = new DiceFormula(3, DiceType.D4);
@@ -155,27 +155,29 @@ namespace HarderEnemies.AI_Mechanics.Actions {
             });
 
             var InvisibilityGreaterAiSpell = AiCastSpellList.CultistDivineFavorAiAction.CreateCopy(HEContext, "InvisibilityGreaterAiSpell", bp => {
-                bp.BaseScore = 15.0f;
+                bp.BaseScore = 10.0f;
                 bp.CooldownRounds = 1;
                 bp.StartCooldownRounds = 0;
                 bp.m_Ability = Abilities.InvisibilityGreater.ToReference<BlueprintAbilityReference>();
                 bp.m_ActorConsiderations = new ConsiderationReference[] {
                     AiConsiderationList.NoBuffInvisibilityGreater.ToReference<ConsiderationReference>(),
-                    AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>()
                 };
             });
 
             var MirrorImageAiSpell = AiCastSpellList.CultistDivineFavorAiAction.CreateCopy(HEContext, "MirrorImageAiSpell", bp => {
-                bp.BaseScore = 15.0f;
+                bp.BaseScore = 8.0f;
                 bp.CooldownRounds = 1;
                 bp.StartCooldownRounds = 0;
                 bp.m_Ability = Abilities.MirrorImage.ToReference<BlueprintAbilityReference>();
                 bp.m_ActorConsiderations = new ConsiderationReference[] {
                     AiConsiderationList.NoBuffMirrorImage.ToReference<ConsiderationReference>(),
-                    AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>()
                 };
             });
 
+            var DivinePowerAiSpell = AiCastSpellList.DivinePowerAiAction.CreateCopy(HEContext, "DivinePowerAiSpell", bp => {
+                bp.BaseScore = 6.0f;
+                bp.CooldownRounds = 1;
+            });
 
             //BlueprintTools.GetBlueprintReference<BlueprintAbilityReference>("b9be852b03568064b8d2275a6cf9e2de"),    // GreaterDispelArea,
             //BlueprintTools.GetBlueprintReference<BlueprintAbilityReference>("f0f761b808dc4b149b08eaf44b99f633"),    // DispelMagicGreater,
@@ -185,14 +187,15 @@ namespace HarderEnemies.AI_Mechanics.Actions {
 
 
             var BoneshakerAiSpell = AiCastSpellList.BoneshakerAiAction.CreateCopy(HEContext, "BoneshakerAiSpell", bp => {
-                bp.BaseScore = 5.0f;
+                bp.BaseScore = 3.0f;
                 bp.m_ActorConsiderations = new ConsiderationReference[] {
                     AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>(),
+                    AiConsiderationList.NoThreateningUnitsConsideration.ToReference<ConsiderationReference>()
                 };
             });
 
             var SoundBurstAiSpell = AiCastSpellList.ThundercallerSoundBurstAiAction.CreateCopy(HEContext, "SoundBurstAiSpell", bp => {
-                bp.BaseScore = 5.0f;
+                bp.BaseScore = 3.0f;
                 bp.m_ActorConsiderations = new ConsiderationReference[] {
                     AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>(),
                 };
@@ -200,7 +203,7 @@ namespace HarderEnemies.AI_Mechanics.Actions {
             });
 
             var BlasphemyAiSpell = AiCastSpellList.Vavakia_AiAction_Blasphemy.CreateCopy(HEContext, "BlasphemyAiSpell", bp => {
-                bp.BaseScore = 15.0f;
+                bp.BaseScore = 5.0f;
                 bp.CombatCount = 1;
                 bp.CooldownRounds = 6;
                 bp.CooldownDice = new DiceFormula(3, DiceType.D4);
@@ -211,7 +214,7 @@ namespace HarderEnemies.AI_Mechanics.Actions {
             });
 
             var UnholyBlightAiSpell = AiCastSpellList.Baphomet_UnholyBlightAIAction.CreateCopy(HEContext, "UnholyBlightAiSpell", bp => {
-                bp.BaseScore = 15.0f;
+                bp.BaseScore = 5.0f;
                 bp.CombatCount = 3;
                 bp.CooldownRounds = 6;
                 bp.CheckCasterDistance = true;
@@ -222,7 +225,7 @@ namespace HarderEnemies.AI_Mechanics.Actions {
             });
 
             var NewFlameStrikeAiSpell = AiCastSpellList.FlameStrikeAiAction.CreateCopy(HEContext, "NewFlameStrikeAiSpell", bp => {
-                bp.BaseScore = 15.0f;
+                bp.BaseScore = 5.0f;
                 bp.CombatCount = 3;
                 bp.CooldownRounds = 8;
                 bp.CheckCasterDistance = true;
@@ -237,7 +240,7 @@ namespace HarderEnemies.AI_Mechanics.Actions {
             });
 
             var StormBoltAiSpell = AiCastSpellList.Mielara_AiAction_Stormbolts.CreateCopy(HEContext, "StormBoltAiSpell", bp => {
-                bp.BaseScore = 15.0f;
+                bp.BaseScore = 8.0f;
                 bp.CombatCount = 3;
                 bp.CooldownRounds = 8;
                 bp.CooldownDice = new DiceFormula(3, DiceType.D4);
@@ -251,7 +254,7 @@ namespace HarderEnemies.AI_Mechanics.Actions {
             });
 
             var FirestormEmpoweredAiSpell = AiCastSpellList.Mielara_AiAction_Stormbolts.CreateCopy(HEContext, "FirestormEmpoweredAiSpell", bp => {
-                bp.BaseScore = 15.0f;
+                bp.BaseScore = 8.0f;
                 bp.CombatCount = 3;
                 bp.CooldownRounds = 8;
                 bp.CheckCasterDistance = true;
@@ -267,7 +270,7 @@ namespace HarderEnemies.AI_Mechanics.Actions {
             });
 
             var DisintregrateMaximized = AiCastSpellList.DLC2_Wizard_Empowered_MagicMissle_AiAction.CreateCopy(HEContext, "DisintregrateMaximized", bp => {
-                bp.BaseScore = 10.0f;
+                bp.BaseScore = 6.0f;
                 bp.CombatCount = 2;
                 bp.CooldownRounds = 8;
                 bp.CheckCasterDistance = true;
@@ -280,7 +283,7 @@ namespace HarderEnemies.AI_Mechanics.Actions {
 
 
             var HellFireMaximized = AiCastSpellList.DLC2_Wizard_Empowered_MagicMissle_AiAction.CreateCopy(HEContext, "HellFireMaximized", bp => {
-                bp.BaseScore = 10.0f;
+                bp.BaseScore = 6.0f;
                 bp.CombatCount = 2;
                 bp.CooldownRounds = 8;
                 bp.CheckCasterDistance = true;
@@ -290,12 +293,32 @@ namespace HarderEnemies.AI_Mechanics.Actions {
                     AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>()
                 };
             });
+
+            var ColdIceStrikeAiSpell = AiCastSpellList.CultistEvokerFireSnakeAiAction.CreateCopy(HEContext, "ColdIceStrikeAiSpell", bp => {
+                bp.BaseScore = 5.0f;
+                bp.m_Ability = Abilities.ColdIceStrike.ToReference<BlueprintAbilityReference>();
+                bp.m_ActorConsiderations = new ConsiderationReference[] {
+                    AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>()
+                };
+            });
+
+            MagicMissileAiSpell
+            BurningArcAiSpell
+            ScorchingRayAiSpell
+            FireballAiSpell
+            var ColdIceStrikeAiSpell = AiCastSpellList.CultistEvokerFireSnakeAiAction.CreateCopy(HEContext, "ColdIceStrikeAiSpell", bp => {
+                bp.BaseScore = 5.0f;
+                bp.m_Ability = Abilities.ColdIceStrike.ToReference<BlueprintAbilityReference>();
+                bp.m_ActorConsiderations = new ConsiderationReference[] {
+                    AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>()
+                };
+            });
         }
 
 
         public static void CreateSummonSpells() {
             var SummonMonsterViiAiSpell = AiCastSpellList.Xantir_SummonMonsterVIAIAction.CreateCopy(HEContext, "SummonMonsterViiAiSpell", bp => {
-                bp.BaseScore = 15.0f;
+                bp.BaseScore = 7.0f;
                 bp.CombatCount = 0;
                 bp.CooldownRounds = 5;
                 bp.CooldownDice = new DiceFormula(3, DiceType.D6);
@@ -308,7 +331,7 @@ namespace HarderEnemies.AI_Mechanics.Actions {
 
             var OpenGateAiSpell = AiCastSpellList.Xantir_SummonMonsterVIAIAction.CreateCopy(HEContext, "OpenGateAiSpell", bp => {
                 var gateAbility = BlueprintTools.GetModBlueprint<BlueprintFeature>(HEContext, "GateSpell");
-                bp.BaseScore = 15.0f;
+                bp.BaseScore = 10.0f;
                 bp.CombatCount = 0;
                 bp.CooldownRounds = 20;
                 bp.CooldownDice = new DiceFormula(3, DiceType.D8);
@@ -321,7 +344,7 @@ namespace HarderEnemies.AI_Mechanics.Actions {
 
             var CreateMythicSwarmsAiSpell = AiCastSpellList.Xantir_SummonMonsterVIAIAction.CreateCopy(HEContext, "CreateMythicSwarmsAiSpell", bp => {
                 var GreaterSwarmSummonAbility = BlueprintTools.GetModBlueprint<BlueprintFeature>(HEContext, "GreaterSwarmSummon");
-                bp.BaseScore = 15.0f;
+                bp.BaseScore = 10.0f;
                 bp.CombatCount = 0;
                 bp.CooldownRounds = 20;
                 bp.CooldownDice = new DiceFormula(3, DiceType.D8);
@@ -333,7 +356,7 @@ namespace HarderEnemies.AI_Mechanics.Actions {
             });
 
             var AnimateDeadAiSpell = AiCastSpellList.Xantir_SummonMonsterVIAIAction.CreateCopy(HEContext, "AnimateDeadAiSpell", bp => {
-                bp.BaseScore = 15.0f;
+                bp.BaseScore = 4.0f;
                 bp.CooldownRounds = 5;
                 bp.CooldownDice = new DiceFormula(2, DiceType.D4);
                 bp.m_Ability = Abilities.AnimateDead.ToReference<BlueprintAbilityReference>();
@@ -345,7 +368,7 @@ namespace HarderEnemies.AI_Mechanics.Actions {
 
             var SummonErineyesAiSpell = AiCastSpellList.Xantir_SummonMonsterVIAIAction.CreateCopy(HEContext, "SummonErineyesAiSpell", bp => {
                 var ErineysSummonAbility = BlueprintTools.GetModBlueprint<BlueprintFeature>(HEContext, "ErineysSummon");
-                bp.BaseScore = 15.0f;
+                bp.BaseScore = 10.0f;
                 bp.CooldownRounds = 20;
                 bp.CooldownDice = new DiceFormula(2, DiceType.D8);
                 bp.m_Ability = ErineysSummonAbility.ToReference<BlueprintAbilityReference>();
@@ -359,7 +382,7 @@ namespace HarderEnemies.AI_Mechanics.Actions {
 
         public static void CreateAreaControlSpells() {
             var GreaseAiSpell = AiCastSpellList.StinkingCloudAiAction.CreateCopy(HEContext, "GreaseAiSpell", bp => {
-                bp.BaseScore = 3.0f;
+                bp.BaseScore = 2.0f;
                 bp.CooldownRounds = 4;
                 bp.CooldownDice = new DiceFormula(3, DiceType.D4);
                 bp.m_Ability = Abilities.Grease.ToReference<BlueprintAbilityReference>();
@@ -382,7 +405,7 @@ namespace HarderEnemies.AI_Mechanics.Actions {
             });
 
             var CreateRiftOfRuinAiSpell = AiCastSpellList.StinkingCloudAiAction.CreateCopy(HEContext, "CreateRiftOfRuinAiSpell", bp => {
-                bp.BaseScore = 5.0f;
+                bp.BaseScore = 6.0f;
                 bp.CooldownRounds = 6;
                 bp.CooldownDice = new DiceFormula(3, DiceType.D4);
                 bp.m_Ability = Abilities.RiftOfRuin.ToReference<BlueprintAbilityReference>();
@@ -396,7 +419,7 @@ namespace HarderEnemies.AI_Mechanics.Actions {
             });
 
             var CreateAcitPitAiSpell = AiCastSpellList.StinkingCloudAiAction.CreateCopy(HEContext, "CreateAcitPitAiSpell", bp => {
-                bp.BaseScore = 5.0f;
+                bp.BaseScore = 3.0f;
                 bp.CooldownRounds = 5;
                 bp.CooldownDice = new DiceFormula(3, DiceType.D4);
                 bp.m_Ability = Abilities.AcidPit.ToReference<BlueprintAbilityReference>();
@@ -410,7 +433,7 @@ namespace HarderEnemies.AI_Mechanics.Actions {
             });
 
             var FearAiSpell = AiCastSpellList.Minagho_WavesOfFatigueAiAction.CreateCopy(HEContext, "FearAiSpell", bp => {
-                bp.BaseScore = 5.0f;
+                bp.BaseScore = 4.0f;
                 bp.CooldownRounds = 5;
                 bp.CooldownDice = new DiceFormula(3, DiceType.D4);
                 bp.m_TargetConsiderations = new ConsiderationReference[] {
@@ -423,7 +446,7 @@ namespace HarderEnemies.AI_Mechanics.Actions {
             });
 
             var OverwhelmingPresenceAiSpell = AiCastSpellList.Baphomet_OverwhelmingPresence_AIAction.CreateCopy(HEContext, "OverwhelmingPresenceAiSpell", bp => {
-                bp.BaseScore = 5.0f;
+                bp.BaseScore = 8.0f;
                 bp.CooldownRounds = 5;
                 bp.CooldownDice = new DiceFormula(3, DiceType.D4);
                 bp.m_TargetConsiderations = new ConsiderationReference[] {
@@ -435,7 +458,7 @@ namespace HarderEnemies.AI_Mechanics.Actions {
             });
 
             var HoldPersonMassAiSpell = AiCastSpellList.Baphomet_OverwhelmingPresence_AIAction.CreateCopy(HEContext, "HoldPersonMassAiSpell", bp => {
-                bp.BaseScore = 5.0f;
+                bp.BaseScore = 8.0f;
                 bp.CooldownRounds = 6;
                 bp.CooldownDice = new DiceFormula(3, DiceType.D4);
                 bp.m_TargetConsiderations = new ConsiderationReference[] {
@@ -449,7 +472,7 @@ namespace HarderEnemies.AI_Mechanics.Actions {
 
 
             var GreaterShoutAiSpell = AiCastSpellList.Baphomet_OverwhelmingPresence_AIAction.CreateCopy(HEContext, "GreaterShoutAiSpell", bp => {
-                bp.BaseScore = 5.0f;
+                bp.BaseScore = 7.0f;
                 bp.CooldownRounds = 5;
                 bp.CooldownDice = new DiceFormula(3, DiceType.D4);
                 bp.m_TargetConsiderations = new ConsiderationReference[] {
@@ -462,9 +485,10 @@ namespace HarderEnemies.AI_Mechanics.Actions {
             });
 
             var HoldPersonAiSpell = AiCastSpellList.CultistHoldPersonAiAction.CreateCopy(HEContext, "HoldPersonAiSpell", bp => {
-                bp.BaseScore = 5.0f;
+                bp.BaseScore = 3.0f;
                 bp.m_ActorConsiderations = new ConsiderationReference[] {
-                    AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>()
+                    AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>(),
+                    AiConsiderationList.NoThreateningUnitsConsideration.ToReference<ConsiderationReference>()
                 };
             });
 
@@ -476,15 +500,41 @@ namespace HarderEnemies.AI_Mechanics.Actions {
             });
 
             var CommandAiSpell = AiCastSpellList.CultistHoldPersonAiAction.CreateCopy(HEContext, "CommandAiSpell", bp => {
-                bp.BaseScore = 5.0f;
+                bp.BaseScore = 2.0f;
                 bp.m_ActorConsiderations = new ConsiderationReference[] {
-                    AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>()
+                    AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>(),
+                    AiConsiderationList.NoThreateningUnitsConsideration.ToReference<ConsiderationReference>()
                 };
-                bp.m_TargetConsiderations = new ConsiderationReference[] { };
+                bp.m_TargetConsiderations = new ConsiderationReference[] {
+                    AiConsiderationList.AttackTargetsPriority.ToReference<ConsiderationReference>()
+                };
                 bp.m_Ability = Abilities.Command.ToReference<BlueprintAbilityReference>();
                 bp.m_Variant = Abilities.CommandFall.ToReference<BlueprintAbilityReference>();
             });
 
+            var CommandGreaterAiSpell = AiCastSpellList.Svendack_AiAction_CommandGreater.CreateCopy(HEContext, "CommandGreaterAiSpell", bp => {
+                bp.BaseScore = 6.0f;
+                bp.m_ActorConsiderations = new ConsiderationReference[] {
+                    AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>(),
+                    AiConsiderationList.NoThreateningUnitsConsideration.ToReference<ConsiderationReference>()
+                };
+            });
+
+            var BlindnessAiSpell = AiCastSpellList.CultistHoldPersonAiAction.CreateCopy(HEContext, "BlindnessAiSpell", bp => {
+                bp.BaseScore = 3.0f;
+                bp.m_ActorConsiderations = new ConsiderationReference[] {
+                    AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>(),
+                    AiConsiderationList.NoThreateningUnitsConsideration.ToReference<ConsiderationReference>()
+                };
+                bp.m_TargetConsiderations = new ConsiderationReference[] {
+                    AiConsiderationList.AttackTargetsPriority.ToReference<ConsiderationReference>()
+                };
+                bp.m_Ability = Abilities.Blindess.ToReference<BlueprintAbilityReference>();
+            });
+
+            var PrayerAiSpell = AiCastSpellList.CultistPrayerAiAction.CreateCopy(HEContext, "PrayerAiSpell", bp => {
+                bp.BaseScore = 3.0f;
+            });
 
         }
     }

@@ -44,6 +44,11 @@ namespace HarderEnemies.UnitModifications.Cultists.MeleeCasters {
             Buffs.ShielfOfFaithBuff.ToReference<BlueprintUnitFactReference>(),
             Buffs.ResistFireBuff.ToReference<BlueprintUnitFactReference>(),
             Buffs.BullsStrengthBuff.ToReference<BlueprintUnitFactReference>(),
+            Buffs.ArchonsAuraBuff.ToReference<BlueprintUnitFactReference>(),
+            Buffs.MagicalVestmentArmorBuff.ToReference<BlueprintUnitFactReference>(),
+            Buffs.MagicWeaponGreaterPrimaryBuff.ToReference<BlueprintUnitFactReference>(),
+            Buffs.DivinePowerBuff.ToReference<BlueprintUnitFactReference>(),
+            Buffs.DeathWardBuff.ToReference<BlueprintUnitFactReference>(),
             };
     }
 }

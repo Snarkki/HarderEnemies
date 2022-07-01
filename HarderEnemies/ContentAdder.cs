@@ -30,18 +30,36 @@ namespace HarderEnemies {
                 AI_Mechanics.Brains.AngelBrains.AngelBrainHandler();
                 AI_Mechanics.Brains.MeleeCultistBrains.BrainHandler();
                 // 
-                Units.ModifyRetrieversDevastators.HandleChanges();
-                Units.ModifyDragons.HandleChanges();
-                Units.ModifyBosses.HandleChanges();
-                Units.ModifyGolems.HandleChanges();
-                Units.ModifyVescavors.HandleChanges();
-                Units.ModifyCultists.HandleChanges();
-                Units.ModifyDemons.HandleChanges();
-                Units.ModifyAngels.HandleChanges();
-                Units.ModifyEliteCasters.HandleChanges();
-                Units.ModifyCyborgs.HandleChanges();
+
 
                 UnitModifications.Cultists.MeleeCasters.MeleeCasterAdjusts.Handler();
+                UnitModifications.Cultists.Casters.CasterAdjusts.Handler();
+                UnitModifications.Angels.AngelAdjusts.Handler();
+                UnitModifications.Bosses.Balors.BalorAdjusts.Handler();
+                UnitModifications.Bosses.CorruptedAngels.CorruptedAngelAdjusts.Handler();
+                UnitModifications.Bosses.DemonLords.DemonLordAdjusts.Handler();
+                UnitModifications.Bosses.Jerribeth.JerribethAdjusts.Handler();
+                UnitModifications.Bosses.Minagho.MinaghoAdjusts.Handler();
+                UnitModifications.Bosses.RandomBosses.RandomBossesAdjusts.Handler();
+                UnitModifications.Cyborgs.CyborgAdjusts.Handler();
+                UnitModifications.Demons.Abrikandilu.AbrikandiluAdjusts.Handler();
+                UnitModifications.Demons.Babau.BabauAdjusts.Handler();
+                UnitModifications.Demons.Brimorak.BrimorakAdjusts.Handler();
+                UnitModifications.Demons.Cambion.CambionAdjusts.Handler();
+                UnitModifications.Demons.Coloxus.ColoxusAdjusts.Handler();
+                UnitModifications.Demons.DemondandStringy.DemodandStringyAdjust.Handler();
+                UnitModifications.Demons.DemodandTarry.DemodandTarryAdjusts.Handler();
+                UnitModifications.Demons.Gibrileth.GibrilethAdjusts.Handler();
+                UnitModifications.Demons.Glabrezu.GlabrezuAdjusts.Handler();
+                UnitModifications.Demons.Marileth.MarilethAdjusts.Handler();
+                UnitModifications.Demons.Minotaur.MinotaurAdjusts.Handler();
+                UnitModifications.Demons.Oolioddroo.OolioddrooAdjusts.Handler();
+                UnitModifications.Dragons.DragonAdjusts.Handler();
+                UnitModifications.EliteCasters.EliteCasterAdjusts.Handler();
+                UnitModifications.Golems.GolemAdjusts.Handler();
+                UnitModifications.Retrievers.RetrieverAdjusts.Handler();
+                UnitModifications.VescavorAndDerakni.VescavorAndDerakniAdjusts.Handler();
+
                 HEContext.Logger.LogHeader("Updates done");
             }
 

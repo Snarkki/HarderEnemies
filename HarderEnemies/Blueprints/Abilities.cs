@@ -40,6 +40,21 @@ namespace HarderEnemies.Blueprints {
         public static BlueprintAbility Blindess = BlueprintTools.GetBlueprint<BlueprintAbility>("46fd02ad56c35224c9c91c88cd457791");
         public static BlueprintAbility Prayer = BlueprintTools.GetBlueprint<BlueprintAbility>("faabd2cc67efa4646ac58c7bb3e40fcc");
         public static BlueprintAbility CauseFear = BlueprintTools.GetBlueprint<BlueprintAbility>("bd81a3931aa285a4f9844585b5d97e51");
+        public static BlueprintAbility DivinePower = BlueprintTools.GetBlueprint<BlueprintAbility>("ef16771cb05d1344989519e87f25b3c5");
+        public static BlueprintAbility CommandGreater = BlueprintTools.GetBlueprint<BlueprintAbility>("cb15cc8d7a5480648855a23b3ba3f93d");
+        public static BlueprintAbility ColdIceStrike = BlueprintTools.GetBlueprint<BlueprintAbility>("5ef85d426783a5347b420546f91a677b");
+        public static BlueprintAbility MagicMissile = BlueprintTools.GetBlueprint<BlueprintAbility>("4ac47ddb9fa1eaf43a1b6809980cfbd2");
+        public static BlueprintAbility ColorSpray = BlueprintTools.GetBlueprint<BlueprintAbility>("91da41b9793a4624797921f221db653c");
+        public static BlueprintAbility Scare = BlueprintTools.GetBlueprint<BlueprintAbility>("08cb5f4c3b2695e44971bf5c45205df0");
+        public static BlueprintAbility HideousLaughter = BlueprintTools.GetBlueprint<BlueprintAbility>("fd4d9fd7f87575d47aafe2a64a6e2d8d");
+        public static BlueprintAbility Fireball = BlueprintTools.GetBlueprint<BlueprintAbility>("2d81362af43aeac4387a3d4fced489c3");
+        public static BlueprintAbility Haste = BlueprintTools.GetBlueprint<BlueprintAbility>("486eaff58293f6441a5c2759c4872f98");
+        public static BlueprintAbility DeepSlumber = BlueprintTools.GetBlueprint<BlueprintAbility>("7658b74f626c56a49939d9c20580885e");
+        public static BlueprintAbility IcyPrison = BlueprintTools.GetBlueprint<BlueprintAbility>("65e8d23aef5e7784dbeb27b1fca40931");
+        public static BlueprintAbility PhantasmalWeb = BlueprintTools.GetBlueprint<BlueprintAbility>("12fb4a4c22549c74d949e2916a2f0b6a");
+        public static BlueprintAbility SummonMonsterVBase = BlueprintTools.GetBlueprint<BlueprintAbility>("630c8b85d9f07a64f917d79cb5905741");
+        public static BlueprintAbility SummonMonsterVd3 = BlueprintTools.GetBlueprint<BlueprintAbility>("715f208d545be2f4aa2d3693e6347a5a");
+        public static BlueprintAbility HungryPit = BlueprintTools.GetBlueprint<BlueprintAbility>("f63f4d1806b78604a952b3958892ce1c");
 
 
 
