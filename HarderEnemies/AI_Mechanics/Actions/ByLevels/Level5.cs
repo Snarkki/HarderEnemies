@@ -65,7 +65,7 @@ namespace HarderEnemies.AI_Mechanics.Actions.ByLevels {
             });
             var NewFlameStrikeAiSpell = AiCastSpellList.FlameStrikeAiAction.CreateCopy(HEContext, "NewFlameStrikeAiSpell", bp => {
                 bp.BaseScore = 5.0f;
-                bp.CombatCount = 3;
+                bp.CombatCount = 1;
                 bp.CooldownRounds = 8;
                 bp.CheckCasterDistance = true;
                 bp.CooldownDice = new DiceFormula(3, DiceType.D4);
