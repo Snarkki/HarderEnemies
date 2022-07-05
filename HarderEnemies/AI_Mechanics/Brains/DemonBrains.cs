@@ -16,8 +16,10 @@ namespace HarderEnemies.AI_Mechanics.Brains {
             CreateDerakniBrain();
             CreateDevastatorBrain();
             CreateCambionRangedBrain();
-            CreateMinotaurBrain();
+
             DemonsByType.AbrikandiluBrain.CreateAbrikandiluBrain();
+            DemonsByType.BrimorakBrain.CreateBrimorakBrain();
+            DemonsByType.MinotaurBrains.Handler();
         }
 
         private static void CreateDerakniBrain() {
@@ -50,17 +52,6 @@ namespace HarderEnemies.AI_Mechanics.Brains {
                    //AiCastSpellList.AttackAiAction.ToReference<BlueprintAiActionReference>(),
                    AiCastSpellList.SuccubusRangedFighter_AiAttack_FocusCasters.ToReference<BlueprintAiActionReference>(),
                   // AiCastSpellList.SwitchToMeleeAiAcition.ToReference<BlueprintAiActionReference>(),
-               };
-            });
-        }
-
-        private static void CreateMinotaurBrain() {
-            var MinotaurStandardBrainNew = Helpers.CreateBlueprint<BlueprintBrain>(HEContext, "MinotaurStandardBrainNew", bp => {
-                bp.m_Actions = new BlueprintAiActionReference[]
-               {
-                   AiCastSpellList.AttackAiAction.ToReference<BlueprintAiActionReference>(),
-                   AiCastSpellList.LabyrinthMinotaur_AiAction_BronzeMask.ToReference<BlueprintAiActionReference>(),
-                   AiCastSpellList.Mutasafen_BullRushAIAction.ToReference<BlueprintAiActionReference>(),
                };
             });
         }

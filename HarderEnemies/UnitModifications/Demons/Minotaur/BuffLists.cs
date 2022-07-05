@@ -25,5 +25,9 @@ namespace HarderEnemies.UnitModifications.Demons.Minotaur {
             Buffs.ExpeditiousRetreatBuff.ToReference<BlueprintUnitFactReference>(),
             Buffs.LegendaryProportionsBuff.ToReference<BlueprintUnitFactReference>(),
         };
+        public static BlueprintUnitFactReference[] HighLevelMeleeMinotaursAlternative = {
+            Buffs.ExpeditiousRetreatBuff.ToReference<BlueprintUnitFactReference>(),
+            Buffs.FrigtfulAspectBuff.ToReference<BlueprintUnitFactReference>(),
+        };
     }
 }

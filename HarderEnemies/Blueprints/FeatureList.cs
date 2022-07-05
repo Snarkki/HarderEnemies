@@ -44,6 +44,11 @@ namespace HarderEnemies.Blueprints {
         public static BlueprintFeature DazzlingDisplayFeature = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>("bcbd674ec70ff6f4894bb5f07b6f4095");
         public static BlueprintFeature SkillFocusDiplomacy = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>("1621be43793c5bb43be55493e9c45924");
         public static BlueprintFeature DreadfulCarnage = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>("fc37b70e3d064a147a3a99db4a86ee12");
+        public static BlueprintFeature TrippingBite = BlueprintTools.GetBlueprint<BlueprintFeature>("f957b4444b6fb404e84ae2a5765797bb");
+        public static BlueprintFeature CornugonSmash = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>("ceea53555d83f2547ae5fc47e0399e14");
+        public static BlueprintFeature IntimidatingProwess = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>("d76497bfc48516e45a0831628f767a0f");
+        public static BlueprintFeature Outflank = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>("422dab7309e1ad343935f33a4d6e9f11");
+        public static BlueprintFeature DispellingStrike = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>("1b92146b8a9830d4bb97ab694335fa7c");
         // MYTHIC FEATURES
         public static BlueprintFeature AlwaysAChange = BlueprintTools.GetBlueprint<BlueprintFeature>("d57301613ad6a5140b2fdac40fa368e3");
         public static BlueprintFeature ThunderingBlows = BlueprintTools.GetBlueprint<BlueprintFeature>("8081c981b95ad9f49a421e7345c8c6f6");
@@ -53,12 +58,9 @@ namespace HarderEnemies.Blueprints {
         public static BlueprintFeature AscendentElementAcid = BlueprintTools.GetBlueprint<BlueprintFeature>("d808baf783a063e4d84a1aaadbdd1cb7");
         public static BlueprintFeature AscendentElementElectricity = BlueprintTools.GetBlueprint<BlueprintFeature>("7bf39f8d76f8c9441896222128f1673a");
         public static BlueprintFeature AscendentElementCold = BlueprintTools.GetBlueprint<BlueprintFeature>("25f9791fbb5de694a8a3b936d2f30390");
+        public static BlueprintFeature BullRushMythicFeat = BlueprintTools.GetBlueprint<BlueprintFeature>("50f13705c167bfa43ad4e1a7da95c491");
 
-        public static BlueprintFeature TrippingBite = BlueprintTools.GetBlueprint<BlueprintFeature>("f957b4444b6fb404e84ae2a5765797bb");
-        public static BlueprintFeature CornugonSmash = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>("ceea53555d83f2547ae5fc47e0399e14");
-        public static BlueprintFeature IntimidatingProwess = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>("d76497bfc48516e45a0831628f767a0f");
-        public static BlueprintFeature Outflank = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>("422dab7309e1ad343935f33a4d6e9f11");
-        public static BlueprintFeature DispellingStrike = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>("1b92146b8a9830d4bb97ab694335fa7c");
+
 
         public static BlueprintFeature CR22_AxiomiteCaster_Feature_Prebuff = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>("c6e69c237da84ff1ae85603912187809");
         public static BlueprintFeature CR22_AxiomiteCaster_Feature_CombatPrebuff = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>("c412fe0f34ec444e9f9ca1da3d18bd9b");

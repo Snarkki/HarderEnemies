@@ -15,6 +15,7 @@ using HarderEnemies.Blueprints;
 using static HarderEnemies.Main;
 using Kingmaker.Blueprints.Items.Weapons;
 using HarderEnemies.UnitModifications.Bosses.Balors;
+using Kingmaker.Designers.Mechanics.Facts;
 
 namespace HarderEnemies.UnitModifications.Bosses.Balors {
     internal class BalorAdjusts {
@@ -61,7 +62,7 @@ namespace HarderEnemies.UnitModifications.Bosses.Balors {
 
             foreach (BlueprintUnit thisUnit in UnitLists.BalorList) {
                 if (thisUnit == UnitLists.Darrazand) {
-                    Utils.CustomHelpers.AddFactListsToUnit(thisUnit, 35, AbilityLists.DarrazandAbilities);
+                    Utils.CustomHelpers.AddFactsToUnit(thisUnit, AbilityLists.DarrazandAbilities);
                 } else if (thisUnit == UnitLists.BalorLeader ||
                       thisUnit == UnitLists.CR20_BalorStandard ||
                       thisUnit == UnitLists.CR20_BalorStandard_RE ||
@@ -72,11 +73,19 @@ namespace HarderEnemies.UnitModifications.Bosses.Balors {
                       thisUnit == UnitLists.CR28M_BalorMythicFighter ||
                       thisUnit == UnitLists.CR28M_BalorMythicFighter_RE
                       ) {
-                    Utils.CustomHelpers.AddFactListsToUnit(thisUnit, 35, AbilityLists.BalorAbilities);
+                    Utils.CustomHelpers.AddFactsToUnit(thisUnit, AbilityLists.BalorAbilities);
                     thisUnit.Body.m_PrimaryHand = BalorNewSword.ToReference<BlueprintItemEquipmentHandReference>();
                 } else if (thisUnit == UnitLists.Alushynirra_BalorNocticulaGuard) {
                     thisUnit.Body.m_PrimaryHand = BalorNewSword.ToReference<BlueprintItemEquipmentHandReference>();
                 }
+                thisUnit.AddComponent<AddCasterLevel>(c => {
+                    c.Bonus = thisUnit.CR;
+                });
+            }
+
+            //1. tee erilaisia baloreita, caster > dama, caster control, melee (joku fear tapanen)
+            //2. uudet aivot kaikille
+
 
                 // BRAIN APPEND
                 BrainList.DarrazandBrain.m_Actions = new BlueprintAiActionReference[] {
@@ -107,7 +116,7 @@ namespace HarderEnemies.UnitModifications.Bosses.Balors {
                     HoldPersonMassAiSpell.ToReference<BlueprintAiActionReference>(),
                     GreaterShoutAiSpell.ToReference<BlueprintAiActionReference>()
                     );
-            }
+            
             HEContext.Logger.LogHeader("Updated Balors");
         }
 

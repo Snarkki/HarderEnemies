@@ -19,26 +19,19 @@ namespace HarderEnemies.UnitModifications.Demons.Minotaur {
 
         // MELEE RUSHING MINOTAURS
 
-        public static BlueprintUnitFactReference[] RushingMeleeMinotaurAbilitiesCR5 = {
+        public static BlueprintUnitFactReference[] RushingMeleeMinotaurAbilitiesNormal= {
             FeatureList.GreaterBullRush.ToReference<BlueprintUnitFactReference>(),
             FeatureList.ImprovedBullRush.ToReference<BlueprintUnitFactReference>(),
             Abilities.OverrunAbility.ToReference<BlueprintUnitFactReference>(),
         };
-        public static BlueprintUnitFactReference[] RushingMeleeMinotaurAbilitiesCR10 = {
+
+        public static BlueprintUnitFactReference[] RushingMeleeMinotaurAbilitiesMythic = {
             FeatureList.GreaterBullRush.ToReference<BlueprintUnitFactReference>(),
             FeatureList.ImprovedBullRush.ToReference<BlueprintUnitFactReference>(),
             Abilities.OverrunAbility.ToReference<BlueprintUnitFactReference>(),
+            FeatureList.BullRushMythicFeat.ToReference<BlueprintUnitFactReference>(),
         };
-        public static BlueprintUnitFactReference[] RushingMeleeMinotaurAbilitiesCR15 = {
-            FeatureList.GreaterBullRush.ToReference<BlueprintUnitFactReference>(),
-            FeatureList.ImprovedBullRush.ToReference<BlueprintUnitFactReference>(),
-            Abilities.OverrunAbility.ToReference<BlueprintUnitFactReference>(),
-        };
-        public static BlueprintUnitFactReference[] RushingMeleeMinotaurAbilitiesCR20 = {
-            FeatureList.GreaterBullRush.ToReference<BlueprintUnitFactReference>(),
-            FeatureList.ImprovedBullRush.ToReference<BlueprintUnitFactReference>(),
-            Abilities.OverrunAbility.ToReference<BlueprintUnitFactReference>(),
-        };
+
 
 
         // MELEE CLEAVING MINOTAURS

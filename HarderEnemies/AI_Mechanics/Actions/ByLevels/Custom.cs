@@ -103,6 +103,22 @@ namespace HarderEnemies.AI_Mechanics.Actions.ByLevels {
                         AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>()
                     };
             });
+
+            var MinotaurTrampleAiSpell = AiCastSpellList.LabyrinthMinotaur_AiAction_Trample.CreateCopy(HEContext, "MinotaurTrampleAiSpell", bp => {
+                bp.BaseScore = 2.5f;
+                bp.CombatCount = 0;
+                bp.m_ActorConsiderations = new ConsiderationReference[] {
+                        AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>()
+                    };
+            });
+
+            var MinotaurBullRushAiSpell = AiCastSpellList.Hepzamirah_BullRushAIAction.CreateCopy(HEContext, "MinotaurBullRushAiSpell", bp => {
+                bp.BaseScore = 2.0f;
+                bp.CombatCount = 1;
+                bp.m_ActorConsiderations = new ConsiderationReference[] {
+                        AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>()
+                    };
+            });
         }
     }
 }

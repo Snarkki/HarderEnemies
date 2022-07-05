@@ -71,11 +71,52 @@ namespace HarderEnemies.UnitModifications.Demons.Minotaur {
 
         public static List<BlueprintUnit> RushingMinotaursList = new List<BlueprintUnit>() {
             IvoryLabyrinthMinotaur_SpecialBaphomet25,
-            MidnightFane_LabyrinthMinotaurAdvanced,
+            MidnightFane_LabyrinthMinotaurAdvanced, //CR 17
             CR10_HalfFiendFuriousMinotaur,
             CR10_HalfFiendFuriousMinotaur_RE,
             CR17_LabyrinthMinotaurAdvanced,
             CR20_LabyrinthMinotaurEnhanced,
         };
+
+
+
+        public static List<BlueprintUnit> MinotaurList = new List<BlueprintUnit>() {
+            Colyphyr_MinotaurSlave,
+            CR10_FiendishMinotaur_Guard,
+            CR10_FiendishMinotaur_TwoAxes,
+            CR10_HalfFiendFuriousMinotaur,
+            CR10_HalfFiendFuriousMinotaur_RE,
+            CR14_FiendishMinotaurAxeThrower,
+            CR14_FiendishMinotaurAxeThrower_RE,
+            CR14_FiendishMinotaur_DLC2,
+            CR14_FiendishMinotaur_TwoAxes,
+            CR14_HalfFiendFighterMinotaurDLC2,
+            CR14_HalfFiendGuardianMinotaur,
+            CR14_HalfFiendGuardianMinotaur_DLC2,
+            CR14_HalfFiendGuardianMinotaur_RE,
+            CR14_MinotaurCleric,
+            CR16_LabyrinthMinotaurStandard,
+            CR17_LabyrinthMinotaurAdvanced,
+            CR19_HalfFiendGuardianMinotaurEnhanced,
+            CR19_HalfFiendGuardianMinotaurEnhanced_RE,
+            CR19_MinotaurCasterDispeller,
+            CR20_LabyrinthMinotaurEnhanced,
+            CR20_MinotaurCasterBlaster,
+            CR20_MinotaurCasterBlaster_RE,
+            CR26_Minotaur_IngerMaggor,
+            CR4_Minotaur,
+            CR5_FiendishMinotaurStandard,
+            CR5_FiendishMinotaurStandard_RE,
+            CR6_FiendishMinotaur_TwoAxes,
+            CR6_HalfFiendMinotaurStandard,
+            CR6_HalfFiendMinotaurStandard_RE,
+            Deradnu,
+            IvoryLabyrinthMinotaur18,
+            IvoryLabyrinthMinotaur_SpecialBaphomet25,
+            MidnightFane_LabyrinthMinotaurAdvanced,
+            MinotaurGhost_Boss,
+            MinotaurGhost_BossNoExp,
+        };
+
     }
 }

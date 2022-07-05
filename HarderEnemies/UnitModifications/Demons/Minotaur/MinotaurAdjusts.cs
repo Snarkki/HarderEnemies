@@ -21,67 +21,84 @@ namespace HarderEnemies.UnitModifications.Demons.Minotaur {
 
 
         private static BlueprintFeature SuperToughness = BlueprintTools.GetModBlueprint<BlueprintFeature>(HEContext, "SuperToughnessFeature");
-        private static BlueprintBrain MinotaurStandardBrainNew = BlueprintTools.GetModBlueprint<BlueprintBrain>(HEContext, "MinotaurStandardBrainNew");
+        private static BlueprintBrain CleaveMinotaurBrain = BlueprintTools.GetModBlueprint<BlueprintBrain>(HEContext, "CleaveMinotaurBrain");
+        private static BlueprintBrain ChargingMinotaurBrain = BlueprintTools.GetModBlueprint<BlueprintBrain>(HEContext, "ChargingMinotaurBrain");
 
 
         public static void Handler() {
             AdjustHP();
-            BabauAbilities();
-            BabauBuffs();
+            HandleAbilities();
+            HandleBuffs();
         }
 
         private static void AdjustHP() {
             if (HEContext.HPChanges.HPBoosts.IsDisabled("AdjustDemonsHp")) { return; }
 
-            foreach (BlueprintUnit thisUnit in UnitLists.DemonMeleeMinotaurList) {
+            foreach (BlueprintUnit thisUnit in UnitLists.MinotaurList) {
                 thisUnit.m_AddFacts = thisUnit.m_AddFacts.AppendToArray(SuperToughness.ToReference<BlueprintUnitFactReference>());
             }
             HEContext.Logger.LogHeader("Adjusted Demons HP");
         }
 
-        private static void BabauAbilities() {
+        private static void HandleAbilities() {
             if (HEContext.AbilityChanges.DemonChanges.IsDisabled("MinotaurAbilities")) { return; }
             foreach (BlueprintUnit thisUnit in UnitLists.DemonMeleeMinotaurList) {
                 if (thisUnit.CR <= 6) {
-                    Utils.CustomHelpers.AddFactsToUnit(thisUnit, AbilityLists.CleavingMeleeMinotaurAbilitiesCR5);
-
-                    // BRAINIT TÄHÄ
+                    Utils.CustomHelpers.AddFactsToUnit(thisUnit, AbilityLists.CleavingMeleeMinotaurAbilitiesCR5);                   
                 } else if (thisUnit.CR > 6 && thisUnit.CR <= 11) {
                     Utils.CustomHelpers.AddFactsToUnit(thisUnit, AbilityLists.CleavingMeleeMinotaurAbilitiesCR10);
-
-                    // BRAINIT TÄHÄ
                 } else if (thisUnit.CR > 11 && thisUnit.CR <= 16) {
                     Utils.CustomHelpers.AddFactsToUnit(thisUnit, AbilityLists.CleavingMeleeMinotaurAbilitiesCR15);
                 } else if (thisUnit.CR > 16) {
                     Utils.CustomHelpers.AddFactsToUnit(thisUnit, AbilityLists.CleavingMeleeMinotaurAbilitiesCR20);
                 }
+                thisUnit.m_Brain = CleaveMinotaurBrain.ToReference<BlueprintBrainReference>();
+                thisUnit.AlternativeBrains = new BlueprintBrainReference[0] { };
+
             }
             foreach (BlueprintUnit thisUnit in UnitLists.RushingMinotaursList) {
-
+                if (thisUnit.CR <= 19) {
+                    Utils.CustomHelpers.AddFactsToUnit(thisUnit, AbilityLists.RushingMeleeMinotaurAbilitiesNormal);
+                } else if (thisUnit.CR > 20) {
+                    Utils.CustomHelpers.AddFactsToUnit(thisUnit, AbilityLists.RushingMeleeMinotaurAbilitiesMythic);
+                }
+                thisUnit.m_Brain = ChargingMinotaurBrain.ToReference<BlueprintBrainReference>();
+                thisUnit.AlternativeBrains = new BlueprintBrainReference[0] { };
             }
 
             UnitLists.MinotaurGhost_Boss.AddComponent<AddStatBonus>(c => {
-                c.Value = -4;
-                c.Descriptor = Kingmaker.Enums.ModifierDescriptor.UntypedStackable;
-                c.Stat = Kingmaker.EntitySystem.Stats.StatType.AC;
-            });
-            UnitLists.MinotaurGhost_Boss.AddComponent<AddStatBonus>(c => {
-                c.Value = -4;
+                c.Value = -5;
                 c.Descriptor = Kingmaker.Enums.ModifierDescriptor.UntypedStackable;
                 c.Stat = Kingmaker.EntitySystem.Stats.StatType.AC;
             });
 
+            UnitLists.MinotaurGhost_BossNoExp.AddComponent<AddStatBonus>(c => {
+                c.Value = -5;
+                c.Descriptor = Kingmaker.Enums.ModifierDescriptor.UntypedStackable;
+                c.Stat = Kingmaker.EntitySystem.Stats.StatType.AC;
+            });
 
-            HEContext.Logger.LogHeader("Updated Babau Abilities");
+            HEContext.Logger.LogHeader("Updated Minotaur Abilities");
 
         }
 
-        private static void BabauBuffs() {
+        private static void HandleBuffs() {
             if (HEContext.Prebuffs.DemonBuffs.IsDisabled("MinotaurBuffs")) { return; }
             foreach (BlueprintUnit thisUnit in UnitLists.DemonMeleeMinotaurList) {
-
+                if (thisUnit.CR <= 15) {
+                    Utils.CustomHelpers.AddFactListsToUnit(thisUnit, thisUnit.CR, BuffLists.MeleeMinotaurBuffs);
+                } else {
+                    Utils.CustomHelpers.AddFactListsToUnit(thisUnit, thisUnit.CR, BuffLists.HighLevelMeleeMinotaursAlternative);
+                }
             }
-            HEContext.Logger.LogHeader("Updated BabauBuffs");
+            foreach (BlueprintUnit thisUnit in UnitLists.RushingMinotaursList) {
+                if (thisUnit.CR <= 15) {
+                    Utils.CustomHelpers.AddFactListsToUnit(thisUnit, thisUnit.CR, BuffLists.MeleeMinotaurBuffs);
+                } else {
+                    Utils.CustomHelpers.AddFactListsToUnit(thisUnit, thisUnit.CR, BuffLists.HighLevelMeleeMinotaurs);
+                }
+            }
+            HEContext.Logger.LogHeader("Updated Minotaur Buffs");
         }
 
     }
