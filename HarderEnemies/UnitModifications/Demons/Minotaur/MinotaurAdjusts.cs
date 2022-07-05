@@ -42,22 +42,23 @@ namespace HarderEnemies.UnitModifications.Demons.Minotaur {
         private static void BabauAbilities() {
             if (HEContext.AbilityChanges.DemonChanges.IsDisabled("MinotaurAbilities")) { return; }
             foreach (BlueprintUnit thisUnit in UnitLists.DemonMeleeMinotaurList) {
-                if (!thisUnit.m_AddFacts.Contains(FeatureList.ImprovedBullRush.ToReference<BlueprintUnitFactReference>())) {
-                    thisUnit.m_AddFacts = thisUnit.m_AddFacts.AppendToArray(FeatureList.ImprovedBullRush.ToReference<BlueprintUnitFactReference>());
-                    thisUnit.m_Brain = MinotaurStandardBrainNew.ToReference<BlueprintBrainReference>();
-                };
-                if (thisUnit.CR > 12 && !thisUnit.m_AddFacts.Contains(FeatureList.GreaterBullRush.ToReference<BlueprintUnitFactReference>())) {
-                    thisUnit.m_AddFacts = thisUnit.m_AddFacts.AppendToArray(FeatureList.GreaterBullRush.ToReference<BlueprintUnitFactReference>());
-                    thisUnit.m_Brain = MinotaurStandardBrainNew.ToReference<BlueprintBrainReference>();
-                };
-                if (thisUnit.m_AddFacts.Contains(FeatureList.GreaterBullRush.ToReference<BlueprintUnitFactReference>())) {
-                    thisUnit.AlternativeBrains = thisUnit.AlternativeBrains.AppendToArray(BrainList.HalfFiendMinotaur_Standard_Brain.ToReference<BlueprintBrainReference>());
+                if (thisUnit.CR <= 6) {
+                    Utils.CustomHelpers.AddFactsToUnit(thisUnit, AbilityLists.CleavingMeleeMinotaurAbilitiesCR5);
+
+                    // BRAINIT TÄHÄ
+                } else if (thisUnit.CR > 6 && thisUnit.CR <= 11) {
+                    Utils.CustomHelpers.AddFactsToUnit(thisUnit, AbilityLists.CleavingMeleeMinotaurAbilitiesCR10);
+
+                    // BRAINIT TÄHÄ
+                } else if (thisUnit.CR > 11 && thisUnit.CR <= 16) {
+                    Utils.CustomHelpers.AddFactsToUnit(thisUnit, AbilityLists.CleavingMeleeMinotaurAbilitiesCR15);
+                } else if (thisUnit.CR > 16) {
+                    Utils.CustomHelpers.AddFactsToUnit(thisUnit, AbilityLists.CleavingMeleeMinotaurAbilitiesCR20);
                 }
+            }
+            foreach (BlueprintUnit thisUnit in UnitLists.RushingMinotaursList) {
 
             }
-
-
-
 
             UnitLists.MinotaurGhost_Boss.AddComponent<AddStatBonus>(c => {
                 c.Value = -4;

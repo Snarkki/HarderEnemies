@@ -42,7 +42,7 @@ namespace HarderEnemies.Features {
                 bp.AddComponent<SuperToughnessLogic>(c => {
                     c.CheckMythicLevel = false;
                 });
-            });         
+            });
         }
 
         public static void CreateAbyssalToughness() {
@@ -66,7 +66,7 @@ namespace HarderEnemies.Features {
                 var RankConfig = bp.GetComponent<ContextRankConfig>();
                 RankConfig.m_BaseValueType = ContextRankBaseValueType.ClassLevel;
                 RankConfig.Archetype = null;
-                RankConfig.m_Class = new BlueprintCharacterClassReference [] { CharacterClass.OutsiderClass.ToReference<BlueprintCharacterClassReference>() };
+                RankConfig.m_Class = new BlueprintCharacterClassReference[] { CharacterClass.OutsiderClass.ToReference<BlueprintCharacterClassReference>() };
             });
         }
 
@@ -98,14 +98,17 @@ namespace HarderEnemies.Features {
             var bolsteredAbilities = new BlueprintAbilityReference[] {
                 BlueprintTools.GetBlueprintReference<BlueprintAbilityReference>("2d81362af43aeac4387a3d4fced489c3"),    // fireball,
                 BlueprintTools.GetBlueprintReference<BlueprintAbilityReference>("700cfcbd0cb2975419bcab7dbb8c6210"),    // Hellfireray,
+                BlueprintTools.GetBlueprintReference<BlueprintAbilityReference>("9a46dfd390f943647ab4395fc997936d"),    // acid arrow,
+                BlueprintTools.GetBlueprintReference<BlueprintAbilityReference>("eaac3d36e0336cb479209a6f65e25e7c"),    // BurningArc
             };
 
+
             var SuperiorQuickenMetaMagicFeature = Sevalros_QuickenFeature.CreateCopy(HEContext, "SuperiorQuickenMetaMagicFeature", bp => {
-            bp.m_Icon = FeatureList.QuickenSpellFeature.Icon;
-            bp.RemoveComponents<AutoMetamagic>();
-            bp.SetName(HEContext, "Quicken Metamagic");
-            bp.SetDescription(HEContext, "Allows you to add quicken metamagic to spells.");
-            bp.AddComponent<AutoMetamagic>(c => {
+                bp.m_Icon = FeatureList.QuickenSpellFeature.Icon;
+                bp.RemoveComponents<AutoMetamagic>();
+                bp.SetName(HEContext, "Quicken Metamagic");
+                bp.SetDescription(HEContext, "Allows you to add quicken metamagic to spells.");
+                bp.AddComponent<AutoMetamagic>(c => {
                     c.m_AllowedAbilities = AutoMetamagic.AllowedType.Any;
                     c.Metamagic = Kingmaker.UnitLogic.Abilities.Metamagic.Quicken;
                     c.Once = false;
@@ -194,7 +197,7 @@ namespace HarderEnemies.Features {
                 bp.SetName(HEContext, "Whip Strike");
                 bp.SetDescription(HEContext, "As a standard action, you can try to pull an enemy towards you.");
                 bp.Range = AbilityRange.Close;
-               
+
                 bp.NeedEquipWeapons = true;
                 bp.Type = AbilityType.SpellLike;
                 bp.ActionType = Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Standard;

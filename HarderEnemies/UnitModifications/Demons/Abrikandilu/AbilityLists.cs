@@ -19,7 +19,8 @@ namespace HarderEnemies.UnitModifications.Demons.Abrikandilu {
 
         public static BlueprintUnitFactReference[] AbrikanduAbilities = {
             FeatureList.IntimidatingProwess.ToReference<BlueprintUnitFactReference>(),
-            FeatureList.CornugonSmash.ToReference<BlueprintUnitFactReference>()
+            FeatureList.CornugonSmash.ToReference<BlueprintUnitFactReference>(),
+            Abilities.Haste.ToReference<BlueprintUnitFactReference>(),
         };
 
     }

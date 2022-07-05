@@ -80,6 +80,26 @@ namespace HarderEnemies.AI_Mechanics.Actions.ByLevels {
                 bp.CooldownRounds = 1;
             });
 
+            var FireDragonsBreathAiSpell = AiCastSpellList.MongrelmanWitch_DragonsBreathAIAction.CreateCopy(HEContext, "FireDragonsBreathAiSpell", bp => {
+                bp.BaseScore = 3.5f;
+                bp.StartCooldownRounds = 0;
+                bp.CooldownRounds = 3;
+                bp.CooldownDice = new DiceFormula(2, DiceType.D4);
+                bp.m_ActorConsiderations = new ConsiderationReference[] {
+                    AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>()
+                };
+            });
+
+            var GreenDragonsBreathAiSpell = AiCastSpellList.MongrelmanWitch_DragonsBreathAIAction.CreateCopy(HEContext, "GreenDragonsBreathAiSpell", bp => {
+                bp.BaseScore = 3.5f;
+                bp.StartCooldownRounds = 0;
+                bp.CooldownRounds = 3;
+                bp.CooldownDice = new DiceFormula(2, DiceType.D4);
+                bp.m_ActorConsiderations = new ConsiderationReference[] {
+                    AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>()
+                };
+                bp.m_Variant = Abilities.DragonsBreathGreen.ToReference<BlueprintAbilityReference>();
+            });
         }
     }
 }

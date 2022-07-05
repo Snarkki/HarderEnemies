@@ -55,26 +55,27 @@ namespace HarderEnemies.UnitModifications.Demons.Minotaur {
 
 
         public static List<BlueprintUnit> DemonMeleeMinotaurList = new List<BlueprintUnit>() {
-            Colyphyr_MinotaurSlave,
-            CR10_FiendishMinotaur_Guard,
-            CR10_HalfFiendFuriousMinotaur,
-            CR10_HalfFiendFuriousMinotaur_RE,
-            CR14_HalfFiendFighterMinotaurDLC2,
-            CR14_HalfFiendGuardianMinotaur,
-            CR14_HalfFiendGuardianMinotaur_DLC2,
-            CR14_HalfFiendGuardianMinotaur_RE,
-            CR16_LabyrinthMinotaurStandard,
-            CR17_LabyrinthMinotaurAdvanced,
-            CR19_HalfFiendGuardianMinotaurEnhanced,
-            CR19_HalfFiendGuardianMinotaurEnhanced_RE,
-            CR20_LabyrinthMinotaurEnhanced,
-            CR5_FiendishMinotaurStandard,
-            CR5_FiendishMinotaurStandard_RE,
             CR6_HalfFiendMinotaurStandard,
             CR6_HalfFiendMinotaurStandard_RE,
+            CR5_FiendishMinotaurStandard,
+            CR5_FiendishMinotaurStandard_RE,
+            Colyphyr_MinotaurSlave, //cr14
+            CR10_FiendishMinotaur_Guard,
+            CR14_HalfFiendGuardianMinotaur,
+            CR14_HalfFiendGuardianMinotaur_RE,
+            CR16_LabyrinthMinotaurStandard,
+            CR19_HalfFiendGuardianMinotaurEnhanced,
+            CR19_HalfFiendGuardianMinotaurEnhanced_RE,
             IvoryLabyrinthMinotaur18,
+        };
+
+        public static List<BlueprintUnit> RushingMinotaursList = new List<BlueprintUnit>() {
             IvoryLabyrinthMinotaur_SpecialBaphomet25,
             MidnightFane_LabyrinthMinotaurAdvanced,
+            CR10_HalfFiendFuriousMinotaur,
+            CR10_HalfFiendFuriousMinotaur_RE,
+            CR17_LabyrinthMinotaurAdvanced,
+            CR20_LabyrinthMinotaurEnhanced,
         };
     }
 }

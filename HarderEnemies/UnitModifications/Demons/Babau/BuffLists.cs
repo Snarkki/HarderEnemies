@@ -16,7 +16,10 @@ using static HarderEnemies.Main;
 
 namespace HarderEnemies.UnitModifications.Demons.Babau {
     internal class BuffLists {
-
+        public static BlueprintUnitFactReference[] BabauBuffs = {
+            Buffs.MagicWeaponGreaterPrimaryBuff.ToReference<BlueprintUnitFactReference>(),
+            Buffs.MagicFangGreaterBuff.ToReference<BlueprintUnitFactReference>(),
+        };
 
     }
 }

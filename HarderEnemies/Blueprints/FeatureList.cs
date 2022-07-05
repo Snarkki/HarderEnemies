@@ -37,7 +37,13 @@ namespace HarderEnemies.Blueprints {
         public static BlueprintFeature GreaterBullRush = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>("72ba6ad46d94ecd41bad8e64739ea392");
         public static BlueprintFeature ImprovedBullRush = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>("b3614622866fe7046b787a548bbd7f59");
         public static BlueprintFeature HalfFiendTemplate = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>("f79b555fa1d81d44499a128076f91273");
-
+        public static BlueprintFeature GreatCleaveFeature = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>("cc9c862ef2e03af4f89be5088851ea35");
+        public static BlueprintFeature CleaveFeature = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>("d809b6c4ff2aaff4fa70d712a70f7d7b");
+        public static BlueprintFeature CleavingFinish = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>("59bd93899149fa44687ff4121389b3a9");
+        public static BlueprintFeature ImprovedCleavingFinish = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>("ffa1b373190af4f4db7a5501904a1983");
+        public static BlueprintFeature DazzlingDisplayFeature = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>("bcbd674ec70ff6f4894bb5f07b6f4095");
+        public static BlueprintFeature SkillFocusDiplomacy = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>("1621be43793c5bb43be55493e9c45924");
+        public static BlueprintFeature DreadfulCarnage = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>("fc37b70e3d064a147a3a99db4a86ee12");
         // MYTHIC FEATURES
         public static BlueprintFeature AlwaysAChange = BlueprintTools.GetBlueprint<BlueprintFeature>("d57301613ad6a5140b2fdac40fa368e3");
         public static BlueprintFeature ThunderingBlows = BlueprintTools.GetBlueprint<BlueprintFeature>("8081c981b95ad9f49a421e7345c8c6f6");

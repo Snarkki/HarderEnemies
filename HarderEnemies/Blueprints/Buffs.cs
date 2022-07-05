@@ -52,6 +52,10 @@ namespace HarderEnemies.Blueprints {
         public static BlueprintBuff MagicalVestmentArmorBuff = BlueprintTools.GetBlueprint<BlueprintBuff>("9e265139cf6c07c4fb8298cb8b646de9");
         public static BlueprintBuff MagicWeaponGreaterPrimaryBuff = BlueprintTools.GetBlueprint<BlueprintBuff>("a38824af2ce2ee845b3592f9533a6056");
         public static BlueprintBuff AidBuff = BlueprintTools.GetBlueprint<BlueprintBuff>("319b4679f25779e4e9d04360381254e1");
+        public static BlueprintBuff ProtectionFromGoodBuff = BlueprintTools.GetBlueprint<BlueprintBuff>("b19e788487556aa4397080ef3dbb3619");
+        public static BlueprintBuff MagicFangGreaterBuff = BlueprintTools.GetBlueprint<BlueprintBuff>("ca90cc4cd9fc592419c5e58f0a9ead64");
+        public static BlueprintBuff ExpeditiousRetreatBuff = BlueprintTools.GetBlueprint<BlueprintBuff>("9ea4ec3dc30cd7940a372a4d699032e7");
+        public static BlueprintBuff EnlargePersonBuff = BlueprintTools.GetBlueprint<BlueprintBuff>("4f139d125bb602f48bfaec3d3e1937cb");
 
 
         public static BlueprintBuff UnlootableBuff = BlueprintTools.GetBlueprint<BlueprintBuff>("0f775c7d5d8b6494197e1ce937754482");

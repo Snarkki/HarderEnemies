@@ -18,6 +18,7 @@ namespace HarderEnemies.UnitModifications.Demons.Brimorak {
     internal class BrimorakAdjusts {
 
         private static BlueprintFeature SuperToughness = BlueprintTools.GetModBlueprint<BlueprintFeature>(HEContext, "SuperToughnessFeature");
+        private static BlueprintBrain BrimorakBrain = BlueprintTools.GetModBlueprint<BlueprintBrain>(HEContext, "BrimorakBrain");
 
         public static void Handler() {
             AdjustHP();
@@ -36,14 +37,24 @@ namespace HarderEnemies.UnitModifications.Demons.Brimorak {
 
         private static void BrimorakAbilities() {
             if (HEContext.AbilityChanges.DemonChanges.IsDisabled("BrimorakAbilities")) { return; }
+            foreach (BlueprintUnit thisUnit in UnitLists.DemonBrimorakList) {
+                if (thisUnit.CR < 6) {
+                    Utils.CustomHelpers.AddFactListsToUnit(thisUnit, thisUnit.CR, AbilityLists.BrimorakAbilities);
+                } else {
+                    Utils.CustomHelpers.AddFactListsToUnit(thisUnit, thisUnit.CR, AbilityLists.BrimorakAbilitiesWithMetamagic);
+                }
+                thisUnit.AlternativeBrains = new BlueprintBrainReference[0] { };
+                thisUnit.m_Brain = BrimorakBrain.ToReference<BlueprintBrainReference>();
+
+            }
         }
 
         private static void BrimorakBuffs() {
             if (HEContext.Prebuffs.DemonBuffs.IsDisabled("BrimorakBuffs")) { return; }
             foreach (BlueprintUnit thisUnit in UnitLists.DemonBrimorakList) {
-
+                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, thisUnit.CR, BuffLists.BrimorakBuffs);
             }
-            HEContext.Logger.LogHeader("Updated Oolioddroo");
+            HEContext.Logger.LogHeader("Updated Brimorak Buffs");
         }
 
     }

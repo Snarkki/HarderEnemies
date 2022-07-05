@@ -18,7 +18,8 @@ namespace HarderEnemies.UnitModifications.Demons.Abrikandilu {
     internal class BuffLists {
 
         public static BlueprintUnitFactReference[] AbrikanduBuffs = {
-            Buffs.HasteBuff.ToReference<BlueprintUnitFactReference>()
+            Buffs.ProtectionFromGoodBuff.ToReference<BlueprintUnitFactReference>(),
+            Buffs.StunningBarrierBuff.ToReference<BlueprintUnitFactReference>(),
         };
     }
 }

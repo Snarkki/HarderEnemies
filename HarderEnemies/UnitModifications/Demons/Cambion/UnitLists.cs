@@ -17,7 +17,6 @@ using static HarderEnemies.Main;
 namespace HarderEnemies.UnitModifications.Demons.Cambion {
     internal class UnitLists {
 
-        public static BlueprintUnit ArenaWizard_Curse = ResourcesLibrary.TryGetBlueprint<BlueprintUnit>("c0fe3438b11d09841a8717ab55eebe15");
         public static BlueprintUnit CambionFlameShaman = ResourcesLibrary.TryGetBlueprint<BlueprintUnit>("fee9736c2d534066a03f17a7793e7bec");
         public static BlueprintUnit CambionMinibossKineticist = ResourcesLibrary.TryGetBlueprint<BlueprintUnit>("6c06f8b57f2c4924e9d4323acc007d9e");
         public static BlueprintUnit CambionSlaverLeader = ResourcesLibrary.TryGetBlueprint<BlueprintUnit>("7c50cad36582b244084704b48f994fa2");
@@ -44,12 +43,6 @@ namespace HarderEnemies.UnitModifications.Demons.Cambion {
         public static BlueprintUnit CR3_CambionWizard_Caster = ResourcesLibrary.TryGetBlueprint<BlueprintUnit>("b410ed79d33b1e342972ed8539f4c5c7");
         public static BlueprintUnit DaeranQ1_CambionWizard = ResourcesLibrary.TryGetBlueprint<BlueprintUnit>("b533e0ba3bc985340a713e65a64b31c4");
         public static BlueprintUnit DaeranQ1_CambionWizard_normal = ResourcesLibrary.TryGetBlueprint<BlueprintUnit>("ecf225e208fa6264488d4f0f49a09bbc");
-        public static BlueprintUnit DrugVictimLeader = ResourcesLibrary.TryGetBlueprint<BlueprintUnit>("914e078ed70d47646aebe55061601798");
-        public static BlueprintUnit FleshmarketGuard_Cambion17 = ResourcesLibrary.TryGetBlueprint<BlueprintUnit>("117211542b3603349a3926714e5b7acb");
-        public static BlueprintUnit Fleshmarket_CambionGuardCaptain_WithLoot = ResourcesLibrary.TryGetBlueprint<BlueprintUnit>("28da512049ec4b138d04ef9d94d58764");
-        public static BlueprintUnit GateGuard_HigherToMedium = ResourcesLibrary.TryGetBlueprint<BlueprintUnit>("fe4e653a606568f448c9e15a52579ab5");
-        public static BlueprintUnit GateGuard_MediumToLower = ResourcesLibrary.TryGetBlueprint<BlueprintUnit>("558dc07952333e345b96ee1b65f01978");
-        public static BlueprintUnit KrebusSlaveTraderHumanForm = ResourcesLibrary.TryGetBlueprint<BlueprintUnit>("67013765d49b47748ba0f4abfdaab1e0");
         public static BlueprintUnit Lair_CambionAlchemist = ResourcesLibrary.TryGetBlueprint<BlueprintUnit>("30b52c870e9c2884c9d5f2f433ebaecf");
         public static BlueprintUnit Mutasafen = ResourcesLibrary.TryGetBlueprint<BlueprintUnit>("3e42b70cc8c924845967ea6592247eff");
         public static BlueprintUnit MutasafenAssistent = ResourcesLibrary.TryGetBlueprint<BlueprintUnit>("cdece5535c236994f8490d9d3d8417ed");
@@ -59,15 +52,12 @@ namespace HarderEnemies.UnitModifications.Demons.Cambion {
         public static BlueprintUnit Mutasafen_MidnightFaneInThePast = ResourcesLibrary.TryGetBlueprint<BlueprintUnit>("a17a7fbf4dc5ce846b4e325587a29a09");
         public static BlueprintUnit Nexus_CambionWithLoot_ForAssault = ResourcesLibrary.TryGetBlueprint<BlueprintUnit>("f3a44470aebf4a0a8f8894d13e60e80d");
         public static BlueprintUnit Nexus_CambionWithLoot_ForAssault_2 = ResourcesLibrary.TryGetBlueprint<BlueprintUnit>("fb5de51f70aa48baae028cbd24c264a7");
-        public static BlueprintUnit NonameSlaveTrader = ResourcesLibrary.TryGetBlueprint<BlueprintUnit>("4b22429c9ca86864e94368380e4e4885");
-        public static BlueprintUnit RvaniySlaveTrader = ResourcesLibrary.TryGetBlueprint<BlueprintUnit>("76b021bd47a2edc42b001ad6ef5c54bc");
-        public static BlueprintUnit SailorRangedTough = ResourcesLibrary.TryGetBlueprint<BlueprintUnit>("0390cb1501e64c15bef19f83a6bbdc95");
         public static BlueprintUnit ToughMinaghoCambion = ResourcesLibrary.TryGetBlueprint<BlueprintUnit>("a974bc51eaf3ae04287c174c5404d2b4");
         public static BlueprintUnit Vellexia_CambionToughMelee_WithLoot = ResourcesLibrary.TryGetBlueprint<BlueprintUnit>("40e5f14437d74763a3c51ef7988c6bc5");
 
-
         public static List<BlueprintUnit> DemonCambionList = new List<BlueprintUnit>() {
             CambionFlameShaman,
+            CambionMinibossKineticist,
             CambionSlaverLeader,
             CambionWithClub,
             CR14_CambionBard_Ranged,
@@ -78,6 +68,8 @@ namespace HarderEnemies.UnitModifications.Demons.Cambion {
             CR15_Cybrog_Cambion_Ranged,
             CR17_CambionToughRanged,
             CR17_CambionToughRanged_RE,
+            CR18_CambionToughCaster,
+            CR18_CambionToughCaster_RE,
             CR19_CambionBard_Melee,
             CR2_CambionStandard_Melee,
             CR2_CambionStandard_Ranged,
@@ -87,23 +79,77 @@ namespace HarderEnemies.UnitModifications.Demons.Cambion {
             CR3_CambionFighter_Melee,
             CR3_CambionRanger_Ranged,
             CR3_CambionRogue_Melee,
-            Lair_CambionAlchemist,
             CR3_CambionWizard_Caster,
             DaeranQ1_CambionWizard,
             DaeranQ1_CambionWizard_normal,
-            CR18_CambionToughCaster,
-            CR18_CambionToughCaster_RE,
+            Lair_CambionAlchemist,
             Nexus_CambionWithLoot_ForAssault,
             Nexus_CambionWithLoot_ForAssault_2,
             ToughMinaghoCambion,
             Vellexia_CambionToughMelee_WithLoot,
         };
 
+        public static List<BlueprintUnit> CambionAlchemists = new List<BlueprintUnit>() {
+            CR15_CambionAlchemist_Ranged,
+            CR15_CambionAlchemist_Ranged_RE,
+            CR3_CambionAlchemist_Ranged,
+            Lair_CambionAlchemist
+
+        };
+
+        public static List<BlueprintUnit> CambionKineticists = new List<BlueprintUnit>() {
+            CambionMinibossKineticist,
+
+        };
+
+        public static List<BlueprintUnit> CambionShamans = new List<BlueprintUnit>() {
+            CambionFlameShaman,
+            CR15_CambionCleric_Caster,
+            CR15_CambionCleric_Caster_RE,
+            CR3_CambionCleric_Caster
+        };
+
+        public static List<BlueprintUnit> CambionBards = new List<BlueprintUnit>() {
+            CambionSlaverLeader,
+            CR14_CambionBard_Ranged,
+            CR19_CambionBard_Melee,
+            CR3_CambionBard_Ranged
+        };
+
+        public static List<BlueprintUnit> CambionWizards = new List<BlueprintUnit>() {
+            CambionSlaverLeader,
+            CR18_CambionToughCaster,
+            CR18_CambionToughCaster_RE,
+            CR3_CambionWizard_Caster,
+            DaeranQ1_CambionWizard,
+            DaeranQ1_CambionWizard_normal,
+        };
+
+        public static List<BlueprintUnit> CambionFighters = new List<BlueprintUnit>() {
+            CambionWithClub,
+            CR2_CambionStandard_Melee,
+            CR3_CambionFighter_Melee,
+            CR3_CambionRogue_Melee,
+            Nexus_CambionWithLoot_ForAssault,
+            Nexus_CambionWithLoot_ForAssault_2,
+            Vellexia_CambionToughMelee_WithLoot
+        };
+
         public static List<BlueprintUnit> DemonRangedCambionList = new List<BlueprintUnit>() {
             CR15_Cybrog_Cambion_Ranged,
             CR17_CambionToughRanged,
             CR17_CambionToughRanged_RE,
+            CR2_CambionStandard_Ranged,
             CR3_CambionRanger_Ranged,
+            ToughMinaghoCambion
         };
+
+        //        Mutasafen,
+        //MutasafenAssistent,
+        //MutasafenFourth_NoLoot,
+        //MutasafenSecond,
+        //MutasafenThird,
+        //Mutasafen_MidnightFaneInThePast,
+
     }
 }

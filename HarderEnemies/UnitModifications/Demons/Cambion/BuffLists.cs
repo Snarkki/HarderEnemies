@@ -17,6 +17,8 @@ using static HarderEnemies.Main;
 namespace HarderEnemies.UnitModifications.Demons.Cambion {
     internal class BuffLists {
 
+        public static BlueprintUnitFactReference[] Buffs = {
 
+        };
     }
 }

@@ -17,6 +17,24 @@ using static HarderEnemies.Main;
 namespace HarderEnemies.UnitModifications.Demons.Brimorak {
     internal class AbilityLists {
 
-       
+        private static BlueprintFeature SuperiorBolsteredMetaMagicFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(HEContext, "SuperiorBolsteredMetaMagicFeature");
+
+        public static BlueprintUnitFactReference[] BrimorakAbilities = {
+            Abilities.DragonsBreath.ToReference<BlueprintUnitFactReference>(),
+            Abilities.AcidArrow.ToReference<BlueprintUnitFactReference>(),
+            Abilities.BurningArc.ToReference<BlueprintUnitFactReference>(),
+            FeatureList.PointBlankShot.ToReference<BlueprintUnitFactReference>(),
+            FeatureList.PreciseShot.ToReference<BlueprintUnitFactReference>(),
+        };
+
+        public static BlueprintUnitFactReference[] BrimorakAbilitiesWithMetamagic = {
+            Abilities.DragonsBreath.ToReference<BlueprintUnitFactReference>(),
+            Abilities.AcidArrow.ToReference<BlueprintUnitFactReference>(),
+            Abilities.BurningArc.ToReference<BlueprintUnitFactReference>(),
+            SuperiorBolsteredMetaMagicFeature.ToReference<BlueprintUnitFactReference>(),
+            FeatureList.PointBlankShot.ToReference<BlueprintUnitFactReference>(),
+            FeatureList.PreciseShot.ToReference<BlueprintUnitFactReference>(),
+        };
+
     }
 }

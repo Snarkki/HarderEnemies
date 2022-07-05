@@ -17,6 +17,8 @@ using static HarderEnemies.Main;
 namespace HarderEnemies.UnitModifications.Demons.Brimorak {
     internal class BuffLists {
 
-       
+        public static BlueprintUnitFactReference[] BrimorakBuffs = {
+            Buffs.ResistAcidBuff.ToReference<BlueprintUnitFactReference>(),
+        };
     }
 }

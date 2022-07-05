@@ -70,7 +70,8 @@ namespace HarderEnemies.AI_Mechanics.Actions.ByLevels {
             var BurningArcAiSpell = AiCastSpellList.BurningArcAiAction.CreateCopy(HEContext, "BurningArcAiSpell", bp => {
                 bp.BaseScore = 3.0f;
                 bp.m_ActorConsiderations = new ConsiderationReference[] {
-                    AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>()
+                    AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>(),
+                    AiConsiderationList.NoThreateningUnitsConsideration.ToReference<ConsiderationReference>()
                 };
             });
 
@@ -80,6 +81,16 @@ namespace HarderEnemies.AI_Mechanics.Actions.ByLevels {
                     AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>()
                 };
             });
+
+            var AcidArrowAiSpell = AiCastSpellList.ScorchingRayAiAction.CreateCopy(HEContext, "AcidArrowAiSpell", bp => {
+                bp.BaseScore = 2.5f;
+                bp.m_ActorConsiderations = new ConsiderationReference[] {
+                    AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>(),
+                    AiConsiderationList.NoThreateningUnitsConsideration.ToReference<ConsiderationReference>()
+                };
+                bp.m_Ability = Abilities.AcidArrow.ToReference<BlueprintAbilityReference>();
+            });
+
             var SoundBurstAiSpell = AiCastSpellList.ThundercallerSoundBurstAiAction.CreateCopy(HEContext, "SoundBurstAiSpell", bp => {
                 bp.BaseScore = 3.0f;
                 bp.m_ActorConsiderations = new ConsiderationReference[] {

@@ -172,6 +172,8 @@
     <Compile Include="AI_Mechanics\Actions\ByLevels\Level1.cs" />
     <Compile Include="AI_Mechanics\Brains\AngelBrain.cs" />
     <Compile Include="AI_Mechanics\Brains\DemonBrains.cs" />
+    <Compile Include="AI_Mechanics\Brains\DemonsByType\AbrikandiluBrain.cs" />
+    <Compile Include="AI_Mechanics\Brains\DemonsByType\BrimorakBrain.cs" />
     <Compile Include="AI_Mechanics\Brains\DragonBrain.cs" />
     <Compile Include="AI_Mechanics\Brains\MeleeCultistBrains.cs" />
     <Compile Include="Blueprints\AiCastSpellList.cs" />

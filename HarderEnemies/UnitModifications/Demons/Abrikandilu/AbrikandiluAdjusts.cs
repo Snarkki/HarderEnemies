@@ -18,6 +18,7 @@ namespace HarderEnemies.UnitModifications.Demons.Abrikandilu {
     internal class AbrikandiluAdjusts {
 
         private static BlueprintFeature SuperToughness = BlueprintTools.GetModBlueprint<BlueprintFeature>(HEContext, "SuperToughnessFeature");
+        private static BlueprintBrain AbrikandiluBrain = BlueprintTools.GetModBlueprint<BlueprintBrain>(HEContext, "AbrikandiluBrain");
 
         public static void Handler() {
             AdjustHP();
@@ -38,6 +39,8 @@ namespace HarderEnemies.UnitModifications.Demons.Abrikandilu {
             if (HEContext.AbilityChanges.DemonChanges.IsDisabled("AbrikandiluAbilities")) { return; }
             foreach (BlueprintUnit thisUnit in UnitLists.DemonAbrikandiluList) {
                 Utils.CustomHelpers.AddFactListsToUnit(thisUnit, thisUnit.CR, AbilityLists.AbrikanduAbilities);
+                thisUnit.AlternativeBrains = new BlueprintBrainReference[0] { };
+                thisUnit.m_Brain = AbrikandiluBrain.ToReference<BlueprintBrainReference>();
             }
             HEContext.Logger.LogHeader("Updated Abrikandilu abilities");
         }

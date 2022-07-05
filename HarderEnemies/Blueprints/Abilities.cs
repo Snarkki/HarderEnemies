@@ -55,6 +55,10 @@ namespace HarderEnemies.Blueprints {
         public static BlueprintAbility SummonMonsterVBase = BlueprintTools.GetBlueprint<BlueprintAbility>("630c8b85d9f07a64f917d79cb5905741");
         public static BlueprintAbility SummonMonsterVd3 = BlueprintTools.GetBlueprint<BlueprintAbility>("715f208d545be2f4aa2d3693e6347a5a");
         public static BlueprintAbility HungryPit = BlueprintTools.GetBlueprint<BlueprintAbility>("f63f4d1806b78604a952b3958892ce1c");
+        public static BlueprintAbility DragonsBreath = BlueprintTools.GetBlueprint<BlueprintAbility>("5e826bcdfde7f82468776b55315b2403");
+        public static BlueprintAbility DragonsBreathGreen = BlueprintTools.GetBlueprint<BlueprintAbility>("48c4433acbcecae499d1d38a56f72f36");
+        public static BlueprintAbility AcidArrow = BlueprintTools.GetBlueprint<BlueprintAbility>("9a46dfd390f943647ab4395fc997936d");
+        public static BlueprintAbility OverrunAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("1a3b471ecea51f7439a946b23577fd70");
 
 
 

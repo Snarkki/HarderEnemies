@@ -26,6 +26,15 @@ namespace HarderEnemies.Utils {
             });
         }
 
+        public static void AddFactsToUnit(this BlueprintUnit thisUnit, BlueprintUnitFactReference[] factList) {
+            foreach (var fact in factList) {
+                if (!thisUnit.m_AddFacts.Contains(fact)) {
+                    thisUnit.m_AddFacts = thisUnit.m_AddFacts.AppendToArray(fact);
+                }
+            }
+            HEContext.Logger.LogHeader("Added " + thisUnit.ToString() + " facts");
+        }
+
         public static void AddMemorizedSpellsAndBrains(BlueprintUnit thisUnit, BlueprintCharacterClass CharacterClass, BlueprintAbilityReference[] SpellList, BlueprintBrain newBrain) {
             var memorizedSpells = thisUnit.GetComponent<AddClassLevels>(c => c.m_CharacterClass.Equals(CharacterClass.ToReference<BlueprintCharacterClassReference>()))?.m_MemorizeSpells;
             //HEContext.Logger.LogHeader(clericClass.m_CharacterClass.ToString());
@@ -36,7 +45,7 @@ namespace HarderEnemies.Utils {
                 // Clear alternative brains
                 thisUnit.AlternativeBrains = new BlueprintBrainReference[0] { };
                 thisUnit.m_Brain = newBrain.ToReference<BlueprintBrainReference>();
-                HEContext.Logger.LogHeader("Added " +  thisUnit.ToString() + " Spells and Brain");
+                HEContext.Logger.LogHeader("Added " + thisUnit.ToString() + " Spells and Brain");
             }
         }
 

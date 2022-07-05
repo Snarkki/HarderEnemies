@@ -17,6 +17,13 @@ using static HarderEnemies.Main;
 namespace HarderEnemies.UnitModifications.Demons.Minotaur {
     internal class BuffLists {
 
+        public static BlueprintUnitFactReference[] MeleeMinotaurBuffs = {
+            Buffs.ExpeditiousRetreatBuff.ToReference<BlueprintUnitFactReference>(),
+        };
 
+        public static BlueprintUnitFactReference[] HighLevelMeleeMinotaurs = {
+            Buffs.ExpeditiousRetreatBuff.ToReference<BlueprintUnitFactReference>(),
+            Buffs.LegendaryProportionsBuff.ToReference<BlueprintUnitFactReference>(),
+        };
     }
 }

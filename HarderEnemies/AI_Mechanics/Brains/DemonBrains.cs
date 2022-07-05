@@ -17,6 +17,7 @@ namespace HarderEnemies.AI_Mechanics.Brains {
             CreateDevastatorBrain();
             CreateCambionRangedBrain();
             CreateMinotaurBrain();
+            DemonsByType.AbrikandiluBrain.CreateAbrikandiluBrain();
         }
 
         private static void CreateDerakniBrain() {
