@@ -36,7 +36,7 @@ namespace HarderEnemies.AI_Mechanics.Brains.DemonsByType {
         }
 
         public static void CreateChargingMinotaurBrain() {
-            var CleaveMinotaurBrain = Helpers.CreateBlueprint<BlueprintBrain>(HEContext, "CleaveMinotaurBrain", bp => {
+            var ChargingMinotaurBrain = Helpers.CreateBlueprint<BlueprintBrain>(HEContext, "ChargingMinotaurBrain ", bp => {
                 bp.m_Actions = new BlueprintAiActionReference[]
                {
                     AiCastSpellList.AttackAiAction.ToReference<BlueprintAiActionReference>(),
