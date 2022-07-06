@@ -48,6 +48,29 @@ namespace HarderEnemies.UnitModifications.Bosses.Balors {
             CR28M_BalorMythicFighter,
             CR28M_BalorMythicFighter_RE,
             Darrazand,
+        };
+
+        public static List<BlueprintUnit> CasterBalors = new List<BlueprintUnit>() {
+            //Alushynirra_BalorNocticulaGuard,
+            CR21_BalorAdvanced,
+            CR21_BalorAdvanced_RE,
+        };
+
+        public static List<BlueprintUnit> MeleeBalors = new List<BlueprintUnit>() {
+            BalorLeader,
+            Berengar_Balor,
+            CR20_BalorStandard,
+            CR20_BalorStandard_RE,
+        };
+
+        public static List<BlueprintUnit> MythicBalors = new List<BlueprintUnit>() {
+            CR26_BalorMythicBloodrager,
+            CR26_BalorMythicBloodrager_RE,
+            CR28M_BalorMythicFighter,
+            CR28M_BalorMythicFighter_RE,
+        };
+
+        public static List<BlueprintUnit> KhorramzadehList = new List<BlueprintUnit>() {
             Khorramzadeh,
             Khorramzadeh_Aeon,
             Khorramzadeh_Undead,

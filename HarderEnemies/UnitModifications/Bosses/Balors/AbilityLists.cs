@@ -42,14 +42,48 @@ namespace HarderEnemies.UnitModifications.Bosses.Balors {
             SuperiorEmpowerMetaFeature.ToReference<BlueprintUnitFactReference>()
         };
 
-        public static BlueprintUnitFactReference[] BalorAbilities = {
+        public static BlueprintUnitFactReference[] MeleeBalorAbilities = {
+            Abilities.InvisibilityGreater.ToReference<BlueprintUnitFactReference>(),
+            Abilities.DispelGreater.ToReference<BlueprintUnitFactReference>(),
+            Abilities.MindBlank.ToReference<BlueprintUnitFactReference>(),
+            Abilities.LegendaryProportions.ToReference<BlueprintUnitFactReference>(),
+            Abilities.MirrorImage.ToReference<BlueprintUnitFactReference>(),
+            Abilities.DemonTeleport.ToReference<BlueprintUnitFactReference>(),
+            DarrazandQuickenFeature.ToReference<BlueprintUnitFactReference>()
+        };
+
+        public static BlueprintUnitFactReference[] CasterBalorAbilities = {
+            Abilities.Blasphemy.ToReference<BlueprintUnitFactReference>(),
             Abilities.FlameStrike.ToReference<BlueprintUnitFactReference>(),
             Abilities.Firestorm.ToReference<BlueprintUnitFactReference>(),
-            Abilities.HoldPersonMass.ToReference<BlueprintUnitFactReference>(),
-            Abilities.OverwhelmingPresence.ToReference<BlueprintUnitFactReference>(),
-            Abilities.ShoutGreater.ToReference<BlueprintUnitFactReference>(),
+            Abilities.LegendaryProportions.ToReference<BlueprintUnitFactReference>(),
+            Abilities.InvisibilityGreater.ToReference<BlueprintUnitFactReference>(),
+            Abilities.DispelGreater.ToReference<BlueprintUnitFactReference>(),
+            Abilities.MirrorImage.ToReference<BlueprintUnitFactReference>(),
+            Abilities.MindBlank.ToReference<BlueprintUnitFactReference>(),
             FeatureList.AscendentElementFire.ToReference<BlueprintUnitFactReference>(),
+            PullingStrikeAbility.ToReference<BlueprintUnitFactReference>(),
+            Abilities.Stormbolts.ToReference<BlueprintUnitFactReference>(),
+            DarrazandQuickenFeature.ToReference<BlueprintUnitFactReference>(),
+            Abilities.HoldPersonMass.ToReference<BlueprintUnitFactReference>(),
+            Abilities.ShoutGreater.ToReference<BlueprintUnitFactReference>(),
             SuperiorEmpowerMetaFeature.ToReference<BlueprintUnitFactReference>()
+        };
+
+        public static BlueprintUnitFactReference[] MythicBalorAbilities = {
+            Abilities.Blasphemy.ToReference<BlueprintUnitFactReference>(),
+            Abilities.LegendaryProportions.ToReference<BlueprintUnitFactReference>(),
+            Abilities.InvisibilityGreater.ToReference<BlueprintUnitFactReference>(),
+            Abilities.DispelGreater.ToReference<BlueprintUnitFactReference>(),
+            Abilities.MirrorImage.ToReference<BlueprintUnitFactReference>(),
+            Abilities.MindBlank.ToReference<BlueprintUnitFactReference>(),
+            Abilities.DemonTeleport.ToReference<BlueprintUnitFactReference>(),
+            FeatureList.AscendentElementFire.ToReference<BlueprintUnitFactReference>(),
+            DarrazandQuickenFeature.ToReference<BlueprintUnitFactReference>(),
+            FeatureList.VitalStrikeFeature.ToReference<BlueprintUnitFactReference>(),
+            FeatureList.VitalStrikeFeatureGreater.ToReference<BlueprintUnitFactReference>(),
+            FeatureList.VitalStrikeFeatureImproved.ToReference<BlueprintUnitFactReference>(),
+            FeatureList.VitalStrikeMythicFeat.ToReference<BlueprintUnitFactReference>(),
         };
 
     }

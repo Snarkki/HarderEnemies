@@ -29,10 +29,6 @@ namespace HarderEnemies.Blueprints {
         public static BlueprintFeature PreciseBomb = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>("5c396342f614dd644a48c3af08d79701");
         public static BlueprintFeature PreciseShot = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>("8f3d1e6b4be006f4d896081f2f889665");
         public static BlueprintFeature PointBlankShot = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>("0da0c194d6e1d43419eb8d990b28e0ab");
-        public static BlueprintFeature VitalStrikeFeature = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>("14a1fc1356df9f146900e1e42142fc9d");
-        public static BlueprintFeature VitalStrikeFeatureGreater = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>("e2d1fa11f6b095e4fb2fd1dcf5e36eb3");
-        public static BlueprintFeature VitalStrikeFeatureImproved = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>("52913092cd018da47845f36e6fbe240f");
-        public static BlueprintFeature VitalStrikeMythicFeat = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>("e07bcb271ecefec44be314e1c807c798");
 
         public static BlueprintFeature GreaterBullRush = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>("72ba6ad46d94ecd41bad8e64739ea392");
         public static BlueprintFeature ImprovedBullRush = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>("b3614622866fe7046b787a548bbd7f59");
@@ -49,6 +45,11 @@ namespace HarderEnemies.Blueprints {
         public static BlueprintFeature IntimidatingProwess = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>("d76497bfc48516e45a0831628f767a0f");
         public static BlueprintFeature Outflank = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>("422dab7309e1ad343935f33a4d6e9f11");
         public static BlueprintFeature DispellingStrike = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>("1b92146b8a9830d4bb97ab694335fa7c");
+        public static BlueprintFeature VitalStrikeFeature = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>("14a1fc1356df9f146900e1e42142fc9d");
+        public static BlueprintFeature VitalStrikeFeatureGreater = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>("e2d1fa11f6b095e4fb2fd1dcf5e36eb3");
+        public static BlueprintFeature VitalStrikeFeatureImproved = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>("52913092cd018da47845f36e6fbe240f");
+        public static BlueprintFeature VitalStrikeMythicFeat = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>("e07bcb271ecefec44be314e1c807c798");
+
         // MYTHIC FEATURES
         public static BlueprintFeature AlwaysAChange = BlueprintTools.GetBlueprint<BlueprintFeature>("d57301613ad6a5140b2fdac40fa368e3");
         public static BlueprintFeature ThunderingBlows = BlueprintTools.GetBlueprint<BlueprintFeature>("8081c981b95ad9f49a421e7345c8c6f6");

@@ -46,7 +46,7 @@ namespace HarderEnemies.Features {
                 bp.RemoveComponents<AbilityEffectRunAction>();
                 bp.AddComponent<AbilityEffectRunAction>(c => {
                     c.Actions = new ActionList {
-                        Actions = new GameAction[] { SummonContext(summonedBalor, Kingmaker.RuleSystem.DiceType.D3) }
+                        Actions = new GameAction[] { SummonContext(summonedBalor, Kingmaker.RuleSystem.DiceType.D3, 1) }
                     };
                 });
             });
@@ -55,11 +55,11 @@ namespace HarderEnemies.Features {
 
             var ErineysSummon = Abilities.SummonMonsterIXd3.CreateCopy(HEContext, "ErineysSummon", bp => {
                 bp.SetName(HEContext, "Summon Erineyes");
-                bp.SetDescription(HEContext, "This spell summons 1d2+1d2 extraplanar Erineyes. ummoned monsters appear where you designate and act according to their initiative check results. They attack your opponents to the best of their ability.");
+                bp.SetDescription(HEContext, "This spell summons 1d2+1d2 extraplanar Erineyes. Summoned monsters appear where you designate and act according to their initiative check results. They attack your opponents to the best of their ability.");
                 bp.RemoveComponents<AbilityEffectRunAction>();
                 bp.AddComponent<AbilityEffectRunAction>(c => {
                     c.Actions = new ActionList {
-                        Actions = new GameAction[] { SummonContext(Summoned_CR20_ErineysDevil, Kingmaker.RuleSystem.DiceType.D2), SummonContext(Summoned_CR20_ErineysDevilRanged, Kingmaker.RuleSystem.DiceType.D2) }
+                        Actions = new GameAction[] { SummonContext(Summoned_CR20_ErineysDevil, Kingmaker.RuleSystem.DiceType.D2, 1), SummonContext(Summoned_CR20_ErineysDevilRanged, Kingmaker.RuleSystem.DiceType.D2, 1) }
                     };
                 });
             });
@@ -74,17 +74,17 @@ namespace HarderEnemies.Features {
 
             var GreaterSwarmSummon = Abilities.SummonMonsterIXd3.CreateCopy(HEContext, "GreaterSwarmSummon", bp => {
                 bp.SetName(HEContext, "Greater Swarm Summon");
-                bp.SetDescription(HEContext, "This spell summons to your side 4 mythic swarms. The summoned swarms appear where you designate and act according to their initiative check results. They attack your opponents to the best of their ability.");
+                bp.SetDescription(HEContext, "This spell summons to your side 1d6 mythic swarms. The summoned swarms appear where you designate and act according to their initiative check results. They attack your opponents to the best of their ability.");
                 bp.RemoveComponents<AbilityEffectRunAction>();
                 bp.AddComponent<AbilityEffectRunAction>(c => {
                     c.Actions = new ActionList {
-                        Actions = new GameAction[] { SummonContext(SummonedEpicSwarms, Kingmaker.RuleSystem.DiceType.D3) }
+                        Actions = new GameAction[] { SummonContext(SummonedEpicSwarms, Kingmaker.RuleSystem.DiceType.D4, 2) }
                     };
                 });
             });
         }
 
-        private static ContextActionSpawnMonster SummonContext(BlueprintUnit unitToSummon, Kingmaker.RuleSystem.DiceType amount) {
+        private static ContextActionSpawnMonster SummonContext(BlueprintUnit unitToSummon, Kingmaker.RuleSystem.DiceType amount, int value) {
 
             var applyBuff = Helpers.Create<ContextActionApplyBuff>(buff => {
                 buff.m_Buff = SummonedCreatureSpawnMonsterVI.ToReference<BlueprintBuffReference>();
@@ -114,7 +114,7 @@ namespace HarderEnemies.Features {
                 summons.CountValue = new ContextDiceValue() {
                     DiceType = amount,
                     DiceCountValue = new ContextValue() {
-                        Value = 1,
+                        Value = value,
                         ValueType = ContextValueType.Simple,
                         ValueRank = Kingmaker.Enums.AbilityRankType.Default,
                         ValueShared = Kingmaker.UnitLogic.Abilities.AbilitySharedValue.Damage,

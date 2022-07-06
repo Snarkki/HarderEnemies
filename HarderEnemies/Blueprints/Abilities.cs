@@ -95,7 +95,7 @@ namespace HarderEnemies.Blueprints {
         public static BlueprintAbility CureModerateWoundsMass = BlueprintTools.GetBlueprint<BlueprintAbility>("571221cc141bc21449ae96b3944652aa");
         public static BlueprintAbility ScorchingRay = BlueprintTools.GetBlueprint<BlueprintAbility>("cdb106d53c65bbc4086183d54c3b97c7");
         public static BlueprintAbility BurningArc = BlueprintTools.GetBlueprint<BlueprintAbility>("eaac3d36e0336cb479209a6f65e25e7c");
-
+        public static BlueprintAbility VitalStrikeAbilityGreater = BlueprintTools.GetBlueprint<BlueprintAbility>("11f971b6453f74d4594c538e3c88d499");
         //Features.FlyerCR15.ToReference<BlueprintUnitFactReference>(),
         //Buffs.TrueSeeingBuff.ToReference<BlueprintUnitFactReference>(),
         //Features.SpellResistanceDivineRank1.ToReference<BlueprintUnitFactReference>(),
@@ -112,6 +112,8 @@ namespace HarderEnemies.Blueprints {
         public static BlueprintAbility Revolt = BlueprintTools.GetBlueprint<BlueprintAbility>("319c5a450b01f834599389853753d0f0");
         public static BlueprintAbility SuddenSquall = BlueprintTools.GetBlueprint<BlueprintAbility>("4e22d7cfda74b3644b31de8e7c044e21");
         public static BlueprintAbility EdictOfInvulnerability = BlueprintTools.GetBlueprint<BlueprintAbility>("6d21deddd7712fd409c94d248b75643d");
+        public static BlueprintAbility DemonTeleport = BlueprintTools.GetBlueprint<BlueprintAbility>("b3e8e307811b2a24387c2c9226fb4c10");
+
 
 
 

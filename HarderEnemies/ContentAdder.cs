@@ -29,6 +29,7 @@ namespace HarderEnemies {
                 AI_Mechanics.Brains.DragonBrain.DragonBrainHandler();
                 AI_Mechanics.Brains.AngelBrains.AngelBrainHandler();
                 AI_Mechanics.Brains.MeleeCultistBrains.BrainHandler();
+                AI_Mechanics.Brains.BossBrains.BalorBrains.Handler();
                 // 
 
 

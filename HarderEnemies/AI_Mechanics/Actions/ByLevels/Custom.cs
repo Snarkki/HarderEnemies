@@ -119,6 +119,11 @@ namespace HarderEnemies.AI_Mechanics.Actions.ByLevels {
                         AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>()
                     };
             });
+
+            var GreaterVitalStrikeAiSpell = AiCastSpellList.Gallu_AiAction_VitalStrike.CreateCopy(HEContext, "GreaterVitalStrikeAiSpell", bp => {
+                bp.BaseScore = 2.0f;
+                bp.m_Ability = Abilities.VitalStrikeAbilityGreater.ToReference<BlueprintAbilityReference>();
+            });
         }
     }
 }
