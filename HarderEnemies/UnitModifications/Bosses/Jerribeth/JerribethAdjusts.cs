@@ -17,15 +17,18 @@ using static HarderEnemies.Main;
 namespace HarderEnemies.UnitModifications.Bosses.Jerribeth {
     internal class JerribethAdjusts {
 
-
+        private static BlueprintFeature AbyssalToughnessFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(HEContext, "AbyssalToughnessFeature");
         private static BlueprintAiCastSpell GreaterDispelAiSpellSwift = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "GreaterDispelAiSpellSwift");
         private static BlueprintAiCastSpell StormBoltAiSpell = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "StormBoltAiSpell");
         private static BlueprintAiCastSpell SummonMonsterViiAiSpell = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "SummonMonsterViiAiSpell");
         private static BlueprintAiCastSpell FearAiSpell = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "FearAiSpell");
-        private static BlueprintFeature AbyssalToughnessFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(HEContext, "AbyssalToughnessFeature");
+        private static BlueprintAiCastSpell HoldPersonMassAiSpell = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "HoldPersonMassAiSpell");
+        private static BlueprintAiCastSpell ScorchingRayAiSpell = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "ScorchingRayAiSpell");
+        private static BlueprintAiCastSpell BurningArcAiSpell = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "BurningArcAiSpell");
+        private static BlueprintAiCastSpell SlowAiSpell = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "SlowAiSpell");
+        
 
-
-
+            
         public static void Handler() {
             HandleHPBuff();
             JerribethAbilities();
@@ -54,10 +57,10 @@ namespace HarderEnemies.UnitModifications.Bosses.Jerribeth {
                 StormBoltAiSpell.ToReference<BlueprintAiActionReference>(),
                 SummonMonsterViiAiSpell.ToReference<BlueprintAiActionReference>(),
                 FearAiSpell.ToReference<BlueprintAiActionReference>(),
-                AiCastSpellList.Nabasu_MassHoldPersonHigh_AiAction.ToReference<BlueprintAiActionReference>(),
-                AiCastSpellList.ScorchingRayAiAction.ToReference<BlueprintAiActionReference>(),
-                AiCastSpellList.BurningArcAiAction.ToReference<BlueprintAiActionReference>(),
-                AiCastSpellList.Xantir_SlowAIAction.ToReference<BlueprintAiActionReference>()
+                HoldPersonMassAiSpell.ToReference<BlueprintAiActionReference>(),
+                SlowAiSpell.ToReference<BlueprintAiActionReference>(),
+                BurningArcAiSpell.ToReference<BlueprintAiActionReference>(),
+                ScorchingRayAiSpell.ToReference<BlueprintAiActionReference>()
 
                 );
             HEContext.Logger.LogHeader("Updated Jerribeth Abilities");

@@ -44,10 +44,15 @@ namespace HarderEnemies.UnitModifications.Demons.Glabrezu {
             foreach (BlueprintUnit thisUnit in UnitLists.DemonGlabrezuList) {
                 thisUnit.m_AddFacts = thisUnit.m_AddFacts.AppendToArray(AbilityLists.GlabrezuAbilities);
             }
-            BrainList.GlabrezuBrainStandard.m_Actions = BrainList.GlabrezuBrainStandard.m_Actions.AppendToArray(AiCastSpellList.MinotaurCleric_DispelMagicAiAction.ToReference<BlueprintAiActionReference>(),
-            AiCastSpellList.NixieConfusionAiAction.ToReference<BlueprintAiActionReference>(),
-            AiCastSpellList.Glabrezu_AiAction_PowerWordStun.ToReference<BlueprintAiActionReference>()
+            BrainList.GlabrezuBrainStandard.m_Actions = BrainList.GlabrezuBrainStandard.m_Actions.AppendToArray(
+                AiCastSpellList.MinotaurCleric_DispelMagicAiAction.ToReference<BlueprintAiActionReference>(),
+                AiCastSpellList.NixieConfusionAiAction.ToReference<BlueprintAiActionReference>(),
+                AiCastSpellList.Glabrezu_AiAction_PowerWordStun.ToReference<BlueprintAiActionReference>()
             );
+
+            "nää pitäs splittaa vähintää kahteen ryhmään. low lvl ja high lvl ja sen mukaan abilityt"
+
+
             HEContext.Logger.LogHeader("Updated GlabrezuListA");
         }
 

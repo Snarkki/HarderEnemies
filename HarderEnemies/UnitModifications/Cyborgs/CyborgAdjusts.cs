@@ -43,6 +43,8 @@ namespace HarderEnemies.UnitModifications.Cyborgs {
                 //thisUnit.AlternativeBrains = new BlueprintBrainReference[0] { };          
             }
 
+            Utils.CustomHelpers.AddMemorizedSpellsAndBrains(UnitLists.CR15_Cyborg_CrusaderCasterLevel13, CharacterClass.WizardClass, AbilityLists.CyborgCasterSpells, CR8ClericBrain);
+
             HEContext.Logger.LogHeader("Updated Cyborg Abilities");
         }
         public static void CasterBuffs() {

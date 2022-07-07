@@ -37,6 +37,13 @@ namespace HarderEnemies.AI_Mechanics.Actions.ByLevels {
                     AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>()
                 };
             });
+
+            var ChainLightningAiSpell = AiCastSpellList.ChainLightningAiAction.CreateCopy(HEContext, "ChainLightningAiSpell", bp => {
+                bp.BaseScore = 5.0f;
+                bp.m_ActorConsiderations = new ConsiderationReference[] {
+                    AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>()
+                };
+            });
             var DisintregrateMaximized = AiCastSpellList.DLC2_Wizard_Empowered_MagicMissle_AiAction.CreateCopy(HEContext, "DisintregrateMaximized", bp => {
                 bp.BaseScore = 6.0f;
                 bp.CombatCount = 2;

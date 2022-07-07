@@ -38,6 +38,15 @@ namespace HarderEnemies.AI_Mechanics.Actions.ByLevels {
                 };
             });
 
+            var WavesOfFatigueAiSpell = AiCastSpellList.Minagho_WavesOfFatigueAiAction.CreateCopy(HEContext, "WavesOfFatigueAiSpell", bp => {
+                bp.BaseScore = 6.0f;
+                bp.CooldownRounds = 5;
+                bp.CooldownDice = new DiceFormula(3, DiceType.D4);
+                bp.m_ActorConsiderations = new ConsiderationReference[] {
+                    AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>(),
+                };
+            });
+
             var HungryPitAiSpell = AiCastSpellList.StinkingCloudAiAction.CreateCopy(HEContext, "HungryPitAiSpell", bp => {
                 bp.BaseScore = 4.0f;
                 bp.CooldownRounds = 5;

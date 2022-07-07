@@ -17,8 +17,10 @@ using static HarderEnemies.Main;
 namespace HarderEnemies.UnitModifications.Demons.Gibrileth {
     internal class GibrilethAdjusts {
 
-        private static BlueprintAiCastSpell UnholyBlightAiSpell = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "UnholyBlightAiSpell");
         private static BlueprintFeature SuperToughness = BlueprintTools.GetModBlueprint<BlueprintFeature>(HEContext, "SuperToughnessFeature");
+        private static BlueprintAiCastSpell UnholyBlightAiSpell = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "UnholyBlightAiSpell");
+        private static BlueprintAiCastSpell StinkingCloudAiSpell = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "StinkingCloudAiSpell");
+        private static BlueprintAiCastSpell WavesOfFatigueAiSpell = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "WavesOfFatigueAiSpell");
 
 
         public static void Handler() {
@@ -41,12 +43,12 @@ namespace HarderEnemies.UnitModifications.Demons.Gibrileth {
             foreach (BlueprintUnit thisUnit in UnitLists.DemonGibrilethList) {
                 thisUnit.m_AddFacts = thisUnit.m_AddFacts.AppendToArray(AbilityLists.GibrilithAbilities);
             }
-            BrainList.GibrilethStandardBrain.m_Actions = BrainList.GibrilethStandardBrain.m_Actions.AppendToArray(AiCastSpellList.StinkingCloudAiAction.ToReference<BlueprintAiActionReference>(),
-                AiCastSpellList.Minagho_WavesOfFatigueAiAction.ToReference<BlueprintAiActionReference>(),
+            BrainList.GibrilethStandardBrain.m_Actions = BrainList.GibrilethStandardBrain.m_Actions.AppendToArray(
+                StinkingCloudAiSpell.ToReference<BlueprintAiActionReference>(),
+                WavesOfFatigueAiSpell.ToReference<BlueprintAiActionReference>(),
                 UnholyBlightAiSpell.ToReference<BlueprintAiActionReference>()
                 );
             HEContext.Logger.LogHeader("Updated GibrilethListAbililties");
-
         }
 
         private static void GibrilethBuffs() {

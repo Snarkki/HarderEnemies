@@ -23,7 +23,12 @@ namespace HarderEnemies.UnitModifications.Bosses.Minagho {
         private static BlueprintAiCastSpell GreaterDispelAiSpellSwift = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "GreaterDispelAiSpellSwift");
         private static BlueprintAiCastSpell PowerWordBlindAiSpell = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "PowerWordBlindAiSpell");
         private static BlueprintAiCastSpell CreateRiftOfRuinAiSpell = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "CreateRiftOfRuinAiSpell");
+        private static BlueprintAiCastSpell FirestormEmpoweredAiSpell = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "FirestormEmpoweredAiSpell");
+        private static BlueprintAiCastSpell ChainLightningAiSpell = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "ChainLightningAiSpell");
 
+
+        
+            
         public static void Handler() {
             HandleHPBuff();
             MinaghoAbilities();
@@ -52,8 +57,8 @@ namespace HarderEnemies.UnitModifications.Bosses.Minagho {
                 GreaterDispelAiSpellSwift.ToReference<BlueprintAiActionReference>(),
                 AiCastSpellList.Minagho_PhantasmalPutrefactionAIAction.ToReference<BlueprintAiActionReference>(),
                 PowerWordBlindAiSpell.ToReference<BlueprintAiActionReference>(),
-                AiCastSpellList.FireStormAiAction.ToReference<BlueprintAiActionReference>(),
-                AiCastSpellList.ChainLightningAiAction.ToReference<BlueprintAiActionReference>(),
+                FirestormEmpoweredAiSpell.ToReference<BlueprintAiActionReference>(),
+                ChainLightningAiSpell.ToReference<BlueprintAiActionReference>(),
                 CreateRiftOfRuinAiSpell.ToReference<BlueprintAiActionReference>()
                 );
 

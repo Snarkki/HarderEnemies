@@ -17,6 +17,21 @@ using static HarderEnemies.Main;
 namespace HarderEnemies.UnitModifications.Cyborgs {
     internal class AbilityLists {
 
-
+        public static BlueprintAbilityReference[] CyborgCasterSpells = {
+                Abilities.MirrorImage.ToReference<BlueprintAbilityReference>(),
+                Abilities.MirrorImage.ToReference<BlueprintAbilityReference>(),
+                Abilities.MagicMissile.ToReference<BlueprintAbilityReference>(),
+                Abilities.MagicMissile.ToReference<BlueprintAbilityReference>(),
+                Abilities.MagicMissile.ToReference<BlueprintAbilityReference>(),
+                Abilities.InvisibilityGreater.ToReference<BlueprintAbilityReference>(),
+                Abilities.InvisibilityGreater.ToReference<BlueprintAbilityReference>(),
+                Abilities.Grease.ToReference<BlueprintAbilityReference>(),
+                Abilities.AnimateDead.ToReference<BlueprintAbilityReference>(),
+                Abilities.AnimateDead.ToReference<BlueprintAbilityReference>(),
+                Abilities.StinkingCloud.ToReference<BlueprintAbilityReference>(),
+                Abilities.DeepSlumber.ToReference<BlueprintAbilityReference>(),
+                Abilities.SummonMonsterVBase.ToReference<BlueprintAbilityReference>(),
+                Abilities.HungryPit.ToReference<BlueprintAbilityReference>(),
+            };
     }
 }
