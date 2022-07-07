@@ -64,6 +64,7 @@ namespace HarderEnemies.UnitModifications.VescavorAndDerakni {
                 thisUnit.m_AddFacts = thisUnit.m_AddFacts.AppendToArray(FeatureList.TripBite.ToReference<BlueprintUnitFactReference>());
                 thisUnit.AlternativeBrains = new BlueprintBrainReference[0] { };
                 thisUnit.m_Brain = DerakniNewStandardBrain.ToReference<BlueprintBrainReference>();
+                " brainit kuntoon - nyt spämmää tyhmästi teleporttii. ehkä joku fiksumpi teleportti myös joka ei ota kaverei mukaa"
             }
             HEContext.Logger.LogHeader("Updated Vescavor/Derakni Abilities");
         }

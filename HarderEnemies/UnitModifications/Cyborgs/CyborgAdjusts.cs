@@ -43,6 +43,20 @@ namespace HarderEnemies.UnitModifications.Cyborgs {
                 //thisUnit.AlternativeBrains = new BlueprintBrainReference[0] { };          
             }
 
+            "melee cyborgien luonti: 2h -> intimidating tms, tower shield jäbät -> trip"
+
+                "cyborg demonit: -ac ainaskin, joku mleee buiildi, vampiric touch succubuksilel jotain muutakin"
+            CR13_CyborgGreaterKalavakusAdvanced,
+
+            CR14_Cyborg_CrusaderTankLevel12,
+
+
+            CR15_Cyborg_CrusaderMeleeLevel13,
+
+            CR15_Cyborg_Incubus_Assasin,
+            CR16_Cyborg_SuccubusSorc,
+
+
             Utils.CustomHelpers.AddMemorizedSpellsAndBrains(UnitLists.CR15_Cyborg_CrusaderCasterLevel13, CharacterClass.WizardClass, AbilityLists.CyborgCasterSpells, CR8ClericBrain);
 
             HEContext.Logger.LogHeader("Updated Cyborg Abilities");

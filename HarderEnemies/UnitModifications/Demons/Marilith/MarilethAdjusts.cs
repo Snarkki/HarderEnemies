@@ -33,11 +33,16 @@ namespace HarderEnemies.UnitModifications.Demons.Marileth {
             foreach (BlueprintUnit thisUnit in UnitLists.DemonMarilithList) {
                 thisUnit.m_AddFacts = thisUnit.m_AddFacts.AppendToArray(SuperToughness.ToReference<BlueprintUnitFactReference>());
             }
+
+
+
             HEContext.Logger.LogHeader("Adjusted Demons HP");
         }
 
         private static void MarilithAbilities() {
             if (HEContext.AbilityChanges.DemonChanges.IsDisabled("MarilithAbilities")) { return; }
+
+            "aivot kuntoon blade barrier osalta "
         }
 
         private static void MarilithBuffs() {
