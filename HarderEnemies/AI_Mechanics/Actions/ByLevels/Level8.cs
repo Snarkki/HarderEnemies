@@ -45,8 +45,8 @@ namespace HarderEnemies.AI_Mechanics.Actions.ByLevels {
                 bp.m_ActorConsiderations = new ConsiderationReference[] {
                     AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>()
                 };
-            }); 
-            
+            });
+
             var StormBoltAiSpell = AiCastSpellList.Mielara_AiAction_Stormbolts.CreateCopy(HEContext, "StormBoltAiSpell", bp => {
                 bp.BaseScore = 8.0f;
                 bp.CombatCount = 3;
@@ -69,6 +69,17 @@ namespace HarderEnemies.AI_Mechanics.Actions.ByLevels {
                 bp.m_Ability = Abilities.MindBlank.ToReference<BlueprintAbilityReference>();
                 bp.m_ActorConsiderations = new ConsiderationReference[] {
                     NoMindBlankConsideration.ToReference<ConsiderationReference>(),
+                    AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>()
+                };
+            });
+
+            var PowerWordStunAiSpell = AiCastSpellList.Glabrezu_AiAction_PowerWordStun.CreateCopy(HEContext, "PowerWordStunAiSpell", bp => {
+                bp.BaseScore = 8.0f;
+                bp.CooldownRounds = 3;
+                bp.StartCooldownRounds = 2;
+                bp.CooldownDice = new DiceFormula(3, DiceType.D4);
+                bp.m_ActorConsiderations = new ConsiderationReference[] {
+                    AiConsiderationList.NoThreateningUnitsConsideration.ToReference<ConsiderationReference>(),
                     AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>()
                 };
             });

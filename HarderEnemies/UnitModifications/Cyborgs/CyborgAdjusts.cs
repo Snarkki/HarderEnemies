@@ -19,6 +19,13 @@ namespace HarderEnemies.UnitModifications.Cyborgs {
 
 
         private static BlueprintFeature SuperToughness = BlueprintTools.GetModBlueprint<BlueprintFeature>(HEContext, "SuperToughnessFeature");
+        private static BlueprintBrain KalavakusBrain = BlueprintTools.GetModBlueprint<BlueprintBrain>(HEContext, "KalavakusBrain");
+        private static BlueprintBrain CyborgTankBrain = BlueprintTools.GetModBlueprint<BlueprintBrain>(HEContext, "CyborgTankBrain");
+        private static BlueprintBrain CyborgMeleeBrain = BlueprintTools.GetModBlueprint<BlueprintBrain>(HEContext, "CyborgMeleeBrain");
+        private static BlueprintBrain IncubusAssassinBrain = BlueprintTools.GetModBlueprint<BlueprintBrain>(HEContext, "IncubusAssassinBrain");
+        private static BlueprintBrain SuccubusSorcererBrain = BlueprintTools.GetModBlueprint<BlueprintBrain>(HEContext, "SuccubusSorcererBrain");
+        private static BlueprintBrain CyborgWizardBrain = BlueprintTools.GetModBlueprint<BlueprintBrain>(HEContext, "CyborgWizardBrain");
+
 
 
         public static void Handler() {
@@ -43,21 +50,41 @@ namespace HarderEnemies.UnitModifications.Cyborgs {
                 //thisUnit.AlternativeBrains = new BlueprintBrainReference[0] { };          
             }
 
-            "melee cyborgien luonti: 2h -> intimidating tms, tower shield jäbät -> trip"
-
-                "cyborg demonit: -ac ainaskin, joku mleee buiildi, vampiric touch succubuksilel jotain muutakin"
-            CR13_CyborgGreaterKalavakusAdvanced,
-
-            CR14_Cyborg_CrusaderTankLevel12,
-
-
-            CR15_Cyborg_CrusaderMeleeLevel13,
-
-            CR15_Cyborg_Incubus_Assasin,
-            CR16_Cyborg_SuccubusSorc,
+            // CYBORG GREATER KALAVAKUS -> CHARGE/HASTE/GCOMMAND/TRIP/DISARM
+            UnitLists.CR13_CyborgGreaterKalavakusAdvanced.AddComponent<AddStatBonus>(c => {
+                c.Value = -7;
+                c.Descriptor = Kingmaker.Enums.ModifierDescriptor.UntypedStackable;
+                c.Stat = Kingmaker.EntitySystem.Stats.StatType.AC;
+            });
+            UnitLists.CR13_CyborgGreaterKalavakusAdvanced.m_Brain = KalavakusBrain.ToReference<BlueprintBrainReference>();
+            UnitLists.CR13_CyborgGreaterKalavakusAdvanced.AlternativeBrains = new BlueprintBrainReference[0] { };
 
 
-            Utils.CustomHelpers.AddMemorizedSpellsAndBrains(UnitLists.CR15_Cyborg_CrusaderCasterLevel13, CharacterClass.WizardClass, AbilityLists.CyborgCasterSpells, CR8ClericBrain);
+            //Crusader Tank -> dazzling display bot
+            Utils.CustomHelpers.AddFactsToUnit(UnitLists.CR14_Cyborg_CrusaderTankLevel12, AbilityLists.CyborgTankFeatures);
+            UnitLists.CR14_Cyborg_CrusaderTankLevel12.m_Brain = CyborgTankBrain.ToReference<BlueprintBrainReference>();
+            UnitLists.CR14_Cyborg_CrusaderTankLevel12.AlternativeBrains = new BlueprintBrainReference[0] { };
+
+            //Crusader 2h -> cleave bot
+            Utils.CustomHelpers.AddFactsToUnit(UnitLists.CR15_Cyborg_CrusaderMeleeLevel13, AbilityLists.Cyborg2hFeatures);
+            UnitLists.CR15_Cyborg_CrusaderMeleeLevel13.m_Brain = CyborgMeleeBrain.ToReference<BlueprintBrainReference>();
+            UnitLists.CR15_Cyborg_CrusaderMeleeLevel13.AlternativeBrains = new BlueprintBrainReference[0] { };
+
+
+            //Assasin Incubus
+            Utils.CustomHelpers.AddFactsToUnit(UnitLists.CR15_Cyborg_Incubus_Assasin, AbilityLists.IncubusAssassinFeatures);
+            UnitLists.CR15_Cyborg_Incubus_Assasin.m_Brain = IncubusAssassinBrain.ToReference<BlueprintBrainReference>();
+            UnitLists.CR15_Cyborg_Incubus_Assasin.AlternativeBrains = new BlueprintBrainReference[0] { };
+
+
+            //CR16_Cyborg_SuccubusSorc
+            Utils.CustomHelpers.AddFactsToUnit(UnitLists.CR16_Cyborg_SuccubusSorc, AbilityLists.IncubusAssassinFeatures);
+            UnitLists.CR16_Cyborg_SuccubusSorc.m_Brain = SuccubusSorcererBrain.ToReference<BlueprintBrainReference>();
+            UnitLists.CR16_Cyborg_SuccubusSorc.AlternativeBrains = new BlueprintBrainReference[0] { };
+
+
+            // Cyborg Caster Wizarad
+            Utils.CustomHelpers.AddMemorizedSpellsAndBrains(UnitLists.CR15_Cyborg_CrusaderCasterLevel13, CharacterClass.WizardClass, AbilityLists.CyborgCasterSpells, CyborgWizardBrain);
 
             HEContext.Logger.LogHeader("Updated Cyborg Abilities");
         }
@@ -68,6 +95,8 @@ namespace HarderEnemies.UnitModifications.Cyborgs {
             foreach (BlueprintUnit thisUnit in UnitLists.CyborgsList) {
                 //Utils.CustomHelpers.AddFactListsToUnit(thisUnit, thisUnit.CR, BuffLists.CultistBuffLists.CultistCasterBuffs);
             }
+            Utils.CustomHelpers.AddFactListsToUnit(UnitLists.CR15_Cyborg_CrusaderMeleeLevel13, UnitLists.CR15_Cyborg_CrusaderMeleeLevel13.CR, BuffLists.Cyborg2HMeleeBuffs);
+
 
             HEContext.Logger.LogHeader("Updated Cyborg Buffs");
         }

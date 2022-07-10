@@ -100,6 +100,37 @@ namespace HarderEnemies.AI_Mechanics.Actions.ByLevels {
                 };
                 bp.m_Variant = Abilities.DragonsBreathGreen.ToReference<BlueprintAbilityReference>();
             });
+
+            var OverwhelmingGriefAiSpell = AiCastSpellList.Nurah_AiAction_OverwhelmingGrief.CreateCopy(HEContext, "OverwhelmingGriefAiSpell", bp => {
+                bp.BaseScore = 4.5f;
+                bp.StartCooldownRounds = 1;
+                bp.CooldownRounds = 1;
+                bp.CooldownDice = new DiceFormula(1, DiceType.D4);
+                bp.m_ActorConsiderations = new ConsiderationReference[] {
+                    AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>()
+                };
+            });
+
+            var BoneshatterAiSpell = AiCastSpellList.Cyborg_SuccubusSorc_Boneshatter_AiAction.CreateCopy(HEContext, "BoneshatterAiSpell", bp => {
+                bp.BaseScore = 4.0f;
+                bp.StartCooldownRounds = 1;
+                bp.CooldownRounds = 1;
+                bp.CooldownDice = new DiceFormula(1, DiceType.D4);
+                bp.m_ActorConsiderations = new ConsiderationReference[] {
+                    AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>()
+                };
+            });
+
+            var ConfusionAiSpell = AiCastSpellList.Glabrezu_AiAction_Confusion.CreateCopy(HEContext, "ConfusionAiSpell", bp => {
+                bp.BaseScore = 4.0f;
+                bp.StartCooldownRounds = 1;
+                bp.CooldownRounds = 2;
+                bp.CooldownDice = new DiceFormula(1, DiceType.D2);
+                bp.m_ActorConsiderations = new ConsiderationReference[] {
+                    AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>(),
+                    AiConsiderationList.NoThreateningUnitsConsideration.ToReference<ConsiderationReference>()
+                };
+            });
         }
     }
 }

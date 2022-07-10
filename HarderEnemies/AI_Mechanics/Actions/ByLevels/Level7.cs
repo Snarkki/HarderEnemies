@@ -64,6 +64,23 @@ namespace HarderEnemies.AI_Mechanics.Actions.ByLevels {
                     AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>()
                 };
             });
+
+            var PrismaticSprayAiSpell = AiCastSpellList.Ankou_PrismaticSprayAiAction.CreateCopy(HEContext, "PrismaticSprayAiSpell", bp => {
+                bp.BaseScore = 8.0f;
+                bp.CooldownRounds = 2;
+                bp.StartCooldownRounds = 2;
+                bp.CooldownDice = new DiceFormula(1, DiceType.D3);
+                bp.m_ActorConsiderations = new ConsiderationReference[] {
+                    AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>()
+                };
+            });
+
+            var CausticEruptionAiSpell = AiCastSpellList.CR22_AxiomiteCaster_AiAction_CausticErruption.CreateCopy(HEContext, "CausticEruptionAiSpell", bp => {
+                bp.BaseScore = 8.0f;
+                bp.CooldownRounds = 2;
+                bp.StartCooldownRounds = 2;
+                bp.CooldownDice = new DiceFormula(1, DiceType.D3);
+            });
         }
     }
 }

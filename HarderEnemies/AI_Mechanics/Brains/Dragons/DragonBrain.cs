@@ -9,7 +9,7 @@ using TabletopTweaks.Core.Utilities;
 using HarderEnemies.Blueprints;
 using static HarderEnemies.Main;
 
-namespace HarderEnemies.AI_Mechanics.Brains {
+namespace HarderEnemies.AI_Mechanics.Brains.Dragons {
     internal class DragonBrain {
 
         private static BlueprintAiCastSpell GreaterDispelAiSpellSwift = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "GreaterDispelAiSpellSwift");
@@ -17,7 +17,7 @@ namespace HarderEnemies.AI_Mechanics.Brains {
         private static BlueprintAiCastSpell CreateAcitPitAiSpell = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "CreateAcitPitAiSpell");
         private static BlueprintAiCastSpell GreaterInvisibilityAiSpellSwift = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "GreaterInvisibilityAiSpellSwift");
 
-        public static void DragonBrainHandler() {
+        public static void Handler() {
             CreateBlackDragonBrain();
         }
 

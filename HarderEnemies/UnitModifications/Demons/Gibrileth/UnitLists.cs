@@ -44,5 +44,20 @@ namespace HarderEnemies.UnitModifications.Demons.Gibrileth {
             CR17M_MythicGibrilethElite,
         };
 
+        public static List<BlueprintUnit> LowLevelGibrilethList = new List<BlueprintUnit>() {
+            CR10_GibrilethStandard_RE_low,
+            CR11_GibrilethStandard,
+            CR11_GibrilethStandardArueshalae,
+            CR11_GibrilethStandard_RE_high,
+            CR12_GibrilethAdvanced,
+            CR13_GibrilethElite_RE_low,
+        };
+
+        public static List<BlueprintUnit> HighLevellGibrilethList = new List<BlueprintUnit>() {
+            CR14_GibrilethElite,
+            CR14_GibrilethElite_RE_high,
+            CR17M_MythicGibrilethElite,
+        };
+
     }
 }

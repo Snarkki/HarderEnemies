@@ -23,6 +23,8 @@ namespace HarderEnemies.UnitModifications.Demons.Minotaur {
         private static BlueprintFeature SuperToughness = BlueprintTools.GetModBlueprint<BlueprintFeature>(HEContext, "SuperToughnessFeature");
         private static BlueprintBrain CleaveMinotaurBrain = BlueprintTools.GetModBlueprint<BlueprintBrain>(HEContext, "CleaveMinotaurBrain");
         private static BlueprintBrain ChargingMinotaurBrain = BlueprintTools.GetModBlueprint<BlueprintBrain>(HEContext, "ChargingMinotaurBrain");
+        private static BlueprintBrain BlasterMinotaurBrain = BlueprintTools.GetModBlueprint<BlueprintBrain>(HEContext, "BlasterMinotaurBrain");
+        private static BlueprintBrain ClericMinotaurBrain = BlueprintTools.GetModBlueprint<BlueprintBrain>(HEContext, "ClericMinotaurBrain");
 
 
         public static void Handler() {
@@ -44,7 +46,7 @@ namespace HarderEnemies.UnitModifications.Demons.Minotaur {
             if (HEContext.AbilityChanges.DemonChanges.IsDisabled("MinotaurAbilities")) { return; }
             foreach (BlueprintUnit thisUnit in UnitLists.DemonMeleeMinotaurList) {
                 if (thisUnit.CR <= 6) {
-                    Utils.CustomHelpers.AddFactsToUnit(thisUnit, AbilityLists.CleavingMeleeMinotaurAbilitiesCR5);                   
+                    Utils.CustomHelpers.AddFactsToUnit(thisUnit, AbilityLists.CleavingMeleeMinotaurAbilitiesCR5);
                 } else if (thisUnit.CR > 6 && thisUnit.CR <= 11) {
                     Utils.CustomHelpers.AddFactsToUnit(thisUnit, AbilityLists.CleavingMeleeMinotaurAbilitiesCR10);
                 } else if (thisUnit.CR > 11 && thisUnit.CR <= 16) {
@@ -77,6 +79,17 @@ namespace HarderEnemies.UnitModifications.Demons.Minotaur {
                 c.Descriptor = Kingmaker.Enums.ModifierDescriptor.UntypedStackable;
                 c.Stat = Kingmaker.EntitySystem.Stats.StatType.AC;
             });
+
+
+            // MINOTAUR CASTERS - CLERICS & SORCERERS
+            UnitLists.CR14_MinotaurCleric.m_Brain = ClericMinotaurBrain.ToReference<BlueprintBrainReference>();
+            UnitLists.CR14_MinotaurCleric.AlternativeBrains = new BlueprintBrainReference[0] { };
+
+            foreach (BlueprintUnit thisUnit in UnitLists.MinotaurBlasters) {
+                Utils.CustomHelpers.AddFactsToUnit(thisUnit, AbilityLists.MinotaurBlasterAbilities);
+                thisUnit.m_Brain = BlasterMinotaurBrain.ToReference<BlueprintBrainReference>();
+                thisUnit.AlternativeBrains = new BlueprintBrainReference[0] { };
+            }
 
             HEContext.Logger.LogHeader("Updated Minotaur Abilities");
 

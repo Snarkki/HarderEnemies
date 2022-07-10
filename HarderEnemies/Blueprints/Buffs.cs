@@ -56,7 +56,10 @@ namespace HarderEnemies.Blueprints {
         public static BlueprintBuff MagicFangGreaterBuff = BlueprintTools.GetBlueprint<BlueprintBuff>("ca90cc4cd9fc592419c5e58f0a9ead64");
         public static BlueprintBuff ExpeditiousRetreatBuff = BlueprintTools.GetBlueprint<BlueprintBuff>("9ea4ec3dc30cd7940a372a4d699032e7");
         public static BlueprintBuff EnlargePersonBuff = BlueprintTools.GetBlueprint<BlueprintBuff>("4f139d125bb602f48bfaec3d3e1937cb");
-
+        public static BlueprintBuff MutagenStrengthBuff = BlueprintTools.GetBlueprint<BlueprintBuff>("b84abc3531ed5674284ef0ba4aafcd3b");
+        public static BlueprintBuff BearsEnduranceBuff = BlueprintTools.GetBlueprint<BlueprintBuff>("c3de8cc9a0f50e2418dde526d8855faa");
+        public static BlueprintBuff CatsGraceBuff = BlueprintTools.GetBlueprint<BlueprintBuff>("f011d0ab4a405e54aa0e83cd10e54430");
+        public static BlueprintBuff SenseVitalsBuff = BlueprintTools.GetBlueprint<BlueprintBuff>("dea0dba1f7bff064987e03f1307bfa84");
 
         public static BlueprintBuff UnlootableBuff = BlueprintTools.GetBlueprint<BlueprintBuff>("0f775c7d5d8b6494197e1ce937754482");
         // MYTHIC BUFFS

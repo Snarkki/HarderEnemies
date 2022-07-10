@@ -9,7 +9,7 @@ using TabletopTweaks.Core.Utilities;
 using HarderEnemies.Blueprints;
 using static HarderEnemies.Main;
 
-namespace HarderEnemies.AI_Mechanics.Brains.BossBrains {
+namespace HarderEnemies.AI_Mechanics.Brains.Bosses {
     internal class BalorBrains {
 
 
@@ -28,7 +28,7 @@ namespace HarderEnemies.AI_Mechanics.Brains.BossBrains {
         private static BlueprintAiCastSpell GreaterShoutAiSpell = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "GreaterShoutAiSpell");
         private static BlueprintAiAttack ThreatenedAiAttack = BlueprintTools.GetModBlueprint<BlueprintAiAttack>(HEContext, "ThreatenedAiAttack");
         private static BlueprintAiCastSpell GreaterVitalStrikeAiSpell = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "GreaterVitalStrikeAiSpell");
-        
+
 
         public static void Handler() {
             CreateDarrazandBrain();

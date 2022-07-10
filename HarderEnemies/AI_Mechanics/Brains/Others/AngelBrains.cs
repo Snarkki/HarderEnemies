@@ -1,5 +1,5 @@
-﻿using Kingmaker.AI.Blueprints;
-using Kingmaker.Blueprints;
+﻿using Kingmaker.Blueprints;
+using Kingmaker.AI.Blueprints;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,16 +9,14 @@ using TabletopTweaks.Core.Utilities;
 using HarderEnemies.Blueprints;
 using static HarderEnemies.Main;
 
-namespace HarderEnemies.AI_Mechanics.Brains {
+namespace HarderEnemies.AI_Mechanics.Brains.Others {
     internal class AngelBrains {
-
-
         private static BlueprintAiCastSpell MirrorImageAiSpell = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "MirrorImageAiSpell");
         private static BlueprintAiCastSpell InvisibilityGreaterAiSpell = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "InvisibilityGreaterAiSpell");
         private static BlueprintAiCastSpell LegendaryProportionsAiSpell = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "LegendaryProportionsAiSpell");
 
 
-        public static void AngelBrainHandler() {
+        public static void Handler() {
             CreateMidnightFaneBrain();
 
         }
@@ -29,7 +27,7 @@ namespace HarderEnemies.AI_Mechanics.Brains {
                {
                     AiCastSpellList.AttackAiAction.ToReference<BlueprintAiActionReference>(),
                     AiCastSpellList.MonadicDevaHealAiAction.ToReference<BlueprintAiActionReference>(),
-                    AiCastSpellList.MonadicDevaHolyAuraAiAction.ToReference<BlueprintAiActionReference>(),  
+                    AiCastSpellList.MonadicDevaHolyAuraAiAction.ToReference<BlueprintAiActionReference>(),
                     AiCastSpellList.MovanicDevaHolySmiteAiAction.ToReference<BlueprintAiActionReference>(),
                     MirrorImageAiSpell.ToReference<BlueprintAiActionReference>(),
                     InvisibilityGreaterAiSpell.ToReference<BlueprintAiActionReference>(),
@@ -37,6 +35,5 @@ namespace HarderEnemies.AI_Mechanics.Brains {
                };
             });
         }
-
     }
 }

@@ -115,6 +115,26 @@ namespace HarderEnemies.AI_Mechanics.Actions.ByLevels {
                     AiConsiderationList.NoBuffMirrorImage.ToReference<ConsiderationReference>(),
                 };
             });
+
+            var SenseVitalsAiSpell = AiCastSpellList.CultistDivineFavorAiAction.CreateCopy(HEContext, "SenseVitalsAiSpell", bp => {
+                bp.BaseScore = 3.0f;
+                bp.CooldownRounds = 1;
+                bp.StartCooldownRounds = 0;
+                bp.m_Ability = Abilities.SenseVitals.ToReference<BlueprintAbilityReference>();
+                bp.m_ActorConsiderations = new ConsiderationReference[] {
+                    AiConsiderationList.NoBuffSenseVitals.ToReference<ConsiderationReference>(),
+                };
+            });
+
+            var SwiftScorchingRayAiSpell = AiCastSpellList.ScorchingRayAiAction.CreateCopy(HEContext, "SwiftScorchingRayAiSpell", bp => {
+                bp.BaseScore = 3.0f;
+                bp.CooldownRounds = 1;
+                bp.StartCooldownRounds = 0;
+                bp.m_ActorConsiderations = new ConsiderationReference[] {
+                    AiConsiderationList.SwiftActionOffCooldown.ToReference<ConsiderationReference>(),
+                    AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>(),
+                };
+            });
         }
     }
 }

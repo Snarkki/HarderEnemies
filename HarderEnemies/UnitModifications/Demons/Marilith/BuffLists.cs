@@ -17,6 +17,12 @@ using static HarderEnemies.Main;
 namespace HarderEnemies.UnitModifications.Demons.Marileth {
     internal class BuffLists {
 
-    
+        public static BlueprintUnitFactReference[] MarilithBuffs = {
+            Buffs.BullsStrengthBuff.ToReference<BlueprintUnitFactReference>(),
+            Buffs.BearsEnduranceBuff.ToReference<BlueprintUnitFactReference>(),
+            Buffs.CatsGraceBuff.ToReference<BlueprintUnitFactReference>(),
+            Buffs.SenseVitalsBuff.ToReference<BlueprintUnitFactReference>(),
+        };
+
     }
 }

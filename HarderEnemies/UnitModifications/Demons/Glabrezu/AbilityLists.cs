@@ -17,9 +17,16 @@ using static HarderEnemies.Main;
 namespace HarderEnemies.UnitModifications.Demons.Glabrezu {
     internal class AbilityLists {
 
-        public static BlueprintUnitFactReference[] GlabrezuAbilities = {
-            Abilities.UnholyBlight.ToReference<BlueprintUnitFactReference>(),
+        private static BlueprintFeature SuperiorQuickenMetaFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(HEContext, "SuperiorQuickenMetaMagicFeature");
+
+        public static BlueprintUnitFactReference[] AdvancedGlabrezuAbilities = {
+            Abilities.DispelGreater.ToReference<BlueprintUnitFactReference>(),
         };
 
+        public static BlueprintUnitFactReference[] MythicGlabrezuAbilities = {
+            Abilities.DispelGreater.ToReference<BlueprintUnitFactReference>(),
+            SuperiorQuickenMetaFeature.ToReference<BlueprintUnitFactReference>(),
+            Abilities.PrismaticSpray.ToReference<BlueprintUnitFactReference>(),
+        };
     }
 }

@@ -15,7 +15,7 @@ using HarderEnemies.Blueprints;
 using static HarderEnemies.Main;
 
 namespace HarderEnemies.UnitModifications.Demons.Marileth {
-   internal class UnitLists {
+    internal class UnitLists {
 
         public static BlueprintUnit AlushinyrraMarilithCommoner = ResourcesLibrary.TryGetBlueprint<BlueprintUnit>("870e4888f4fa4f94ca25035d60c41afe");
         public static BlueprintUnit AponaviciusVision = ResourcesLibrary.TryGetBlueprint<BlueprintUnit>("280e0464d529949448dcccbd0d3a7e34");
@@ -54,6 +54,29 @@ namespace HarderEnemies.UnitModifications.Demons.Marileth {
             DontLikeGuestsLeader,
             Ember_Q3_MarilithAdvanced,
             NoRespectLeader,
+        };
+
+        //Standard = bladebarrier + hit
+        public static List<BlueprintUnit> MarilithStandardList = new List<BlueprintUnit>() {
+            Aponavicius_IvoryLabyrinth26,
+            Aponavicius_IvoryLabyrinth26_Scimitar,
+            CR17_AreshkagalMarilith,
+            CR17_MarilithStandard,
+            CR17_MarilithStandard_RE,
+            CR18_MarilithAdvanced,
+            CR18_MarilithAdvanced_RE,
+            CR19_MarilithAdvanced,
+            CR23_MythicMarilithRogue,
+            DontLikeGuestsLeader,
+            Ember_Q3_MarilithAdvanced,
+            NoRespectLeader,
+        };
+
+        // Slayer = study + bladebarrier + hit
+        public static List<BlueprintUnit> MarilithSlayerList = new List<BlueprintUnit>() {
+            CR21_MarilithMythic4_Slayer,
+            CR21_MarilithMythic4_Slayer_RE,
+            CR26_MythicMarilithSlayer,
         };
     }
 }

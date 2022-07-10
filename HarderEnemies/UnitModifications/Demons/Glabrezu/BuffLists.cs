@@ -20,5 +20,11 @@ namespace HarderEnemies.UnitModifications.Demons.Glabrezu {
         public static BlueprintUnitFactReference[] GlabrezuBuffs = {
             Buffs.UnholyAuraBuff.ToReference<BlueprintUnitFactReference>(),
         };
+
+        public static BlueprintUnitFactReference[] MythicGlabrezuBuffs = {
+            Buffs.MindBlankBuff.ToReference<BlueprintUnitFactReference>(),
+            Buffs.TrueSeeingBuff.ToReference<BlueprintUnitFactReference>(),
+            Buffs.MageShieldBuff.ToReference<BlueprintUnitFactReference>(),
+        };
     }
 }

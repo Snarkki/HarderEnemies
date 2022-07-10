@@ -78,6 +78,10 @@ namespace HarderEnemies.UnitModifications.Demons.Minotaur {
             CR20_LabyrinthMinotaurEnhanced,
         };
 
+        public static List<BlueprintUnit> MinotaurBlasters = new List<BlueprintUnit>() {
+            CR20_MinotaurCasterBlaster,
+            CR20_MinotaurCasterBlaster_RE,
+        };
 
 
         public static List<BlueprintUnit> MinotaurList = new List<BlueprintUnit>() {

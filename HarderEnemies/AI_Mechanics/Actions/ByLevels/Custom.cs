@@ -124,6 +124,8 @@ namespace HarderEnemies.AI_Mechanics.Actions.ByLevels {
                 bp.BaseScore = 2.0f;
                 bp.m_Ability = Abilities.VitalStrikeAbilityGreater.ToReference<BlueprintAbilityReference>();
             });
+
+
         }
     }
 }

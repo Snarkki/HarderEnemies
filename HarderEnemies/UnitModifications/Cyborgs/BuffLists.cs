@@ -17,6 +17,10 @@ using static HarderEnemies.Main;
 namespace HarderEnemies.UnitModifications.Cyborgs {
     internal class BuffLists {
 
+        public static BlueprintUnitFactReference[] Cyborg2HMeleeBuffs = {
+            Buffs.MutagenStrengthBuff.ToReference<BlueprintUnitFactReference>(),
+        };
+
 
     }
 }

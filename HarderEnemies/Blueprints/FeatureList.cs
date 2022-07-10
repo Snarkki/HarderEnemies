@@ -49,6 +49,9 @@ namespace HarderEnemies.Blueprints {
         public static BlueprintFeature VitalStrikeFeatureGreater = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>("e2d1fa11f6b095e4fb2fd1dcf5e36eb3");
         public static BlueprintFeature VitalStrikeFeatureImproved = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>("52913092cd018da47845f36e6fbe240f");
         public static BlueprintFeature VitalStrikeMythicFeat = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>("e07bcb271ecefec44be314e1c807c798");
+        public static BlueprintFeature Persuasive = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>("86d93a5891d299d4983bdc6ef3987afd");
+        public static BlueprintFeature ShatterDefenses = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>("61a17ccbbb3d79445b0926347ec07577");
+        public static BlueprintFeature ThugFrightening = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>("5476fa6ac147a584aa886f1c232b8a87");
 
         // MYTHIC FEATURES
         public static BlueprintFeature AlwaysAChange = BlueprintTools.GetBlueprint<BlueprintFeature>("d57301613ad6a5140b2fdac40fa368e3");

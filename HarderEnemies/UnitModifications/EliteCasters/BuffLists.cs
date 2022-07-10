@@ -51,6 +51,9 @@ namespace HarderEnemies.UnitModifications.EliteCasters {
             Buffs.DeathWardBuff.ToReference<BlueprintUnitFactReference>(),
             Buffs.FreedomOfMovementBuff.ToReference<BlueprintUnitFactReference>(),
             Buffs.TrueSeeingBuff.ToReference<BlueprintUnitFactReference>(),
+            Buffs.ProtectionFromArrowsBuff.ToReference<BlueprintUnitFactReference>(),
+            Buffs.MindBlankBuff.ToReference<BlueprintUnitFactReference>(),
+            Buffs.ResistFireBuff.ToReference<BlueprintUnitFactReference>(),
             FeatureList.DR5.ToReference<BlueprintUnitFactReference>(),
         };
 

@@ -86,6 +86,27 @@ namespace HarderEnemies.AI_Mechanics.Actions.ByLevels {
                     AiConsiderationList.AttackTargetsPriority.ToReference<ConsiderationReference>()
                 };
             });
+
+            var BladeBarrierAiSpell = AiCastSpellList.Marilith_AiAction_BladeBarrier.CreateCopy(HEContext, "BladeBarrierAiSpell", bp => {
+                bp.BaseScore = 5.0f;
+                bp.CombatCount = 1;
+                bp.CooldownRounds = 2;
+                bp.CooldownDice = new DiceFormula(1, DiceType.D3);
+                bp.m_ActorConsiderations = new ConsiderationReference[] {
+                    AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>(),
+                    AiConsiderationList.NoThreateningUnitsConsideration.ToReference<ConsiderationReference>()
+                };
+            });
+
+            var AcidicSprayAiSpell = AiCastSpellList.AcidicSprayAiAction.CreateCopy(HEContext, "AcidicSprayAiSpell", bp => {
+                bp.BaseScore = 5.0f;
+                bp.CombatCount = 1;
+                bp.CooldownRounds = 2;
+                bp.CooldownDice = new DiceFormula(1, DiceType.D3);
+                bp.m_ActorConsiderations = new ConsiderationReference[] {
+                    AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>(),
+                };
+            });
         }
     }
 }

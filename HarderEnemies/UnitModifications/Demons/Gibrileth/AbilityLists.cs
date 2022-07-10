@@ -16,8 +16,15 @@ using static HarderEnemies.Main;
 
 namespace HarderEnemies.UnitModifications.Demons.Gibrileth {
     internal class AbilityLists {
-        public static BlueprintUnitFactReference[] GibrilithAbilities = {
+
+        public static BlueprintUnitFactReference[] LowLevelGibrilethAbilities = {
             Abilities.UnholyBlight.ToReference<BlueprintUnitFactReference>(),
+            Abilities.AcidicSpray.ToReference<BlueprintUnitFactReference>(),
+        };
+
+        public static BlueprintUnitFactReference[] HighLevelGibrilethAbilities = {
+            Abilities.AcidFog.ToReference<BlueprintUnitFactReference>(),
+            Abilities.CausticEruption.ToReference<BlueprintUnitFactReference>(),
         };
 
     }

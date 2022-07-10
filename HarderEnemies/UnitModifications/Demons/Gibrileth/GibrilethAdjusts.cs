@@ -18,9 +18,8 @@ namespace HarderEnemies.UnitModifications.Demons.Gibrileth {
     internal class GibrilethAdjusts {
 
         private static BlueprintFeature SuperToughness = BlueprintTools.GetModBlueprint<BlueprintFeature>(HEContext, "SuperToughnessFeature");
-        private static BlueprintAiCastSpell UnholyBlightAiSpell = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "UnholyBlightAiSpell");
-        private static BlueprintAiCastSpell StinkingCloudAiSpell = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "StinkingCloudAiSpell");
-        private static BlueprintAiCastSpell WavesOfFatigueAiSpell = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "WavesOfFatigueAiSpell");
+        private static BlueprintBrain LowLevelGibrilithBrain = BlueprintTools.GetModBlueprint<BlueprintBrain>(HEContext, "LowLevelGibrilithBrain");
+        private static BlueprintBrain HighLevelGibrilithBrain = BlueprintTools.GetModBlueprint<BlueprintBrain>(HEContext, "HighLevelGibrilithBrain");
 
 
         public static void Handler() {
@@ -40,14 +39,20 @@ namespace HarderEnemies.UnitModifications.Demons.Gibrileth {
 
         private static void GibrilethAbilities() {
             if (HEContext.AbilityChanges.DemonChanges.IsDisabled("GibrilethAbilities")) { return; }
-            foreach (BlueprintUnit thisUnit in UnitLists.DemonGibrilethList) {
-                thisUnit.m_AddFacts = thisUnit.m_AddFacts.AppendToArray(AbilityLists.GibrilithAbilities);
+
+            // split to two groups, both acid based damage and some control abilities
+            foreach (BlueprintUnit thisUnit in UnitLists.LowLevelGibrilethList) {
+                Utils.CustomHelpers.AddFactsToUnit(thisUnit, AbilityLists.LowLevelGibrilethAbilities);
+                thisUnit.m_Brain = LowLevelGibrilithBrain.ToReference<BlueprintBrainReference>();
+                thisUnit.AlternativeBrains = new BlueprintBrainReference[0] { };
             }
-            BrainList.GibrilethStandardBrain.m_Actions = BrainList.GibrilethStandardBrain.m_Actions.AppendToArray(
-                StinkingCloudAiSpell.ToReference<BlueprintAiActionReference>(),
-                WavesOfFatigueAiSpell.ToReference<BlueprintAiActionReference>(),
-                UnholyBlightAiSpell.ToReference<BlueprintAiActionReference>()
-                );
+
+            foreach (BlueprintUnit thisUnit in UnitLists.HighLevellGibrilethList) {
+                Utils.CustomHelpers.AddFactsToUnit(thisUnit, AbilityLists.HighLevelGibrilethAbilities);
+                thisUnit.m_Brain = HighLevelGibrilithBrain.ToReference<BlueprintBrainReference>();
+                thisUnit.AlternativeBrains = new BlueprintBrainReference[0] { };
+            }
+
             HEContext.Logger.LogHeader("Updated GibrilethListAbililties");
         }
 

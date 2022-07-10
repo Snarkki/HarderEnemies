@@ -74,7 +74,19 @@ namespace HarderEnemies.AI_Mechanics.Actions.ByLevels {
                     AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>()
                 };
             });
+            var VampiricTouchAiSpell = AiCastSpellList.Cyborg_SuccubusSorcVampiricTouchAiAction.CreateCopy(HEContext, "VampiricTouchAiSpell", bp => {
+                bp.BaseScore = 3.5f;
+                bp.m_ActorConsiderations = new ConsiderationReference[] {
+                    AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>()
+                };
+            });
 
+            var TargetedDispelAiSpell = AiCastSpellList.MinotaurCleric_DispelMagicAiAction.CreateCopy(HEContext, "TargetedDispelAiSpell", bp => {
+                bp.BaseScore = 5.0f;
+                bp.CooldownRounds = 1;
+                bp.StartCooldownRounds = 1;
+                bp.CooldownDice = new DiceFormula(1, DiceType.D2);
+            });
         }
     }
 }

@@ -72,5 +72,36 @@ namespace HarderEnemies.UnitModifications.Demons.Glabrezu {
             Voetiel,
             WintersunGlabrezu,
         };
+
+        public static List<BlueprintUnit> StandardGlabrezuList = new List<BlueprintUnit>() {
+            CR13_GlabrezuStandard,
+            CR13_GlabrezuStandard_RE,
+            CR13_GlabrezuStandard_RE_high,
+            CR14_Prebuff_GlabrezuStandard,
+        };
+
+        public static List<BlueprintUnit> AdvancedGlabrezuList = new List<BlueprintUnit>() {
+            CR14_GlabrezuAdvanced,
+            CR14_GlabrezuAdvanced_RE,
+            CR14_GlabrezuAdvanced_RE_high,
+            CR15_Prebuff_GlabrezuAdvanced,
+            CR16_GlabrezuElite,
+            CR16_GlabrezuElite_RE,
+            CR16_GlabrezuElite_RE_high,
+        };
+
+        public static List<BlueprintUnit> MythicGlabrezuList = new List<BlueprintUnit>() {
+            CR18M_MythicCrazyGlabrezu,
+            CR18M_MythicCrazyGlabrezu_RE,
+            CR22M_MythicGlabrezu,
+            CR22M_MythicGlabrezu_RE,
+        };
+
+        public static List<BlueprintUnit> OtherGlabrezuList = new List<BlueprintUnit>() {
+            CR19_GlabrezuDrezenOptional,
+            Drezen1_Tavern_Glabrezu,
+            Voetiel,
+            WintersunGlabrezu,
+        };
     }
 }

@@ -59,6 +59,12 @@ namespace HarderEnemies.Blueprints {
         public static BlueprintAbility DragonsBreathGreen = BlueprintTools.GetBlueprint<BlueprintAbility>("48c4433acbcecae499d1d38a56f72f36");
         public static BlueprintAbility AcidArrow = BlueprintTools.GetBlueprint<BlueprintAbility>("9a46dfd390f943647ab4395fc997936d");
         public static BlueprintAbility OverrunAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("1a3b471ecea51f7439a946b23577fd70");
+        public static BlueprintAbility OverwhelmingGrief = BlueprintTools.GetBlueprint<BlueprintAbility>("dd2918e4a77c50044acba1ac93494c36");
+        public static BlueprintAbility RainbowPattern = BlueprintTools.GetBlueprint<BlueprintAbility>("4b8265132f9c8174f87ce7fa6d0fe47b");
+        public static BlueprintAbility PrismaticSpray = BlueprintTools.GetBlueprint<BlueprintAbility>("b22fd434bdb60fb4ba1068206402c4cf");
+        public static BlueprintAbility AcidicSpray = BlueprintTools.GetBlueprint<BlueprintAbility>("c543eef6d725b184ea8669dd09b3894c");
+        public static BlueprintAbility CausticEruption = BlueprintTools.GetBlueprint<BlueprintAbility>("8c29e953190cc67429dc9c701b16b7c2");
+        public static BlueprintAbility AcidFog = BlueprintTools.GetBlueprint<BlueprintAbility>("dbf99b00cd35d0a4491c6cc9e771b487");
 
 
 
@@ -85,7 +91,6 @@ namespace HarderEnemies.Blueprints {
         public static BlueprintAbility DimensionDoorHell = BlueprintTools.GetBlueprint<BlueprintAbility>("637e9c2a9d121584fb8b3f3ec799eb1e");
         public static BlueprintAbility DerakniDroneAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("30e1b50180b115840a94c611599de01e");
         public static BlueprintAbility DroningWingsAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("7050231f1705f604c859f991fec4b523");
-        public static BlueprintAbility AcidicSpray = BlueprintTools.GetBlueprint<BlueprintAbility>("c543eef6d725b184ea8669dd09b3894c");
         public static BlueprintAbility Slow = BlueprintTools.GetBlueprint<BlueprintAbility>("f492622e473d34747806bdb39356eb89");
         public static BlueprintAbility ChainLightning = BlueprintTools.GetBlueprint<BlueprintAbility>("645558d63604747428d55f0dd3a4cb58");
         public static BlueprintAbility PhantasmalPutrefaction = BlueprintTools.GetBlueprint<BlueprintAbility>("1f2e6019ece86d64baa5effa15e81ecc");
@@ -96,10 +101,7 @@ namespace HarderEnemies.Blueprints {
         public static BlueprintAbility ScorchingRay = BlueprintTools.GetBlueprint<BlueprintAbility>("cdb106d53c65bbc4086183d54c3b97c7");
         public static BlueprintAbility BurningArc = BlueprintTools.GetBlueprint<BlueprintAbility>("eaac3d36e0336cb479209a6f65e25e7c");
         public static BlueprintAbility VitalStrikeAbilityGreater = BlueprintTools.GetBlueprint<BlueprintAbility>("11f971b6453f74d4594c538e3c88d499");
-        //Features.FlyerCR15.ToReference<BlueprintUnitFactReference>(),
-        //Buffs.TrueSeeingBuff.ToReference<BlueprintUnitFactReference>(),
-        //Features.SpellResistanceDivineRank1.ToReference<BlueprintUnitFactReference>(),
-        //Features.DamageOnMissByLevelFeat.ToReference<BlueprintUnitFactReference>()
+        public static BlueprintAbility SenseVitals = BlueprintTools.GetBlueprint<BlueprintAbility>("82962a820ebc0e7408b8582fdc3f4c0c");
 
 
 

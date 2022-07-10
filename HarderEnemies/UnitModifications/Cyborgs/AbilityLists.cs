@@ -29,9 +29,39 @@ namespace HarderEnemies.UnitModifications.Cyborgs {
                 Abilities.AnimateDead.ToReference<BlueprintAbilityReference>(),
                 Abilities.AnimateDead.ToReference<BlueprintAbilityReference>(),
                 Abilities.StinkingCloud.ToReference<BlueprintAbilityReference>(),
-                Abilities.DeepSlumber.ToReference<BlueprintAbilityReference>(),
+                Abilities.Fireball.ToReference<BlueprintAbilityReference>(),
+                Abilities.Fireball.ToReference<BlueprintAbilityReference>(),
                 Abilities.SummonMonsterVBase.ToReference<BlueprintAbilityReference>(),
                 Abilities.HungryPit.ToReference<BlueprintAbilityReference>(),
+                Abilities.BurningArc.ToReference<BlueprintAbilityReference>(),
+                Abilities.BurningArc.ToReference<BlueprintAbilityReference>(),
+                Abilities.IcyPrison.ToReference<BlueprintAbilityReference>(),
+            };
+
+        public static BlueprintUnitFactReference[] CyborgTankFeatures = {
+                FeatureList.IntimidatingProwess.ToReference<BlueprintUnitFactReference>(),
+                FeatureList.Persuasive.ToReference<BlueprintUnitFactReference>(),
+                FeatureList.SkillFocusDiplomacy.ToReference<BlueprintUnitFactReference>(),
+                FeatureList.DazzlingDisplayFeature.ToReference<BlueprintUnitFactReference>(),
+                FeatureList.ShatterDefenses.ToReference<BlueprintUnitFactReference>(),
+                FeatureList.CornugonSmash.ToReference<BlueprintUnitFactReference>(),
+                FeatureList.ThugFrightening.ToReference<BlueprintUnitFactReference>(),
+                FeatureList.Outflank.ToReference<BlueprintUnitFactReference>(),
+            };
+
+        public static BlueprintUnitFactReference[] Cyborg2hFeatures = {
+                FeatureList.VitalStrikeFeature.ToReference<BlueprintUnitFactReference>(),
+                FeatureList.VitalStrikeFeatureGreater.ToReference<BlueprintUnitFactReference>(),
+                FeatureList.VitalStrikeFeatureImproved.ToReference<BlueprintUnitFactReference>(),
+                FeatureList.Outflank.ToReference<BlueprintUnitFactReference>(),
+            };
+        public static BlueprintUnitFactReference[] IncubusAssassinFeatures = {
+                FeatureList.Outflank.ToReference<BlueprintUnitFactReference>(),
+            };
+        public static BlueprintUnitFactReference[] SuccubusSorcererFeatures = {
+                Abilities.Slow.ToReference<BlueprintUnitFactReference>(),
+                Abilities.InvisibilityGreater.ToReference<BlueprintUnitFactReference>(),
+                Abilities.OverwhelmingGrief.ToReference<BlueprintUnitFactReference>(),
             };
     }
 }

@@ -80,6 +80,7 @@ namespace HarderEnemies.Features {
                 BlueprintTools.GetBlueprintReference<BlueprintAbilityReference>("ecaa0def35b38f949bd1976a6c9539e0"),    // GreaterInvisbility,
                 BlueprintTools.GetBlueprintReference<BlueprintAbilityReference>("f492622e473d34747806bdb39356eb89"),    // Slow,
                 BlueprintTools.GetBlueprintReference<BlueprintAbilityReference>("da1b292d91ba37948893cdbe9ea89e28"),    // LegendaryProportions,
+                BlueprintTools.GetBlueprintReference<BlueprintAbilityReference>("cdb106d53c65bbc4086183d54c3b97c7"),    // ScorchingRay,
             };
 
             var emporedAbilities = new BlueprintAbilityReference[] {
@@ -87,6 +88,7 @@ namespace HarderEnemies.Features {
                 BlueprintTools.GetBlueprintReference<BlueprintAbilityReference>("700cfcbd0cb2975419bcab7dbb8c6210"),    // Hellfireray,
                 BlueprintTools.GetBlueprintReference<BlueprintAbilityReference>("16ce660837fb2544e96c3b7eaad73c63"),    // Volcanic Storm,
                 BlueprintTools.GetBlueprintReference<BlueprintAbilityReference>("e3d0dfe1c8527934294f241e0ae96a8d"),    // Firestorm ,
+                BlueprintTools.GetBlueprintReference<BlueprintAbilityReference>("f9910c76efc34af41b6e43d5d8752f0f"),    // FlameStrike ,
             };
 
             var maximizedAbilities = new BlueprintAbilityReference[] {
@@ -100,6 +102,8 @@ namespace HarderEnemies.Features {
                 BlueprintTools.GetBlueprintReference<BlueprintAbilityReference>("700cfcbd0cb2975419bcab7dbb8c6210"),    // Hellfireray,
                 BlueprintTools.GetBlueprintReference<BlueprintAbilityReference>("9a46dfd390f943647ab4395fc997936d"),    // acid arrow,
                 BlueprintTools.GetBlueprintReference<BlueprintAbilityReference>("eaac3d36e0336cb479209a6f65e25e7c"),    // BurningArc
+                BlueprintTools.GetBlueprintReference<BlueprintAbilityReference>("cdb106d53c65bbc4086183d54c3b97c7"),    // ScorchingRay,
+                BlueprintTools.GetBlueprintReference<BlueprintAbilityReference>("700cfcbd0cb2975419bcab7dbb8c6210"),    // Hellfireray,
             };
 
 

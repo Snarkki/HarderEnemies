@@ -7,30 +7,31 @@ cambion: nämä on eri classeja (wizard, fighter, ranger) läpikäynti per class
 coloxus: ai/ability läpikäynti, ihan hyvä rooli muuten
 demodandstringy: aika ok - ehkä jotain buffei/feattei.
 demodandtarry:  aika ok - ehkä jotain buffei/feattei.
-gibrileth: acid/poison pohjanen caster. täl hetkel spämmää liikaa stinking cloudii. 
-glabrezu: ehkä confusionin lisäks jotain muuta - ihan ok rooli mirror image -> confuse > hit
-marilith: aseisiin vähän jotain buffia (näillä on feature joka antaa +1 aseisiin) - esim elemental dmg. AI kuntoon et blade barrier käyttöön jos kukaan ei rangel
-Minotaur: jakaantuu axe throwers (nämä aika ok), priests: spellien läpikäynti, ja melee: näille bullrush/overrun/great cleave
+
 oolioddroo: pari jotain control abilityä, invis def ja kova sneak attack
+
+retriever: 
+
+disarming strike? 
+golem: vital strike?
+
 
 DONE:
 abrikandilu:  haste abilityks ei buffiks. 
 babau: magic fang/weapon buffeina, dispel/outflank abilityinä
 brimorak: toinen element haltuun ettei voi suojautua niin helposti (dragon breath random variatn??), korkeille cr voisi lisätä metamagic
+glabrezu: ehkä confusionin lisäks jotain muuta - ihan ok rooli mirror image -> confuse > hit
+marilith: aseisiin vähän jotain buffia (näillä on feature joka antaa +1 aseisiin) - esim elemental dmg. AI kuntoon et blade barrier käyttöön jos kukaan ei rangel
+gibrileth: acid/poison pohjanen caster. täl hetkel spämmää liikaa stinking cloudii. 
+Minotaur: jakaantuu axe throwers (nämä aika ok), priests: spellien läpikäynti, ja melee: näille bullrush/overrun/great cleave
 
-blackwater:
-
+blackwater
 kalavakus marauder -> -10 tms AC, +5-10 AB, bullrush ?
 augmented spellcaster -> spellie läpikäynti, armor failure??
 augmented tower shield guy -> combat maneuver botti?
 augmented 2h, cleave botti, alternative buildina intimidating?
-
 augmented incubus??? jotai rogueita?
 augmented succubus -> enervation vampiric touch
 hundred face -> liian vähä AC! tai sit DR & hp boost. 300hp, 15dr vois toimii.
 
-retriever: 
 
-disarming strike? 
-
-golem: vital strike?
