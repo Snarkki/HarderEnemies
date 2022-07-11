@@ -34,6 +34,9 @@ namespace HarderEnemies.AI_Mechanics.Actions.ByLevels {
 
             var CommandAiSpell = AiCastSpellList.CultistHoldPersonAiAction.CreateCopy(HEContext, "CommandAiSpell", bp => {
                 bp.BaseScore = 2.0f;
+                bp.StartCooldownRounds = 1;
+                bp.CooldownRounds = 1;
+                bp.CooldownDice = new DiceFormula(1, DiceType.D3);
                 bp.m_ActorConsiderations = new ConsiderationReference[] {
                     AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>(),
                     AiConsiderationList.NoThreateningUnitsConsideration.ToReference<ConsiderationReference>()
@@ -47,6 +50,9 @@ namespace HarderEnemies.AI_Mechanics.Actions.ByLevels {
 
             var CauseFearAiSpell = AiCastSpellList.CauseFearAiAction.CreateCopy(HEContext, "CauseFearAiSpell", bp => {
                 bp.BaseScore = 5.0f;
+                bp.StartCooldownRounds = 1;
+                bp.CooldownRounds = 1;
+                bp.CooldownDice = new DiceFormula(1, DiceType.D3);
                 bp.m_ActorConsiderations = new ConsiderationReference[] {
                     AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>()
                 };
@@ -54,6 +60,7 @@ namespace HarderEnemies.AI_Mechanics.Actions.ByLevels {
 
             var GreaseAiSpell = AiCastSpellList.StinkingCloudAiAction.CreateCopy(HEContext, "GreaseAiSpell", bp => {
                 bp.BaseScore = 2.0f;
+                bp.StartCooldownRounds = 1;
                 bp.CooldownRounds = 4;
                 bp.CooldownDice = new DiceFormula(3, DiceType.D4);
                 bp.m_Ability = Abilities.Grease.ToReference<BlueprintAbilityReference>();

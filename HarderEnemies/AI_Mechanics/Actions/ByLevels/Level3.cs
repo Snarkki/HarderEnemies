@@ -24,6 +24,10 @@ namespace HarderEnemies.AI_Mechanics.Actions.ByLevels {
 
             var DeepSlumberAiSpell = AiCastSpellList.Svendack_AiAction_CommandGreater.CreateCopy(HEContext, "DeepSlumberAiSpell", bp => {
                 bp.BaseScore = 3.0f;
+                bp.StartCooldownRounds = 1;
+                bp.CombatCount = 1;
+                bp.CooldownRounds = 2;
+                bp.CooldownDice = new DiceFormula(1, DiceType.D3);
                 bp.m_Ability = Abilities.DeepSlumber.ToReference<BlueprintAbilityReference>();
                 bp.m_ActorConsiderations = new ConsiderationReference[] {
                     AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>(),
@@ -32,6 +36,10 @@ namespace HarderEnemies.AI_Mechanics.Actions.ByLevels {
 
             var SlowAiSpell = AiCastSpellList.SlowAiAction.CreateCopy(HEContext, "SlowAiSpell", bp => {
                 bp.BaseScore = 3.5f;
+                bp.StartCooldownRounds = 1;
+                bp.CombatCount = 1;
+                bp.CooldownRounds = 2;
+                bp.CooldownDice = new DiceFormula(1, DiceType.D3);
                 bp.m_ActorConsiderations = new ConsiderationReference[] {
                     AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>(),
                 };
@@ -47,8 +55,10 @@ namespace HarderEnemies.AI_Mechanics.Actions.ByLevels {
 
             var StinkingCloudAiSpell = AiCastSpellList.StinkingCloudAiAction.CreateCopy(HEContext, "StinkingCloudAiSpell", bp => {
                 bp.BaseScore = 3.0f;
-                bp.CooldownRounds = 4;
-                bp.CooldownDice = new DiceFormula(3, DiceType.D4);
+                bp.StartCooldownRounds = 1;
+                bp.CombatCount = 1;
+                bp.CooldownRounds = 2;
+                bp.CooldownDice = new DiceFormula(2, DiceType.D3);
                 bp.m_ActorConsiderations = new ConsiderationReference[] {
                     AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>(),
                 };
@@ -60,6 +70,7 @@ namespace HarderEnemies.AI_Mechanics.Actions.ByLevels {
 
             var AnimateDeadAiSpell = AiCastSpellList.Xantir_SummonMonsterVIAIAction.CreateCopy(HEContext, "AnimateDeadAiSpell", bp => {
                 bp.BaseScore = 4.0f;
+                bp.StartCooldownRounds = 1;
                 bp.CooldownRounds = 5;
                 bp.CooldownDice = new DiceFormula(2, DiceType.D4);
                 bp.m_Ability = Abilities.AnimateDead.ToReference<BlueprintAbilityReference>();
@@ -83,6 +94,7 @@ namespace HarderEnemies.AI_Mechanics.Actions.ByLevels {
 
             var TargetedDispelAiSpell = AiCastSpellList.MinotaurCleric_DispelMagicAiAction.CreateCopy(HEContext, "TargetedDispelAiSpell", bp => {
                 bp.BaseScore = 5.0f;
+                bp.StartCooldownRounds = 1;
                 bp.CooldownRounds = 1;
                 bp.StartCooldownRounds = 1;
                 bp.CooldownDice = new DiceFormula(1, DiceType.D2);

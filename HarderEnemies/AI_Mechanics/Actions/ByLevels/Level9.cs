@@ -20,8 +20,9 @@ namespace HarderEnemies.AI_Mechanics.Actions.ByLevels {
 
             var OverwhelmingPresenceAiSpell = AiCastSpellList.Baphomet_OverwhelmingPresence_AIAction.CreateCopy(HEContext, "OverwhelmingPresenceAiSpell", bp => {
                 bp.BaseScore = 8.0f;
+                bp.StartCooldownRounds = 1;
                 bp.CombatCount = 1;
-                bp.CooldownRounds = 5;
+                bp.CooldownRounds = 2;
                 bp.CooldownDice = new DiceFormula(3, DiceType.D4);
                 bp.m_TargetConsiderations = new ConsiderationReference[] {
                     AiConsiderationList.AoE_ChooseMoreEnemies.ToReference<ConsiderationReference>()
@@ -33,8 +34,9 @@ namespace HarderEnemies.AI_Mechanics.Actions.ByLevels {
 
             var WailOfBansheeAiSpell = AiCastSpellList.Nocticula_AiAction_WailOfBanshee.CreateCopy(HEContext, "WailOfBansheeAiSpell", bp => {
                 bp.BaseScore = 9.0f;
+                bp.StartCooldownRounds = 1;
                 bp.CombatCount = 1;
-                bp.CooldownRounds = 5;
+                bp.CooldownRounds = 2;
                 bp.CooldownDice = new DiceFormula(3, DiceType.D4);
                 bp.m_TargetConsiderations = new ConsiderationReference[] {
                     AiConsiderationList.AoE_ChooseMoreEnemies.ToReference<ConsiderationReference>()
@@ -47,9 +49,10 @@ namespace HarderEnemies.AI_Mechanics.Actions.ByLevels {
 
             var WeirdAiSpell = AiCastSpellList.Oolioddroo_WeirdAIAction.CreateCopy(HEContext, "WeirdAiSpell", bp => {
                 bp.BaseScore = 9.0f;
+                bp.StartCooldownRounds = 1;
                 bp.CombatCount = 1;
-                bp.CooldownRounds = 5;
-                bp.CooldownDice = new DiceFormula(2, DiceType.D4);
+                bp.CooldownRounds = 2;
+                bp.CooldownDice = new DiceFormula(3, DiceType.D4);
                 bp.m_TargetConsiderations = new ConsiderationReference[] {
                     AiConsiderationList.AoE_ChooseMoreEnemies.ToReference<ConsiderationReference>()
                 };

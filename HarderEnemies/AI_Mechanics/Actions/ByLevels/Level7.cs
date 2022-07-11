@@ -19,7 +19,9 @@ namespace HarderEnemies.AI_Mechanics.Actions.ByLevels {
         public static void Handler() {
             var HoldPersonMassAiSpell = AiCastSpellList.Baphomet_OverwhelmingPresence_AIAction.CreateCopy(HEContext, "HoldPersonMassAiSpell", bp => {
                 bp.BaseScore = 8.0f;
-                bp.CooldownRounds = 6;
+                bp.StartCooldownRounds = 1;
+                bp.CombatCount = 1;
+                bp.CooldownRounds = 2;
                 bp.CooldownDice = new DiceFormula(3, DiceType.D4);
                 bp.m_TargetConsiderations = new ConsiderationReference[] {
                     AiConsiderationList.AoE_ChooseMoreEnemies.ToReference<ConsiderationReference>()
@@ -31,9 +33,10 @@ namespace HarderEnemies.AI_Mechanics.Actions.ByLevels {
             });
             var SummonMonsterViiAiSpell = AiCastSpellList.Xantir_SummonMonsterVIAIAction.CreateCopy(HEContext, "SummonMonsterViiAiSpell", bp => {
                 bp.BaseScore = 7.0f;
-                bp.CombatCount = 0;
-                bp.CooldownRounds = 5;
-                bp.CooldownDice = new DiceFormula(3, DiceType.D6);
+                bp.StartCooldownRounds = 1;
+                bp.CombatCount = 1;
+                bp.CooldownRounds = 2;
+                bp.CooldownDice = new DiceFormula(2, DiceType.D4);
                 bp.m_Ability = Abilities.SummonMonsterVII.ToReference<BlueprintAbilityReference>();
                 bp.m_Variant = Abilities.SummonMonsterVIId3.ToReference<BlueprintAbilityReference>();
                 bp.m_ActorConsiderations = new ConsiderationReference[] {
@@ -42,8 +45,10 @@ namespace HarderEnemies.AI_Mechanics.Actions.ByLevels {
             });
             var PowerWordBlindAiSpell = AiCastSpellList.Glabrezu_AiAction_PowerWordStun.CreateCopy(HEContext, "PowerWordBlindAiSpell", bp => {
                 bp.BaseScore = 8.0f;
-                bp.CooldownRounds = 8;
-                bp.CooldownDice = new DiceFormula(3, DiceType.D4);
+                bp.StartCooldownRounds = 1;
+                bp.CombatCount = 1;
+                bp.CooldownRounds = 2;
+                bp.CooldownDice = new DiceFormula(2, DiceType.D3);
                 bp.m_TargetConsiderations = new ConsiderationReference[] {
                         AiConsiderationList.AttackTargetsPriority.ToReference<ConsiderationReference>()
                     };
@@ -55,9 +60,10 @@ namespace HarderEnemies.AI_Mechanics.Actions.ByLevels {
 
             var LegendaryProportionsAiSpell = AiCastSpellList.CultistDivineFavorAiAction.CreateCopy(HEContext, "LegendaryProportionsAiSpell", bp => {
                 bp.BaseScore = 10.0f;
-                bp.CooldownRounds = 5;
-                bp.StartCooldownRounds = 2;
-                bp.CooldownDice = new DiceFormula(3, DiceType.D4);
+                bp.StartCooldownRounds = 1;
+                bp.CombatCount = 1;
+                bp.CooldownRounds = 2;
+                bp.CooldownDice = new DiceFormula(2, DiceType.D4);
                 bp.m_Ability = Abilities.LegendaryProportions.ToReference<BlueprintAbilityReference>();
                 bp.m_ActorConsiderations = new ConsiderationReference[] {
                     AiConsiderationList.NoBuffLegendaryProportions.ToReference<ConsiderationReference>(),
@@ -67,9 +73,10 @@ namespace HarderEnemies.AI_Mechanics.Actions.ByLevels {
 
             var PrismaticSprayAiSpell = AiCastSpellList.Ankou_PrismaticSprayAiAction.CreateCopy(HEContext, "PrismaticSprayAiSpell", bp => {
                 bp.BaseScore = 8.0f;
+                bp.StartCooldownRounds = 1;
+                bp.CombatCount = 1;
                 bp.CooldownRounds = 2;
-                bp.StartCooldownRounds = 2;
-                bp.CooldownDice = new DiceFormula(1, DiceType.D3);
+                bp.CooldownDice = new DiceFormula(2, DiceType.D4);
                 bp.m_ActorConsiderations = new ConsiderationReference[] {
                     AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>()
                 };
@@ -77,9 +84,10 @@ namespace HarderEnemies.AI_Mechanics.Actions.ByLevels {
 
             var CausticEruptionAiSpell = AiCastSpellList.CR22_AxiomiteCaster_AiAction_CausticErruption.CreateCopy(HEContext, "CausticEruptionAiSpell", bp => {
                 bp.BaseScore = 8.0f;
+                bp.StartCooldownRounds = 1;
+                bp.CombatCount = 1;
                 bp.CooldownRounds = 2;
-                bp.StartCooldownRounds = 2;
-                bp.CooldownDice = new DiceFormula(1, DiceType.D3);
+                bp.CooldownDice = new DiceFormula(2, DiceType.D4);
             });
         }
     }

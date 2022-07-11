@@ -20,6 +20,10 @@ namespace HarderEnemies.AI_Mechanics.Actions.ByLevels {
 
             var HideousLaughterAiSpell = AiCastSpellList.HideousLaughterAiAction.CreateCopy(HEContext, "HideousLaughterAiSpell", bp => {
                 bp.BaseScore = 2.0f;
+                bp.StartCooldownRounds = 1;
+                bp.CombatCount = 1;
+                bp.CooldownRounds = 2;
+                bp.CooldownDice = new DiceFormula(1, DiceType.D3);
                 bp.m_ActorConsiderations = new ConsiderationReference[] {
                     AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>(),
                 };
@@ -29,6 +33,10 @@ namespace HarderEnemies.AI_Mechanics.Actions.ByLevels {
 
             var ScareAiSpell = AiCastSpellList.ScareAiAction.CreateCopy(HEContext, "ScareAiSpell", bp => {
                 bp.BaseScore = 2.0f;
+                bp.StartCooldownRounds = 1;
+                bp.CombatCount = 1;
+                bp.CooldownRounds = 2;
+                bp.CooldownDice = new DiceFormula(1, DiceType.D3);
                 bp.m_ActorConsiderations = new ConsiderationReference[] {
                     AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>(),
                 };
@@ -36,6 +44,10 @@ namespace HarderEnemies.AI_Mechanics.Actions.ByLevels {
 
             var BlindnessAiSpell = AiCastSpellList.CultistHoldPersonAiAction.CreateCopy(HEContext, "BlindnessAiSpell", bp => {
                 bp.BaseScore = 3.0f;
+                bp.StartCooldownRounds = 1;
+                bp.CombatCount = 1;
+                bp.CooldownRounds = 2;
+                bp.CooldownDice = new DiceFormula(1, DiceType.D3);
                 bp.m_ActorConsiderations = new ConsiderationReference[] {
                     AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>(),
                     AiConsiderationList.NoThreateningUnitsConsideration.ToReference<ConsiderationReference>()
@@ -48,6 +60,10 @@ namespace HarderEnemies.AI_Mechanics.Actions.ByLevels {
 
             var HoldPersonAiSpell = AiCastSpellList.CultistHoldPersonAiAction.CreateCopy(HEContext, "HoldPersonAiSpell", bp => {
                 bp.BaseScore = 3.0f;
+                bp.StartCooldownRounds = 1;
+                bp.CombatCount = 1;
+                bp.CooldownRounds = 2;
+                bp.CooldownDice = new DiceFormula(1, DiceType.D3);
                 bp.m_ActorConsiderations = new ConsiderationReference[] {
                     AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>(),
                     AiConsiderationList.NoThreateningUnitsConsideration.ToReference<ConsiderationReference>()
@@ -56,8 +72,9 @@ namespace HarderEnemies.AI_Mechanics.Actions.ByLevels {
 
             var CreatePitAiSpell = AiCastSpellList.StinkingCloudAiAction.CreateCopy(HEContext, "CreatePitAiSpell", bp => {
                 bp.BaseScore = 3.0f;
+                bp.StartCooldownRounds = 1;
                 bp.CooldownRounds = 4;
-                bp.CooldownDice = new DiceFormula(3, DiceType.D4);
+                bp.CooldownDice = new DiceFormula(2, DiceType.D4);
                 bp.m_Ability = Abilities.CreatePit.ToReference<BlueprintAbilityReference>();
                 bp.m_ActorConsiderations = new ConsiderationReference[] {
                     AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>()
@@ -109,7 +126,7 @@ namespace HarderEnemies.AI_Mechanics.Actions.ByLevels {
             var MirrorImageAiSpell = AiCastSpellList.CultistDivineFavorAiAction.CreateCopy(HEContext, "MirrorImageAiSpell", bp => {
                 bp.BaseScore = 8.0f;
                 bp.CooldownRounds = 1;
-                bp.StartCooldownRounds = 0;
+                bp.StartCooldownRounds = 1;
                 bp.m_Ability = Abilities.MirrorImage.ToReference<BlueprintAbilityReference>();
                 bp.m_ActorConsiderations = new ConsiderationReference[] {
                     AiConsiderationList.NoBuffMirrorImage.ToReference<ConsiderationReference>(),
@@ -119,7 +136,7 @@ namespace HarderEnemies.AI_Mechanics.Actions.ByLevels {
             var SenseVitalsAiSpell = AiCastSpellList.CultistDivineFavorAiAction.CreateCopy(HEContext, "SenseVitalsAiSpell", bp => {
                 bp.BaseScore = 3.0f;
                 bp.CooldownRounds = 1;
-                bp.StartCooldownRounds = 0;
+                bp.StartCooldownRounds = 1;
                 bp.m_Ability = Abilities.SenseVitals.ToReference<BlueprintAbilityReference>();
                 bp.m_ActorConsiderations = new ConsiderationReference[] {
                     AiConsiderationList.NoBuffSenseVitals.ToReference<ConsiderationReference>(),
@@ -129,7 +146,7 @@ namespace HarderEnemies.AI_Mechanics.Actions.ByLevels {
             var SwiftScorchingRayAiSpell = AiCastSpellList.ScorchingRayAiAction.CreateCopy(HEContext, "SwiftScorchingRayAiSpell", bp => {
                 bp.BaseScore = 3.0f;
                 bp.CooldownRounds = 1;
-                bp.StartCooldownRounds = 0;
+                bp.StartCooldownRounds = 1;
                 bp.m_ActorConsiderations = new ConsiderationReference[] {
                     AiConsiderationList.SwiftActionOffCooldown.ToReference<ConsiderationReference>(),
                     AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>(),

@@ -20,8 +20,9 @@ namespace HarderEnemies.AI_Mechanics.Actions.ByLevels {
 
             var FearAiSpell = AiCastSpellList.Minagho_WavesOfFatigueAiAction.CreateCopy(HEContext, "FearAiSpell", bp => {
                 bp.BaseScore = 4.0f;
-                bp.CooldownRounds = 5;
-                bp.CooldownDice = new DiceFormula(3, DiceType.D4);
+                bp.CombatCount = 1;
+                bp.CooldownRounds = 2;
+                bp.CooldownDice = new DiceFormula(2, DiceType.D3);
                 bp.m_TargetConsiderations = new ConsiderationReference[] {
                     AiConsiderationList.AoE_ChooseMoreEnemies.ToReference<ConsiderationReference>()
                 };
@@ -33,8 +34,9 @@ namespace HarderEnemies.AI_Mechanics.Actions.ByLevels {
 
             var CreateAcitPitAiSpell = AiCastSpellList.StinkingCloudAiAction.CreateCopy(HEContext, "CreateAcitPitAiSpell", bp => {
                 bp.BaseScore = 3.0f;
-                bp.CooldownRounds = 5;
-                bp.CooldownDice = new DiceFormula(3, DiceType.D4);
+                bp.CombatCount = 1;
+                bp.CooldownRounds = 2;
+                bp.CooldownDice = new DiceFormula(2, DiceType.D3);
                 bp.m_Ability = Abilities.AcidPit.ToReference<BlueprintAbilityReference>();
                 bp.m_ActorConsiderations = new ConsiderationReference[] {
                    AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>()
@@ -105,7 +107,7 @@ namespace HarderEnemies.AI_Mechanics.Actions.ByLevels {
                 bp.BaseScore = 4.5f;
                 bp.StartCooldownRounds = 1;
                 bp.CooldownRounds = 1;
-                bp.CooldownDice = new DiceFormula(1, DiceType.D4);
+                bp.CooldownDice = new DiceFormula(2, DiceType.D3);
                 bp.m_ActorConsiderations = new ConsiderationReference[] {
                     AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>()
                 };
@@ -124,8 +126,9 @@ namespace HarderEnemies.AI_Mechanics.Actions.ByLevels {
             var ConfusionAiSpell = AiCastSpellList.Glabrezu_AiAction_Confusion.CreateCopy(HEContext, "ConfusionAiSpell", bp => {
                 bp.BaseScore = 4.0f;
                 bp.StartCooldownRounds = 1;
+                bp.CombatCount = 1;
                 bp.CooldownRounds = 2;
-                bp.CooldownDice = new DiceFormula(1, DiceType.D2);
+                bp.CooldownDice = new DiceFormula(1, DiceType.D3);
                 bp.m_ActorConsiderations = new ConsiderationReference[] {
                     AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>(),
                     AiConsiderationList.NoThreateningUnitsConsideration.ToReference<ConsiderationReference>()
