@@ -18,17 +18,11 @@ namespace HarderEnemies.UnitModifications.Bosses.Jerribeth {
     internal class JerribethAdjusts {
 
         private static BlueprintFeature AbyssalToughnessFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(HEContext, "AbyssalToughnessFeature");
-        private static BlueprintAiCastSpell GreaterDispelAiSpellSwift = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "GreaterDispelAiSpellSwift");
-        private static BlueprintAiCastSpell StormBoltAiSpell = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "StormBoltAiSpell");
-        private static BlueprintAiCastSpell SummonMonsterViiAiSpell = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "SummonMonsterViiAiSpell");
-        private static BlueprintAiCastSpell FearAiSpell = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "FearAiSpell");
-        private static BlueprintAiCastSpell HoldPersonMassAiSpell = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "HoldPersonMassAiSpell");
-        private static BlueprintAiCastSpell ScorchingRayAiSpell = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "ScorchingRayAiSpell");
-        private static BlueprintAiCastSpell BurningArcAiSpell = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "BurningArcAiSpell");
-        private static BlueprintAiCastSpell SlowAiSpell = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "SlowAiSpell");
-        
+        private static BlueprintBrain JerribethBrain = BlueprintTools.GetModBlueprint<BlueprintBrain>(HEContext, "JerribethBrain");
 
-            
+
+
+
         public static void Handler() {
             HandleHPBuff();
             JerribethAbilities();
@@ -50,19 +44,11 @@ namespace HarderEnemies.UnitModifications.Bosses.Jerribeth {
 
             foreach (BlueprintUnit thisUnit in UnitLists.JerribethList) {
                 Utils.CustomHelpers.AddFactListsToUnit(thisUnit, thisUnit.CR, AbilityLists.JerribethAbilities);
+                thisUnit.m_Brain = JerribethBrain.ToReference<BlueprintBrainReference>();
+                thisUnit.AlternativeBrains = new BlueprintBrainReference[0] { };
             }
 
-            BrainList.JerribethBrain.m_Actions = BrainList.JerribethBrain.m_Actions.AppendToArray(
-                GreaterDispelAiSpellSwift.ToReference<BlueprintAiActionReference>(),
-                StormBoltAiSpell.ToReference<BlueprintAiActionReference>(),
-                SummonMonsterViiAiSpell.ToReference<BlueprintAiActionReference>(),
-                FearAiSpell.ToReference<BlueprintAiActionReference>(),
-                HoldPersonMassAiSpell.ToReference<BlueprintAiActionReference>(),
-                SlowAiSpell.ToReference<BlueprintAiActionReference>(),
-                BurningArcAiSpell.ToReference<BlueprintAiActionReference>(),
-                ScorchingRayAiSpell.ToReference<BlueprintAiActionReference>()
 
-                );
             HEContext.Logger.LogHeader("Updated Jerribeth Abilities");
         }
 

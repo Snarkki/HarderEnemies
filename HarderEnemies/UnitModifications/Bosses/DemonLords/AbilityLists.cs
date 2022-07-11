@@ -20,12 +20,14 @@ namespace HarderEnemies.UnitModifications.Bosses.DemonLords {
 
         private static BlueprintFeature SuperiorQuickenMetaFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(HEContext, "SuperiorQuickenMetaMagicFeature");
         private static BlueprintFeature SuperiorEmpowerMetaFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(HEContext, "SuperiorEmporedMetaMagicFeature");
+        private static BlueprintFeature SuperiorMaximizedMetaMagicFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(HEContext, "SuperiorMaximizedMetaMagicFeature");
 
 
         private static BlueprintAbility GreaterSwarmSummon = BlueprintTools.GetModBlueprint<BlueprintAbility>(HEContext, "GreaterSwarmSummon");
         private static BlueprintAbility GateSpell = BlueprintTools.GetModBlueprint<BlueprintAbility>(HEContext, "GateSpell");
 
         public static BlueprintUnitFactReference[] DeskariAbilityList =  {
+            FeatureList.DR30.ToReference<BlueprintUnitFactReference>(),
             GreaterSwarmSummon.ToReference<BlueprintUnitFactReference>(),
             Abilities.EdictOfInvulnerability.ToReference<BlueprintUnitFactReference>(),
         };
@@ -35,6 +37,7 @@ namespace HarderEnemies.UnitModifications.Bosses.DemonLords {
             Abilities.Stormbolts.ToReference<BlueprintUnitFactReference>(),
             Abilities.RiftOfRuin.ToReference<BlueprintUnitFactReference>(),
             Abilities.Firestorm.ToReference<BlueprintUnitFactReference>(),
+            Abilities.Heal.ToReference<BlueprintUnitFactReference>(),
             SuperiorQuickenMetaFeature.ToReference<BlueprintUnitFactReference>(),
             SuperiorEmpowerMetaFeature.ToReference<BlueprintUnitFactReference>(),
         };
@@ -44,8 +47,10 @@ namespace HarderEnemies.UnitModifications.Bosses.DemonLords {
             Abilities.DispelGreater.ToReference<BlueprintUnitFactReference>(),
             Abilities.Stormbolts.ToReference<BlueprintUnitFactReference>(),
             Abilities.CommandGreaterFall.ToReference<BlueprintUnitFactReference>(),
+            Abilities.Heal.ToReference<BlueprintUnitFactReference>(),
             SuperiorQuickenMetaFeature.ToReference<BlueprintUnitFactReference>(),
             SuperiorEmpowerMetaFeature.ToReference<BlueprintUnitFactReference>(),
+            SuperiorMaximizedMetaMagicFeature.ToReference<BlueprintUnitFactReference>(),
             GateSpell.ToReference<BlueprintUnitFactReference>(),
         };
 

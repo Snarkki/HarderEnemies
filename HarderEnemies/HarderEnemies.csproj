@@ -173,6 +173,7 @@
     <Compile Include="AI_Mechanics\Brains\Bosses\BalorBrains.cs" />
     <Compile Include="AI_Mechanics\Brains\Bosses\DemonLords.cs" />
     <Compile Include="AI_Mechanics\Brains\Bosses\EliteCasters.cs" />
+    <Compile Include="AI_Mechanics\Brains\Bosses\OtherBrains.cs" />
     <Compile Include="AI_Mechanics\Brains\Cultists\CultistClericBrains.cs" />
     <Compile Include="AI_Mechanics\Brains\Cultists\CultistWizardBrains.cs" />
     <Compile Include="AI_Mechanics\Brains\Cyborgs\CyborgBrains.cs" />

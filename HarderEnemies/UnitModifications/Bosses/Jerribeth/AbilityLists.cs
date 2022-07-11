@@ -28,7 +28,8 @@ namespace HarderEnemies.UnitModifications.Bosses.Jerribeth {
             Abilities.Fear.ToReference<BlueprintUnitFactReference>(),
             Abilities.Stormbolts.ToReference<BlueprintUnitFactReference>(),
             SuperiorQuickenMetaFeature.ToReference<BlueprintUnitFactReference>(),
-            Abilities.DispelGreater.ToReference<BlueprintUnitFactReference>()
+            Abilities.DispelGreater.ToReference<BlueprintUnitFactReference>(),
+            Abilities.InvisibilityGreater.ToReference<BlueprintUnitFactReference>()
         };
 
     }

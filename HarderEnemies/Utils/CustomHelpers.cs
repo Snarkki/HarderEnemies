@@ -44,6 +44,9 @@ namespace HarderEnemies.Utils {
                 charClass.m_MemorizeSpells = new BlueprintAbilityReference[0] { };
                 charClass.m_SelectSpells = new BlueprintAbilityReference[0] { };
 
+                //charClass.m_MemorizeSpells = NewSpellList.ToArray();
+
+
                 if (NewSpellList != null) {
                 foreach (var spell in NewSpellList) {
                         charClass.m_MemorizeSpells = charClass.m_MemorizeSpells.AppendToArray(spell);

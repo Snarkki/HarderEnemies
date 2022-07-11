@@ -17,6 +17,7 @@ namespace HarderEnemies.AI_Mechanics.Brains {
             Bosses.BalorBrains.Handler();
             Bosses.DemonLords.Handler();
             Bosses.EliteCasters.Handler();
+            Bosses.OtherBrains.Handler();
 
             Cultists.CultistClericBrains.CreateCultistClericBrains();
             Cultists.CultistWizardBrains.CreateCultistWizardBrains();

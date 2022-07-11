@@ -79,6 +79,10 @@ namespace HarderEnemies.UnitModifications.Bosses.RandomBosses {
         public static BlueprintUnit MidnightFane_GlabrezuElite = BlueprintTools.GetBlueprint<BlueprintUnit>("75fa4aaa407c3d64fbd8cfd4c221f415");
         public static BlueprintUnit MidnightFane_GlabrezuRitualists = BlueprintTools.GetBlueprint<BlueprintUnit>("b8d0898ac46e4851b9613b80aea0ef04");
         public static BlueprintUnit XanthirPhase1 = ResourcesLibrary.TryGetBlueprint<BlueprintUnit>("082edd80ca45af84ab602fbe06e53f55");
+        public static BlueprintUnit MidnightFane_NocticulaPriestess = BlueprintTools.GetBlueprint<BlueprintUnit>("2d6fe3abc0ed7364ba48e604ae2471bd");
+        public static BlueprintUnit MidnightFane_ShadowDemonNocticula = BlueprintTools.GetBlueprint<BlueprintUnit>("786e50e95d025e8498281178fec9d182");
+        public static BlueprintUnit EchoOfDeskari = BlueprintTools.GetBlueprint<BlueprintUnit>("a40904b640d757a498f7d10b3e066f84");
+        public static BlueprintUnit EchoOfDeskari_ForFight = BlueprintTools.GetBlueprint<BlueprintUnit>("e0cb4338cb6e72146a8a35794a0034be");
 
 
         public static List<BlueprintUnit> MutafasenList = new List<BlueprintUnit>() {

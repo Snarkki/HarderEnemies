@@ -107,6 +107,16 @@ namespace HarderEnemies.AI_Mechanics.Actions.ByLevels {
                     AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>(),
                 };
             });
+
+            var PhantasmalPutreficationAiSpell = AiCastSpellList.Minagho_PhantasmalPutrefactionAIAction.CreateCopy(HEContext, "PhantasmalPutreficationAiSpell", bp => {
+                bp.BaseScore = 6.0f;
+                bp.CombatCount = 1;
+                bp.CooldownRounds = 2;
+                bp.CooldownDice = new DiceFormula(2, DiceType.D3);
+                bp.m_ActorConsiderations = new ConsiderationReference[] {
+                    AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>(),
+                };
+            });
         }
     }
 }

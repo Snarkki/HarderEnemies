@@ -17,14 +17,11 @@ using static HarderEnemies.Main;
 namespace HarderEnemies.UnitModifications.Bosses.DemonLords {
     internal class DemonLordAdjusts {
 
-        private static BlueprintAiCastSpell GreaterDispelAiSpellSwift = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "GreaterDispelAiSpellSwift");
-        private static BlueprintAiCastSpell CreateRiftOfRuinAiSpell = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "CreateRiftOfRuinAiSpell");
-        private static BlueprintAiCastSpell StormBoltAiSpell = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "StormBoltAiSpell");
-        private static BlueprintAiCastSpell CreateMythicSwarmsAiSpell = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "CreateMythicSwarmsAiSpell");
-        private static BlueprintAiCastSpell FirestormEmpoweredAiSpell = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "FirestormEmpoweredAiSpell");
-        private static BlueprintAiCastSpell EdictOfInvulnerabilityAiSpell = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "EdictOfInvulnerabilityAiSpell");
-        private static BlueprintAiCastSpell OpenGateAiSpell = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "OpenGateAiSpell");
+        
         private static BlueprintFeature AbyssalToughnessFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(HEContext, "AbyssalToughnessFeature");
+        private static BlueprintBrain DeskariBrain = BlueprintTools.GetModBlueprint<BlueprintBrain>(HEContext, "DeskariBrain");
+        private static BlueprintBrain NocticulaBrain = BlueprintTools.GetModBlueprint<BlueprintBrain>(HEContext, "NocticulaBrain");
+        private static BlueprintBrain AreeluBrain = BlueprintTools.GetModBlueprint<BlueprintBrain>(HEContext, "AreeluBrain");
 
         public static void Handler() {
             HandleHPBuff();
@@ -46,44 +43,37 @@ namespace HarderEnemies.UnitModifications.Bosses.DemonLords {
             if (HEContext.AbilityChanges.BossChanges.IsDisabled("DemonLordChanges")) { return; }
 
 
+
+            // NOCTICULA
             foreach (BlueprintUnit thisUnit in UnitLists.NocticulaList) {
-                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, 40, AbilityLists.NocticulaAbilityList);
+                Utils.CustomHelpers.AddFactsToUnit(thisUnit, AbilityLists.NocticulaAbilityList);
+                thisUnit.m_Brain = NocticulaBrain.ToReference<BlueprintBrainReference>();
+                thisUnit.AlternativeBrains = new BlueprintBrainReference[0] { };
             }
 
 
-            foreach (BlueprintUnit thisUnit in UnitLists.DeskariList) {
-                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, 40, AbilityLists.DeskariAbilityList);
+            // DESKARI
+            Utils.CustomHelpers.AddFactsToUnit(UnitLists.DemonLordDeskari, AbilityLists.DeskariAbilityList);
+            UnitLists.DemonLordDeskari.m_Brain = DeskariBrain.ToReference<BlueprintBrainReference>();
+            UnitLists.DemonLordDeskari.AlternativeBrains = new BlueprintBrainReference[0] { };
 
-            }
+
 
 
 
             //CR30_AreshkagalBoss, ehkä ei mitään...
-            Utils.CustomHelpers.AddFactListsToUnit(UnitLists.CR30_AreshkagalBoss, 40, AbilityLists.CR30_AreshkagalAbilities);
+            Utils.CustomHelpers.AddFactsToUnit(UnitLists.CR30_AreshkagalBoss, AbilityLists.CR30_AreshkagalAbilities);
 
 
 
             //AREELU 
-            Utils.CustomHelpers.AddFactListsToUnit(UnitLists.AreeluDemonicForm, 40, AbilityLists.AreeluAbilityList);
+            foreach (BlueprintUnit thisUnit in UnitLists.AreeluList) {
+                Utils.CustomHelpers.AddFactsToUnit(thisUnit, AbilityLists.AreeluAbilityList);
+                thisUnit.m_Brain = AreeluBrain.ToReference<BlueprintBrainReference>();
+                thisUnit.AlternativeBrains = new BlueprintBrainReference[0] { };
+            }
 
 
-            // BRAINS
-            BrainList.Nocticula_Brain.m_Actions = BrainList.Nocticula_Brain.m_Actions.AppendToArray(
-                GreaterDispelAiSpellSwift.ToReference<BlueprintAiActionReference>(),
-                FirestormEmpoweredAiSpell.ToReference<BlueprintAiActionReference>(),
-                StormBoltAiSpell.ToReference<BlueprintAiActionReference>()
-                );
-            BrainList.Deskari_Brain.m_Actions = BrainList.Deskari_Brain.m_Actions.AppendToArray(
-                CreateMythicSwarmsAiSpell.ToReference<BlueprintAiActionReference>(),
-                EdictOfInvulnerabilityAiSpell.ToReference<BlueprintAiActionReference>()
-                );
-            BrainList.Areelu_Brain.m_Actions = BrainList.Areelu_Brain.m_Actions.AppendToArray(
-                OpenGateAiSpell.ToReference<BlueprintAiActionReference>(),
-                GreaterDispelAiSpellSwift.ToReference<BlueprintAiActionReference>(),
-                StormBoltAiSpell.ToReference<BlueprintAiActionReference>(),
-                AiCastSpellList.ColyphyrBaphomet_CommandGreater_AIAction.ToReference<BlueprintAiActionReference>(),
-                AiCastSpellList.Baphomet_OverwhelmingPresence_AIAction.ToReference<BlueprintAiActionReference>()
-                );
         }
 
 
@@ -100,12 +90,11 @@ namespace HarderEnemies.UnitModifications.Bosses.DemonLords {
             }
 
             //DESKARI
-            foreach (BlueprintUnit thisUnit in UnitLists.DeskariList) {
-                thisUnit.m_AddFacts = thisUnit.m_AddFacts.AppendToArray(FeatureList.CR22_AxiomiteCaster_Feature_Prebuff.ToReference<BlueprintUnitFactReference>(),
+            UnitLists.CR30_AreshkagalBoss.m_AddFacts = UnitLists.CR30_AreshkagalBoss.m_AddFacts.AppendToArray(FeatureList.CR22_AxiomiteCaster_Feature_Prebuff.ToReference<BlueprintUnitFactReference>(),
                                         FeatureList.CR22_AxiomiteCaster_Feature_CombatPrebuff.ToReference<BlueprintUnitFactReference>()
                     );
-                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, 40, BuffLists.DeskariBuffList);
-            }
+                Utils.CustomHelpers.AddFactListsToUnit(UnitLists.CR30_AreshkagalBoss, 40, BuffLists.DeskariBuffList);
+            
 
             //CR30_AreshkagalBoss
             UnitLists.CR30_AreshkagalBoss.m_AddFacts = UnitLists.CR30_AreshkagalBoss.m_AddFacts.AppendToArray(FeatureList.CR22_AxiomiteCaster_Feature_Prebuff.ToReference<BlueprintUnitFactReference>(),

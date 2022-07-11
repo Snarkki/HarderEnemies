@@ -139,6 +139,27 @@ namespace HarderEnemies.AI_Mechanics.Actions.ByLevels {
                     AiConsiderationList.AoE_ChooseMoreEnemies.ToReference<ConsiderationReference>()
                 };
             });
+
+            var HealAiSpellSwift = AiCastSpellList.HealAiAction.CreateCopy(HEContext, "HealAiSpellSwift", bp => {
+                bp.BaseScore = 15.0f;
+                bp.CooldownRounds = 1;
+                bp.StartCooldownRounds = 1;
+                bp.CooldownDice = new DiceFormula(2, DiceType.D4);
+                bp.m_ActorConsiderations = new ConsiderationReference[] {
+                   AiConsiderationList.SwiftActionOffCooldown.ToReference<ConsiderationReference>(),
+                   AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>()
+                };
+            });
+
+            var HealAiSpell = AiCastSpellList.HealAiAction.CreateCopy(HEContext, "HealAiSpell", bp => {
+                bp.BaseScore = 7.0f;
+                bp.CooldownRounds = 1;
+                bp.StartCooldownRounds = 1;
+                bp.CooldownDice = new DiceFormula(2, DiceType.D4);
+                bp.m_ActorConsiderations = new ConsiderationReference[] {
+                   AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>()
+                };
+            });
         }
     }
 }

@@ -27,8 +27,8 @@ namespace HarderEnemies.UnitModifications.Bosses.Minagho {
         private static BlueprintAiCastSpell ChainLightningAiSpell = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "ChainLightningAiSpell");
 
 
-        
-            
+        private static BlueprintBrain MinaghoBrain = BlueprintTools.GetModBlueprint<BlueprintBrain>(HEContext, "MinaghoBrain");
+
         public static void Handler() {
             HandleHPBuff();
             MinaghoAbilities();
@@ -48,9 +48,11 @@ namespace HarderEnemies.UnitModifications.Bosses.Minagho {
             if (HEContext.AbilityChanges.BossChanges.IsDisabled("MinaghoChanges")) { return; }
 
             foreach (BlueprintUnit thisUnit in UnitLists.MinaghoList) {
-                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, thisUnit.CR, AbilityLists.MinaghoAbilities);
+                Utils.CustomHelpers.AddFactsToUnit(thisUnit, AbilityLists.MinaghoAbilities);
             }
 
+            UnitLists.Alushinyrra_Minagho.m_Brain = MinaghoBrain.ToReference<BlueprintBrainReference>();
+            UnitLists.Alushinyrra_Minagho.AlternativeBrains = new BlueprintBrainReference[0] { };
 
 
             BrainList.Alushinyrra_Minagho_Brain.m_Actions = BrainList.Alushinyrra_Minagho_Brain.m_Actions.AppendToArray(

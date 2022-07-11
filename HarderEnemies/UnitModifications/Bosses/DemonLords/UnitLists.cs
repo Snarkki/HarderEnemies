@@ -20,18 +20,13 @@ namespace HarderEnemies.UnitModifications.Bosses.DemonLords {
         public static BlueprintUnit DemonLordDeskari = ResourcesLibrary.TryGetBlueprint<BlueprintUnit>("5a75db49bf7aeaf4c9f0264cac3eed5c");
         public static BlueprintUnit Nocticula_AlushinyrraMythicDemon = ResourcesLibrary.TryGetBlueprint<BlueprintUnit>("ce682067f7f81084fbd00d3e57f877af");
         public static BlueprintUnit AreeluDemonicForm = ResourcesLibrary.TryGetBlueprint<BlueprintUnit>("6eac4b763b6504546a580d4f01c63bfa");
+        public static BlueprintUnit Areelu = ResourcesLibrary.TryGetBlueprint<BlueprintUnit>("92f29ae2c49edb74f8943d30ea788dd0");
         public static BlueprintUnit NocticulaInDress = ResourcesLibrary.TryGetBlueprint<BlueprintUnit>("9182101ebd724cad9914015acf5f58c0");
         public static BlueprintUnit Nocticula = ResourcesLibrary.TryGetBlueprint<BlueprintUnit>("0cca8c841d634d84fbec2609c8db3465");
         public static BlueprintUnit Baphomet = ResourcesLibrary.TryGetBlueprint<BlueprintUnit>("f8007503fe211da4eb027e070eeb3f8c");
-        public static BlueprintUnit MidnightFane_NocticulaPriestess = BlueprintTools.GetBlueprint<BlueprintUnit>("2d6fe3abc0ed7364ba48e604ae2471bd");
-        public static BlueprintUnit EchoOfDeskari = BlueprintTools.GetBlueprint<BlueprintUnit>("a40904b640d757a498f7d10b3e066f84");
-        public static BlueprintUnit EchoOfDeskari_ForFight = BlueprintTools.GetBlueprint<BlueprintUnit>("e0cb4338cb6e72146a8a35794a0034be");
-        public static BlueprintUnit MidnightFane_ShadowDemonNocticula = BlueprintTools.GetBlueprint<BlueprintUnit>("786e50e95d025e8498281178fec9d182");
         public static BlueprintUnit CR30_AreshkagalBoss = BlueprintTools.GetBlueprint<BlueprintUnit>("7a1b0862dd2443b49adaba36b194e5de");
 
         public static List<BlueprintUnit> DemonLordList = new List<BlueprintUnit>() {
-            MidnightFane_NocticulaPriestess,
-            MidnightFane_ShadowDemonNocticula,
             CR30_AreshkagalBoss,
             DemonLordDeskari,
             Nocticula_AlushinyrraMythicDemon,
@@ -39,20 +34,19 @@ namespace HarderEnemies.UnitModifications.Bosses.DemonLords {
             NocticulaInDress,
             Nocticula,
             Baphomet,
-            EchoOfDeskari,
-            EchoOfDeskari_ForFight
         };
 
 
         public static List<BlueprintUnit> NocticulaList = new List<BlueprintUnit>() {
+            Nocticula_AlushinyrraMythicDemon,
             NocticulaInDress,
             Nocticula,
         };
 
-        public static List<BlueprintUnit> DeskariList = new List<BlueprintUnit>() {
-            DemonLordDeskari,
-            EchoOfDeskari,
-            EchoOfDeskari_ForFight
+        public static List<BlueprintUnit> AreeluList = new List<BlueprintUnit>() {
+            AreeluDemonicForm,
+            Areelu,
         };
+
     }
 }
