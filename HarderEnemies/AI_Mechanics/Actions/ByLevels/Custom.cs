@@ -125,7 +125,12 @@ namespace HarderEnemies.AI_Mechanics.Actions.ByLevels {
                 bp.m_Ability = Abilities.VitalStrikeAbilityGreater.ToReference<BlueprintAbilityReference>();
             });
 
-
+            var DimensionDoorHellAiSpell = AiCastSpellList.Derakni_AiAction_BacklineTeleportation.CreateCopy(HEContext, "DimensionDoorHellAiSpell", bp => {
+                bp.BaseScore = 8.0f;
+                bp.CombatCount = 1;
+                bp.CooldownRounds = 2;
+                bp.CooldownDice = new DiceFormula(1, DiceType.D4);
+            });
         }
     }
 }
