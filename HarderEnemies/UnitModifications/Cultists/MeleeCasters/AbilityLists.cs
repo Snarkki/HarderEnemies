@@ -17,6 +17,11 @@ using static HarderEnemies.Main;
 namespace HarderEnemies.UnitModifications.Cultists.MeleeCasters {
     internal class AbilityLists {
 
+        /// <summary>
+        /// 
+        /// </summary>
+
+ 
         public static BlueprintAbilityReference[] LowLevelCultistClericMemorizedSpells = new BlueprintAbilityReference[] {
                 Abilities.Command.ToReference<BlueprintAbilityReference>(),
                 Abilities.Command.ToReference<BlueprintAbilityReference>(),
@@ -26,6 +31,10 @@ namespace HarderEnemies.UnitModifications.Cultists.MeleeCasters {
                 Abilities.SoundBurst.ToReference<BlueprintAbilityReference>(),
                 Abilities.Boneshaker.ToReference<BlueprintAbilityReference>(),
             };
+
+        /// <summary>
+        /// 
+        /// </summary>
 
         public static BlueprintAbilityReference[] CR6ClericMemorizedSpells = {
                 Abilities.Command.ToReference<BlueprintAbilityReference>(),
@@ -38,6 +47,9 @@ namespace HarderEnemies.UnitModifications.Cultists.MeleeCasters {
                 Abilities.Prayer.ToReference<BlueprintAbilityReference>(),
                 Abilities.Blindess.ToReference<BlueprintAbilityReference>(),
             };
+        /// <summary>
+        /// 
+        /// </summary>
 
         public static BlueprintAbilityReference[] CR8ClericMemorizedSpells = {
                 Abilities.Command.ToReference<BlueprintAbilityReference>(),
@@ -51,6 +63,9 @@ namespace HarderEnemies.UnitModifications.Cultists.MeleeCasters {
                 Abilities.Blindess.ToReference<BlueprintAbilityReference>(),
                 Abilities.DivinePower.ToReference<BlueprintAbilityReference>(),
             };
+        /// <summary>
+        /// 
+        /// </summary>
 
         public static BlueprintAbilityReference[] HighLevelClericMemorizedSpells = {
                 Abilities.Prayer.ToReference<BlueprintAbilityReference>(),

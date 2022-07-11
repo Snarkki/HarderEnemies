@@ -17,6 +17,7 @@ using static HarderEnemies.Main;
 namespace HarderEnemies.UnitModifications.Cultists.Casters {
     internal class AbilityLists {
 
+
         public static BlueprintAbilityReference[] CR4DamageWizardSpells = {
                 Abilities.MirrorImage.ToReference<BlueprintAbilityReference>(),
                 Abilities.MagicMissile.ToReference<BlueprintAbilityReference>(),
@@ -28,6 +29,11 @@ namespace HarderEnemies.UnitModifications.Cultists.Casters {
                 Abilities.BurningArc.ToReference<BlueprintAbilityReference>(),
             };
 
+
+        /// <summary>
+        /// 
+        /// </summary>
+
         public static BlueprintAbilityReference[] CR4SummonWizardSpells = {
                 Abilities.MirrorImage.ToReference<BlueprintAbilityReference>(),
                 Abilities.MagicMissile.ToReference<BlueprintAbilityReference>(),
@@ -38,6 +44,11 @@ namespace HarderEnemies.UnitModifications.Cultists.Casters {
                 Abilities.BurningArc.ToReference<BlueprintAbilityReference>(),
                 Abilities.BurningArc.ToReference<BlueprintAbilityReference>(),
             };
+
+        /// <summary>
+        /// 
+        /// </summary>
+
 
         public static BlueprintAbilityReference[] CR6DamageWizardSpells = {
                 Abilities.MirrorImage.ToReference<BlueprintAbilityReference>(),
@@ -54,7 +65,11 @@ namespace HarderEnemies.UnitModifications.Cultists.Casters {
                 Abilities.Haste.ToReference<BlueprintAbilityReference>(),
             };
 
-        public static BlueprintAbilityReference[] CR6SummonWizardSpells = {
+        /// <summary>
+        /// 
+        /// </summary>
+
+    public static BlueprintAbilityReference[] CR6SummonWizardSpells = {
                 Abilities.MirrorImage.ToReference<BlueprintAbilityReference>(),
                 Abilities.MagicMissile.ToReference<BlueprintAbilityReference>(),
                 Abilities.MagicMissile.ToReference<BlueprintAbilityReference>(),
@@ -67,6 +82,10 @@ namespace HarderEnemies.UnitModifications.Cultists.Casters {
                 Abilities.StinkingCloud.ToReference<BlueprintAbilityReference>(),
                 Abilities.DeepSlumber.ToReference<BlueprintAbilityReference>(),
             };
+        /// <summary>
+        /// 
+        /// </summary>
+
 
         public static BlueprintAbilityReference[] CR8DamageWizardSpells = {
                 Abilities.MirrorImage.ToReference<BlueprintAbilityReference>(),
@@ -85,6 +104,9 @@ namespace HarderEnemies.UnitModifications.Cultists.Casters {
                 Abilities.IcyPrison.ToReference<BlueprintAbilityReference>(),
                 Abilities.PhantasmalWeb.ToReference<BlueprintAbilityReference>(),
             };
+        /// <summary>
+        /// 
+        /// </summary>
 
         public static BlueprintAbilityReference[] CR8SummonWizardSpells = {
                 Abilities.MirrorImage.ToReference<BlueprintAbilityReference>(),

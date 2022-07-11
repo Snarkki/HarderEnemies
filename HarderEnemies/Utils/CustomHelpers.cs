@@ -13,6 +13,7 @@ using Kingmaker.ElementsSystem;
 using Kingmaker.UnitLogic.Mechanics.Actions;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.AI.Blueprints;
+using Kingmaker.UnitLogic.Abilities.Blueprints;
 
 namespace HarderEnemies.Utils {
     public static class CustomHelpers {
@@ -35,12 +36,22 @@ namespace HarderEnemies.Utils {
             HEContext.Logger.LogHeader("Added " + thisUnit.ToString() + " facts");
         }
 
-        public static void AddMemorizedSpellsAndBrains(BlueprintUnit thisUnit, BlueprintCharacterClass CharacterClass, BlueprintAbilityReference[] SpellList, BlueprintBrain newBrain) {
-            var memorizedSpells = thisUnit.GetComponent<AddClassLevels>(c => c.m_CharacterClass.Equals(CharacterClass.ToReference<BlueprintCharacterClassReference>()))?.m_MemorizeSpells;
-            //HEContext.Logger.LogHeader(clericClass.m_CharacterClass.ToString());
-            if (memorizedSpells != null) {
+        public static void AddMemorizedSpellsAndBrains(BlueprintUnit thisUnit, BlueprintCharacterClass CharacterClass, BlueprintBrain newBrain, BlueprintAbilityReference[] NewSpellList ) {
+            var charClass = thisUnit.GetComponent<AddClassLevels>(c => c.m_CharacterClass.Equals(CharacterClass.ToReference<BlueprintCharacterClassReference>()));
 
-                memorizedSpells = SpellList;
+            if (charClass != null) {
+
+                charClass.m_MemorizeSpells = new BlueprintAbilityReference[0] { };
+                charClass.m_SelectSpells = new BlueprintAbilityReference[0] { };
+
+                if (NewSpellList != null) {
+                foreach (var spell in NewSpellList) {
+                        charClass.m_MemorizeSpells = charClass.m_MemorizeSpells.AppendToArray(spell);
+                        if (!charClass.m_SelectSpells.Contains(spell)) {
+                            charClass.m_SelectSpells = charClass.m_SelectSpells.AppendToArray(spell);
+                        }
+                    }
+                }
 
                 // Clear alternative brains
                 thisUnit.AlternativeBrains = new BlueprintBrainReference[0] { };

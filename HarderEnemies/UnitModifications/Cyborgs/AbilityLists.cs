@@ -17,6 +17,12 @@ using static HarderEnemies.Main;
 namespace HarderEnemies.UnitModifications.Cyborgs {
     internal class AbilityLists {
 
+
+        public static BlueprintUnitFactReference[] CyborgCasterAbilities = {
+                FeatureList.ArcaneArmorTraining.ToReference<BlueprintUnitFactReference>(),
+                FeatureList.ArcaneArmorMastery.ToReference<BlueprintUnitFactReference>(),
+            };
+
         public static BlueprintAbilityReference[] CyborgCasterSpells = {
                 Abilities.MirrorImage.ToReference<BlueprintAbilityReference>(),
                 Abilities.MirrorImage.ToReference<BlueprintAbilityReference>(),
@@ -62,6 +68,8 @@ namespace HarderEnemies.UnitModifications.Cyborgs {
                 Abilities.Slow.ToReference<BlueprintUnitFactReference>(),
                 Abilities.InvisibilityGreater.ToReference<BlueprintUnitFactReference>(),
                 Abilities.OverwhelmingGrief.ToReference<BlueprintUnitFactReference>(),
+                FeatureList.ArcaneArmorTraining.ToReference<BlueprintUnitFactReference>(),
+                FeatureList.ArcaneArmorMastery.ToReference<BlueprintUnitFactReference>(),
             };
     }
 }

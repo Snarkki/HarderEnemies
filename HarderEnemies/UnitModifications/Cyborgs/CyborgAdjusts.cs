@@ -84,7 +84,9 @@ namespace HarderEnemies.UnitModifications.Cyborgs {
 
 
             // Cyborg Caster Wizarad
-            Utils.CustomHelpers.AddMemorizedSpellsAndBrains(UnitLists.CR15_Cyborg_CrusaderCasterLevel13, CharacterClass.WizardClass, AbilityLists.CyborgCasterSpells, CyborgWizardBrain);
+            Utils.CustomHelpers.AddMemorizedSpellsAndBrains(UnitLists.CR15_Cyborg_CrusaderCasterLevel13, CharacterClass.WizardClass, CyborgWizardBrain,  AbilityLists.CyborgCasterSpells);
+            Utils.CustomHelpers.AddFactsToUnit(UnitLists.CR15_Cyborg_CrusaderCasterLevel13, AbilityLists.CyborgCasterAbilities);
+
 
             HEContext.Logger.LogHeader("Updated Cyborg Abilities");
         }

@@ -66,27 +66,27 @@ namespace HarderEnemies.UnitModifications.Cultists.Casters {
                 // CR4
 
                 foreach (BlueprintUnit thisUnit in UnitLists.CR4CultistDamageCasterList) {
-                    Utils.CustomHelpers.AddMemorizedSpellsAndBrains(thisUnit, CharacterClass.WizardClass, AbilityLists.CR4DamageWizardSpells, CR4DamageWizardBrain);
+                    Utils.CustomHelpers.AddMemorizedSpellsAndBrains(thisUnit, CharacterClass.WizardClass, CR4DamageWizardBrain, AbilityLists.CR4DamageWizardSpells);
                 }
 
                 foreach (BlueprintUnit thisUnit in UnitLists.CR4CultistSummonCasterList) {
-                    Utils.CustomHelpers.AddMemorizedSpellsAndBrains(thisUnit, CharacterClass.WizardClass, AbilityLists.CR4SummonWizardSpells, CR4SummonWizardBrain);
+                    Utils.CustomHelpers.AddMemorizedSpellsAndBrains(thisUnit, CharacterClass.WizardClass, CR4SummonWizardBrain,  AbilityLists.CR4SummonWizardSpells);
                 }
 
                 foreach (BlueprintUnit thisUnit in UnitLists.CR6CultistDamageCasterList) {
-                    Utils.CustomHelpers.AddMemorizedSpellsAndBrains(thisUnit, CharacterClass.WizardClass, AbilityLists.CR6DamageWizardSpells, CR6DamageWizardBrain);
+                    Utils.CustomHelpers.AddMemorizedSpellsAndBrains(thisUnit, CharacterClass.WizardClass, CR6DamageWizardBrain, AbilityLists.CR6DamageWizardSpells);
                 }
 
                 foreach (BlueprintUnit thisUnit in UnitLists.CR6CultistSummonCasterList) {
-                    Utils.CustomHelpers.AddMemorizedSpellsAndBrains(thisUnit, CharacterClass.WizardClass, AbilityLists.CR6SummonWizardSpells, CR6SummonWizardBrain);
+                    Utils.CustomHelpers.AddMemorizedSpellsAndBrains(thisUnit, CharacterClass.WizardClass, CR6SummonWizardBrain, AbilityLists.CR6SummonWizardSpells);
                 }
 
                 foreach (BlueprintUnit thisUnit in UnitLists.CR8CultistDamageCasterList) {
-                    Utils.CustomHelpers.AddMemorizedSpellsAndBrains(thisUnit, CharacterClass.WizardClass, AbilityLists.CR8DamageWizardSpells, CR8DamageWizardBrain);
+                    Utils.CustomHelpers.AddMemorizedSpellsAndBrains(thisUnit, CharacterClass.WizardClass, CR8DamageWizardBrain, AbilityLists.CR8DamageWizardSpells);
                 }
 
                 foreach (BlueprintUnit thisUnit in UnitLists.CR8CultistSummonCasterList) {
-                    Utils.CustomHelpers.AddMemorizedSpellsAndBrains(thisUnit, CharacterClass.WizardClass, AbilityLists.CR8SummonWizardSpells, CR8SummonWizardBrain);
+                    Utils.CustomHelpers.AddMemorizedSpellsAndBrains(thisUnit, CharacterClass.WizardClass, CR8SummonWizardBrain , AbilityLists.CR8SummonWizardSpells);
                 }
             }
         }

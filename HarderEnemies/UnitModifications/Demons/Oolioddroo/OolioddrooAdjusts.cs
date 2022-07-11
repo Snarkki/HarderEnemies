@@ -39,7 +39,7 @@ namespace HarderEnemies.UnitModifications.Demons.Oolioddroo {
         private static void OolioddrooAbilities() {
             if (HEContext.AbilityChanges.DemonChanges.IsDisabled("OolioddrooAbilities")) { return; }
 
-            "aivot ja abilityt kuntoon"
+            //"aivot ja abilityt kuntoon"
 
         }
 

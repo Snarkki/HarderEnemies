@@ -58,23 +58,23 @@ namespace HarderEnemies.UnitModifications.Cultists.MeleeCasters {
             if (!HEContext.AbilityChanges.OtherChanges.IsDisabled("CultistCasterChanges")) {
                 // CR3
                 foreach (BlueprintUnit thisUnit in UnitLists.LowLevelClericList) {
-                    Utils.CustomHelpers.AddMemorizedSpellsAndBrains(thisUnit, CharacterClass.ClericClass, AbilityLists.LowLevelCultistClericMemorizedSpells, LowLevelClericBrain);                    
+                    Utils.CustomHelpers.AddMemorizedSpellsAndBrains(thisUnit, CharacterClass.ClericClass, LowLevelClericBrain, AbilityLists.LowLevelCultistClericMemorizedSpells );                    
                 }
 
                 foreach (BlueprintUnit thisUnit in UnitLists.CR6ClericList) {
-                    Utils.CustomHelpers.AddMemorizedSpellsAndBrains(thisUnit, CharacterClass.ClericClass, AbilityLists.CR6ClericMemorizedSpells, CR6ClericBrain);
+                    Utils.CustomHelpers.AddMemorizedSpellsAndBrains(thisUnit, CharacterClass.ClericClass, CR6ClericBrain, AbilityLists.CR6ClericMemorizedSpells);
                 }
 
                 foreach (BlueprintUnit thisUnit in UnitLists.CR8ClericList) {
-                    Utils.CustomHelpers.AddMemorizedSpellsAndBrains(thisUnit, CharacterClass.ClericClass, AbilityLists.CR8ClericMemorizedSpells, CR8ClericBrain);
+                    Utils.CustomHelpers.AddMemorizedSpellsAndBrains(thisUnit, CharacterClass.ClericClass, CR8ClericBrain, AbilityLists.CR8ClericMemorizedSpells );
                 }
 
                 foreach (BlueprintUnit thisUnit in UnitLists.HighLevelClericList) {
-                    Utils.CustomHelpers.AddMemorizedSpellsAndBrains(thisUnit, CharacterClass.ClericClass, AbilityLists.HighLevelClericMemorizedSpells, HighLevelClericBrain);
+                    Utils.CustomHelpers.AddMemorizedSpellsAndBrains(thisUnit, CharacterClass.ClericClass, HighLevelClericBrain , AbilityLists.HighLevelClericMemorizedSpells);
                 }
 
                 
-                Utils.CustomHelpers.AddMemorizedSpellsAndBrains(UnitLists.CR19_Cultist_Areshkagal_MeleeCaster, CharacterClass.ClericClass, AbilityLists.HighLevelClericMemorizedSpells, HighLevelClericBrain);
+                Utils.CustomHelpers.AddMemorizedSpellsAndBrains(UnitLists.CR19_Cultist_Areshkagal_MeleeCaster, CharacterClass.ClericClass, HighLevelClericBrain,  AbilityLists.HighLevelClericMemorizedSpells );
                 
             }
         }
