@@ -48,7 +48,7 @@ namespace HarderEnemies.UnitModifications.Dragons {
             if (HEContext.AbilityChanges.OtherChanges.IsDisabled("DragonChanges")) { return; }
 
             foreach (BlueprintUnit thisUnit in UnitLists.DragonList) {
-                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, thisUnit.CR, AbilityLists.GreaterDragonAbilities);
+                Utils.CustomHelpers.AddFactsToUnit(thisUnit, AbilityLists.GreaterDragonAbilities);
             }
             UnitLists.CR16_BlackDragonAncient.m_Brain = NewBlackDragonBrain.ToReference<BlueprintBrainReference>();
         }
@@ -56,7 +56,7 @@ namespace HarderEnemies.UnitModifications.Dragons {
         private static void DragonBuffs() {
             if (HEContext.Prebuffs.OtherBuffs.IsDisabled("DragonBuffs")) { return; }
             foreach (BlueprintUnit thisUnit in UnitLists.DragonList) {
-                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, thisUnit.CR, BuffLists.GreaterDragonBuffs);
+                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, thisUnit.CR + 8, BuffLists.GreaterDragonBuffs);
             }
         }
 
@@ -68,7 +68,7 @@ namespace HarderEnemies.UnitModifications.Dragons {
             if (HEContext.Prebuffs.OtherBuffs.IsDisabled("LesserDragonBuffs")) { return; }
 
             foreach (BlueprintUnit thisUnit in UnitLists.LesserDragonsList) {
-                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, thisUnit.CR, BuffLists.LesserDragonBuffs);
+                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, 26, BuffLists.LesserDragonBuffs);
 
             }
             HEContext.Logger.LogHeader("Updated Dragons");

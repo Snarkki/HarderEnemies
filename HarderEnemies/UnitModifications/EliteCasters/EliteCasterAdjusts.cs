@@ -44,12 +44,12 @@ namespace HarderEnemies.UnitModifications.EliteCasters {
         private static void HandleEliteCasterAbilities() {
             if (HEContext.AbilityChanges.OtherChanges.IsDisabled("EliteCasterChanges")) { return; }
             foreach (BlueprintUnit thisUnit in UnitLists.SemiEliteCasterList) {
-                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, thisUnit.CR, AbilityLists.SemiEliteCasterAbilities);
+                Utils.CustomHelpers.AddFactsToUnit(thisUnit, AbilityLists.SemiEliteCasterAbilities);
                 thisUnit.m_Brain = SemiEliteCasterAltBrain.ToReference<BlueprintBrainReference>();
             }
 
 
-            Utils.CustomHelpers.AddFactListsToUnit(UnitLists.AlderpashLich25, 40, AbilityLists.EliteCasterAbilities);
+            Utils.CustomHelpers.AddFactsToUnit(UnitLists.AlderpashLich25, AbilityLists.EliteCasterAbilities);
 
             UnitLists.AlderpashLich25.m_Brain = EliteCasterAltBrain.ToReference<BlueprintBrainReference>();
             HEContext.Logger.LogHeader("Updated EliteCasters Abilities");
@@ -58,7 +58,7 @@ namespace HarderEnemies.UnitModifications.EliteCasters {
         private static void HandleEliteCasterBuffs() {
             if (HEContext.Prebuffs.OtherBuffs.IsDisabled("EliteCasterBuffs")) { return; }
             foreach (BlueprintUnit thisUnit in UnitLists.SemiEliteCasterList) {
-                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, thisUnit.CR, BuffLists.SemiEliteCasterBuffs);
+                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, 30, BuffLists.SemiEliteCasterBuffs);
             }
 
             Utils.CustomHelpers.AddFactListsToUnit(UnitLists.AlderpashLich25, 40, BuffLists.EliteCasterBuffs);

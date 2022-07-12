@@ -73,7 +73,7 @@ namespace HarderEnemies.UnitModifications.Bosses.Minagho {
             if (HEContext.Prebuffs.BossBuffs.IsDisabled("MinaghoBuffs")) { return; }
 
             foreach (BlueprintUnit thisUnit in UnitLists.MinaghoList) {
-                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, thisUnit.CR, BuffLists.MinaghoBuffs);
+                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, 32, BuffLists.MinaghoBuffs);
             }
 
             //BrainList.MinaghoBrain.m_Actions.AppendToArray(GreaterDispelAiSpell.ToReference<BlueprintAiActionReference>());

@@ -38,7 +38,7 @@ namespace HarderEnemies.UnitModifications.Demons.Abrikandilu {
         private static void AbrikandiluAbilities() {
             if (HEContext.AbilityChanges.DemonChanges.IsDisabled("AbrikandiluAbilities")) { return; }
             foreach (BlueprintUnit thisUnit in UnitLists.DemonAbrikandiluList) {
-                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, thisUnit.CR, AbilityLists.AbrikanduAbilities);
+                Utils.CustomHelpers.AddFactsToUnit(thisUnit, AbilityLists.AbrikanduAbilities);
                 thisUnit.AlternativeBrains = new BlueprintBrainReference[0] { };
                 thisUnit.m_Brain = AbrikandiluBrain.ToReference<BlueprintBrainReference>();
             }
@@ -48,7 +48,7 @@ namespace HarderEnemies.UnitModifications.Demons.Abrikandilu {
         private static void AbrikandiluBuffs() {
             if (HEContext.Prebuffs.DemonBuffs.IsDisabled("AbrikandiluBuffs")) { return; }
             foreach (BlueprintUnit thisUnit in UnitLists.DemonAbrikandiluList) {
-                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, thisUnit.CR, BuffLists.AbrikanduBuffs);
+                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, thisUnit.CR + 8, BuffLists.AbrikanduBuffs);
             }
             HEContext.Logger.LogHeader("Updated Abrikandilu buffs");
         }

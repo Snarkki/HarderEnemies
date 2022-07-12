@@ -39,9 +39,9 @@ namespace HarderEnemies.UnitModifications.Demons.Brimorak {
             if (HEContext.AbilityChanges.DemonChanges.IsDisabled("BrimorakAbilities")) { return; }
             foreach (BlueprintUnit thisUnit in UnitLists.DemonBrimorakList) {
                 if (thisUnit.CR < 6) {
-                    Utils.CustomHelpers.AddFactListsToUnit(thisUnit, thisUnit.CR, AbilityLists.BrimorakAbilities);
+                    Utils.CustomHelpers.AddFactsToUnit(thisUnit,  AbilityLists.BrimorakAbilities);
                 } else {
-                    Utils.CustomHelpers.AddFactListsToUnit(thisUnit, thisUnit.CR, AbilityLists.BrimorakAbilitiesWithMetamagic);
+                    Utils.CustomHelpers.AddFactsToUnit(thisUnit, AbilityLists.BrimorakAbilitiesWithMetamagic);
                 }
                 thisUnit.AlternativeBrains = new BlueprintBrainReference[0] { };
                 thisUnit.m_Brain = BrimorakBrain.ToReference<BlueprintBrainReference>();
@@ -52,7 +52,7 @@ namespace HarderEnemies.UnitModifications.Demons.Brimorak {
         private static void BrimorakBuffs() {
             if (HEContext.Prebuffs.DemonBuffs.IsDisabled("BrimorakBuffs")) { return; }
             foreach (BlueprintUnit thisUnit in UnitLists.DemonBrimorakList) {
-                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, thisUnit.CR, BuffLists.BrimorakBuffs);
+                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, thisUnit.CR + 10, BuffLists.BrimorakBuffs);
             }
             HEContext.Logger.LogHeader("Updated Brimorak Buffs");
         }

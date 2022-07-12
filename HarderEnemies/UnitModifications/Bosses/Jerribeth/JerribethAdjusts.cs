@@ -43,7 +43,7 @@ namespace HarderEnemies.UnitModifications.Bosses.Jerribeth {
             if (HEContext.AbilityChanges.BossChanges.IsDisabled("JerribethChanges")) { return; }
 
             foreach (BlueprintUnit thisUnit in UnitLists.JerribethList) {
-                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, thisUnit.CR, AbilityLists.JerribethAbilities);
+                Utils.CustomHelpers.AddFactsToUnit(thisUnit, AbilityLists.JerribethAbilities);
                 thisUnit.m_Brain = JerribethBrain.ToReference<BlueprintBrainReference>();
                 thisUnit.AlternativeBrains = new BlueprintBrainReference[0] { };
             }
@@ -56,7 +56,7 @@ namespace HarderEnemies.UnitModifications.Bosses.Jerribeth {
             if (HEContext.Prebuffs.BossBuffs.IsDisabled("JerribethBuffs")) { return; }
 
             foreach (BlueprintUnit thisUnit in UnitLists.JerribethList) {
-                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, thisUnit.CR, BuffLists.JerribethBuffs);
+                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, 28, BuffLists.JerribethBuffs);
             }
 
 

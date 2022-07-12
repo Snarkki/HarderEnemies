@@ -40,7 +40,7 @@ namespace HarderEnemies.UnitModifications.Bosses.CorruptedAngels {
             if (HEContext.AbilityChanges.BossChanges.IsDisabled("CorruptedAngelChanges")) { return; }
             foreach (BlueprintUnit thisUnit in UnitLists.CorruptHeraldsList) {
                 thisUnit.Body.m_PrimaryHand = HolyEvilBane5Sword.ToReference<BlueprintItemEquipmentHandReference>();
-                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, thisUnit.CR, AbilityLists.CorruptedAngelAbilities);
+                Utils.CustomHelpers.AddFactsToUnit(thisUnit, AbilityLists.CorruptedAngelAbilities);
 
             }
             HEContext.Logger.LogHeader("Updated Corrupted Heralds");
@@ -50,7 +50,7 @@ namespace HarderEnemies.UnitModifications.Bosses.CorruptedAngels {
             if (HEContext.Prebuffs.BossBuffs.IsDisabled("CorruptedAngelBuffs")) { return; }
 
             foreach (BlueprintUnit thisUnit in UnitLists.CorruptHeraldsList) {
-                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, thisUnit.CR, BuffLists.CorruptedAngelBuffs);
+                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, thisUnit.CR + 10, BuffLists.CorruptedAngelBuffs);
             }
             HEContext.Logger.LogHeader("Updated Corrupted Heralds");
         }

@@ -55,15 +55,15 @@ namespace HarderEnemies.UnitModifications.Bosses.RandomBosses {
             if (HEContext.Prebuffs.BossBuffs.IsDisabled("RandomBossBuffs")) { return; }
 
 
-            Utils.CustomHelpers.AddFactListsToUnit(UnitLists.Maugla, UnitLists.Maugla.CR, BuffLists.MauglaBuffs);
+            Utils.CustomHelpers.AddFactListsToUnit(UnitLists.Maugla, 25, BuffLists.MauglaBuffs);
 
 
             foreach (BlueprintUnit thisUnit in UnitLists.MutafasenList) {
-                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, thisUnit.CR, BuffLists.MutasafenGangBuffs);
+                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, thisUnit.CR + 8, BuffLists.MutasafenGangBuffs);
             }
 
 
-            Utils.CustomHelpers.AddFactListsToUnit(UnitLists.XanthirPhase1, UnitLists.XanthirPhase1.CR, BuffLists.XanthirBuffs);
+            Utils.CustomHelpers.AddFactListsToUnit(UnitLists.XanthirPhase1, 27, BuffLists.XanthirBuffs);
 
         }
     }

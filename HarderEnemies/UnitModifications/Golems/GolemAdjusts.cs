@@ -62,7 +62,7 @@ namespace HarderEnemies.UnitModifications.Golems {
             if (HEContext.Prebuffs.OtherBuffs.IsDisabled("GolemBuffs")) { return; }
 
             foreach (BlueprintUnit thisUnit in UnitLists.GolemList) {
-                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, thisUnit.CR, BuffLists.GolemBuffs);
+                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, 25, BuffLists.GolemBuffs);
             }
             HEContext.Logger.LogHeader("Updated Golems Buffs");
         }

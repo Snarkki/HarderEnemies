@@ -44,7 +44,7 @@ namespace HarderEnemies.UnitModifications.Angels {
             if (HEContext.AbilityChanges.OtherChanges.IsDisabled("AngelChanges")) { return; }
 
             foreach (BlueprintUnit thisUnit in UnitLists.AngelsList) {
-                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, thisUnit.CR, AbilityLists.AngelAbilitiesList);
+                Utils.CustomHelpers.AddFactsToUnit(thisUnit, AbilityLists.AngelAbilitiesList);
                 thisUnit.m_Brain = AngelMidnightFaneBrain.ToReference<BlueprintBrainReference>();
             }
         }
@@ -54,7 +54,7 @@ namespace HarderEnemies.UnitModifications.Angels {
 
             foreach (BlueprintUnit thisUnit in UnitLists.AngelsList) {
                 thisUnit.Body.m_PrimaryHand = HolyEvilBane5Sword.ToReference<BlueprintItemEquipmentHandReference>();
-                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, thisUnit.CR, BuffLists.AngelBuffList);
+                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, thisUnit.CR + 10, BuffLists.AngelBuffList);
             }
         }
 
