@@ -18,7 +18,6 @@ using Kingmaker.UnitLogic.Abilities.Blueprints;
 namespace HarderEnemies.UnitModifications.Bosses.Balors {
     internal class AbilityLists {
         private static BlueprintFeature SuperiorQuickenMetaFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(HEContext, "SuperiorQuickenMetaMagicFeature");
-        private static BlueprintFeature DarrazandQuickenFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(HEContext, "DarrazandQuickenFeature");
         private static BlueprintFeature SuperiorEmpowerMetaFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(HEContext, "SuperiorEmporedMetaMagicFeature");
         //Balor weapons
         private static BlueprintAbility PullingStrikeAbility = BlueprintTools.GetModBlueprint<BlueprintAbility>(HEContext, "PullingStrikeAbility");
@@ -38,7 +37,7 @@ namespace HarderEnemies.UnitModifications.Bosses.Balors {
             FeatureList.AscendentElementFire.ToReference<BlueprintUnitFactReference>(),
             PullingStrikeAbility.ToReference<BlueprintUnitFactReference>(),
             Abilities.Stormbolts.ToReference<BlueprintUnitFactReference>(),
-            DarrazandQuickenFeature.ToReference<BlueprintUnitFactReference>(),
+            SuperiorQuickenMetaFeature.ToReference<BlueprintUnitFactReference>(),
             SuperiorEmpowerMetaFeature.ToReference<BlueprintUnitFactReference>()
         };
 
@@ -49,7 +48,7 @@ namespace HarderEnemies.UnitModifications.Bosses.Balors {
             Abilities.LegendaryProportions.ToReference<BlueprintUnitFactReference>(),
             Abilities.MirrorImage.ToReference<BlueprintUnitFactReference>(),
             Abilities.DemonTeleport.ToReference<BlueprintUnitFactReference>(),
-            DarrazandQuickenFeature.ToReference<BlueprintUnitFactReference>()
+            SuperiorQuickenMetaFeature.ToReference<BlueprintUnitFactReference>()
         };
 
         public static BlueprintUnitFactReference[] CasterBalorAbilities = {
@@ -64,7 +63,7 @@ namespace HarderEnemies.UnitModifications.Bosses.Balors {
             FeatureList.AscendentElementFire.ToReference<BlueprintUnitFactReference>(),
             PullingStrikeAbility.ToReference<BlueprintUnitFactReference>(),
             Abilities.Stormbolts.ToReference<BlueprintUnitFactReference>(),
-            DarrazandQuickenFeature.ToReference<BlueprintUnitFactReference>(),
+            SuperiorQuickenMetaFeature.ToReference<BlueprintUnitFactReference>(),
             Abilities.HoldPersonMass.ToReference<BlueprintUnitFactReference>(),
             Abilities.ShoutGreater.ToReference<BlueprintUnitFactReference>(),
             SuperiorEmpowerMetaFeature.ToReference<BlueprintUnitFactReference>()
@@ -79,7 +78,7 @@ namespace HarderEnemies.UnitModifications.Bosses.Balors {
             Abilities.MindBlank.ToReference<BlueprintUnitFactReference>(),
             Abilities.DemonTeleport.ToReference<BlueprintUnitFactReference>(),
             FeatureList.AscendentElementFire.ToReference<BlueprintUnitFactReference>(),
-            DarrazandQuickenFeature.ToReference<BlueprintUnitFactReference>(),
+            SuperiorQuickenMetaFeature.ToReference<BlueprintUnitFactReference>(),
             FeatureList.VitalStrikeFeature.ToReference<BlueprintUnitFactReference>(),
             FeatureList.VitalStrikeFeatureGreater.ToReference<BlueprintUnitFactReference>(),
             FeatureList.VitalStrikeFeatureImproved.ToReference<BlueprintUnitFactReference>(),

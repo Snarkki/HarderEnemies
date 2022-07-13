@@ -82,6 +82,7 @@ namespace HarderEnemies.Features {
                 BlueprintTools.GetBlueprintReference<BlueprintAbilityReference>("da1b292d91ba37948893cdbe9ea89e28"),    // LegendaryProportions,
                 BlueprintTools.GetBlueprintReference<BlueprintAbilityReference>("cdb106d53c65bbc4086183d54c3b97c7"),    // ScorchingRay,
                 BlueprintTools.GetBlueprintReference<BlueprintAbilityReference>("ff8f1534f66559c478448723e16b6624"),    // Heal,
+                BlueprintTools.GetBlueprintReference<BlueprintAbilityReference>("3e4ab69ada402d145a5e0ad3ad4b8564"),    // MirrorImage,
             };
 
             var emporedAbilities = new BlueprintAbilityReference[] {
@@ -201,12 +202,12 @@ namespace HarderEnemies.Features {
                     abil.FullRoundIfTurnBased = true;
                 });
                 bp.SetName(HEContext, "Whip Strike");
-                bp.SetDescription(HEContext, "As a standard action, you can try to pull an enemy towards you.");
+                bp.SetDescription(HEContext, "As a free action, you can try to pull an enemy towards you.");
                 bp.Range = AbilityRange.Close;
 
                 bp.NeedEquipWeapons = true;
                 bp.Type = AbilityType.SpellLike;
-                bp.ActionType = Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Standard;
+                bp.ActionType = Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Free;
             });
 
             var quickenAbilities = new BlueprintAbilityReference[] {

@@ -29,6 +29,7 @@ namespace HarderEnemies.AI_Mechanics.Brains.Bosses {
 
 
         public static void Handler() {
+            if (HEContext.AbilityChanges.BossChanges.IsDisabled("DemonLordChanges")) { return; }
             CreateNocticulaBrain();
             CreateDeskariBrain();
             CreateAreeluBrain();

@@ -83,7 +83,7 @@ namespace HarderEnemies.AI_Mechanics.Actions.ByLevels {
                 };
             });
             var BlasphemyAiSpell = AiCastSpellList.Vavakia_AiAction_Blasphemy.CreateCopy(HEContext, "BlasphemyAiSpell", bp => {
-                bp.BaseScore = 5.0f;
+                bp.BaseScore = 10.0f;
                 bp.StartCooldownRounds = 1;
                 bp.CombatCount = 1;
                 bp.CooldownRounds = 2;

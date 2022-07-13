@@ -78,7 +78,7 @@ namespace HarderEnemies.UnitModifications.Cyborgs {
 
 
             //CR16_Cyborg_SuccubusSorc
-            Utils.CustomHelpers.AddFactsToUnit(UnitLists.CR16_Cyborg_SuccubusSorc, AbilityLists.IncubusAssassinFeatures);
+            Utils.CustomHelpers.AddFactsToUnit(UnitLists.CR16_Cyborg_SuccubusSorc, AbilityLists.SuccubusSorcererFeatures);
             UnitLists.CR16_Cyborg_SuccubusSorc.m_Brain = SuccubusSorcererBrain.ToReference<BlueprintBrainReference>();
             UnitLists.CR16_Cyborg_SuccubusSorc.AlternativeBrains = new BlueprintBrainReference[0] { };
 

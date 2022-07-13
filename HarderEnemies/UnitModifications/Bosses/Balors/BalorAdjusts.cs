@@ -55,11 +55,12 @@ namespace HarderEnemies.UnitModifications.Bosses.Balors {
             foreach (BlueprintUnit thisUnit in UnitLists.BalorList) {
                 thisUnit.Body.m_PrimaryHand = BalorNewSword.ToReference<BlueprintItemEquipmentHandReference>();
                 //  Bonus caster level
-                thisUnit.AddComponent<AddCasterLevel>(c => { c.Bonus = 15; });
+                thisUnit.AddComponent<AddCasterLevel>(c => { c.Bonus = 5; });
             }
 
             // Adjust Darrazand
             Utils.CustomHelpers.AddFactsToUnit(UnitLists.Darrazand, AbilityLists.DarrazandAbilities);
+            UnitLists.Darrazand.AddComponent<AddCasterLevel>(c => { c.Bonus = 5; });
             UnitLists.Darrazand.m_Brain = DarrazandBrain.ToReference<BlueprintBrainReference>();
             UnitLists.Darrazand.AlternativeBrains = new BlueprintBrainReference[0] { };
 
@@ -92,7 +93,7 @@ namespace HarderEnemies.UnitModifications.Bosses.Balors {
             if (HEContext.Prebuffs.BossBuffs.IsDisabled("BalorBuffs")) { return; }
             foreach (BlueprintUnit thisUnit in UnitLists.BalorList) {
                 thisUnit.m_AddFacts = thisUnit.m_AddFacts.AppendToArray(FeatureList.CR22_AxiomiteCaster_Feature_CombatPrebuff.ToReference<BlueprintUnitFactReference>());
-                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, 37, BuffLists.BalorBuffsList);
+                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, 33, BuffLists.BalorBuffsList);
             }
         }
 

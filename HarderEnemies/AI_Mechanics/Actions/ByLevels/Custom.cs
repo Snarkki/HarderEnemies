@@ -21,7 +21,7 @@ namespace HarderEnemies.AI_Mechanics.Actions.ByLevels {
 
             var ThreatenedAiAttack = AiCastSpellList.AttackAiAction.CreateCopy(HEContext, "ThreatenedAiAttack", bp => {
                 //SwiftActionCooldown.ToReference<ConsiderationReference>()
-                bp.BaseScore = 25.0f;
+                bp.BaseScore = 5.0f;
                 bp.m_ActorConsiderations = new ConsiderationReference[] {
                     AiConsiderationList.IsThreatedConsideration.ToReference<ConsiderationReference>()
                 };

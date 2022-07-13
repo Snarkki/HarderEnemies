@@ -35,7 +35,7 @@ namespace HarderEnemies.AI_Mechanics.Brains.Bosses {
         }
 
         private static void CreateJerribethBrain() {
-
+            if (HEContext.AbilityChanges.BossChanges.IsDisabled("JerribethChanges")) { return; }
             AiCastSpellList.Jerribeth_FeeblemindAIAction.BaseScore = 9.0f;
             AiCastSpellList.Jerribeth_PhantasmalPutrefactionAIAction.BaseScore = 9.0f;
             AiCastSpellList.Jerribeth_SlumberAIAction.BaseScore = 5.5f;
