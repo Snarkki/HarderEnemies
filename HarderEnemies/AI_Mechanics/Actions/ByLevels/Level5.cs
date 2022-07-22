@@ -133,6 +133,18 @@ namespace HarderEnemies.AI_Mechanics.Actions.ByLevels {
                     AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>(),
                 };
             });
+
+            var MindFogAiSpell = AiCastSpellList.Coloxus_AiAction_MindFog.CreateCopy(HEContext, "MindFogAiSpell", bp => {
+                bp.BaseScore = 9.0f;
+                bp.StartCooldownRounds = 5;
+                bp.CombatCount = 1;
+                bp.CooldownRounds = 5;
+                bp.CooldownDice = new DiceFormula(4, DiceType.D4);
+                bp.m_ActorConsiderations = new ConsiderationReference[] {
+                    AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>(),
+                    AiConsiderationList.NoThreateningUnitsConsideration.ToReference<ConsiderationReference>()
+                };
+            });
         }
     }
 }

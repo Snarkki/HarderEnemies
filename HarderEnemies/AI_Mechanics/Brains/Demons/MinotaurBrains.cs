@@ -9,7 +9,7 @@ using TabletopTweaks.Core.Utilities;
 using HarderEnemies.Blueprints;
 using static HarderEnemies.Main;
 
-namespace HarderEnemies.AI_Mechanics.Brains.DemonsByType {
+namespace HarderEnemies.AI_Mechanics.Brains.Demons {
     internal class MinotaurBrains {
 
 

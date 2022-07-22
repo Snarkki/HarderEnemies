@@ -99,6 +99,20 @@ namespace HarderEnemies.AI_Mechanics.Actions.ByLevels {
                 bp.StartCooldownRounds = 1;
                 bp.CooldownDice = new DiceFormula(1, DiceType.D2);
             });
+
+            var ContagionBubonicAiSpell = AiCastSpellList.Coloxus_AiAction_ContagionBubonicPlague.CreateCopy(HEContext, "ContagionBubonicAiSpell", bp => {
+                bp.BaseScore = 5.0f;
+                bp.StartCooldownRounds = 1;
+                bp.CooldownRounds = 1;
+                bp.StartCooldownRounds = 1;
+                bp.CooldownDice = new DiceFormula(1, DiceType.D4);
+                bp.m_ActorConsiderations = new ConsiderationReference[] {
+                    AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>()
+                };
+                bp.m_TargetConsiderations = new ConsiderationReference[] {
+                    AiConsiderationList.AttackTargetsPriority.ToReference<ConsiderationReference>()
+                };
+            });
         }
     }
 }

@@ -9,12 +9,12 @@ using TabletopTweaks.Core.Utilities;
 using HarderEnemies.Blueprints;
 using static HarderEnemies.Main;
 
-namespace HarderEnemies.AI_Mechanics.Brains.DemonsByType {
+namespace HarderEnemies.AI_Mechanics.Brains.Demons {
     internal class DerakniBrains {
 
         private static BlueprintAiCastSpell DimensionDoorHellAiSpell = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "DimensionDoorHellAiSpell");
         public static void CreateDerakniBrain() {
-        
+
             var DerakniNewStandardBrain = Helpers.CreateBlueprint<BlueprintBrain>(HEContext, "DerakniNewStandardBrain", bp => {
                 bp.m_Actions = new BlueprintAiActionReference[]
                {

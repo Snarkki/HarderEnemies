@@ -9,7 +9,7 @@ using TabletopTweaks.Core.Utilities;
 using HarderEnemies.Blueprints;
 using static HarderEnemies.Main;
 
-namespace HarderEnemies.AI_Mechanics.Brains.DemonsByType {
+namespace HarderEnemies.AI_Mechanics.Brains.Demons {
     internal class GibrilithBrains {
         private static BlueprintAiCastSpell StinkingCloudAiSpell = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "StinkingCloudAiSpell");
         private static BlueprintAiCastSpell WavesOfFatigueAiSpell = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "WavesOfFatigueAiSpell");

@@ -22,14 +22,15 @@ namespace HarderEnemies.AI_Mechanics.Brains {
             Cultists.CultistClericBrains.CreateCultistClericBrains();
             Cultists.CultistWizardBrains.CreateCultistWizardBrains();
 
-            DemonsByType.AbrikandiluBrain.CreateAbrikandiluBrain();
-            DemonsByType.BrimorakBrain.CreateBrimorakBrain();
-            DemonsByType.MinotaurBrains.Handler();
-            DemonsByType.GlabrezuBrains.Handler();
-            DemonsByType.DerakniBrains.CreateDerakniBrain();
-            DemonsByType.CambionBrains.Handler();
-            DemonsByType.MarilithBrains.CreateMarilithBrains();
-            DemonsByType.GibrilithBrains.Handler();
+            Demons.AbrikandiluBrain.CreateAbrikandiluBrain();
+            Demons.BrimorakBrain.CreateBrimorakBrain();
+            Demons.MinotaurBrains.Handler();
+            Demons.GlabrezuBrains.Handler();
+            Demons.DerakniBrains.CreateDerakniBrain();
+            Demons.CambionBrains.Handler();
+            Demons.MarilithBrains.CreateMarilithBrains();
+            Demons.GibrilithBrains.Handler();
+            Demons.ColoxusBrains.Handler();
 
             Cyborgs.CyborgDemonBrains.Handler();
             Cyborgs.CyborgBrains.Handler();

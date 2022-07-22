@@ -179,6 +179,7 @@
     <Compile Include="AI_Mechanics\Brains\Cyborgs\CyborgBrains.cs" />
     <Compile Include="AI_Mechanics\Brains\Cyborgs\CyborgDemonBrains.cs" />
     <Compile Include="AI_Mechanics\Brains\BrainHandler.cs" />
+    <Compile Include="AI_Mechanics\Brains\Demons\ColoxusBrains.cs" />
     <Compile Include="AI_Mechanics\Brains\Demons\GibrilithBrains.cs" />
     <Compile Include="AI_Mechanics\Brains\Demons\MarilithBrains.cs" />
     <Compile Include="AI_Mechanics\Brains\Demons\CambionBrains.cs" />

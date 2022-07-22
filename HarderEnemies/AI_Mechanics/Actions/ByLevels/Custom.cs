@@ -139,6 +139,18 @@ namespace HarderEnemies.AI_Mechanics.Actions.ByLevels {
                 bp.CooldownRounds = 2;
                 bp.CooldownDice = new DiceFormula(2, DiceType.D2);
             });
+
+            // Custom droning wings for coloxus, basescore lowered
+            var ColoxusDroningWingsAiSpell = AiCastSpellList.Derakni_AiAction_BacklineTeleportation.CreateCopy(HEContext, "ColoxusDroningWingsAiSpell", bp => {
+                bp.BaseScore = 6.0f;
+                bp.StartCooldownRounds = 1;
+                bp.CombatCount = 1;
+                bp.CooldownRounds = 2;
+                bp.CooldownDice = new DiceFormula(2, DiceType.D2);
+                bp.m_ActorConsiderations = new ConsiderationReference[] {
+                        AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>()
+                    };
+            });
         }
     }
 }

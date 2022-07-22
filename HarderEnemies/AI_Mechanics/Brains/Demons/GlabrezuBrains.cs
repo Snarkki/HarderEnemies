@@ -10,7 +10,7 @@ using HarderEnemies.Blueprints;
 using static HarderEnemies.Main;
 
 
-namespace HarderEnemies.AI_Mechanics.Brains.DemonsByType {
+namespace HarderEnemies.AI_Mechanics.Brains.Demons {
     internal class GlabrezuBrains {
         private static BlueprintAiCastSpell MirrorImageAiSpell = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "MirrorImageAiSpell");
         private static BlueprintAiCastSpell TargetedDispelAiSpell = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "TargetedDispelAiSpell");

@@ -10,7 +10,7 @@ using HarderEnemies.Blueprints;
 using static HarderEnemies.Main;
 
 
-namespace HarderEnemies.AI_Mechanics.Brains.DemonsByType {
+namespace HarderEnemies.AI_Mechanics.Brains.Demons {
     internal class MarilithBrains {
         private static BlueprintAiCastSpell BladeBarrierAiSpell = BlueprintTools.GetModBlueprint<BlueprintAiCastSpell>(HEContext, "BladeBarrierAiSpell");
 
