@@ -89,6 +89,17 @@ namespace HarderEnemies.AI_Mechanics.Actions.ByLevels {
                 bp.CooldownRounds = 2;
                 bp.CooldownDice = new DiceFormula(2, DiceType.D4);
             });
+
+            var InsanityAiSpell = AiCastSpellList.ColoxusToughCaster_AiAction_Insanity.CreateCopy(HEContext, "InsanityAiSpell", bp => {
+                bp.BaseScore = 8.0f;
+                bp.StartCooldownRounds = 1;
+                bp.CombatCount = 1;
+                bp.CooldownRounds = 2;
+                bp.CooldownDice = new DiceFormula(2, DiceType.D4);
+                bp.m_ActorConsiderations = new ConsiderationReference[] {
+                    AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>()
+                };
+            });
         }
     }
 }

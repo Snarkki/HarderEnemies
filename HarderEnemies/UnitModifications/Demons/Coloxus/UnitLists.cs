@@ -27,11 +27,9 @@ namespace HarderEnemies.UnitModifications.Demons.Coloxus {
         public static BlueprintUnit CR17_ColoxusToughCaster_1 = ResourcesLibrary.TryGetBlueprint<BlueprintUnit>("b06d25ead6ec62c4ab9c0821c7c32dd5");
         public static BlueprintUnit CR21_ColoxusCaster = ResourcesLibrary.TryGetBlueprint<BlueprintUnit>("5e0ec427990647f6bfe5345669315ed8");
         public static BlueprintUnit CR21_ColoxusCaster_RE_high = ResourcesLibrary.TryGetBlueprint<BlueprintUnit>("47c032c3ca2b42d5bedf3c36a4158dfe");
-        public static BlueprintUnit CR27_ColoxusCaster_DLC1 = ResourcesLibrary.TryGetBlueprint<BlueprintUnit>("79174e258d294235b2f6c0b2a5224f1c");
         public static BlueprintUnit FakeNosorez = ResourcesLibrary.TryGetBlueprint<BlueprintUnit>("67fe6232c9fcda14687438d082085eca");
         public static BlueprintUnit GateGuard_MediumToHigher = ResourcesLibrary.TryGetBlueprint<BlueprintUnit>("e38f403833a0c0c4c8ddcf624b333baf");
         public static BlueprintUnit TTD_ColoxusPatron = ResourcesLibrary.TryGetBlueprint<BlueprintUnit>("997595680918dfc44bbbfc89a12eb230");
-
 
         public static List<BlueprintUnit> DemonColoxusList = new List<BlueprintUnit>() {
             CR12_ColoxusStandard,
@@ -43,7 +41,25 @@ namespace HarderEnemies.UnitModifications.Demons.Coloxus {
             CR17_ColoxusToughCaster_1,
             CR21_ColoxusCaster,
             CR21_ColoxusCaster_RE_high,
-            CR27_ColoxusCaster_DLC1,
+         };
+
+
+        public static List<BlueprintUnit> StandardColoxusList = new List<BlueprintUnit>() {
+            CR12_ColoxusStandard,
+            CR12_ColoxusStandard_RE_high,
+            CR13_ColoxusAdvanced,
+            CR13_ColoxusAdvanced_RE_high,
+         };
+
+        public static List<BlueprintUnit> DiscordColoxusList = new List<BlueprintUnit>() {
+            CR15_ColoxusEmissary,
+            CR15_ColoxusEmissary_RE_high,
+         };
+
+        public static List<BlueprintUnit> CasterColoxusList = new List<BlueprintUnit>() {
+            CR17_ColoxusToughCaster_1,
+            CR21_ColoxusCaster,
+            CR21_ColoxusCaster_RE_high,
          };
 
     }

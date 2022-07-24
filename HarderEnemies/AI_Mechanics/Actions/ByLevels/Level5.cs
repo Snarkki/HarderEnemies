@@ -145,6 +145,20 @@ namespace HarderEnemies.AI_Mechanics.Actions.ByLevels {
                     AiConsiderationList.NoThreateningUnitsConsideration.ToReference<ConsiderationReference>()
                 };
             });
+
+            var SongOfDiscordAiSpell = AiCastSpellList.Coloxus_AiAction_SongOfDiscord.CreateCopy(HEContext, "SongOfDiscordAiSpell", bp => {
+                bp.BaseScore = 5.0f;
+                bp.StartCooldownRounds = 5;
+                bp.CombatCount = 1;
+                bp.CooldownRounds = 5;
+                bp.CooldownDice = new DiceFormula(1, DiceType.D4);
+                bp.m_ActorConsiderations = new ConsiderationReference[] {
+                    AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>(),
+                    AiConsiderationList.NoThreateningUnitsConsideration.ToReference<ConsiderationReference>()
+                };
+            });
+
+
         }
     }
 }

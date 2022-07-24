@@ -177,6 +177,17 @@ namespace HarderEnemies.AI_Mechanics.Actions.ByLevels {
                    AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>()
                 };
             });
+
+            var LitanyOfMadnessAiSpell = AiCastSpellList.ColoxusToughCaster_AiAction_LitanyOfMadness.CreateCopy(HEContext, "LitanyOfMadnessAiSpell", bp => {
+                bp.BaseScore = 7.0f;
+                bp.StartCooldownRounds = 1;
+                bp.CombatCount = 1;
+                bp.CooldownRounds = 2;
+                bp.CooldownDice = new DiceFormula(1, DiceType.D4);
+                bp.m_ActorConsiderations = new ConsiderationReference[] {
+                   AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>()
+                };
+            });
         }
     }
 }
