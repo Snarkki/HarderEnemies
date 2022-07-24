@@ -158,6 +158,35 @@ namespace HarderEnemies.AI_Mechanics.Actions.ByLevels {
                 };
             });
 
+            var DominatePersonAiSpell = AiCastSpellList.Nurah_AiActionDominatePerson.CreateCopy(HEContext, "DominatePersonAiSpell", bp => {
+                bp.BaseScore = 5.0f;
+                bp.StartCooldownRounds = 5;
+                bp.CombatCount = 1;
+                bp.CooldownRounds = 5;
+                bp.CooldownDice = new DiceFormula(2, DiceType.D4);
+                bp.m_ActorConsiderations = new ConsiderationReference[] {
+                    AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>(),
+                    AiConsiderationList.NoThreateningUnitsConsideration.ToReference<ConsiderationReference>()
+                };
+                bp.m_TargetConsiderations = new ConsiderationReference[] {
+                    AiConsiderationList.HeavyArmorConsideration.ToReference<ConsiderationReference>(),
+                    AiConsiderationList.NoBuffDominate.ToReference<ConsiderationReference>(),
+                    AiConsiderationList.NotAnimalCompanionConsideration.ToReference<ConsiderationReference>(),
+                    AiConsiderationList.NotUndeadConsideration.ToReference<ConsiderationReference>()
+                };
+            });
+
+            var SerenityAiSpell = AiCastSpellList.CyborgChiefFemale_Serenity_AiAction.CreateCopy(HEContext, "SerenityAiSpell", bp => {
+                bp.BaseScore = 5.0f;
+                bp.StartCooldownRounds = 5;
+                bp.CombatCount = 1;
+                bp.CooldownRounds = 5;
+                bp.CooldownDice = new DiceFormula(2, DiceType.D4);
+                bp.m_ActorConsiderations = new ConsiderationReference[] {
+                    AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>(),
+                    AiConsiderationList.NoThreateningUnitsConsideration.ToReference<ConsiderationReference>()
+                };
+            });
 
         }
     }

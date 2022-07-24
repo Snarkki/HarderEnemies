@@ -59,6 +59,7 @@ namespace HarderEnemies.Blueprints {
         public static BlueprintBuff MutagenStrengthBuff = BlueprintTools.GetBlueprint<BlueprintBuff>("b84abc3531ed5674284ef0ba4aafcd3b");
         public static BlueprintBuff BearsEnduranceBuff = BlueprintTools.GetBlueprint<BlueprintBuff>("c3de8cc9a0f50e2418dde526d8855faa");
         public static BlueprintBuff CatsGraceBuff = BlueprintTools.GetBlueprint<BlueprintBuff>("f011d0ab4a405e54aa0e83cd10e54430");
+        public static BlueprintBuff EaglesSplendorBuff = BlueprintTools.GetBlueprint<BlueprintBuff>("7ed853ffcfd29914cb098cd7b1c46cc4");
         public static BlueprintBuff SenseVitalsBuff = BlueprintTools.GetBlueprint<BlueprintBuff>("dea0dba1f7bff064987e03f1307bfa84");
 
         public static BlueprintBuff UnlootableBuff = BlueprintTools.GetBlueprint<BlueprintBuff>("0f775c7d5d8b6494197e1ce937754482");

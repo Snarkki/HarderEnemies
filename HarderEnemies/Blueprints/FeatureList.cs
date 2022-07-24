@@ -54,6 +54,7 @@ namespace HarderEnemies.Blueprints {
         public static BlueprintFeature ThugFrightening = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>("5476fa6ac147a584aa886f1c232b8a87");
         public static BlueprintFeature ArcaneArmorTraining = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>("1a0298abacb6e0f45b7e28553e99e76c");
         public static BlueprintFeature ArcaneArmorMastery = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>("453f5181a5ed3a445abfa3bcd3f4ac0c");
+        public static BlueprintFeature BanditInspireCourageFeature = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>("65c2b39752cf54841b36c4dff47643e6");
 
         // MYTHIC FEATURES
         public static BlueprintFeature AlwaysAChange = BlueprintTools.GetBlueprint<BlueprintFeature>("d57301613ad6a5140b2fdac40fa368e3");

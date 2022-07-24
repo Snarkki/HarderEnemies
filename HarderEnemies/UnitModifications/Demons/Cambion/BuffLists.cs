@@ -17,8 +17,11 @@ using static HarderEnemies.Main;
 namespace HarderEnemies.UnitModifications.Demons.Cambion {
     internal class BuffLists {
 
-        public static BlueprintUnitFactReference[] Buffs = {
-
+        public static BlueprintUnitFactReference[] BardBuffs = {
+            Buffs.SenseVitalsBuff.ToReference<BlueprintUnitFactReference>(),
+            Buffs.BlurBuff.ToReference<BlueprintUnitFactReference>(),
+            Buffs.EaglesSplendorBuff.ToReference<BlueprintUnitFactReference>(),
+            Buffs.CatsGraceBuff.ToReference<BlueprintUnitFactReference>(),
         };
     }
 }

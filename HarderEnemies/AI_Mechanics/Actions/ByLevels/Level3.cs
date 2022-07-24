@@ -46,11 +46,15 @@ namespace HarderEnemies.AI_Mechanics.Actions.ByLevels {
             });
 
             var HasteAiSpell = AiCastSpellList.HasteAiAction.CreateCopy(HEContext, "HasteAiSpell", bp => {
-                bp.BaseScore = 3.5f;
-                bp.m_Ability = Abilities.DeepSlumber.ToReference<BlueprintAbilityReference>();
-                bp.m_ActorConsiderations = new ConsiderationReference[] {
-                    AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>(),
+                bp.BaseScore = 15.0f;
+                bp.StartCooldownRounds = 1;
+                bp.CombatCount = 1;
+                bp.CooldownRounds = 2;
+                bp.CooldownDice = new DiceFormula(1, DiceType.D3);
+                bp.m_TargetConsiderations = new ConsiderationReference[] {
+                    AiConsiderationList.NoBuffHaste.ToReference<ConsiderationReference>(),
                 };
+
             });
 
             var StinkingCloudAiSpell = AiCastSpellList.StinkingCloudAiAction.CreateCopy(HEContext, "StinkingCloudAiSpell", bp => {

@@ -134,6 +134,23 @@ namespace HarderEnemies.AI_Mechanics.Actions.ByLevels {
                     AiConsiderationList.NoThreateningUnitsConsideration.ToReference<ConsiderationReference>()
                 };
             });
+
+            var ShoutAiSpell = AiCastSpellList.CambionBard_ShoutAIAction.CreateCopy(HEContext, "ShoutAiSpell", bp => {
+                bp.BaseScore = 4.0f;
+                bp.StartCooldownRounds = 1;
+                bp.CombatCount = 1;
+                bp.CooldownRounds = 2;
+                bp.CooldownDice = new DiceFormula(2, DiceType.D3);
+                bp.m_ActorConsiderations = new ConsiderationReference[] {
+                    AiConsiderationList.ChaoticBehaviour.ToReference<ConsiderationReference>(),
+                    AiConsiderationList.NoThreateningUnitsConsideration.ToReference<ConsiderationReference>()
+                };
+                bp.m_TargetConsiderations = new ConsiderationReference[] {
+                    AiConsiderationList.AttackTargetsPriority.ToReference<ConsiderationReference>(),
+                    AiConsiderationList.HeavyArmorConsideration.ToReference<ConsiderationReference>(),
+                    AiConsiderationList.AoE_AvoidFriends.ToReference<ConsiderationReference>(),
+                };
+            });
         }
     }
 }

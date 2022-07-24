@@ -2,6 +2,7 @@
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
+using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using System;
 using System.Collections.Generic;
@@ -102,6 +103,7 @@ namespace HarderEnemies.Blueprints {
         public static BlueprintAbility BurningArc = BlueprintTools.GetBlueprint<BlueprintAbility>("eaac3d36e0336cb479209a6f65e25e7c");
         public static BlueprintAbility VitalStrikeAbilityGreater = BlueprintTools.GetBlueprint<BlueprintAbility>("11f971b6453f74d4594c538e3c88d499");
         public static BlueprintAbility SenseVitals = BlueprintTools.GetBlueprint<BlueprintAbility>("82962a820ebc0e7408b8582fdc3f4c0c");
+        public static BlueprintAbility Nurah_InspirecourageAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("2e5cbdbab116779418fa94021b2547fc");
 
 
 

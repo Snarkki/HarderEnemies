@@ -110,7 +110,6 @@ namespace HarderEnemies.UnitModifications.Demons.Cambion {
         };
 
         public static List<BlueprintUnit> CambionBards = new List<BlueprintUnit>() {
-            CambionSlaverLeader,
             CR14_CambionBard_Ranged,
             CR19_CambionBard_Melee,
             CR3_CambionBard_Ranged
