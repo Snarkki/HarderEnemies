@@ -56,7 +56,7 @@ namespace HarderEnemies.UnitModifications.Dragons {
         private static void DragonBuffs() {
             if (HEContext.Prebuffs.OtherBuffs.IsDisabled("DragonBuffs")) { return; }
             foreach (BlueprintUnit thisUnit in UnitLists.DragonList) {
-                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, thisUnit.CR + 5, BuffLists.GreaterDragonBuffs);
+                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, BuffLists.GreaterDragonBuffs);
             }
         }
 
@@ -68,7 +68,7 @@ namespace HarderEnemies.UnitModifications.Dragons {
             if (HEContext.Prebuffs.OtherBuffs.IsDisabled("LesserDragonBuffs")) { return; }
 
             foreach (BlueprintUnit thisUnit in UnitLists.LesserDragonsList) {
-                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, 26, BuffLists.LesserDragonBuffs);
+                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, BuffLists.LesserDragonBuffs);
             }
             HEContext.Logger.LogHeader("Updated Dragons");
         }

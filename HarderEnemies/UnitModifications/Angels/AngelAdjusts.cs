@@ -54,7 +54,7 @@ namespace HarderEnemies.UnitModifications.Angels {
 
             foreach (BlueprintUnit thisUnit in UnitLists.AngelsList) {
                 thisUnit.Body.m_PrimaryHand = HolyEvilBane5Sword.ToReference<BlueprintItemEquipmentHandReference>();
-                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, thisUnit.CR + 10, BuffLists.AngelBuffList);
+                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, BuffLists.AngelBuffList);
             }
         }
 

@@ -52,7 +52,7 @@ namespace HarderEnemies.UnitModifications.Demons.Brimorak {
         private static void BrimorakBuffs() {
             if (HEContext.Prebuffs.DemonBuffs.IsDisabled("BrimorakBuffs")) { return; }
             foreach (BlueprintUnit thisUnit in UnitLists.DemonBrimorakList) {
-                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, thisUnit.CR + 10, BuffLists.BrimorakBuffs);
+                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, BuffLists.BrimorakBuffs);
             }
             HEContext.Logger.LogHeader("Updated Brimorak Buffs");
         }

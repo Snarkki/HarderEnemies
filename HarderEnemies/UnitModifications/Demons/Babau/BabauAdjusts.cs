@@ -52,7 +52,7 @@ namespace HarderEnemies.UnitModifications.Demons.Babau {
         private static void BabauBuffs() {
             if (HEContext.Prebuffs.DemonBuffs.IsDisabled("BabauBuffs")) { return; }
             foreach (BlueprintUnit thisUnit in UnitLists.DemonBabauList) {
-                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, thisUnit.CR + 10, BuffLists.BabauBuffs);
+                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, BuffLists.BabauBuffs);
             }
             HEContext.Logger.LogHeader("Updated BabauBuffs");
         }

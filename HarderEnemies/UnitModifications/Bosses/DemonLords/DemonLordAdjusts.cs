@@ -86,28 +86,28 @@ namespace HarderEnemies.UnitModifications.Bosses.DemonLords {
                 thisUnit.m_AddFacts = thisUnit.m_AddFacts.AppendToArray(FeatureList.CR22_AxiomiteCaster_Feature_Prebuff.ToReference<BlueprintUnitFactReference>(),
                     FeatureList.CR22_AxiomiteCaster_Feature_CombatPrebuff.ToReference<BlueprintUnitFactReference>()
                     );
-                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, 40, BuffLists.NocticulaBuffList);
+                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, BuffLists.NocticulaBuffList);
             }
 
             //DESKARI
             UnitLists.CR30_AreshkagalBoss.m_AddFacts = UnitLists.CR30_AreshkagalBoss.m_AddFacts.AppendToArray(FeatureList.CR22_AxiomiteCaster_Feature_Prebuff.ToReference<BlueprintUnitFactReference>(),
                                         FeatureList.CR22_AxiomiteCaster_Feature_CombatPrebuff.ToReference<BlueprintUnitFactReference>()
                     );
-                Utils.CustomHelpers.AddFactListsToUnit(UnitLists.CR30_AreshkagalBoss, 40, BuffLists.DeskariBuffList);
+                Utils.CustomHelpers.AddFactListsToUnit(UnitLists.CR30_AreshkagalBoss, BuffLists.DeskariBuffList);
             
 
             //CR30_AreshkagalBoss
             UnitLists.CR30_AreshkagalBoss.m_AddFacts = UnitLists.CR30_AreshkagalBoss.m_AddFacts.AppendToArray(FeatureList.CR22_AxiomiteCaster_Feature_Prebuff.ToReference<BlueprintUnitFactReference>(),
                                     FeatureList.CR22_AxiomiteCaster_Feature_CombatPrebuff.ToReference<BlueprintUnitFactReference>()
                     );
-            Utils.CustomHelpers.AddFactListsToUnit(UnitLists.CR30_AreshkagalBoss, 40, BuffLists.CR30_AreshkagalBossBuffs);
+            Utils.CustomHelpers.AddFactListsToUnit(UnitLists.CR30_AreshkagalBoss, BuffLists.CR30_AreshkagalBossBuffs);
 
 
             //AREELU 
             UnitLists.AreeluDemonicForm.m_AddFacts = UnitLists.AreeluDemonicForm.m_AddFacts.AppendToArray(FeatureList.CR22_AxiomiteCaster_Feature_Prebuff.ToReference<BlueprintUnitFactReference>(),
                                     FeatureList.CR22_AxiomiteCaster_Feature_CombatPrebuff.ToReference<BlueprintUnitFactReference>()
                     );
-            Utils.CustomHelpers.AddFactListsToUnit(UnitLists.AreeluDemonicForm, 40, BuffLists.AreeluBuffList);
+            Utils.CustomHelpers.AddFactListsToUnit(UnitLists.AreeluDemonicForm,  BuffLists.AreeluBuffList);
 
         }
     }

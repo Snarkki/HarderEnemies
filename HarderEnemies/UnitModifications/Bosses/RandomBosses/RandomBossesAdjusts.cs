@@ -39,7 +39,7 @@ namespace HarderEnemies.UnitModifications.Bosses.RandomBosses {
         private static void RandomBossAbilities() {
             if (HEContext.AbilityChanges.BossChanges.IsDisabled("RandomBossChanges")) { return; }
 
-            Utils.CustomHelpers.AddFactListsToUnit(UnitLists.Mutasafen, UnitLists.Mutasafen.CR, AbilityLists.MutasafenAbilities);
+            Utils.CustomHelpers.AddFactListsToUnit(UnitLists.Mutasafen, AbilityLists.MutasafenAbilities);
 
             BrainList.Mutasafen_Brain.m_Actions = BrainList.Mutasafen_Brain.m_Actions.AppendToArray(
                 GreaterInvisibilityAiSpellSwift.ToReference<BlueprintAiActionReference>(),
@@ -55,15 +55,15 @@ namespace HarderEnemies.UnitModifications.Bosses.RandomBosses {
             if (HEContext.Prebuffs.BossBuffs.IsDisabled("RandomBossBuffs")) { return; }
 
 
-            Utils.CustomHelpers.AddFactListsToUnit(UnitLists.Maugla, 25, BuffLists.MauglaBuffs);
+            Utils.CustomHelpers.AddFactListsToUnit(UnitLists.Maugla, BuffLists.MauglaBuffs);
 
 
             foreach (BlueprintUnit thisUnit in UnitLists.MutafasenList) {
-                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, thisUnit.CR + 8, BuffLists.MutasafenGangBuffs);
+                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, BuffLists.MutasafenGangBuffs);
             }
 
 
-            Utils.CustomHelpers.AddFactListsToUnit(UnitLists.XanthirPhase1, 27, BuffLists.XanthirBuffs);
+            Utils.CustomHelpers.AddFactListsToUnit(UnitLists.XanthirPhase1,  BuffLists.XanthirBuffs);
 
         }
     }

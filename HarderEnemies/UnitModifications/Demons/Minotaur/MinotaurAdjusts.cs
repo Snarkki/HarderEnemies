@@ -99,16 +99,16 @@ namespace HarderEnemies.UnitModifications.Demons.Minotaur {
             if (HEContext.Prebuffs.DemonBuffs.IsDisabled("MinotaurBuffs")) { return; }
             foreach (BlueprintUnit thisUnit in UnitLists.DemonMeleeMinotaurList) {
                 if (thisUnit.CR <= 15) {
-                    Utils.CustomHelpers.AddFactListsToUnit(thisUnit, thisUnit.CR + 10, BuffLists.MeleeMinotaurBuffs);
+                    Utils.CustomHelpers.AddFactListsToUnit(thisUnit,BuffLists.MeleeMinotaurBuffs);
                 } else {
-                    Utils.CustomHelpers.AddFactListsToUnit(thisUnit, thisUnit.CR + 10 , BuffLists.HighLevelMeleeMinotaursAlternative);
+                    Utils.CustomHelpers.AddFactListsToUnit(thisUnit, BuffLists.HighLevelMeleeMinotaursAlternative);
                 }
             }
             foreach (BlueprintUnit thisUnit in UnitLists.RushingMinotaursList) {
                 if (thisUnit.CR <= 15) {
-                    Utils.CustomHelpers.AddFactListsToUnit(thisUnit, thisUnit.CR + 10, BuffLists.MeleeMinotaurBuffs);
+                    Utils.CustomHelpers.AddFactListsToUnit(thisUnit, BuffLists.MeleeMinotaurBuffs);
                 } else {
-                    Utils.CustomHelpers.AddFactListsToUnit(thisUnit, thisUnit.CR + 10, BuffLists.HighLevelMeleeMinotaurs);
+                    Utils.CustomHelpers.AddFactListsToUnit(thisUnit, BuffLists.HighLevelMeleeMinotaurs);
                 }
             }
             HEContext.Logger.LogHeader("Updated Minotaur Buffs");

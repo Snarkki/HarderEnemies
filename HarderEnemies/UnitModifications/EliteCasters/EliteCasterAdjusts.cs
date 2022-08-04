@@ -58,10 +58,10 @@ namespace HarderEnemies.UnitModifications.EliteCasters {
         private static void HandleEliteCasterBuffs() {
             if (HEContext.Prebuffs.OtherBuffs.IsDisabled("EliteCasterBuffs")) { return; }
             foreach (BlueprintUnit thisUnit in UnitLists.SemiEliteCasterList) {
-                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, 30, BuffLists.SemiEliteCasterBuffs);
+                Utils.CustomHelpers.AddFactListsToUnit(thisUnit,  BuffLists.SemiEliteCasterBuffs);
             }
 
-            Utils.CustomHelpers.AddFactListsToUnit(UnitLists.AlderpashLich25, 40, BuffLists.EliteCasterBuffs);
+            Utils.CustomHelpers.AddFactListsToUnit(UnitLists.AlderpashLich25, BuffLists.EliteCasterBuffs);
 
 
             HEContext.Logger.LogHeader("Updated EliteCasters Buffs");

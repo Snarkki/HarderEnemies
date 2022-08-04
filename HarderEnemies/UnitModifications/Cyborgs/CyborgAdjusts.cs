@@ -97,7 +97,7 @@ namespace HarderEnemies.UnitModifications.Cyborgs {
             foreach (BlueprintUnit thisUnit in UnitLists.CyborgsList) {
                 //Utils.CustomHelpers.AddFactListsToUnit(thisUnit, thisUnit.CR, BuffLists.CultistBuffLists.CultistCasterBuffs);
             }
-            Utils.CustomHelpers.AddFactListsToUnit(UnitLists.CR15_Cyborg_CrusaderMeleeLevel13, 25, BuffLists.Cyborg2HMeleeBuffs);
+            Utils.CustomHelpers.AddFactListsToUnit(UnitLists.CR15_Cyborg_CrusaderMeleeLevel13,  BuffLists.Cyborg2HMeleeBuffs);
 
 
             HEContext.Logger.LogHeader("Updated Cyborg Buffs");

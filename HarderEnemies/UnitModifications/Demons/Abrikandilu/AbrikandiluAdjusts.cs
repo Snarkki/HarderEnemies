@@ -48,7 +48,7 @@ namespace HarderEnemies.UnitModifications.Demons.Abrikandilu {
         private static void AbrikandiluBuffs() {
             if (HEContext.Prebuffs.DemonBuffs.IsDisabled("AbrikandiluBuffs")) { return; }
             foreach (BlueprintUnit thisUnit in UnitLists.DemonAbrikandiluList) {
-                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, thisUnit.CR + 8, BuffLists.AbrikanduBuffs);
+                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, BuffLists.AbrikanduBuffs);
             }
             HEContext.Logger.LogHeader("Updated Abrikandilu buffs");
         }

@@ -93,7 +93,7 @@ namespace HarderEnemies.UnitModifications.Bosses.Balors {
             if (HEContext.Prebuffs.BossBuffs.IsDisabled("BalorBuffs")) { return; }
             foreach (BlueprintUnit thisUnit in UnitLists.BalorList) {
                 thisUnit.m_AddFacts = thisUnit.m_AddFacts.AppendToArray(FeatureList.CR22_AxiomiteCaster_Feature_CombatPrebuff.ToReference<BlueprintUnitFactReference>());
-                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, 33, BuffLists.BalorBuffsList);
+                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, BuffLists.BalorBuffsList);
             }
         }
 

@@ -50,7 +50,7 @@ namespace HarderEnemies.UnitModifications.Bosses.CorruptedAngels {
             if (HEContext.Prebuffs.BossBuffs.IsDisabled("CorruptedAngelBuffs")) { return; }
 
             foreach (BlueprintUnit thisUnit in UnitLists.CorruptHeraldsList) {
-                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, thisUnit.CR + 10, BuffLists.CorruptedAngelBuffs);
+                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, BuffLists.CorruptedAngelBuffs);
             }
             HEContext.Logger.LogHeader("Updated Corrupted Heralds");
         }

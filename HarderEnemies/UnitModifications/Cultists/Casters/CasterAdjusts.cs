@@ -95,22 +95,22 @@ namespace HarderEnemies.UnitModifications.Cultists.Casters {
 
             if (!HEContext.Prebuffs.OtherBuffs.IsDisabled("CultistCasterBuffs")) {
                 foreach (BlueprintUnit thisUnit in UnitLists.CR4CultistDamageCasterList) {
-                    Utils.CustomHelpers.AddFactListsToUnit(thisUnit, 18, BuffLists.CR4WizardBuffs);
+                    Utils.CustomHelpers.AddFactListsToUnit(thisUnit, BuffLists.CR4WizardBuffs);
                 }
                 foreach (BlueprintUnit thisUnit in UnitLists.CR4CultistSummonCasterList) {
-                    Utils.CustomHelpers.AddFactListsToUnit(thisUnit, 18, BuffLists.CR4WizardBuffs);
+                    Utils.CustomHelpers.AddFactListsToUnit(thisUnit, BuffLists.CR4WizardBuffs);
                 }
                 foreach (BlueprintUnit thisUnit in UnitLists.CR6CultistDamageCasterList) {
-                    Utils.CustomHelpers.AddFactListsToUnit(thisUnit, 20, BuffLists.CR6WizardBuffs);
+                    Utils.CustomHelpers.AddFactListsToUnit(thisUnit, BuffLists.CR6WizardBuffs);
                 }
                 foreach (BlueprintUnit thisUnit in UnitLists.CR6CultistSummonCasterList) {
-                    Utils.CustomHelpers.AddFactListsToUnit(thisUnit, 20, BuffLists.CR6WizardBuffs);
+                    Utils.CustomHelpers.AddFactListsToUnit(thisUnit, BuffLists.CR6WizardBuffs);
                 }
                 foreach (BlueprintUnit thisUnit in UnitLists.CR8CultistDamageCasterList) {
-                    Utils.CustomHelpers.AddFactListsToUnit(thisUnit, 22, BuffLists.CR8WizardBuffs);
+                    Utils.CustomHelpers.AddFactListsToUnit(thisUnit, BuffLists.CR8WizardBuffs);
                 }
                 foreach (BlueprintUnit thisUnit in UnitLists.CR8CultistSummonCasterList) {
-                    Utils.CustomHelpers.AddFactListsToUnit(thisUnit, 22, BuffLists.CR8WizardBuffs);
+                    Utils.CustomHelpers.AddFactListsToUnit(thisUnit, BuffLists.CR8WizardBuffs);
                 }
 
             }

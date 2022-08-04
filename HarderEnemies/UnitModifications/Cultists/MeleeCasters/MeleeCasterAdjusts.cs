@@ -83,19 +83,19 @@ namespace HarderEnemies.UnitModifications.Cultists.MeleeCasters {
 
             if (!HEContext.Prebuffs.OtherBuffs.IsDisabled("CultistCasterBuffs")) {
                 foreach (BlueprintUnit thisUnit in UnitLists.LowLevelClericList) {
-                    Utils.CustomHelpers.AddFactListsToUnit(thisUnit, 18, BuffLists.LowLevelClericBuffs);
+                    Utils.CustomHelpers.AddFactListsToUnit(thisUnit, BuffLists.LowLevelClericBuffs);
                 }
                 foreach (BlueprintUnit thisUnit in UnitLists.CR6ClericList) {
-                    Utils.CustomHelpers.AddFactListsToUnit(thisUnit, 19, BuffLists.CR6ClericBuffs);
+                    Utils.CustomHelpers.AddFactListsToUnit(thisUnit, BuffLists.CR6ClericBuffs);
                 }
                 foreach (BlueprintUnit thisUnit in UnitLists.CR8ClericList) {
-                    Utils.CustomHelpers.AddFactListsToUnit(thisUnit, 20, BuffLists.CR8ClericBuffs);
+                    Utils.CustomHelpers.AddFactListsToUnit(thisUnit,  BuffLists.CR8ClericBuffs);
                 }
                 foreach (BlueprintUnit thisUnit in UnitLists.HighLevelClericList) {
-                    Utils.CustomHelpers.AddFactListsToUnit(thisUnit, 21, BuffLists.HighLevelClericBuffs);
+                    Utils.CustomHelpers.AddFactListsToUnit(thisUnit,  BuffLists.HighLevelClericBuffs);
                 }
 
-                Utils.CustomHelpers.AddFactListsToUnit(UnitLists.CR19_Cultist_Areshkagal_MeleeCaster, 30, BuffLists.HighLevelClericBuffs);
+                Utils.CustomHelpers.AddFactListsToUnit(UnitLists.CR19_Cultist_Areshkagal_MeleeCaster,  BuffLists.HighLevelClericBuffs);
             }
         }
 

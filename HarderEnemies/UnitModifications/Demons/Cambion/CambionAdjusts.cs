@@ -83,7 +83,7 @@ namespace HarderEnemies.UnitModifications.Demons.Cambion {
             }
 
             foreach (BlueprintUnit thisUnit in UnitLists.CambionBards) {
-                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, thisUnit.CR + 5, BuffLists.BardBuffs);
+                Utils.CustomHelpers.AddFactListsToUnit(thisUnit, BuffLists.BardBuffs);
             }
 
             HEContext.Logger.LogHeader("Updated CambionBuffs");
