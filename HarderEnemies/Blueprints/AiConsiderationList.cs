@@ -9,11 +9,11 @@ using TabletopTweaks.Core.Utilities;
 
 
 namespace HarderEnemies.Blueprints {
-    public  class AiConsiderationList {
+    public class AiConsiderationList {
 
         //public static ComplexConsideration AttackTargetsPriority = BlueprintTools.GetBlueprint<ComplexConsideration>("7a2b25dcc09cd244db261ce0a70cca84");
         //public static CommandCooldownConsideration SwiftActionCooldown = BlueprintTools.GetBlueprint<CommandCooldownConsideration>("c2b7d2f9a5cb8d04d9e1aa4bf3d3c598");
-       
+
         //public static RandomConsideration ChaoticBehavior = BlueprintTools.GetBlueprint<RandomConsideration>("aad346ba597e8aa45bb4b589d9f9d0ea");
 
         //public static UnitsAroundConsideration ChooseMoreAoeTargets = BlueprintTools.GetBlueprint<UnitsAroundConsideration>("b2490b137b8b53a4e950c1d79d1c5c1d");
@@ -406,7 +406,7 @@ namespace HarderEnemies.Blueprints {
         public static ComplexConsideration Cultist_FireRasing_Consideration = BlueprintTools.GetBlueprint<ComplexConsideration>("53d9b8e1faaf533498f20c47ecdd4d40");
         public static ComplexConsideration HelpTargetsPriority = BlueprintTools.GetBlueprint<ComplexConsideration>("36010f75540818a48879f220efd2fa6f");
         public static ComplexConsideration SwiftAction = BlueprintTools.GetBlueprint<ComplexConsideration>("f335c9d35bc608648af2ca45ef2e096c");
-        public static ConditionConsideration DisabledMovementCondition = BlueprintTools.GetBlueprint<ConditionConsideration>("dcaa2ecdb79525642aadbd9907bb3841");
+        public static UnitConditionConsideration DisabledMovementCondition = BlueprintTools.GetBlueprint<UnitConditionConsideration>("dcaa2ecdb79525642aadbd9907bb3841");
         public static DistanceConsideration BlightedTreant_Consideration_TrampleRange = BlueprintTools.GetBlueprint<DistanceConsideration>("a62ac14c12db2774f866ef6463e35a27");
         public static DistanceConsideration CorruptedHerald_Phase2_CR25_ChargeConsideration = BlueprintTools.GetBlueprint<DistanceConsideration>("769c72be7ad1f4e48820e3dbeb169e76");
         public static DistanceConsideration HalfFiendSmiteDistanceConsideration = BlueprintTools.GetBlueprint<DistanceConsideration>("ff2994cef34fcfd4a9efa3b6311a2589");

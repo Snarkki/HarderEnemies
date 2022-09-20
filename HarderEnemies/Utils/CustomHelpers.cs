@@ -18,7 +18,7 @@ using Kingmaker.UnitLogic.Abilities.Blueprints;
 namespace HarderEnemies.Utils {
     public static class CustomHelpers {
 
-        public static int CasterLevelBonus = 10;
+        public static int CasterLevelBonus = 3;
         public static void AddFactListsToUnit(this BlueprintUnit unit,BlueprintUnitFactReference[] buffList) {
             unit.AddComponent<AddFacts>(c => {
                 c.CasterLevel = unit.CR + CasterLevelBonus;

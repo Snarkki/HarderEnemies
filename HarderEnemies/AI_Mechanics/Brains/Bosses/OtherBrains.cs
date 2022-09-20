@@ -32,14 +32,19 @@ namespace HarderEnemies.AI_Mechanics.Brains.Bosses {
         public static void Handler() {
             CreateJerribethBrain();
             CreateMinaghoBrain();
+            ChangeJerribethBrain();
         }
 
-        private static void CreateJerribethBrain() {
+        private static void ChangeJerribethBrain() {
             if (HEContext.AbilityChanges.BossChanges.IsDisabled("JerribethChanges")) { return; }
             AiCastSpellList.Jerribeth_FeeblemindAIAction.BaseScore = 9.0f;
             AiCastSpellList.Jerribeth_PhantasmalPutrefactionAIAction.BaseScore = 9.0f;
             AiCastSpellList.Jerribeth_SlumberAIAction.BaseScore = 5.5f;
             AiCastSpellList.Jerribeth_DeathClutchAIAction.BaseScore = 5.5f;
+        }
+
+        private static void CreateJerribethBrain() {
+
 
             var JerribethBrain = Helpers.CreateBlueprint<BlueprintBrain>(HEContext, "JerribethBrain", bp => {
                 bp.m_Actions = new BlueprintAiActionReference[]

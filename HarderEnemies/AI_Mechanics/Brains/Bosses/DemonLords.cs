@@ -29,20 +29,26 @@ namespace HarderEnemies.AI_Mechanics.Brains.Bosses {
 
 
         public static void Handler() {
-            if (HEContext.AbilityChanges.BossChanges.IsDisabled("DemonLordChanges")) { return; }
+
             CreateNocticulaBrain();
             CreateDeskariBrain();
             CreateAreeluBrain();
+            NocticulaAiChanges();
         }
 
-        private static void CreateNocticulaBrain() {
-
+        private static void NocticulaAiChanges() {
+            if (HEContext.AbilityChanges.BossChanges.IsDisabled("DemonLordChanges")) { return; }
             AiCastSpellList.Nocticula_AiAction_Domination.BaseScore = 10.0f;
             AiCastSpellList.Nocticula_AiAction_QDomination.BaseScore = 10.0f;
             AiCastSpellList.Nocticula_AiAction_Confusion.BaseScore = 10.0f;
             AiCastSpellList.Nocticula_AiAction_HoldMonsterMass.BaseScore = 10.0f;
             AiCastSpellList.Nocticula_AiAction_MindFog.BaseScore = 10.0f;
             AiCastSpellList.Nocticula_AiAction_HoldMonster.BaseScore = 10.0f;
+        }
+
+        private static void CreateNocticulaBrain() {
+
+
 
             var NocticulaBrain = Helpers.CreateBlueprint<BlueprintBrain>(HEContext, "NocticulaBrain", bp => {
                 bp.m_Actions = new BlueprintAiActionReference[]
